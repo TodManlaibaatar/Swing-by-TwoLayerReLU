@@ -1,0 +1,71 @@
+{
+  "components": {
+    "multiseed": {
+      "cells": [
+        [
+          1.8,
+          0.12
+        ],
+        [
+          2.0,
+          0.15
+        ],
+        [
+          2.2,
+          0.18
+        ]
+      ],
+      "headline_metrics": [
+        "t_W",
+        "eta1_blk",
+        "eta2_blk",
+        "p1_peak_angle_error_deg",
+        "p2_peak_angle_error_deg",
+        "Smax1_over_eta1_sq",
+        "Smax2_over_eta2_sq",
+        "global_corr_Sactual_Sred",
+        "tG_minus_tfull_probe",
+        "tred_minus_tfull_probe"
+      ],
+      "new_training_seeds": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "seed0_reused": true,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "reduction_validity": {
+      "boundary_metric": "OOD selector-model output RMS vs minimum angular distance to strong or dynamic weak gate boundary over [t_W,T]",
+      "id_block_metric": "relative RMS of full output vs dynamic two-block selector model",
+      "id_frozen_gate_metric": "relative RMS of full output vs all-neuron gates frozen at t_W",
+      "reference_gate_time": "t_W"
+    },
+    "sector_classification": {
+      "boundary_exclude_deg": 6.0,
+      "labels": [
+        "swing",
+        "negligible",
+        "no_swing_improving",
+        "no_swing_worsening"
+      ],
+      "negligible_range_threshold": 0.0001,
+      "swing_threshold": 0.0001
+    }
+  },
+  "created_utc": "2026-08-25T00:38:03.332637+00:00",
+  "schema_version": 1,
+  "source_hashes": {
+    "swing_grid_preregistered/evaluation_v1_postspecialization/G_timing_summary.csv": "6fc98b771b717329b3b63bec3bd09882cbfae76d2331edd19f33faf3bf2022ee",
+    "swing_grid_preregistered/evaluation_v1_postspecialization/evaluation_completed.json": "1a6d26eaac5003441466ff20cfb42bc63b4f81bb21acd6c827d4c34e94d533ef",
+    "swing_grid_preregistered/evaluation_v1_postspecialization/scaling_summary.csv": "294a8ade4053beb9f353be1f494995654c36f08745b2c3a294717d6bcaba771d",
+    "swing_grid_preregistered/preregistration_v1_postspecialization/manifest.json": "ce727063910dd6c17ae540d9b2a8227d15327d59a97f5fec6d61ae743edd97fe"
+  }
+}

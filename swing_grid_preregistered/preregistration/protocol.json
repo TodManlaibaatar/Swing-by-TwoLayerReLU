@@ -1,0 +1,39 @@
+{
+  "basis_convention": {
+    "p1_order": [
+      "e1",
+      "e2"
+    ],
+    "p2_order": [
+      "e2",
+      "e1"
+    ]
+  },
+  "created_utc": "2026-08-24T22:21:02.210704+00:00",
+  "eta_definition": "max(|m_pq|/|m_pp|, |m_qp|/|m_pp|, sqrt(|m_qq|/|m_pp|))",
+  "eta_gm_definition": "sqrt(|m_pq*m_qp|)/|m_pp|",
+  "frozen_primary_tests": [
+    "Smax_p / eta_blk_p^2 is O(1) and approximately stable across nearby cells",
+    "S_p/eta_blk_p^2 approximately collapses vs theta_p/eta_blk_p in the preregistered normal-form core",
+    "eta1_blk vs mu2*sigma/mu1^2",
+    "eta1_gm vs mu2*sigma/mu1^2"
+  ],
+  "grid": {
+    "mu1": 3.0,
+    "mu2": [
+      1.8,
+      2.0,
+      2.2
+    ],
+    "sigma": [
+      0.12,
+      0.15,
+      0.18
+    ]
+  },
+  "psi_step_deg": 0.5,
+  "secondary_test": "For the reduced-predicted p=1 core peak, compare finite-difference normal-form G zero crossing, reduced t_reversal, and later full t_reversal.",
+  "seed": 0,
+  "t_block": 4.0,
+  "z_core_max": 4.0
+}

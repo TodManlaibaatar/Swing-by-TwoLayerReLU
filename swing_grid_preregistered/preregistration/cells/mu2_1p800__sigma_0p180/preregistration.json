@@ -1,0 +1,176 @@
+{
+  "blocks": {
+    "M1_ambient_t_block": [
+      [
+        0.9484280274646009,
+        -0.01085542965347014
+      ],
+      [
+        -0.07516179458648571,
+        0.005711261448744396
+      ]
+    ],
+    "M2_ambient_t_block": [
+      [
+        0.0012730845869972512,
+        -0.05512998552713792
+      ],
+      [
+        0.03553747429720141,
+        0.9153348007855299
+      ]
+    ],
+    "remainder_mass_fraction": 0.04230180981333548,
+    "strong_mass_fraction": 0.48767104291837204,
+    "weak_mass_fraction": 0.47002714726829237
+  },
+  "cell_id": "mu2_1p800__sigma_0p180",
+  "config": {
+    "capture_margin_deg": 1.0,
+    "dt": 0.0002,
+    "epsilon": 0.001,
+    "figure_dir": "phase0_diagnostic_figures",
+    "log_every": 50,
+    "max_time": 10.0,
+    "mu1": 3.0,
+    "mu2": 1.8,
+    "n_per_cluster": 2000,
+    "save_legacy_figures": false,
+    "seed": 0,
+    "sigma1": 0.18,
+    "sigma2": 0.18,
+    "strong_half_width_deg": 20.0,
+    "weak_H_min_deg": 60.0,
+    "weak_branch_min_deg": 5.0,
+    "weak_field_max_time": 3.0,
+    "weak_max_deg": 170.0,
+    "weak_min_deg": 110.0,
+    "width": 200
+  },
+  "created_utc": "2026-08-24T22:44:18.168026+00:00",
+  "eta_param_strong": 0.036000000000000004,
+  "files": {
+    "predicted_phase_diagram": "predicted_phase_diagram.csv",
+    "training_state": "training_state.npz",
+    "weak_branch": "weak_branch.csv"
+  },
+  "p1_strong_block": {
+    "B_ordered": [
+      [
+        0.9484280274646009,
+        -0.01085542965347014
+      ],
+      [
+        -0.07516179458648571,
+        0.005711261448744396
+      ]
+    ],
+    "a": 0.9484280274646009,
+    "b": -0.1369790834580817,
+    "c": -0.9484280274646008,
+    "d": 0.9093823460390891,
+    "eta_blk": 0.0792488121501566,
+    "eta_gm": 0.030117415433966486,
+    "m_pp": 0.9484280274646009,
+    "m_pq": -0.01085542965347014,
+    "m_qp": -0.07516179458648571,
+    "m_qq": 0.005711261448744396,
+    "r_pq": 0.011445707359038701,
+    "r_qp": 0.0792488121501566,
+    "sqrt_r_qq": 0.07760037697989836
+  },
+  "p2_weak_block": {
+    "B_ordered": [
+      [
+        0.9153348007855299,
+        0.03553747429720141
+      ],
+      [
+        -0.05512998552713792,
+        0.0012730845869972512
+      ]
+    ],
+    "a": 0.9153348007855299,
+    "b": 0.5900361961865087,
+    "c": -0.9153348007855299,
+    "d": 0.35094693365843,
+    "eta_blk": 0.06022931224708817,
+    "eta_gm": 0.04835676551508675,
+    "m_pp": 0.9153348007855299,
+    "m_pq": 0.03553747429720141,
+    "m_qp": -0.05512998552713792,
+    "m_qq": 0.0012730845869972512,
+    "r_pq": 0.038824563718874834,
+    "r_qp": 0.06022931224708817,
+    "sqrt_r_qq": 0.03729397221326446
+  },
+  "predicted_gate_boundaries_deg": {
+    "p1": [
+      -90.0,
+      90.0
+    ],
+    "p2_at_t_block": [
+      -3.7597598075928715,
+      176.2402401924071
+    ]
+  },
+  "predicted_p1_G_timing": {
+    "G_zero_crossing_fd": 4.308813461021257,
+    "all_G_zero_crossings_fd": [
+      4.308813461021257
+    ],
+    "derivative_method": "np.gradient_on_logged_M_history",
+    "eta_blk": 0.0792488121501566,
+    "psi_deg": -85.45461124833747,
+    "s": -1.0,
+    "z": 0.999999999999999
+  },
+  "predicted_primary_p1": {
+    "analysis_center_deg": -90.0,
+    "core_halfwidth_deg": 18.162489870516207,
+    "normal_form_probe_Sred": 0.009653451790606116,
+    "normal_form_probe_grid_psi_deg": -85.5,
+    "normal_form_probe_psi_deg": -85.45461124833747,
+    "normal_form_probe_s": -1.0,
+    "normal_form_probe_t_reversal_red": 4.3100000000000005,
+    "normal_form_probe_z": 1.0,
+    "reduced_core_peak_Sred": 0.012688056719431517,
+    "reduced_core_peak_psi_deg": -90.0,
+    "reduced_core_peak_t_reversal": 3.89,
+    "z_core_max": 4.0
+  },
+  "predicted_primary_p2": {
+    "analysis_center_deg": 176.2402401924071,
+    "core_halfwidth_deg": 13.803541578935011,
+    "normal_form_probe_Sred": 0.0065792167180164784,
+    "normal_form_probe_grid_psi_deg": 176.5,
+    "normal_form_probe_psi_deg": 176.5470248039743,
+    "normal_form_probe_s": -1.0,
+    "normal_form_probe_t_reversal_red": 1.59,
+    "normal_form_probe_z": 1.0,
+    "reduced_core_peak_Sred": 0.014457063745406007,
+    "reduced_core_peak_psi_deg": 173.0,
+    "reduced_core_peak_t_reversal": 4.2700000000000005,
+    "z_core_max": 4.0
+  },
+  "protocol": {
+    "block_tol_deg": 15.0,
+    "branch_search_start": 0.9,
+    "branch_stride": 5,
+    "full_ood_evaluated": false,
+    "psi_step_deg": 0.5,
+    "t_block": 4.0,
+    "t_end": 10.0,
+    "z_core_max": 4.0
+  },
+  "schema_version": 1,
+  "weak_branch": {
+    "birth_time": 1.1500000000000001,
+    "boundary_minus_90_at_block_deg": -3.7597598075928715,
+    "boundary_plus_90_at_block_deg": 176.2402401924071,
+    "phi_birth_deg": 86.35726442337038,
+    "phi_block_deg": 86.24024019240713,
+    "phi_max_deg": 89.04942995070965,
+    "phi_min_deg": 82.9114584541127
+  }
+}

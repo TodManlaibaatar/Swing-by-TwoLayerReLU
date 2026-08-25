@@ -1,0 +1,37 @@
+{
+  "comparison_times": [
+    "t_W",
+    "t_rev_p1",
+    "t_rev_p2",
+    "t_block=4",
+    "t=10"
+  ],
+  "created_utc": "2026-08-25T00:09:58.218949+00:00",
+  "decision_rule": {
+    "best_case": "ideal fixed point gets comparative statics and approximately matches eta_blk at t_rev",
+    "partial_success": "fixed point predicts t=10 and/or parameter ordering but not t_rev; transient dynamics are required",
+    "stop_case": "even measured-gate equilibrium gets mu2/sigma comparative statics wrong; stop equilibrium work for the current paper",
+    "useful_conditional_case": "measured-gate fixed point matches t_rev while ideal does not; gate-angle prediction is the main missing link"
+  },
+  "moment_method": {
+    "distribution": "equal mixture N((mu1,0),sigma^2 I) and N((0,mu2),sigma^2 I)",
+    "order": 100,
+    "quadrature": "tensor-product Gauss-Hermite"
+  },
+  "negative_prediction": "The isolated leading balance m21^(1)\u2248-(mu1+mu2)sigma/(sqrt(2pi)mu1^2) will fail quantitatively and in comparative statics; the full coupled normal equations are required.",
+  "normal_equations": "[M1 M2] [[S1,H],[H,S2]] = [S1,S2]",
+  "purpose": "Predeclare the fixed-gate least-squares Level-1 diagnostic before computing any fixed-point result.",
+  "schema_version": 1,
+  "source_artifact_hashes": {
+    "swing_grid_preregistered/evaluation_v1_postspecialization/G_timing_summary.csv": "6fc98b771b717329b3b63bec3bd09882cbfae76d2331edd19f33faf3bf2022ee",
+    "swing_grid_preregistered/evaluation_v1_postspecialization/evaluation_completed.json": "1a6d26eaac5003441466ff20cfb42bc63b4f81bb21acd6c827d4c34e94d533ef",
+    "swing_grid_preregistered/evaluation_v1_postspecialization/scaling_summary.csv": "294a8ade4053beb9f353be1f494995654c36f08745b2c3a294717d6bcaba771d",
+    "swing_grid_preregistered/preregistration_v1_postspecialization/manifest.json": "ce727063910dd6c17ae540d9b2a8227d15327d59a97f5fec6d61ae743edd97fe"
+  },
+  "variants": {
+    "ideal": "phi1=0 deg, phi2=90 deg",
+    "measured_cohort": "phi1=0 deg, phi2=mass-weighted frozen weak-cohort U angle",
+    "measured_root": "phi1=0 deg, phi2=stable V_true root at comparison time",
+    "predicted_gate": "PENDING: not evaluated until an independent phi_hat_W(mu1,mu2,sigma,t) is derived"
+  }
+}

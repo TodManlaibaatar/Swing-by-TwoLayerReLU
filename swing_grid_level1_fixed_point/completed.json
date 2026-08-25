@@ -1,0 +1,7 @@
+{
+  "completed_utc": "2026-08-25T00:10:06.966396+00:00",
+  "freeze_sha256": "81cbc5ff63284e9e0b548c390d4e64a52e08a62f035ea6d97ed6d09a66994801",
+  "n_comparison_rows": 270,
+  "n_trajectory_rows": 258,
+  "predicted_gate_variant_status": "not evaluated; no independent phi_hat_W has been derived"
+}

@@ -1,0 +1,199 @@
+{
+  "combined_sha256": "18f97680734c61a812bc7821960e174d343baa3d713ab0c7027b4882fc4cfd41",
+  "created_utc": "2026-08-24T23:47:18.124694+00:00",
+  "files": [
+    {
+      "path": "cells/mu2_1p800__sigma_0p120/predicted_phase_diagram.csv",
+      "sha256": "1cd850503d90e4f4a2d22eed1e2a945f7ad17236f7fd1ced78a033e843e7578d",
+      "size_bytes": 11212
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p120/preregistration.json",
+      "sha256": "6ea6ae86016c4e005a8dcc4ccc1dcc0f365bc137c5ed1202a605af2cd82fba4e",
+      "size_bytes": 6124
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p120/training_state.npz",
+      "sha256": "0dcd1e39c56d504beb70ee42b70acf96dbfcf823acc93c8d23e4d1e011df147b",
+      "size_bytes": 5175055
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p120/weak_branch.csv",
+      "sha256": "243a326de15626000292fcee075d788608eb03aad0b70b2a36c5ec3ef5e8da7c",
+      "size_bytes": 10794
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p150/predicted_phase_diagram.csv",
+      "sha256": "16543681b063f50c3883159d992dcac98a92c9dfea8323b617301961da605600",
+      "size_bytes": 11359
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p150/preregistration.json",
+      "sha256": "7add16e50ac08a52fd3ead570ecddac7f776fb54de6e4a944d02062aff08a425",
+      "size_bytes": 6146
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p150/training_state.npz",
+      "sha256": "86c8a72a976d104d1abad471a9206411c4136480230ba1270453d3003d970501",
+      "size_bytes": 5291980
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p150/weak_branch.csv",
+      "sha256": "7a25eaf40eb1050ef0733830d1e4ca35741acfd00166145fcb08f372254da3c1",
+      "size_bytes": 10764
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p180/predicted_phase_diagram.csv",
+      "sha256": "c279cde2e9f684e4725362558629fe57ee207f16d218a66f16eb7fca5aff40ed",
+      "size_bytes": 11654
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p180/preregistration.json",
+      "sha256": "8b46e9d0a4bcb56f49905c64d77ea2c0f098608784cd6a66b620c35ff41c2a42",
+      "size_bytes": 6239
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p180/training_state.npz",
+      "sha256": "5651beb5f647b4440c77e16442f7237c872b09e0765f0b014eccfac836a6e7a5",
+      "size_bytes": 5383046
+    },
+    {
+      "path": "cells/mu2_1p800__sigma_0p180/weak_branch.csv",
+      "sha256": "0f20b4d3990e80e9998418a04f098183916401a4a3fbd52bc974d6fbb1e27c95",
+      "size_bytes": 10779
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p120/predicted_phase_diagram.csv",
+      "sha256": "1a3dc6d3a742c6b2de3c216d25722b4b7849a5097042e737b4e4434bf94dcbef",
+      "size_bytes": 11807
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p120/preregistration.json",
+      "sha256": "5a853a243ccdbf80581c53abe0562c160abb354ad25a3d3168a66c7e2d208d30",
+      "size_bytes": 6115
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p120/training_state.npz",
+      "sha256": "2d886e2d7fdfa96821b71375eedb9af592842fce304a981b952eca6e20e4ec87",
+      "size_bytes": 5138998
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p120/weak_branch.csv",
+      "sha256": "dfa76d95d6865cd366c92328f3c40481f85b5eb16370240e65906f614c2b463c",
+      "size_bytes": 10581
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p150/predicted_phase_diagram.csv",
+      "sha256": "1230caa5a146ab0dfd5d5587a4b89f9facb4a8cebface27d3858f2cb808a4ca0",
+      "size_bytes": 11710
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p150/preregistration.json",
+      "sha256": "751cfa2050062ed7c70826b015aa3482f5e0f404f805646afefcb82b7a07e473",
+      "size_bytes": 6137
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p150/training_state.npz",
+      "sha256": "32b158f4210ea969e5468540459b457bbbca81b0cdd926715b57c473dbe568b9",
+      "size_bytes": 5231100
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p150/weak_branch.csv",
+      "sha256": "7435d4b6e90f72b8d7f837fe9fd96e7541f079e7e80f41a6a8558f62ca3399b8",
+      "size_bytes": 10820
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p180/predicted_phase_diagram.csv",
+      "sha256": "6be2e7131abb5a1184a94b7e462e4dbc0ea4fbe248ca03aa7f10951f597d54d4",
+      "size_bytes": 11760
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p180/preregistration.json",
+      "sha256": "ba20ea29d779414e93a2ddeabfd391579d91cea4c9170aef9afe1f0f9b67122a",
+      "size_bytes": 6172
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p180/training_state.npz",
+      "sha256": "3b25b393130061de6217e6b8a9efb03c5b6d83e3feede173be48ee4f093d480e",
+      "size_bytes": 5345577
+    },
+    {
+      "path": "cells/mu2_2p000__sigma_0p180/weak_branch.csv",
+      "sha256": "d4b499c48040c737edb9f28b6790429d46b84f550bd629956c59a65f758a458f",
+      "size_bytes": 10829
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p120/predicted_phase_diagram.csv",
+      "sha256": "8993a53f02f82da11a6df71cc91c3b52396395d6385f3317730ef6ffd691ef0c",
+      "size_bytes": 12328
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p120/preregistration.json",
+      "sha256": "fc141c70a308f61b9fc26f55c51fc63974abb4fab39e8a8179e2dd1667aa3847",
+      "size_bytes": 6127
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p120/training_state.npz",
+      "sha256": "ef50ed19e3a3bd7cedc1af3272b393c5498315c1a419fd9dadd0e4255968456d",
+      "size_bytes": 5077590
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p120/weak_branch.csv",
+      "sha256": "d91c524938d048f92cf8370e7288c6d0c5d171dd10212a2439798e15ecb35947",
+      "size_bytes": 10256
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p150/predicted_phase_diagram.csv",
+      "sha256": "6177ad645265331e6c4d047d9d56bd8250679ec3b4a0a4baef38c2ae892ee3ab",
+      "size_bytes": 12079
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p150/preregistration.json",
+      "sha256": "2d4be84c0e36576397088f410816f0b4ace11a8ebecf9dc103fcae10d2c43952",
+      "size_bytes": 6158
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p150/training_state.npz",
+      "sha256": "884b6e4d8d05f0df173c354fbb0113c1bda49015c8cb44219de60506d929c964",
+      "size_bytes": 5220920
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p150/weak_branch.csv",
+      "sha256": "ce8128c7fad9679358b75ea9be6266a36a3399dfce131625b2bd807e29dd7bd5",
+      "size_bytes": 10529
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p180/predicted_phase_diagram.csv",
+      "sha256": "ae1a1a848e67a54c6d8fd0404c1267e22ae951c474126955b2ef41b9ff74c4cf",
+      "size_bytes": 12099
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p180/preregistration.json",
+      "sha256": "f6570c6d216343d51bb9372be4cf1f2f709cef957e6ef653da994a6380c8b67f",
+      "size_bytes": 6106
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p180/training_state.npz",
+      "sha256": "2fc6e7ca0c1ccf1ac0d070043c01277daaeb29e79803d110b90b0decca32644b",
+      "size_bytes": 5310031
+    },
+    {
+      "path": "cells/mu2_2p200__sigma_0p180/weak_branch.csv",
+      "sha256": "33f133fa35352952beeb31d96cbd866717a0c01fbfbaf2fd17b2c09e571fa5f8",
+      "size_bytes": 10619
+    },
+    {
+      "path": "correction_record.json",
+      "sha256": "8a6ac4a469e0abf832215f366461ab72112724549ce75ad6b012a1b58b59a136",
+      "size_bytes": 575
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "df5cf9db05846917ccf44d0beb9b190da6aaff775a0a4676e6458b7d8c45563c",
+      "size_bytes": 1388
+    }
+  ],
+  "full_ood_evaluated": false,
+  "purpose": "Frozen pre-OOD preregistration for 3x3 Swing-by scaling test",
+  "schema_version": 1
+}

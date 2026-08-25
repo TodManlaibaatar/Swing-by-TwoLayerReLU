@@ -1,0 +1,5 @@
+probe,persistent_swing,persistent_swing_over_xnorm2,t_local_min,loss_local_min,t_persistent_rebound,loss_persistent_rebound,initial_loss,loss_at_reference_t,loss_at_t3,post_creation_weak_gate_switches
+pp,0.0,0.0,nan,nan,nan,nan,6.488737232422246,0.002980933799686088,9.43110308606207e-05,0
+pm,0.0,0.0,nan,nan,nan,nan,6.488775404744608,1.5808796080969827,1.4555685309255482,0
+mp,0.0,0.0,nan,nan,nan,nan,6.488553223115071,4.1334096339835495,3.93909953791793,0
+mm,0.0,0.0,nan,nan,nan,nan,6.488733117999125,6.488941581256643,6.488943494793414,0

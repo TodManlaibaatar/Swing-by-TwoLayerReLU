@@ -1,0 +1,202 @@
+{
+  "blocks": {
+    "M1_ambient_t_block": [
+      [
+        0.9481276133191932,
+        -0.014861087010160978
+      ],
+      [
+        -0.0734243496359878,
+        0.0059387154998310765
+      ]
+    ],
+    "M2_ambient_t_block": [
+      [
+        0.0018339254910018379,
+        -0.05044542416545429
+      ],
+      [
+        0.03152523509871331,
+        0.907123761708904
+      ]
+    ],
+    "remainder_mass_fraction": 0.044715142640318936,
+    "strong_mass_fraction": 0.4885686790262673,
+    "weak_mass_fraction": 0.4667161783334136
+  },
+  "cell_id": "mu2_1p800__sigma_0p150",
+  "config": {
+    "capture_margin_deg": 1.0,
+    "dt": 0.0002,
+    "epsilon": 0.001,
+    "figure_dir": "phase0_diagnostic_figures",
+    "log_every": 50,
+    "max_time": 10.0,
+    "mu1": 3.0,
+    "mu2": 1.8,
+    "n_per_cluster": 2000,
+    "save_legacy_figures": false,
+    "seed": 0,
+    "sigma1": 0.15,
+    "sigma2": 0.15,
+    "strong_half_width_deg": 20.0,
+    "weak_H_min_deg": 60.0,
+    "weak_branch_min_deg": 5.0,
+    "weak_field_max_time": 3.0,
+    "weak_max_deg": 170.0,
+    "weak_min_deg": 110.0,
+    "width": 200
+  },
+  "correction": {
+    "reason": "Pilot reduced-model prediction began at weak-branch birth even though frozen block membership was defined at t_block, allowing eventual weak-block members to be extrapolated backward before recruitment. Corrected before any full-ReLU OOD evaluation.",
+    "source_preregistration_json_sha256": "b99381de422c30899dec6ec57e7f46e7b4895fe438f9635fb153dec27049ad21"
+  },
+  "created_utc": "2026-08-24T23:47:16.654344+00:00",
+  "eta_param_strong": 0.030000000000000002,
+  "files": {
+    "predicted_phase_diagram": "predicted_phase_diagram.csv",
+    "training_state": "training_state.npz",
+    "weak_branch": "weak_branch.csv"
+  },
+  "p1_strong_block": {
+    "B_ordered": [
+      [
+        0.9481276133191932,
+        -0.014861087010160978
+      ],
+      [
+        -0.0734243496359878,
+        0.0059387154998310765
+      ]
+    ],
+    "a": 0.9481276133191932,
+    "b": -0.18777497563353496,
+    "c": -0.9277420591359834,
+    "d": 0.9481276133191933,
+    "eta_blk": 0.07914306451123788,
+    "eta_gm": 0.034840032181766754,
+    "m_pp": 0.9481276133191932,
+    "m_pq": -0.014861087010160978,
+    "m_qp": -0.0734243496359878,
+    "m_qq": 0.0059387154998310765,
+    "r_pq": 0.015674142173895213,
+    "r_qp": 0.0774414209696359,
+    "sqrt_r_qq": 0.07914306451123788
+  },
+  "p2_weak_block": {
+    "B_ordered": [
+      [
+        0.907123761708904,
+        0.03152523509871331
+      ],
+      [
+        -0.05044542416545429,
+        0.0018339254910018379
+      ]
+    ],
+    "a": 0.907123761708904,
+    "b": 0.5668956168889981,
+    "c": -0.907123761708904,
+    "d": 0.5930225628730016,
+    "eta_blk": 0.05561029960280352,
+    "eta_gm": 0.043961602272232725,
+    "m_pp": 0.907123761708904,
+    "m_pq": 0.03152523509871331,
+    "m_qp": -0.05044542416545429,
+    "m_qq": 0.0018339254910018379,
+    "r_pq": 0.03475295922060716,
+    "r_qp": 0.05561029960280352,
+    "sqrt_r_qq": 0.04496323725404667
+  },
+  "post_specialization": {
+    "branch_birth": 1.1500000000000001,
+    "criterion": "first persistent time where each frozen block's projected-mass share is at least threshold times its t_block share",
+    "strong_persistent_suffix_min_at_own_onset": 1.0,
+    "strong_ratio_at_own_onset": 1.9105657043465096,
+    "strong_ratio_t_W": 1.089332172840355,
+    "strong_share_t_W": 0.5322135807054259,
+    "strong_share_t_block": 0.4885686790262674,
+    "t_W": 3.52,
+    "t_W_strong": 1.1500000000000001,
+    "t_W_weak": 3.52,
+    "threshold_fraction_of_t_block_share": 0.9,
+    "weak_persistent_suffix_min_at_own_onset": 0.9024776872925928,
+    "weak_ratio_at_own_onset": 0.9024776872925928,
+    "weak_ratio_t_W": 0.9024776872925928,
+    "weak_share_t_W": 0.42120093724437674,
+    "weak_share_t_block": 0.46671617833341394
+  },
+  "predicted_gate_boundaries_deg": {
+    "p1": [
+      -90.0,
+      90.0
+    ],
+    "p2_at_t_block": [
+      -3.0440058708252025,
+      176.95599412917477
+    ]
+  },
+  "predicted_p1_G_timing": {
+    "G_zero_crossing_fd": 4.364299069916661,
+    "all_G_zero_crossings_fd": [
+      4.364299069916661
+    ],
+    "derivative_method": "np.gradient_on_logged_M_history",
+    "eta_blk": 0.07914306451123788,
+    "psi_deg": -85.46068923227233,
+    "s": -1.0,
+    "validity_start_time": 3.52,
+    "z": 0.9999999999999977
+  },
+  "predicted_primary_p1": {
+    "analysis_center_deg": -90.0,
+    "core_halfwidth_deg": 18.138254296902144,
+    "normal_form_probe_Sred": 0.007540139446690408,
+    "normal_form_probe_grid_psi_deg": -85.5,
+    "normal_form_probe_psi_deg": -85.46068923227233,
+    "normal_form_probe_s": -1.0,
+    "normal_form_probe_t_reversal_red": 4.36,
+    "normal_form_probe_z": 1.0,
+    "reduced_core_peak_Sred": 0.00992260981579407,
+    "reduced_core_peak_psi_deg": -90.0,
+    "reduced_core_peak_t_reversal": 3.95,
+    "z_core_max": 4.0
+  },
+  "predicted_primary_p2": {
+    "analysis_center_deg": 176.95599412917477,
+    "core_halfwidth_deg": 12.74494185879472,
+    "normal_form_probe_Sred": 0.0052360831449901335,
+    "normal_form_probe_grid_psi_deg": 177.0,
+    "normal_form_probe_psi_deg": 176.81212000395521,
+    "normal_form_probe_s": -1.0,
+    "normal_form_probe_t_reversal_red": 3.79,
+    "normal_form_probe_z": 1.0,
+    "reduced_core_peak_Sred": 0.010477980416801369,
+    "reduced_core_peak_psi_deg": 174.5,
+    "reduced_core_peak_t_reversal": 4.21,
+    "z_core_max": 4.0
+  },
+  "protocol": {
+    "block_tol_deg": 15.0,
+    "branch_search_start": 0.9,
+    "branch_stride": 5,
+    "full_ood_evaluated": false,
+    "post_specialization_mass_share_fraction": 0.9,
+    "prediction_validity_start": 3.52,
+    "psi_step_deg": 0.5,
+    "refrozen_from_pilot_without_retraining": true,
+    "t_block": 4.0,
+    "t_end": 10.0,
+    "z_core_max": 4.0
+  },
+  "schema_version": 2,
+  "weak_branch": {
+    "birth_time": 1.1500000000000001,
+    "boundary_minus_90_at_block_deg": -3.0440058708252025,
+    "boundary_plus_90_at_block_deg": 176.95599412917477,
+    "phi_birth_deg": 87.07671556472779,
+    "phi_block_deg": 86.9559941291748,
+    "phi_max_deg": 89.31314683913749,
+    "phi_min_deg": 84.06171495435709
+  }
+}

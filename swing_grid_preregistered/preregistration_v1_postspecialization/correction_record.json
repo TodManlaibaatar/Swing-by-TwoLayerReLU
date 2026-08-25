@@ -1,0 +1,8 @@
+{
+  "correction": "Introduce ID-only post-specialization validity time t_W based on persistent recruitment of frozen strong/weak cohorts. Recompute all reduced OOD predictions only on [t_W,T]. Reuse saved training trajectories; no retraining and no full-ReLU OOD evaluation.",
+  "created_utc": "2026-08-24T23:47:16.308440+00:00",
+  "full_ood_seen_before_correction": false,
+  "mass_share_threshold": 0.9,
+  "source_pilot_combined_sha256": "46d520101cfcf0d5c7a7afc0d296270097087b797fabcb3042d60b8c0e51c6eb",
+  "source_pilot_root": "swing_grid_preregistered/preregistration"
+}

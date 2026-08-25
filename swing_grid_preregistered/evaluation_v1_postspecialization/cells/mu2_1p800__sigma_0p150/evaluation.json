@@ -1,0 +1,45 @@
+{
+  "cell_id": "mu2_1p800__sigma_0p150",
+  "eta_param_strong": 0.030000000000000002,
+  "evaluated_utc": "2026-08-24T23:47:32.219758+00:00",
+  "mu2": 1.8,
+  "p1": {
+    "G_zero_crossing_fd": 4.364299069916661,
+    "actual_core_peak": {
+      "Smax": 0.006593512768107712,
+      "Smax_over_eta2": 1.0526672854413404,
+      "psi_deg": -85.0,
+      "t_reversal": 4.470000000000001,
+      "theta_deg": 5.0,
+      "theta_over_eta": 1.102641945174174
+    },
+    "center_deg_frozen": -90.0,
+    "eta_blk": 0.07914306451123788,
+    "eta_gm": 0.034840032181766754,
+    "full_t_reversal_at_predicted_probe": 4.44,
+    "normal_form_probe_psi_deg": -85.46068923227233,
+    "predicted_t_reversal_at_probe": 4.36
+  },
+  "p2": {
+    "actual_core_peak": {
+      "Smax": 0.0045212239159095335,
+      "Smax_over_eta2": 1.4619938525805098,
+      "psi_deg": 176.0,
+      "t_reversal": 4.13,
+      "theta_deg": -0.9559941291747691,
+      "theta_over_eta": -0.300038757262774
+    },
+    "center_deg_frozen": 176.95599412917477,
+    "eta_blk": 0.05561029960280352,
+    "eta_gm": 0.043961602272232725,
+    "normal_form_probe_psi_deg": 176.81212000395521,
+    "predicted_t_reversal_at_probe": 3.79
+  },
+  "phase_agreement": {
+    "global_MAE": 0.00012488610223142113,
+    "global_corr_Sactual_Sred": 0.9312221078142695
+  },
+  "prediction_validity_start_t_W": 3.52,
+  "schema_version": 1,
+  "sigma": 0.15
+}
