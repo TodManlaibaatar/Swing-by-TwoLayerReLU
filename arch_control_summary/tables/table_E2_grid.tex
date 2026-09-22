@@ -1,0 +1,14 @@
+\begin{table}[t]
+\centering
+\small
+\caption{E2 grid: matched architectures on identical data and initialization (mean $\pm$ 95\% CI over seeds; counts are directions on the 0.5$^\circ$ grid; in/off = inside/outside the closed positive cone).}
+\label{tab:E2_grid}
+\begin{tabular}{llllllllllll}
+\toprule
+arch & runs & comp rise (max) & comp$_{\rm emp}$ rise (max) & in $S{\ge}10^{-4}$ & off $S{\ge}10^{-4}$ & in $S{\ge}10^{-5}$ & off $S{\ge}10^{-5}$ & $S(-85^\circ)$ & $t_{\min}(-85^\circ)$ & final excess $(-85^\circ)$ & $\max|E(\psi)-E(\psi{+}\pi)|$ \\
+\midrule
+linear & 45 & $7.8e-30$ & $1.5e-29$ & $0\pm0$ & $0\pm0$ & $0\pm0$ & $0\pm0$ & $0\pm0$ & $9.78\pm0.12$ & $1.46\times10^{-34}\pm2.0\times10^{-34}$ & $2.8e-14$ \\
+ReLU & 45 & $8.0e-06$ & $8.3e-06$ & $4.29\pm2.7$ & $113\pm4.6$ & $36.1\pm9.4$ & $128\pm4$ & $0.0103\pm8.5\times10^{-4}$ & $3.74\pm0.17$ & $0.0106\pm8.6\times10^{-4}$ & $5.0e-01$ \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,17 @@
+{
+  "V1_archive_reproduction": {
+    "max_abs_dU": 2.498001805406602e-16,
+    "max_abs_dW": 2.1510571102112408e-16,
+    "t_birth": 1.08,
+    "max_abs_dS": 1.559863349598345e-14,
+    "n_directions": 1022,
+    "n_in_cone": 198,
+    "n_off_cone": 824,
+    "n_above_1em4": 230,
+    "n_above_1em4_in_cone": 0,
+    "archived_above_1em4": 230,
+    "status": "PASS"
+  },
+  "V4_detector_max_abs_diff": 1.3183898417423734e-15,
+  "V4_status": "PASS"
+}
