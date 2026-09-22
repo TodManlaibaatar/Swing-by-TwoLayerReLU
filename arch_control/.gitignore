@@ -1,0 +1,4 @@
+# raw per-run arrays are large; archive them separately (e.g. an anonymous data host)
+results/*/runs/
+results/SMOKE/
+__pycache__/
