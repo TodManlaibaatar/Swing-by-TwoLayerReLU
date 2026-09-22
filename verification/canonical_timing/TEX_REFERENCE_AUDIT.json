@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "labels": [
+    "sec:canonical-full-tube-timing",
+    "thm:canonical-full-tube-timing",
+    "sec:pattern-quotient",
+    "lem:pattern-quotient",
+    "eq:invalid-transfer-bound"
+  ],
+  "unresolved_references": [],
+  "original_appendix_modified": false
+}

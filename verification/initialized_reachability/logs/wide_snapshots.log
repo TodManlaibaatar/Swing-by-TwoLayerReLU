@@ -1,0 +1,46 @@
+{
+  "status": "STATIC SNAPSHOT BALLS ENCLOSED; TRAJECTORY REACHABILITY SEPARATE",
+  "radius_by_time": {
+    "3.4": "0.00002",
+    "3.7": "0.000035",
+    "3.9": "0.000046"
+  },
+  "snapshots": [
+    {
+      "time": 3.4,
+      "radius_upper": 2.0000000000000005e-05,
+      "E_center_lower": 0.48314945554681654,
+      "E_center_upper": 0.4831494555468179,
+      "E_ball_lower": 0.483146419310388,
+      "E_ball_upper": 0.48315249178324643,
+      "parameter_norm_ball_upper": 1.9925656994129928,
+      "probe_error_Lipschitz_upper": 8.911174453725987
+    },
+    {
+      "time": 3.7,
+      "radius_upper": 3.5000000000000004e-05,
+      "E_center_lower": 0.4829939160596393,
+      "E_center_upper": 0.48299391605964065,
+      "E_ball_lower": 0.4829885344873686,
+      "E_ball_upper": 0.48299929763191135,
+      "parameter_norm_ball_upper": 2.0038990939166053,
+      "probe_error_Lipschitz_upper": 9.04689566614598
+    },
+    {
+      "time": 3.9,
+      "radius_upper": 4.600000000000001e-05,
+      "E_center_lower": 0.48306543963835546,
+      "E_center_upper": 0.4830654396383568,
+      "E_ball_lower": 0.4830583186940505,
+      "E_ball_upper": 0.48307256058266174,
+      "parameter_norm_ball_upper": 2.0069194617432515,
+      "probe_error_Lipschitz_upper": 9.08336935674098
+    }
+  ],
+  "central_first_gap_lower": 0.00014712167847663601,
+  "central_rebound_lower": 5.902106213917512e-05,
+  "sector_angular_halfwidth": "0.000001",
+  "sector_first_gap_lower": 0.000128954939763154,
+  "sector_rebound_lower": 4.085432342569315e-05,
+  "input_sha256": "ca09eb5c29d39fa713ec3427dfc1a5b214946eab0542a89ac9a06c2fc50180d1"
+}

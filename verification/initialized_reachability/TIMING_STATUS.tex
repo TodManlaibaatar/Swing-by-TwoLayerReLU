@@ -1,0 +1,31 @@
+\section{Timing relation: the remaining signed inequality}
+No initialized timing theorem is established. The certified endpoint signs
+alone imply neither a unique zero of $Q_G$ nor an ordering of that zero and
+the full-network minimum. In particular the interpolated empirical times
+are not used as theorem constants.
+
+For the actual probe, put $g_E=\nabla_\theta E$ on each probe activation cell,
+and let $g_G=\nabla\Phi_I$ be the repository statistic's gradient defined
+above. Almost everywhere along a compatible flow, the exact discrepancy is
+\[
+ \Xi(\theta)=(g_E-g_G)^TF,\qquad \dot E=Q_G+\Xi.
+\]
+Thus one concrete sufficient signed estimate after a reached $G$ crossing is
+\begin{equation}\label{initcert:timing-missing}
+ 0\le Q_G\le q_+,
+ \qquad \Xi\le-q_+-\delta,\qquad \delta>0.
+\end{equation}
+This would force the full error still to decrease on that interval. All
+neurons, the ungated fixed cohort defining $Q_G$, and actual training
+selectors must be retained in this comparison. At probe-gate events one
+must use the actual one-sided/a.e. derivative rather than extending a
+single probe-cell gradient across the event.
+
+To localize all full-error minimizers to $[a_E,b_E]$, it suffices additionally
+to certify $\dot E<0$ almost everywhere from entry to $a_E$, and
+$\dot E>0$ almost everywhere from $b_E$ to the final endpoint. A reached
+sign-separated $G$ crossing bracket $[a_G,b_G]$ with $b_G<a_E$ would then
+prove a positive timing separation without asserting uniqueness of either
+crossing. These interval-wide inequalities have not been verified.
+Per the requested dependency order, no timing search was substituted for
+the missing initialization-to-entry proof.

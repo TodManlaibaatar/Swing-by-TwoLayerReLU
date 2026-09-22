@@ -1,0 +1,35 @@
+step 17100 radius 1.0920999541467338e-05 elapsed 25.75
+step 17200 radius 1.1787657796290845e-05 elapsed 48.4
+step 17300 radius 1.2690250525493016e-05 elapsed 71.13
+step 17400 radius 1.3616297691543882e-05 elapsed 94.39
+step 17500 radius 1.457052954529729e-05 elapsed 119.64
+step 17600 radius 1.5524256628208856e-05 elapsed 142.03
+step 17700 radius 1.6482547972216725e-05 elapsed 164.14
+step 17800 radius 1.7523417165033296e-05 elapsed 186.6
+step 17900 radius 1.8564633397997196e-05 elapsed 211.15
+step 18000 radius 1.9514237605062697e-05 elapsed 233.07
+step 18100 radius 2.0746025145515652e-05 elapsed 255.24
+step 18200 radius 2.186269489822835e-05 elapsed 278.1
+step 18300 radius 2.311957772176282e-05 elapsed 301.71
+step 18400 radius 2.4318250321113765e-05 elapsed 323.92
+step 18500 radius 2.550190695623659e-05 elapsed 345.36
+step 18600 radius 2.6763208334662677e-05 elapsed 367.86
+step 18700 radius 2.802495491801836e-05 elapsed 390.64
+step 18800 radius 2.9326350046300546e-05 elapsed 412.09
+step 18900 radius 3.06078298953248e-05 elapsed 433.78
+step 19000 radius 3.194896247112918e-05 elapsed 456.82
+step 19100 radius 3.325328061349022e-05 elapsed 482.06
+step 19200 radius 3.475541383037324e-05 elapsed 507.7
+step 19300 radius 3.6134933679527834e-05 elapsed 531.93
+step 19400 radius 3.747312011764127e-05 elapsed 559.48
+step 19500 radius 3.906620956921816e-05 elapsed 585.33
+{
+  "status": "LOCAL FLOW ENCLOSED FROM A BALL AT THE t=3.4 NUMERICAL CENTER; INITIALIZED REACHABILITY NOT CERTIFIED",
+  "initial_radius": 1e-05,
+  "initial_reference_index": 17000,
+  "final_reference_index": 19500,
+  "dt": "1/5000",
+  "final_radius_upper": 3.906620956921816e-05,
+  "inside_static_witness_ball": true,
+  "runtime_seconds": 585.3572104999912
+}

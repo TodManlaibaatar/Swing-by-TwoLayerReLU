@@ -1,0 +1,8 @@
+{
+  "python": "3.12.2",
+  "numpy": "2.5.3",
+  "mpmath": "1.3.0",
+  "sympy": "1.12.1",
+  "platform": "macOS-15.6.1-arm64-arm-64bit",
+  "thread_contract": "OPENBLAS_NUM_THREADS=1; VECLIB_MAXIMUM_THREADS=1"
+}

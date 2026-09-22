@@ -1,0 +1,444 @@
+{
+  "tex_sha256": "26ada1229dbbd11554d76770abb8a1d2f8b5dd0d44324629183cc403476a96df",
+  "source_lines": 26907,
+  "cleaned_lines": 1631,
+  "labels": {
+    "app:setup": 26,
+    "lem:gf-regularity": 52,
+    "eq:flow": 59,
+    "eq:dissipation": 67,
+    "cor:exact-balance": 113,
+    "sbwindow:mass": 123,
+    "eq:mass-envelope": 127,
+    "lem:probe-kernel": 153,
+    "sbaudit:kernel": 155,
+    "sbaudit:alignment": 160,
+    "app:empirical": 174,
+    "eq:empirical-entry": 226,
+    "app:normal": 367,
+    "prop:pointwise-normal": 381,
+    "eq:normal-H": 396,
+    "eq:normal-G": 398,
+    "eq:normal-exact": 412,
+    "eq:eta-independent": 437,
+    "app:finite": 469,
+    "sbsharp:theorem": 474,
+    "prop:good-event": 535,
+    "eq:good-moments": 538,
+    "eq:good-net": 548,
+    "eq:logistic-time": 598,
+    "sbwide:axis-system": 623,
+    "sbwide:perturbed-axis": 632,
+    "sbsharp:weighted": 697,
+    "sbwide:relative": 697,
+    "sbwide:relative-bounds": 709,
+    "sbwide:core-holding": 822,
+    "sbwide:core-mass": 835,
+    "lem:output-envelope": 876,
+    "lem:kernel-lower": 912,
+    "eq:kernel-lower": 917,
+    "eq:lambda-local": 937,
+    "eq:descent-budget": 953,
+    "sbsharp:descent": 963,
+    "sec:late-increase": 1058,
+    "app:validation": 1169,
+    "app:noiseless": 1224,
+    "sbsector:theorem": 1240,
+    "sbsector:time": 1273,
+    "sbsector:amplitude": 1282,
+    "sbsector:two-concept": 1300,
+    "sbsector:isotropic": 1320,
+    "sbsector:isotropic-time": 1335,
+    "sbsector:ode": 1348,
+    "sbsector:balance": 1359,
+    "sbsector:error": 1401,
+    "sbsector:basic": 1408,
+    "sbsector:leakage": 1416,
+    "sbsector:early-sign": 1435,
+    "sbsector:late-sign": 1454,
+    "sbsector:profile": 1548
+  },
+  "references": [
+    {
+      "target": "app:empirical",
+      "line": 17
+    },
+    {
+      "target": "app:normal",
+      "line": 18
+    },
+    {
+      "target": "app:finite",
+      "line": 19
+    },
+    {
+      "target": "app:validation",
+      "line": 20
+    },
+    {
+      "target": "app:noiseless",
+      "line": 21
+    },
+    {
+      "target": "sbsharp:theorem",
+      "line": 32
+    },
+    {
+      "target": "app:finite",
+      "line": 46
+    },
+    {
+      "target": "eq:flow",
+      "line": 82
+    },
+    {
+      "target": "eq:flow",
+      "line": 94
+    },
+    {
+      "target": "eq:dissipation",
+      "line": 110
+    },
+    {
+      "target": "eq:flow",
+      "line": 120
+    },
+    {
+      "target": "eq:flow",
+      "line": 142
+    },
+    {
+      "target": "eq:dissipation",
+      "line": 143
+    },
+    {
+      "target": "eq:mass-envelope",
+      "line": 146
+    },
+    {
+      "target": "lem:gf-regularity",
+      "line": 167
+    },
+    {
+      "target": "eq:flow",
+      "line": 167
+    },
+    {
+      "target": "app:finite",
+      "line": 188
+    },
+    {
+      "target": "eq:eta-independent",
+      "line": 298
+    },
+    {
+      "target": "app:validation",
+      "line": 363
+    },
+    {
+      "target": "eq:normal-exact",
+      "line": 421
+    },
+    {
+      "target": "eq:normal-G",
+      "line": 436
+    },
+    {
+      "target": "eq:eta-independent",
+      "line": 447
+    },
+    {
+      "target": "app:empirical",
+      "line": 455
+    },
+    {
+      "target": "sbsector:profile",
+      "line": 462
+    },
+    {
+      "target": "app:empirical",
+      "line": 466
+    },
+    {
+      "target": "app:normal",
+      "line": 524
+    },
+    {
+      "target": "sbsharp:theorem",
+      "line": 536
+    },
+    {
+      "target": "eq:good-moments",
+      "line": 560
+    },
+    {
+      "target": "eq:good-net",
+      "line": 583
+    },
+    {
+      "target": "lem:gf-regularity",
+      "line": 646
+    },
+    {
+      "target": "cor:exact-balance",
+      "line": 664
+    },
+    {
+      "target": "eq:logistic-time",
+      "line": 672
+    },
+    {
+      "target": "prop:good-event",
+      "line": 672
+    },
+    {
+      "target": "sbwide:axis-system",
+      "line": 720
+    },
+    {
+      "target": "lem:gf-regularity",
+      "line": 724
+    },
+    {
+      "target": "sbwide:axis-system",
+      "line": 735
+    },
+    {
+      "target": "prop:good-event",
+      "line": 807
+    },
+    {
+      "target": "sbsharp:weighted",
+      "line": 809
+    },
+    {
+      "target": "sbsharp:weighted",
+      "line": 823
+    },
+    {
+      "target": "sbwide:axis-system",
+      "line": 853
+    },
+    {
+      "target": "sbsharp:weighted",
+      "line": 858
+    },
+    {
+      "target": "prop:good-event",
+      "line": 877
+    },
+    {
+      "target": "sbsharp:weighted",
+      "line": 878
+    },
+    {
+      "target": "sbsharp:weighted",
+      "line": 905
+    },
+    {
+      "target": "eq:good-moments",
+      "line": 906
+    },
+    {
+      "target": "lem:probe-kernel",
+      "line": 916
+    },
+    {
+      "target": "eq:kernel-lower",
+      "line": 933
+    },
+    {
+      "target": "sbwindow:mass",
+      "line": 942
+    },
+    {
+      "target": "sbwindow:mass",
+      "line": 946
+    },
+    {
+      "target": "eq:kernel-lower",
+      "line": 964
+    },
+    {
+      "target": "lem:kernel-lower",
+      "line": 986
+    },
+    {
+      "target": "sbwindow:mass",
+      "line": 987
+    },
+    {
+      "target": "sbsharp:descent",
+      "line": 1001
+    },
+    {
+      "target": "eq:lambda-local",
+      "line": 1001
+    },
+    {
+      "target": "eq:descent-budget",
+      "line": 1014
+    },
+    {
+      "target": "lem:gf-regularity",
+      "line": 1073
+    },
+    {
+      "target": "sbsharp:theorem",
+      "line": 1112
+    },
+    {
+      "target": "sbsharp:theorem",
+      "line": 1122
+    },
+    {
+      "target": "prop:good-event",
+      "line": 1124
+    },
+    {
+      "target": "eq:logistic-time",
+      "line": 1125
+    },
+    {
+      "target": "sbsharp:weighted",
+      "line": 1130
+    },
+    {
+      "target": "sbwide:core-holding",
+      "line": 1154
+    },
+    {
+      "target": "sbsharp:weighted",
+      "line": 1155
+    },
+    {
+      "target": "lem:output-envelope",
+      "line": 1156
+    },
+    {
+      "target": "sbsharp:descent",
+      "line": 1157
+    },
+    {
+      "target": "sec:late-increase",
+      "line": 1158
+    },
+    {
+      "target": "sbsharp:theorem",
+      "line": 1173
+    },
+    {
+      "target": "app:empirical",
+      "line": 1220
+    },
+    {
+      "target": "sbsharp:theorem",
+      "line": 1227
+    },
+    {
+      "target": "sbsector:time",
+      "line": 1294
+    },
+    {
+      "target": "sbsector:theorem",
+      "line": 1309
+    },
+    {
+      "target": "sbsector:two-concept",
+      "line": 1326
+    },
+    {
+      "target": "sbsector:ode",
+      "line": 1384
+    },
+    {
+      "target": "sbsector:leakage",
+      "line": 1428
+    },
+    {
+      "target": "sbsector:error",
+      "line": 1452
+    },
+    {
+      "target": "sbsector:basic",
+      "line": 1452
+    },
+    {
+      "target": "sbsector:time",
+      "line": 1472
+    },
+    {
+      "target": "sbsector:late-sign",
+      "line": 1490
+    },
+    {
+      "target": "sbsector:error",
+      "line": 1498
+    },
+    {
+      "target": "sbsector:theorem",
+      "line": 1515
+    },
+    {
+      "target": "sbsector:ode",
+      "line": 1520
+    },
+    {
+      "target": "sbsector:ode",
+      "line": 1523
+    },
+    {
+      "target": "sbsector:two-concept",
+      "line": 1528
+    },
+    {
+      "target": "sbsector:isotropic",
+      "line": 1531
+    },
+    {
+      "target": "sbsector:isotropic-time",
+      "line": 1543
+    },
+    {
+      "target": "sbsector:theorem",
+      "line": 1549
+    },
+    {
+      "target": "sbsector:two-concept",
+      "line": 1562
+    },
+    {
+      "target": "sbsector:theorem",
+      "line": 1584
+    },
+    {
+      "target": "app:normal",
+      "line": 1609
+    },
+    {
+      "target": "eq:normal-H",
+      "line": 1611
+    },
+    {
+      "target": "eq:normal-G",
+      "line": 1611
+    },
+    {
+      "target": "sbsector:profile",
+      "line": 1612
+    },
+    {
+      "target": "sbsector:early-sign",
+      "line": 1616
+    },
+    {
+      "target": "sbsector:late-sign",
+      "line": 1617
+    }
+  ],
+  "missing_references": [],
+  "duplicate_labels": [],
+  "compile_warnings": [],
+  "source_preserved": true,
+  "forbidden_roots_present": []
+}

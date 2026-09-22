@@ -1,0 +1,110 @@
+\section{A local noisy many-neuron reversal certificate}
+\label{sec:local-result}
+The following result is a conditional entry theorem. Its hypothesis specifies
+a neighborhood of an ID-trained state; it does not assume an OOD derivative
+sign or a crossing. The local dynamics and the OOD conclusions are certified
+below. Initialization-to-entry is a separate unresolved inequality.
+
+Let $X$ be the supplied canonical binary dataset, $h=200$, and
+$\widehat\theta_a$ the supplied numerical center indexed by $a=3.4$.
+The loss uses all $N=4000$ samples. The fixed cohort $I$ is the original
+$71$-neuron offline strong cohort. Let
+\[
+ \xi_\alpha=(\cos\alpha,\sin\alpha),\qquad
+ \mathcal I=\{\alpha:|\alpha+17\pi/36|\le10^{-6}\}.
+\]
+The sector has angular width $2\cdot10^{-6}$ radians.
+
+\begin{theorem}[Reversal from a certified learned-state neighborhood]
+\label{thm:local-certificate}
+Assume a compatible gradient-flow solution satisfies
+\begin{equation}\label{eq:entry-missing}
+ \|\theta(3.4)-\widehat\theta_{3.4}\|_2\le10^{-6}.
+\end{equation}
+Then, uniformly for $\alpha\in\mathcal I$,
+\begin{align*}
+ E(\xi_\alpha,3.4)-E(\xi_\alpha,3.7)&>1.2\cdot10^{-4},\\
+ E(\xi_\alpha,3.9)-E(\xi_\alpha,3.7)&>4\cdot10^{-5}.
+\end{align*}
+In particular the full-network error attains an interior minimum on
+$[3.4,3.9]$. At entry the fixed cohort has $m_{11}>0.9322$, input angles
+below $15^\circ$, and output angles below $20^\circ$.
+For the central probe, $Q_G<0$ at entry and $Q_G>0$ at $3.9$ for every
+compatible training selector; the full-error rate has the same strict signs.
+More quantitatively, for every probe in $\mathcal I$,
+$\dot E<-0.00115$ almost everywhere on $[3.4,3.40001]$, and
+$\dot E>0.000444$ almost everywhere on $[3.9,3.90001]$.
+No continuous or unique zero of $Q_G$ is asserted.
+\end{theorem}
+\begin{proof}[Proof and computational obligations]
+The local enclosure uses $2500$ cubic-reference steps of length $1/5000$.
+At each step, outward bounds for the uniform reference defect, smooth
+one-sided rate, and adverse gate jumps are inserted into
+Corollary~\ref{cor:tube-step}. The input radius is $10^{-6}$, rounded upward for the scalar replay.
+The certified radii at $3.7$ and $3.9$ are below
+$1.199\cdot10^{-5}$ and $2.217\cdot10^{-5}$, respectively.
+Every strict tube-invariance inequality must pass; the complete list is
+\texttt{LOCAL\_FLOW\_ENCLOSURE.csv}, with its terminal report in
+\texttt{LOCAL\_FLOW\_CERTIFICATE.json}. These computations certify that
+the flow is within $3.5\cdot10^{-5}$ of the reference snapshots at $3.7$
+and $3.9$. Section~\ref{sec:static} proves the static rate and geometry
+bounds used here. The computational proof is conditional on the arithmetic
+contract stated there; source code and exact binary inputs are supplied.
+
+For completeness, the independent snapshot verification gives
+\begin{align*}
+ E(\xi_0,3.4)&\in[0.48314414,0.48315477],\\
+ E(\xi_0,3.7)&\in[0.48298853,0.48299930],\\
+ E(\xi_0,3.9)&\in[0.48306002,0.48307086],
+ \qquad \xi_0=\xi_{-17\pi/36}.
+\end{align*}
+The displayed intervals are enlarged from the full-precision certified
+values. They follow by Taylor's theorem for the full probe-error potential,
+with error bound $\|g(y)\|R+H_gR^2/2$; all probe gates are constant
+on the respective static balls. The first and second central gaps exceed
+$0.00014484$ and $0.00006072$.
+
+For any parameter vector in these balls,
+$\sum_i\|w_i\|\|u_i\|\le\|\theta\|^2/2$.
+Thus the full error on the unit circle is Lipschitz in the probe with
+constant at most $(1+\|\theta\|^2/2)^2<9.084$.
+Moving the probe by at most $10^{-6}$ in angle changes a difference of
+two errors by less than $1.8168\cdot10^{-5}$. This proves the two
+claimed uniform gaps. Continuity gives an interior minimum. The mass,
+cone, and central derivative conclusions are the corresponding static
+certificates. The terminal enclosure is smaller than $3\cdot10^{-5}$.
+The speed bounds $0.385$ and $0.309$ ensure that extending either
+endpoint forward by $10^{-5}$ stays in its radius-$3.5\cdot10^{-5}$
+static ball, by a first-exit argument. Across the probe sector the masks
+remain unchanged: the additional score movement is at most
+$2.01\cdot10^{-6}$, below the unused central probe margin. On either ball
+\[
+ |\dot E(\xi)-\dot E(\xi_0)|
+ \le2(1+P^2/2)P\|F\|\,\|\xi-\xi_0\|
+ <5\cdot10^{-6},\qquad P<2.01.
+\]
+Subtract this cost from the static rate margins to obtain the asserted
+uniform decreasing and increasing intervals. This also extends the
+compatible flow through the short terminal interval.
+\end{proof}
+
+\paragraph{What the signed mechanism says.}
+At both endpoints the strong-cluster contribution to the full OOD rate is
+negative and the weak-cluster contribution is positive. The latter dominates
+at $3.9$. Moreover its late lower bound exceeds its early upper bound, while
+the strong-cluster contribution becomes less negative, by strict certified
+endpoint margins. These are contributions to the \emph{same} gradient field
+and full-network residual, not results of removing a cluster and retraining.
+They explain the local reversal by signed competition between the two
+training clusters. They do not prove that specialization alone is sufficient
+or that it causes reversal for every specialized state.
+
+\paragraph{The remaining initialized obligation.}
+The certificate starts from the small neighborhood in
+\eqref{eq:entry-missing}. It does not prove that the canonical initialized
+flow reaches it. In particular, restarting a numerical or exact flow at
+$\widehat\theta_{3.4}$ is not the same as certifying the path from the
+archived seed. An initialized canonical theorem still requires
+\eqref{eq:entry-missing}, or another proved entry enclosure for which the
+local bounds close. The high-probability iid theorem requires an additional
+probability argument and is not implied by this fixed-dataset result.

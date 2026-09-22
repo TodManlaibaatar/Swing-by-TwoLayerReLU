@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "pages": 8,
+  "source": "INITIALIZED_CANONICAL_AUDIT_STANDALONE.tex",
+  "unresolved_references": [],
+  "warnings": [],
+  "visual_inspection": "All eight rendered pages checked; no clipping, overlap, or broken equations.",
+  "original_sources_unchanged": true
+}

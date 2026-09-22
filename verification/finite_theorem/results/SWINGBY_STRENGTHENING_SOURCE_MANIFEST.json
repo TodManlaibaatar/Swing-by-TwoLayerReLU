@@ -1,0 +1,14 @@
+{
+  "incoming_hashes": {
+    "main-15.tex": "71664a01288824004a23bf00b99d23beb207bb1e31fbbe8cf140fb37440a7412",
+    "SWINGBY_THEORY_HANDOFF_v13.md": "f283646af30f4b53f4206420edb51419e1b76f0ce1f23b9385715f839095ee3b"
+  },
+  "R0_retained_verbatim": true,
+  "Theorem_5_4_retained_verbatim": true,
+  "changes": "New Section 6 plus precise abstract scope; prior proof body unchanged.",
+  "labels_unique": true,
+  "references_resolve": true,
+  "environment_nesting": "passed",
+  "full_conference_build": false,
+  "reason": "Missing conference style and notation files."
+}

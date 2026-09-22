@@ -1,0 +1,26 @@
+{
+  "status": "PREFIX VALIDATED; NONDECREASING COMPARISON EXCEEDS ENTRY BUDGET",
+  "initial_radius": 0,
+  "initial_reference_index": 0,
+  "last_validated_reference_index": 4974,
+  "first_failed_or_budget_step": 4974,
+  "target_entry_radius_exact": "0.000012",
+  "failure_comparison": {
+    "step": 4974,
+    "time": 0.9948,
+    "gate_rate": 1.0,
+    "perturbation_rate_upper": 0.39430884066649385,
+    "gate_forcing_upper": 2.3667419223645557e-06,
+    "eta_upper": 4.229489003504273e-05,
+    "eta_smooth_upper": 1.6118540148789903e-06,
+    "eta_gate_upper": 4.068303602016373e-05,
+    "tube_radius_upper": 1.5425235363179266e-05,
+    "smooth_rate_upper": 3.3153194161828123,
+    "rate_upper": 3.7096282568493066,
+    "radius_upper": 1.2003084494454761e-05,
+    "previous_radius_upper": 1.1982855683396031e-05,
+    "step_tube_slack_lower": 3.4221508687245042e-06
+  },
+  "arithmetic": "60-digit interval exponential; exact rational dt=1/5000; nextafter upward replay; smooth rates independently recomputed with explicit single normalization.",
+  "scope": "Failure of this sufficient scalar enclosure only. It is not a lower bound on the true error and is not an obstruction to initialized reversal."
+}

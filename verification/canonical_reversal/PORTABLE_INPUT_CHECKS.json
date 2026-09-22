@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "reference_arrays": "Exact equality against all executed X/theta/velocity inputs",
+  "portable_step_checks": [
+    17000,
+    18499,
+    19499
+  ],
+  "step_bounds": "Exact equality with archived coefficient bounds"
+}

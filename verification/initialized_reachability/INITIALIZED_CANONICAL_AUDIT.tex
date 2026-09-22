@@ -1,0 +1,26 @@
+\documentclass[10pt]{article}
+\usepackage[margin=.9in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\E}{\mathbb E}
+\title{Canonical initialization: continuation certificate and reachability audit}
+\author{}\date{}
+\begin{document}\maketitle
+\noindent
+The initialized canonical reversal theorem remains open. This supplement
+verifies a twelvefold larger sufficient learned-state entry region, audits
+the exact inputs and the local proof chain, and records the initialized
+continuation and first-event checks. It neither asserts a high-probability
+result nor certifies the empirical timing lag.
+\section{Verified canonical continuation}
+\input{CANONICAL_CONTINUATION_BODY.tex}
+\input{SHARP_GATE_STABILITY.tex}
+\input{FIRST_EVENT_PROOF.tex}
+\input{INITIALIZED_COMPARISON_STATUS.tex}
+\input{TIMING_STATUS.tex}
+\end{document}

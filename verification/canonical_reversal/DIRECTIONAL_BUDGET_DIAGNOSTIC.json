@@ -1,0 +1,17 @@
+{
+  "entry": 3.4,
+  "horizon": 0.5,
+  "psi": 0.00043946878400800363,
+  "actual_Q_at_endpoint": 0.0008296787010776482,
+  "actual_minus_reference": 0.0003902099170696446,
+  "endpoint_gradient_drift": 0.0003228852164922166,
+  "endpoint_J_drift": 0.0001586021076987449,
+  "integral1_trapezoid": 5.427656287223216e-05,
+  "integral2_trapezoid": 3.7235667505593515e-05,
+  "signed_reconstruction": 0.00038997509381313584,
+  "quadrature_and_discrete_trajectory_mismatch": 2.3482325650875206e-07,
+  "absolute_pointwise_integrated_budget": 0.0007930895127270417,
+  "energy_Cauchy_budget": 0.0009553771248937552,
+  "late_positive_margin_after_pointwise_budget": -0.00035362072871903804,
+  "status": "Retrospective sampled diagnostics only. Trapezoidal sums on Euler states are not analytic upper bounds or validated quadrature."
+}

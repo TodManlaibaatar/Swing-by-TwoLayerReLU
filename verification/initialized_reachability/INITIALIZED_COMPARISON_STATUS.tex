@@ -1,0 +1,60 @@
+\section{Initialized continuation and the failed entry comparison}
+The initialized reversal theorem remains open. Starting at the exact
+archived parameter vector, the interval verifier establishes a tube through
+$4974$ intervals of length $1/5000$, hence through $t=0.9948$.
+The initial comparison radius is exactly zero. Every step satisfies its
+strict tube inequality, including all compatible training-gate changes.
+All smooth-rate coefficients were independently recomputed, and the
+accumulation was replayed from zero with $60$-digit interval exponentials.
+
+Let $\bar r_j$ be the outward-rounded comparison radius, $k_j\ge0$ its
+one-sided rate, and $\omega_j\ge0$ the sum of the reference-defect and
+adverse-gate intercept bounds. The checked recurrence is
+\[
+ \bar r_j=\operatorname{up}\left[
+ e^{k_j/5000}\bar r_{j-1}
+ +\frac{e^{k_j/5000}-1}{k_j}\omega_j\right].
+\]
+At the first failure of the \emph{entry-budget} comparison, the ledger gives
+\begin{align*}
+ j&=4974, &t_{j-1}&=0.9946,&t_j&=0.9948,\\
+ \bar r_{j-1}&\approx1.1982855683396031\cdot10^{-5},&&&\\
+ \bar r_j&\approx1.2003084494454761\cdot10^{-5}
+                  >1.2\cdot10^{-5}.&&&
+\end{align*}
+Here $k_j<4.709629$, $\omega_j<4.466164\cdot10^{-5}$.
+The prescribed tube radius is greater than $1.5425235\cdot10^{-5}$;
+its strict slack is greater than $3.4221508\cdot10^{-6}$.
+Thus the actual tube criterion has \emph{not} failed. The failed sufficient
+inequality is specifically
+\begin{equation}\label{initcert:failed-budget}
+ \boxed{\bar r_{4974}\le1.2\cdot10^{-5}.}
+\end{equation}
+The exact binary upper bounds and rational step are recorded in
+\texttt{INITIAL\_FLOW\_CERTIFICATE.json}; the full accepted prefix is in
+\texttt{INITIAL\_FLOW\_ENCLOSURE.csv}.
+
+This distinction is essential. The result proves
+$\|\theta(t_j)-y(t_j)\|\le\bar r_j$, not a lower bound on the actual
+error. The nondecreasing comparison used here cannot subsequently restore
+the selected entry tolerance at $t=3.4$. A sharper propagation method,
+a better-defect reference, a different sufficient entry set, or an
+observable enclosure could still succeed. No structural obstruction to
+initialized reversal, and no justification for a theorem-scope pivot,
+follows from~\eqref{initcert:failed-budget}.
+
+At this step the reference gate correction is less than
+$4.068304\cdot10^{-5}$, while the smooth reference defect is less than
+$1.611855\cdot10^{-6}$. The proof bottleneck is therefore not addressed
+by checking only a smooth integrator's truncation error. A continuation
+that improves this estimate must account for actual gate events and their
+signed propagation. The isolated first-event proposition above does this
+for one event; it does not certify the entire event sequence.
+
+\paragraph{Independent arithmetic audit.}
+A suspected normalization error proved to be a misreading of parentheses.
+Both the certainly-active and uncertain residual contributions had exactly
+one factor $1/N$. Independent recomputation agreed within
+$1.8\cdot10^{-15}$ in the smooth rates; the delivered expression makes
+that normalization explicit. No alleged correction to the underlying
+mathematical bound is claimed.

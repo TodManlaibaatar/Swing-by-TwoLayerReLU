@@ -1,0 +1,13 @@
+step 4900 radius 1.0582458847847941e-05 elapsed 9.35
+ENTRY RADIUS BUDGET EXCEEDED 4974 1.2003084494454761e-05
+{
+  "status": "VALIDATED INITIAL SEGMENT; NONDECREASING COMPARISON EXCEEDS THE 1.2e-5 ENTRY BUDGET",
+  "initial_radius": 1.0009814095137533e-05,
+  "initial_reference_index": 4867,
+  "last_reference_index": 4974,
+  "dt": "1/5000",
+  "final_radius_upper": 1.2003084494454761e-05,
+  "target_entry_radius": 1.2e-05,
+  "not_claimed": "The true trajectory error exceeds 1.2e-5; this is only a failed sufficient comparison for continuing to t=3.4.",
+  "runtime_seconds": 28.318930665991502
+}

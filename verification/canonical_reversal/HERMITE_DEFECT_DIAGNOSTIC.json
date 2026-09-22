@@ -1,0 +1,18 @@
+{
+  "status": "Feasibility only: sampled midpoint defects, omitted tube growth and gate terms; not an error enclosure.",
+  "radii": [
+    {
+      "terminal": 3.3950000000000005,
+      "smooth_weighted_midpoint_defect": 0.05377001414299454
+    },
+    {
+      "terminal": 3.8950000000000005,
+      "smooth_weighted_midpoint_defect": 0.055137174144674526
+    },
+    {
+      "terminal": 3.995,
+      "smooth_weighted_midpoint_defect": 0.05536145330410068
+    }
+  ],
+  "max_defect": 0.00118994830645634
+}

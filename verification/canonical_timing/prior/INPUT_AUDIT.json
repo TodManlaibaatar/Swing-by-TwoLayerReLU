@@ -1,0 +1,44 @@
+{
+  "status": "PASS with provenance qualifications",
+  "checks": {
+    "manifest": true,
+    "dataset_matches_repository_generator": true,
+    "dataset_matches_full_reference": true,
+    "initialization_matches_archived_rows": true,
+    "portable_initialization_matches_archive": true,
+    "strong_cohort_matches_ID_rule": true,
+    "stored_center_matches_reference": true
+  },
+  "repository_commit": "ae16f9c0e4e51269c624ffb196184568f2cfe6d9",
+  "strong_cohort_size": 71,
+  "strong_cohort_rule": "Input direction at t=4 within 15 degrees of e1 and no farther than the archived ID-tracked weak direction; no probe outcomes enter.",
+  "loss_normalization": "1/(2N)",
+  "parameter_order": "all U rows followed by all W rows",
+  "initialization_regeneration_max_abs_difference": 4.87890977618477e-19,
+  "qualifications": [
+    "The verifier uses exact archived U[0], W[0], not freshly evaluated trigonometric initialization.",
+    "The original training_state.npz does not contain X or an independent archived X hash. The supplied binary X matches the committed seeded generator under the current runtime; this does not independently prove historical bitwise identity of an unarchived dataset. The exact theorem instance is the supplied binary X.",
+    "Dataset and initialization routines each restart RNG(seed=0). No implementation-level independence claim is made."
+  ],
+  "input_sha256": {
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/work/appendix-repository/swing_grid_preregistered/preregistration_v1_postspecialization/cells/mu2_2p000__sigma_0p150/training_state.npz": "32b158f4210ea969e5468540459b457bbbca81b0cdd926715b57c473dbe568b9",
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/work/appendix-repository/theory_guided_swing_by_phase_diagram.py": "0e1569f3685e5d9bc5828d25953825e45e15296788b90a5f4286818f4e92d295",
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/work/appendix-repository/full_flow_diagnostic.py": "0eb5f4579e641d5a5455070594467fdbfda25955f319ce91a811a0a7cc7624a4",
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/work/appendix-repository/canonical_G_check.py": "9558ea60bdcb8d542966665adeb3bf6bc90d7042698a702fb884230fa95db6b1",
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/work/appendix-repository/swing_grid_preregister.py": "01b0f9825d42ade468e79129ab33adde4e93f8d61d08bc2a381aa9c2bfe977c1",
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/outputs/crossing-closure/canonical_witness_states.npz": "f83864ac40df9bf634206a1884fe2c99ec6cd05df2de2c5f3d427e1fbcdea41a",
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/outputs/crossing-closure/canonical_late_reference.npz": "036fe360e0d9a96b70f09e155893319981be29be5d53d522b0d3a4bf0bc0743f",
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/outputs/crossing-closure/LOCAL_FLOW_ENCLOSURE.csv": "d25c8ba8446875ee84efadeb356b3287941f36debe54d6e125599dfb5fe401e2",
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/outputs/crossing-closure/LOCAL_FLOW_CERTIFICATE.json": "1eb75c6113d084aa9a7ca21a990da0a6cfdbd453451a462da4618b7851296cc4",
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/outputs/crossing-closure/code/interval_bounds.py": "70ce17539d51a033c43fd4c7f44ba71400796e6748bbb90e555f426371973b04",
+    "/Users/todmanlaibaatar/Documents/Codex/2026-09-13/ex/outputs/crossing-closure/code/validate_late_tube.py": "ddf8d84bcdae1b153094ed143e0d1b34287639d802358f13a9e8dcfa6c450e94",
+    "/Users/todmanlaibaatar/Downloads/main-appendix-revised.tex": "50bcb0cd11e8324fb06f47a43827c8cbbedbb4a9365bce39a1f67a4502a7f9c5",
+    "/Users/todmanlaibaatar/Downloads/main-15.tex": "71aae8f7a313f0c550718cd5741df6da05b2ad85421c7feedd20a24b3bfbda92"
+  },
+  "repository_source_bytes_match_commit": {
+    "theory_guided_swing_by_phase_diagram.py": true,
+    "full_flow_diagnostic.py": true,
+    "canonical_G_check.py": true,
+    "swing_grid_preregister.py": true
+  }
+}

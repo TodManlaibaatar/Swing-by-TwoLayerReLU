@@ -1,0 +1,15 @@
+{
+  "label": "sbsector:profile",
+  "exact_identity_both_signs": true,
+  "static_upper_bound": "828/49 < 20",
+  "derivative_upper_bound": "3615/49 < 80",
+  "original_lines": [
+    17625,
+    17681
+  ],
+  "reference_lines": [
+    462,
+    1612
+  ],
+  "new_trajectory_assumptions": false
+}

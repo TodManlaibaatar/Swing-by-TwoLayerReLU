@@ -1,0 +1,77 @@
+% Self-contained replacement for the adverse-weight part of the existing tube bound.
+\section{A sharper one-sided gate bound}
+Let $y=(u_i,w_i)_i$, $F$ be the empirical ReLU gradient field, and
+$e_y(x)=x-f_y(x)$. For a radius $R$, define the potentially crossing samples
+$\mathcal N_i=\{n:|u_i^Tx_n|\le R\|x_n\|\}$ and
+\[
+ C_i=\frac1N\sum_{n\in\mathcal N_i}\|e_y(x_n)\|\|x_n\|,
+ \qquad K_i=\frac1N\sum_{n\in\mathcal N_i}\|x_n\|^2,
+ \qquad D=\|y\|+R/2.
+\]
+Use reference-only positive conormal weights
+\[
+ B_i(s)=\frac1N\sum_{|u_i^Tx_n|\le s\|x_n\|}
+                 (w_i^Te_y(x_n))_+\|x_n\|.
+\]
+Suppose $B_i(s)\le a_i+\beta s$ for $0\le s\le R$, and the residual
+Hessian matrices on smooth pieces of this ball have norm at most $A$.
+Then, for compatible selectors and $\|z\|\le R$,
+\begin{equation}\label{eq:sharp-gate-stability}
+ \langle z,F(y+z)-F(y)\rangle
+ \le (A+\beta+\Gamma)\|z\|^2+\|(a_i)_i\|_2\|z\|,
+\end{equation}
+where
+\[
+ \Gamma=\tfrac12\max_i(C_i+DRK_i)
+       +D\left(\sum_i\|w_i\|^2K_i^2\right)^{1/2}.
+\]
+In particular parameter perturbations need not be charged independently by
+$R$ inside every neuron's positive gate weight.
+
+\begin{proof}
+On each smooth piece $DF=-J^*J+H_e$; retain the nonpositive term and bound
+the residual-Hessian term by $A\|z\|^2$ along the parameter segment.
+At a gate crossing on this segment the contribution to the scalar pairing
+is at most
+\[
+ \frac{|z_{u_i}^Tx_n|}{N}
+                 (w_i(s)^Te_{y+sz}(x_n))_+.
+\]
+The reference term gives $\sum_i\|z_{u_i}\|B_i(\|z_{u_i}\|)$.
+Write $r=\|z\|$. ReLU Lipschitzness along the parameter segment gives
+$\|f_{y+sz}(x_n)-f_y(x_n)\|\le Dr\|x_n\|$.
+The other conormal terms are bounded by
+\[
+ \|z_{w_i}\|\|e_y(x_n)\|
+ +\|w_i\|Dr\|x_n\|+\|z_{w_i}\|Dr\|x_n\|.
+\]
+After summing over possible crossings their contribution is at most
+\[
+ \sum_i(C_i+DrK_i)\|z_{u_i}\|\|z_{w_i}\|
+ +Dr\sum_i\|w_i\|K_i\|z_{u_i}\|
+ \le\Gamma r^2.
+\]
+Use $2ab\le a^2+b^2$, Cauchy--Schwarz, and $r\le R$.
+The reference weights contribute at most $\|(a_i)\|r+\beta r^2$.
+Endpoint partial selectors and simultaneous crossings satisfy the same bound.
+\end{proof}
+
+\paragraph{Signed enclosure of the residual matrices.}
+A second improvement avoids adding a full absolute near-gate contribution
+to a matrix that already contains it. At a reference midpoint put
+$c_{n,ab}=e_y(x_n)_a x_{n,b}$. For an uncertain gate set $\mathcal N_i$
+and the certainly active set $\mathcal F_i$, the matrix computed with
+reference residual and actual selectors belongs entrywise to
+\[
+ \left[\frac1N\sum_{n\in\mathcal F_i}c_{n,ab}
+       +\frac1N\sum_{n\in\mathcal N_i}\min(0,c_{n,ab}),\quad
+       \frac1N\sum_{n\in\mathcal F_i}c_{n,ab}
+       +\frac1N\sum_{n\in\mathcal N_i}\max(0,c_{n,ab})\right].
+\]
+Residual change costs at most $\lambda D_{\rm out}$ in operator norm if
+$\|f_\theta-f_y\|_n\le\sqrt\lambda D_{\rm out}$ and
+$\|\mathbb E_n xx^T\|\le\lambda$. This follows by Cauchy--Schwarz,
+retaining the signed coordinate intervals before taking a matrix norm.
+Both estimates are deterministic inequalities. The initialized interval
+validator implements them with outward bounds; its floating-point
+feasibility prototype is separate and is not used as a proof premise.

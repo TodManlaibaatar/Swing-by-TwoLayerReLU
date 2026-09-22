@@ -1,0 +1,453 @@
+\documentclass[10pt]{article}
+\usepackage[margin=.85in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ip}[2]{\langle #1,#2\rangle_n}
+\title{Signed residual dynamics and a local noisy crossing certificate}
+\author{Research continuation; initialization-to-entry remains open}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+The repository's strong-block statistic is the derivative of a smooth
+parameter functional. Its signed residual representation separates strong-
+and weak-cluster forcing without discarding complement neurons or training
+gate changes. We prove local comparison and enclosure lemmas and give a
+computer-assisted, fixed-dataset reversal certificate from a small
+neighborhood of a learned canonical state. The full OOD error decreases
+and rebounds on an explicit sector; weak-cluster forcing dominates at the
+late endpoint. The certificate is conditional on reaching its entry
+neighborhood. The canonical initialized reachability inequality and the
+high-probability iid theorem remain open.
+\end{abstract}
+
+\section{Conventions and the signed weak source}
+Let $f_\theta(x)=\sum_{i=1}^h w_i(u_i^Tx)_+$ in $\R^2$,
+$e(x)=x-f_\theta(x)$, and $\mathcal L=\frac12\E_n\|e\|^2$.
+Use the Euclidean parameter norm and the empirical output inner product
+$\ip{v}{z}=\E_n v(x)^Tz(x)$. Throughout, the flow is compatible gradient
+flow with the ReLU chain rule and loss dissipation; all differential identities
+are almost everywhere. Training selectors are the actual selectors.
+The cohort $I$ is fixed, including when it was chosen by an offline ID rule.
+Set
+\[
+ M=\sum_{i\in I}w_i u_i^T,\qquad v=(r,-1)^T,\qquad
+ Y=e_1^TMv-r,\qquad \ell=(Y,1)^T,\quad 0<r<1.
+\]
+The repository statistic, without inserting geometric $k$ factors, is
+\begin{equation}\label{eq:q}
+ Q_G=Y(r\dot m_{11}-\dot m_{12})+r\dot m_{21}-\dot m_{22}
+     =\ell^T\dot Mv.
+\end{equation}
+Here $v$ is an auxiliary vector, not the unit OOD probe
+$\xi=(r,-\sqrt{1-r^2})$.
+
+Write $u_i=(a_i,b_i)$ and $w_i=(c_i,d_i)$. On the weak cluster, define
+\begin{align*}
+ F_I(x)&=\sum_{i\in I}c_i(u_i^Tx)_+,& F_O(x)&=f_1(x)-F_I(x),\\
+ H_I(x)&=x_2\sum_{i\in I}\alpha_i(x)c_id_i,
+ &L_I(x)&=x_2\sum_{i\in I}\alpha_i(x)c_i(d_i-b_i),\\
+ Z_I(x)&=-x_1\sum_{i\in I}\alpha_i(x)c_ia_i.
+\end{align*}
+The weak source singled out in the supplied proof is
+$\mathcal S_2=\frac12\E_{2,n}[(f_1-x_1)H_I]$.
+
+\begin{lemma}[Exact square and signed corrections]\label{lem:source}
+One has $H_I=F_I+L_I+Z_I$ and
+\begin{equation}\label{eq:square}
+\begin{split}
+\mathcal S_2={}&\tfrac12\|F_I\|_{2,n}^2
+ +\tfrac12\E_{2,n}[F_OF_I]-\tfrac12\E_{2,n}[x_1F_I]\\
+ &+\tfrac12\E_{2,n}[(f_1-x_1)L_I]
+ +\tfrac12\E_{2,n}[(f_1-x_1)Z_I].
+\end{split}
+\end{equation}
+No sign is asserted for the four corrections.
+\end{lemma}
+\begin{proof}
+Selector compatibility gives $F_I=\sum_I\alpha_i c_i(a_ix_1+b_ix_2)$.
+Subtract this from $H_I$ and expand $f_1=F_I+F_O$ in its inner product
+with $F_I$. These operations are pointwise finite-sum identities and do not
+freeze a training gate.
+\end{proof}
+Thus approximate input--output alignment is not innocuous unless its
+\emph{signed contribution at the scale of the source} is controlled. Small
+noise in coordinates also need not give a smaller-order target term.
+
+\section{A smooth potential and exact residual dynamics}
+Let $J_t$ be the selected Jacobian of the training output map from parameters
+to the empirical output space. The flow and residual equation are
+\begin{equation}\label{eq:residual}
+ \dot\theta=J_t^*e_t,\qquad \dot e_t=-K_te_t,\qquad K_t=J_tJ_t^*\succeq0.
+\end{equation}
+The adjoint includes empirical averaging. Matrix calculations below can instead
+use outputs and residuals divided by $\sqrt N$ and ordinary transposes.
+
+\begin{proposition}[The empirical statistic as a residual functional]\label{prop:potential}
+Define the smooth polynomial in the parameters
+\[
+ \Phi_I(\theta)=\tfrac12(e_1^TMv-r)^2+e_2^TMv,\qquad
+ g_t=\nabla_\theta\Phi_I(\theta_t),\qquad C_t=J_tg_t.
+\]
+Then $Q_G=\dot\Phi_I=\ip{C_t}{e_t}$. Its gradient is explicitly
+\[
+ (g_t)_{w_i}=\mathbf1_{i\in I}\ell(u_i^Tv),\qquad
+ (g_t)_{u_i}=\mathbf1_{i\in I}v(w_i^T\ell).
+\]
+Equivalently,
+\[
+ C_t(x)=\sum_{i\in I}\alpha_i(x)
+ \big[(u_i^Tx)(u_i^Tv)\ell+(x^Tv)(w_i^T\ell)w_i\big].
+\]
+All neurons, including those outside $I$, enter $e_t,J_t,K_t$.
+\end{proposition}
+\begin{proof}
+Differentiate $\Phi_I$ with respect to $M$ to obtain $\ell v^T$, and then
+with respect to the two neuron vectors to obtain $g_t$. The product rule gives
+$\dot\Phi_I=\ell^T\dot Mv=Q_G$. Substitute the flow and take the adjoint.
+Applying the network Jacobian to $g_t$ gives the last formula. Equation
+\eqref{eq:residual} follows from the absolutely continuous ReLU chain rule,
+including at preactivations that vanish on a set of positive time measure.
+\end{proof}
+The positivity of $K_t$ does not determine the sign of $\ip{C_t}{e_t}$.
+It does, however, prevent exponential amplification in a comparison of
+\emph{training residuals}. This is different from a parameter-space
+Gr\"onwall comparison or a global frozen-kernel training assumption.
+
+\begin{theorem}[Contractive finite-window comparison]\label{thm:comparison}
+Fix an entry time $a$ and a horizon $H>0$. Write
+$e_a=e$, $J_a=J$, $K_a=K$, $g_a=g$, $C_a=C$, and define
+\[
+ \bar e(\tau)=e^{-K\tau}e,\qquad
+ \Psi(\tau)=\ip{C}{e^{-K\tau}e},\qquad 0\le\tau\le H.
+\]
+For almost every $\tau$, the exact discrepancy is
+\begin{equation}\label{eq:directional}
+\begin{split}
+ Q_G(a+\tau)-\Psi(\tau)={}&\ip{C_{a+\tau}-C}{e_{a+\tau}}\\
+ &-\int_0^\tau
+ \ip{e^{-K(\tau-s)}C}{(K_{a+s}-K)e_{a+s}}\,ds.
+\end{split}
+\end{equation}
+If $\|C_{a+s}-C\|_n\le d_C(s)$ and
+$\|K_{a+s}-K\|_{\rm op}\le d_K(s)$ almost everywhere, then
+\begin{equation}\label{eq:rho}
+ |Q_G(a+\tau)-\Psi(\tau)|\le
+ \|e\|_n\left[d_C(\tau)+\int_0^\tau
+ d_K(s)\|e^{-K(\tau-s)}C\|_n\,ds\right].
+\end{equation}
+In particular uniform bounds $d_C,d_K$ give the uniform error
+$\rho=\|e\|_n(d_C+H d_K\|C\|_n)$. There is no exponential growth factor.
+\end{theorem}
+\begin{proof}
+Dissipation or \eqref{eq:residual} gives
+$\|e_t\|_n\le\|e\|_n$ for $t\ge a$. Variation of constants relative to
+$K$ gives
+\[
+ e_{a+\tau}-e^{-K\tau}e
+ =-\int_0^\tau e^{-K(\tau-s)}(K_{a+s}-K)e_{a+s}\,ds.
+\]
+Subtract the two residual functionals and use self-adjointness of $K$ to
+move its exponential onto $C$. This proves \eqref{eq:directional} with its
+signs intact. Cauchy--Schwarz proves \eqref{eq:rho}. Since $K\succeq0$,
+$\|e^{-Ku}\|\le1$ for $u\ge0$, proving the uniform bound. The integrals
+only require measurable bounded Jacobians on the compact parameter path;
+training-gate jumps are allowed.
+\end{proof}
+For a late positive witness, a lower bound on the signed expression
+\eqref{eq:directional} suffices. Requiring its absolute value to be small
+is stronger and can lose helpful drift.
+
+
+\begin{corollary}[Directional budget with signed endpoint drift]\label{cor:directional}
+For a fixed $\tau$, put $b_s=J_{a+s}^*e_{a+s}$,
+$\Delta J_s=J_{a+s}-J_a$, and $z_s=e^{-K_a(\tau-s)}C_a$. Define
+\begin{align*}
+ P_\tau&=(g_{a+\tau}-g_a)^Tb_\tau
+                  +g_a^T\Delta J_\tau^*e_{a+\tau},\\
+ B_\tau&=\int_0^\tau\left[
+       \|\Delta J_s^*z_s\|\,\|b_s\|
+       +\|J_a^*z_s\|\,\|\Delta J_s^*e_{a+s}\|\right]ds.
+\end{align*}
+Then almost everywhere in $\tau$,
+\begin{equation}\label{eq:directional-budget}
+ Q_G(a+\tau)\ge\Psi(\tau)+P_\tau-B_\tau.
+\end{equation}
+In particular $P_\tau\ge-p$ and $B_\tau\le B$ imply a positive witness
+whenever $\Psi(\tau)>p+B$. No upper bound on helpful positive endpoint
+drift is required. These bounds on an interval give an increasing interval
+for $\Phi_I$; a single time is not by itself such an interval.
+\end{corollary}
+\begin{proof}
+The first term of \eqref{eq:directional} equals $P_\tau$, since
+$J_tg_t-J_ag_a=J_t(g_t-g_a)+(J_t-J_a)g_a$. Moreover
+\[
+ K_{a+s}-K_a=\Delta J_sJ_{a+s}^*+J_a\Delta J_s^*.
+\]
+Thus its integrand is exactly
+$(\Delta J_s^*z_s)^Tb_s+(J_a^*z_s)^T\Delta J_s^*e_{a+s}$.
+Cauchy--Schwarz bounds this above by the integrand of $B_\tau$.
+This proves the lower bound, retaining the sign of $P_\tau$.
+\end{proof}
+The first integral can alternatively be bounded by
+\[
+ \sqrt{\mathcal L(a)-\mathcal L(a+\tau)}
+       \left(\int_0^\tau\|\Delta J_s^*z_s\|^2ds\right)^{1/2},
+\]
+using loss dissipation. This need not be sharper than keeping the pointwise
+product. Neither form requires an operator-norm bound over all residual
+directions.
+
+\section{Spectral crossing and full-error transfer}
+The comparison function is calculated in parameter dimension rather than
+forming a $2N$-dimensional kernel. Put $B=J^*J$, $b=J^*e$. If
+$Bz_j=\lambda_jz_j$ is an orthonormal eigendecomposition, then
+\begin{equation}\label{eq:spectrum}
+ \Psi(\tau)=g^Te^{-B\tau}b
+     =\sum_j c_je^{-\lambda_j\tau},\qquad
+ c_j=(g^Tz_j)(z_j^Tb),\quad \lambda_j\ge0.
+\end{equation}
+This follows from $J^*e^{-JJ^*\tau}=e^{-J^*J\tau}J^*$. The coefficients
+are signed. Positive and negative terms can decay at different rates even
+though the training residual norm is nonincreasing.
+
+\begin{corollary}[A sufficient two-rate envelope]\label{cor:rates}
+Choose $0\le s<f$. Let $A$ be the sum of positive $c_j$ with
+$\lambda_j\le s$, let $B_-$ be the sum of $|c_j|$ over negative
+$c_j$ with $\lambda_j\ge f$, and let $D_-$ be the sum of $|c_j|$
+over all remaining negative coefficients. Then
+\[
+ \Psi(\tau)\ge A e^{-s\tau}-B_-e^{-f\tau}-D_-.
+\]
+Consequently if the right side exceeds $\rho$ on a nontrivial late
+interval, and $\Psi<-\rho$ on a nontrivial earlier interval,
+$\Phi_I(\theta_t)$ has a decreasing interval followed by an increasing
+interval under Theorem~\ref{thm:comparison}.
+\end{corollary}
+\begin{proof}
+Bound retained positive terms below by $e^{-s\tau}$ times their total
+coefficient, the fast negative terms below by $-e^{-f\tau}B_-$,
+and the remaining negative terms below by $-D_-$. Discard other positive
+terms. Apply \eqref{eq:rho} and integrate the strict signs almost everywhere.
+\end{proof}
+The full spectral sum may give a much sharper certificate than this envelope;
+no claim that two literal eigenmodes suffice is required.
+
+\begin{theorem}[Crossing localization from an entry-state response]\label{thm:localization}
+Suppose the comparison error is uniformly at most $\rho$ on $[0,H]$.
+Assume the explicitly computed $\Psi$ has $0<\tau_*<H$, and for some
+$\kappa>0$,
+\[
+ \Psi(\tau)\le-\kappa(\tau_*-\tau)\quad(\tau<\tau_*),\qquad
+ \Psi(\tau)\ge\kappa(\tau-\tau_*)\quad(\tau>\tau_*).
+\]
+If $\rho/\kappa<\min(\tau_*,H-\tau_*)$, every minimum of
+$\Phi_I(\theta_t)$ on $[a,a+H]$ is interior and is within
+$\rho/\kappa$ of $a+\tau_*$. The function is strictly decreasing before
+this bracket and strictly increasing after it. A continuous zero of $Q_G$
+is not asserted.
+
+If the exact full-probe discrepancy satisfies
+$|\dot E_{\rm full}-Q_G|\le d$ on the same interval, replace $\rho$ by
+$\rho+d$ to obtain the corresponding conclusion for $E_{\rm full}$.
+\end{theorem}
+\begin{proof}
+For $\tau<\tau_*-\rho/\kappa$, the upper bound for $Q_G$ is strictly
+negative almost everywhere. For $\tau>\tau_*+\rho/\kappa$, its lower
+bound is strictly positive. Since $\Phi_I(\theta_t)$ is absolutely
+continuous, integration proves strict monotonicity on the outer intervals.
+Continuity and compactness give a minimum, and those intervals exclude any
+minimizer outside the bracket. The proof for $E_{\rm full}$ uses the same
+argument after adding $d$.
+\end{proof}
+In contrast with assuming the actual $Q_G$ crossing, the reference response
+and its slopes are calculated from one state. Reachability of that state and
+a sufficiently small error remain separate questions. The full discrepancy
+$d$ must include inactive strong neurons, the active complement and their
+velocities, and the difference between $Q_G$ and the exact reduced derivative.
+A forward residual bound alone does not supply $d$.
+
+\section{A completely explicit drift bound, including gate changes}
+The preceding error can be bounded from a single state without postulating a
+trajectory regularity constant. The following deliberately conservative bound
+is useful for stating exactly what has and has not been certified.
+Let $X_* = \max_n\|x_n\|$, $P=\|\theta_a\|$,
+$R_* = \sqrt{H\mathcal L(a)}$, and $V=\|v\|$.
+For each neuron define the set of possibly changing sample gates
+\[
+ \mathcal B_i=\{x_n:|u_i(a)^Tx_n|\le R_*\|x_n\|\},\qquad
+ \Gamma^2=\sum_i\|w_i(a)\|^2\E_n[\|x\|^2\mathbf1_{\mathcal B_i}].
+\]
+Set
+\begin{align*}
+ D_M&=PR_*+\tfrac12R_*^2,&
+ D_J&=\sqrt2 X_*R_*+\Gamma,\\
+ D_g&=V\|\ell_a\|R_*+V^2D_M(P+R_*),& j&=\|J_a\|,\\
+ D_C&=D_J\|g_a\|+(j+D_J)D_g,&
+ D_K&=(2j+D_J)D_J.
+\end{align*}
+
+\begin{proposition}[Primitive finite-window error]\label{prop:primitive}
+Throughout $[a,a+H]$, these constants bound respectively the block change,
+Jacobian change, potential-gradient change, $C$ change and $K$ change.
+In particular the comparison theorem holds with
+\begin{equation}\label{eq:primitive}
+ \rho_{\rm prim}=\sqrt{2\mathcal L(a)}
+       \big[D_C+H D_K\|C_a\|_n\big].
+\end{equation}
+No probability claim or entry-state assertion is included.
+\end{proposition}
+\begin{proof}
+Loss dissipation and Cauchy--Schwarz imply
+\[
+ \|\theta_t-\theta_a\|\le\int_a^t\|\dot\theta_s\|ds
+ \le\sqrt{(t-a)(\mathcal L(a)-\mathcal L(t))}\le R_*.
+\]
+For a fixed block, expanding $W_I^TU_I$ gives
+$\|\Delta M\|\le PR_*+R_*^2/2$.
+A changed selector can only occur on $\mathcal B_i$. Split the Jacobian
+change into its smooth weight/activation change and its changed-selector
+part, attaching the latter to $w_i(a)$. The squared Hilbert--Schmidt norm
+of the smooth part is at most
+$X_*^2(2\|\Delta U\|_F^2+\|\Delta W\|_F^2)\le2X_*^2R_*^2$.
+The selector part has Hilbert--Schmidt norm at most $\Gamma$.
+The operator norm is no larger; this proves $D_J$.
+
+Next $\|\ell_t-\ell_a\|=|Y_t-Y_a|\le V D_M$.
+The explicit formulas for $g$ in Proposition~\ref{prop:potential} give
+$\|g_t-g_a\|\le V\|\ell_a\|R_*+V^2D_M(P+R_*)$.
+Expanding $J_tg_t-J_ag_a$ and $J_tJ_t^*-J_aJ_a^*$ gives $D_C,D_K$.
+Apply Theorem~\ref{thm:comparison} and $\|e_a\|_n=\sqrt{2\mathcal L(a)}$.
+\end{proof}
+If every initial training margin exceeds $R_*\|x\|$, then $\Gamma=0$.
+For bounded state norms, fixed $H$ and fixed positive margins, writing
+$\epsilon_e=\|e_a\|_n$ gives $R_*=O(\epsilon_e)$,
+$D_J,D_g,D_C,D_K=O(\epsilon_e)$, and therefore
+$\rho_{\rm prim}=O(\epsilon_e^2)$. Thus an order-$\epsilon_e$ signed
+spectral crossing is stable to this bound in such a small-residual regime.
+This scaling observation does not prove that canonical random initialization
+reaches either the spectral condition or the required margins.
+
+\section{Checks on existing canonical states and the remaining inequality}
+The reanalysis uses the saved canonical seed-$0$ trajectory with $h=200$,
+$N=4000$, means $3,2$, noise standard deviation $0.15$, and the stored strong
+mask selected at time $4$. The fixed probe is $-85^\circ$.
+No training was rerun. The saved states come from Euler integration;
+all numbers below are retrospective floating-point diagnostics, not validated
+continuous-time bounds. The scripts reconstruct the original seeded dataset.
+
+At $t=3.60$, equation~\eqref{eq:square} has the following terms:
+\begin{center}
+\begin{tabular}{lr}\toprule
+Term & Value\\\midrule
+Positive square & $+0.0036797850$\\
+Complement correlation & $-0.0006266230$\\
+Target correlation & $-0.0042214838$\\
+Input--output mismatch contribution & $+0.0012836054$\\
+Gate-weighted $x_1$ correction & $+0.0017669433$\\\midrule
+Total $\mathcal S_2$ & $+0.0018822269$\\\bottomrule
+\end{tabular}
+\end{center}
+The target term alone exceeds the square. The mismatch and $x_1$ corrections
+are essential to this decomposition's sign. The normalized alignment of
+$f_1-x_1$ with $H_I$ is approximately $0.485$, rather than a consequence
+of an unweighted weak residual norm.
+
+The spectral reference in \eqref{eq:spectrum}, computed separately at each
+listed entry time, gives these interpolated negative-to-positive crossings:
+\begin{center}
+\begin{tabular}{rrrr}\toprule
+Entry $a$ & $Q_G(a)$ & Reference crossing $a+\tau_*$ & $\Psi(0.5)$\\\midrule
+2.9 & $-0.00724618$ & 3.813095 & $-0.00136129$\\
+3.0 & $-0.00555350$ & 3.768320 & $-0.00077795$\\
+3.2 & $-0.00281777$ & 3.704165 & $-0.00000939$\\
+3.4 & $-0.00105117$ & 3.654520 & $+0.00043947$\\
+3.5 & $-0.00045939$ & 3.630368 & $+0.00059510$\\\bottomrule
+\end{tabular}
+\end{center}
+The supplied audit gives the actual-statistic crossing on saved states as
+$3.60182403$, by interpolation. The frozen reference is therefore informative
+but not exact. Starting at $a=3.4$, linear decomposition by the support of the
+\emph{initial residual} gives at $\tau=0.5$ a strong-cluster contribution
+$-0.0009715782$ and a weak-cluster contribution $+0.0014110470$.
+Both contributions evolve under the full coupled reference kernel. This is
+not an ablation removing the weak training cluster and is not the same
+partition as the instantaneous clusterwise source in the supplied audit.
+
+\paragraph{What the current bound actually certifies.}
+For the diagnostic state $a=3.4$, $H=0.5$, the primitive formulas give
+\[
+ \mathcal L(a)=0.0041220000,\qquad R_*=0.04539824,
+ \qquad \rho_{\rm prim}=0.40288812.
+\]
+The required positive-witness inequality would be
+\begin{equation}\label{eq:failed}
+ \rho < \Psi(0.5)=0.0004394687840.
+\end{equation}
+It is not satisfied by the primitive bound. This failure does not disprove
+a useful finite-window theorem. In particular it does not show that the
+actual signed discrepancy is large or adverse.
+
+\paragraph{The sharper remaining target.}
+For the late witness one only needs
+\begin{equation}\label{eq:remaining}
+\begin{split}
+ &\ip{C_{a+H}-C_a}{e_{a+H}}\\
+ &\quad-\int_0^H\ip{e^{-K_a(H-s)}C_a}{(K_{a+s}-K_a)e_{a+s}}\,ds
+ >-\Psi(H)
+\end{split}
+\end{equation}
+on a neighborhood of a late time (almost everywhere), together with an early
+negative interval. A proved absolute bound satisfying \eqref{eq:failed} is
+sufficient but not necessary. No estimate in the existing specialization or
+loss-dissipation results establishes \eqref{eq:remaining} on a reached
+canonical window. The source square does not fill this gap either.
+
+
+\paragraph{A smaller signed budget on the saved states.}
+At $a=3.4$, $H=0.5$, retrospective evaluation of
+Corollary~\ref{cor:directional} gives
+\begin{align*}
+ (g_{a+H}-g_a)^Tb_H&=+0.0003228852,\\
+ g_a^T\Delta J_H^*e_{a+H}&=+0.0001586021,\\
+ P_H&=+0.0004814873,\qquad
+ B_H^{\rm sampled}=0.0003116022.
+\end{align*}
+The last quantity is a trapezoidal sum of the pointwise norm products, not a
+rigorous upper bound on the continuous-time integral. If one could prove
+$P_H\ge0$ and an upper bound as small as this sampled $B_H$, the positive
+margin left by \eqref{eq:directional-budget} would be about $0.0001278666$.
+This shows why taking absolute values of the endpoint drift is counterproductive:
+the corresponding sampled absolute budget is $0.0007930895$, which exceeds
+$\Psi(H)$. The signed Duhamel reconstruction differs from the directly
+evaluated discrepancy by $2.35\cdot10^{-7}$; this includes quadrature and
+Euler-trajectory error and is not a certified error bound.
+
+This sharper calculation identifies a quantitatively plausible target but
+still proves no uniform inequality on the true initialized flow. Validating a
+fixed-seed canonical trajectory would be a distinct, computer-assisted milestone;
+it would not supply a high-probability iid theorem or license treating Euler
+snapshots as exact gradient-flow states.
+
+\paragraph{Scope of the saved-state comparison.}
+The new results isolate a route from a reached ID state to a crossing without
+assuming the crossing itself. They do not prove that iid isotropic initialization
+reaches a favorable spectral state or that its signed drift is favorable.
+For the comparison route, the coordinate-specific full-probe residual and velocity
+must also satisfy the transfer budget on the same window. The separate local
+certificate below instead verifies the full derivative and snapshots directly. No common noisy
+high-probability parameter region or canonical timing guarantee is claimed.
+The supplied noiseless countermodel remains compatible with every statement
+here: its actual statistic need not satisfy a favorable spectral certificate.
+The existing finite-sample theorem and cleaned appendix are unchanged.
+\input{STATIC_WITNESS_METHOD.tex}
+\input{CANONICAL_ENCLOSURE_METHOD.tex}
+\input{LOCAL_CROSSING_THEOREM.tex}
+\end{document}

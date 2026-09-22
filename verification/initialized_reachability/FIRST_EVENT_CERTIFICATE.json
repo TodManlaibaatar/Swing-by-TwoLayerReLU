@@ -1,0 +1,21 @@
+{
+  "status": "FIRST TRAINING-GATE EVENT CERTIFIED FROM EXACT ARCHIVED INITIAL PARAMETERS",
+  "indexing": "zero based",
+  "sample": 3971,
+  "neuron": 36,
+  "transition": "inactive to active",
+  "time_bracket_rationals": [
+    "35888/10^10",
+    "35891/10^10"
+  ],
+  "q_at_lower_upper": -5.327966168966049e-14,
+  "q_at_upper_lower": 1.2953583195615164e-13,
+  "other_gates_oriented_margin_lower": 2.607971371148397e-09,
+  "pre_event_normal_velocity_lower": 0.0006064394701245842,
+  "post_event_normal_velocity_lower": 0.0006064386223281902,
+  "smooth_reference_parameter_radius": 1.0000000000000002e-06,
+  "whole_interval_speed_upper": 0.1086125075696444,
+  "polynomial_third_derivative_upper": 3.2081709556015614,
+  "input_sha256": "f83864ac40df9bf634206a1884fe2c99ec6cd05df2de2c5f3d427e1fbcdea41a",
+  "scope": "A nonlinear event existence, isolation and two-sided transversality certificate. It does not continue the full trajectory to time 3.4."
+}

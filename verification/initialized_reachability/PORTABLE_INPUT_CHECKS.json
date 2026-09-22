@@ -1,0 +1,22 @@
+{
+  "status": "PASS with recorded dataset provenance qualification",
+  "checks": {
+    "dataset_matches_generator": true,
+    "initialization_matches_archived_rows": true,
+    "initial_reference_starts_at_exact_archive": true,
+    "dataset_identical_in_early_late_and_witness": true,
+    "cohort_matches_ID_only_rule": true,
+    "late_reference_matches_endpoints": true,
+    "late_reference_matches_snapshots": true,
+    "pinned_source_theory_guided_swing_by_phase_diagram.py": true,
+    "pinned_source_full_flow_diagnostic.py": true,
+    "pinned_source_canonical_G_check.py": true,
+    "pinned_source_swing_grid_preregister.py": true
+  },
+  "repository_commit": "ae16f9c0e4e51269c624ffb196184568f2cfe6d9",
+  "qualifications": [
+    "The verifier uses exact archived U[0], W[0], not freshly evaluated trigonometric initialization.",
+    "The original training_state.npz does not contain X or an independent archived X hash. The supplied binary X matches the committed seeded generator under the current runtime; this does not independently prove historical bitwise identity of an unarchived dataset. The exact theorem instance is the supplied binary X.",
+    "Dataset and initialization routines each restart RNG(seed=0). No implementation-level independence claim is made."
+  ]
+}

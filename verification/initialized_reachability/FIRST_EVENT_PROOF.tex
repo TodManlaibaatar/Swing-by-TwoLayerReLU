@@ -1,0 +1,52 @@
+\section{The first initialized training-gate event}
+This result concerns the exact binary input dataset and exact archived
+initial parameter rows. No numerical trajectory is a proof premise.
+Indices in the following statement are zero based.
+
+\begin{proposition}[An isolated transverse first event]
+The first training preactivation to vanish is that of neuron $36$ on
+sample $3971$. Its time $\tau$ satisfies
+\[
+ 35888/10^{10}<\tau<35891/10^{10}.
+\]
+The gate changes from inactive to active. Both one-sided normal velocities
+are greater than $0.0006064$. All other training gates stay strictly in
+their initial signs through the corresponding frozen-mask comparison interval.
+The initialized Clarke flow is unique up to this event and has a unique
+local continuation across this isolated transverse crossing.
+\end{proposition}
+\begin{proof}
+The interval computation resolves every initial gate strictly. Extend the
+initial-mask vector field polynomially and call its unique smooth solution
+$y(t)$. Work in the radius-$10^{-6}$ ball about the archived initial state.
+The certified speed is at most $0.108613$, so on
+$[0,H]$, $H=35891/10^{10}$, a first-exit argument confines $y$ to the ball.
+The field Lipschitz and third-trajectory-derivative bounds are constructed
+from the full empirical covariance and initial residual. In particular
+$\|y'''\|<3.20818$ throughout this interval.
+
+The code evaluates the degree-two Taylor polynomial
+\[
+ p(t)=y(0)+tF(y(0))+\tfrac12t^2DF(y(0))F(y(0))
+\]
+with outward interval arithmetic and adds $3.20818t^3/6$ as a norm
+remainder. For the candidate preactivation, its upper bound at the lower
+time is $-5.3279\cdot10^{-14}$, and its lower bound at the upper time is
+$1.2953\cdot10^{-13}$. Its derivative is bounded below by $0.000606439$.
+Every other oriented preactivation is positive throughout $[0,H]$:
+its initial value plus the negative part of its initial slope times $H$,
+minus the uniform quadratic remainder, is greater than
+$2.6079\cdot10^{-9}$. Thus the frozen flow has exactly this first event,
+and coincides with the initialized flow until it occurs.
+
+At the event the only field jump is the input-coordinate vector
+$N^{-1}(w_i^Te_x)x_n$. Outward bounds on the same ball show that adding
+its normal projection leaves the post-event normal velocity greater than
+$0.000606438$. Both fields therefore cross the isolated hyperplane in the
+same direction. Smooth uniqueness on either side and strict transversality
+exclude dwelling or a choice of distinct continuations at the boundary.
+The full numerical inequalities, exact rational time endpoints, and input
+hash are in \texttt{FIRST\_EVENT\_CERTIFICATE.json}.
+\end{proof}
+This validates one nonlinear event, not a sequence of all subsequent events.
+It does not establish initialized entry at time $3.4$.

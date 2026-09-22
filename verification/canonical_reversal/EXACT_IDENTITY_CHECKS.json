@@ -1,0 +1,8 @@
+{
+  "gradient_u_0": true,
+  "gradient_w_0": true,
+  "gradient_u_1": true,
+  "gradient_w_1": true,
+  "weak_feature_identity": true,
+  "signed_source_expansion": true
+}

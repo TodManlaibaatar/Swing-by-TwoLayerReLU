@@ -1,0 +1,13 @@
+{
+  "method": "RK4 numerical centers, not certified reachable",
+  "dt": 0.0002,
+  "steps": 20000,
+  "source_archive_sha256": "32b158f4210ea969e5468540459b457bbbca81b0cdd926715b57c473dbe568b9",
+  "reference_theta_sha256": "6e5ccf919e7f9952a44100df547905b32793a8e67690fecc17547bd7a63846e7",
+  "portable_data_sha256": "f83864ac40df9bf634206a1884fe2c99ec6cd05df2de2c5f3d427e1fbcdea41a",
+  "repository_commit": "ae16f9c0e4e51269c624ffb196184568f2cfe6d9",
+  "late_reference_sha256": "036fe360e0d9a96b70f09e155893319981be29be5d53d522b0d3a4bf0bc0743f",
+  "late_reference_arrays_match_original_memmaps": true,
+  "validator_used": "code/validate_late_tube_executed.py followed by code/replay_local_enclosure.py",
+  "portable_validator": "code/validate_late_tube.py: same step bounds with portable input loader and upward-rounded entry radius"
+}

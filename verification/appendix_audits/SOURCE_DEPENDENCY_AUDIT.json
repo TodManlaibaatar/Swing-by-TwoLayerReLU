@@ -1,0 +1,5025 @@
+{
+  "source_sha256": "71aae8f7a313f0c550718cd5741df6da05b2ad85421c7feedd20a24b3bfbda92",
+  "source_lines": 26907,
+  "blocks": [
+    {
+      "start_line": 104,
+      "end_line": 117,
+      "heading": "\\section{Submission of conference papers to ICLR 2027}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 117,
+      "end_line": 132,
+      "heading": "\\subsection{Style}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 132,
+      "end_line": 150,
+      "heading": "\\subsection{Retrieval of style files}",
+      "labels": [],
+      "references": [
+        "gen_inst",
+        "headings",
+        "others"
+      ]
+    },
+    {
+      "start_line": 150,
+      "end_line": 174,
+      "heading": "\\section{General formatting instructions}",
+      "labels": [
+        "gen_inst"
+      ],
+      "references": [
+        "others"
+      ]
+    },
+    {
+      "start_line": 174,
+      "end_line": 181,
+      "heading": "\\section{Headings: first level}",
+      "labels": [
+        "headings"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 181,
+      "end_line": 187,
+      "heading": "\\subsection{Headings: second level}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 187,
+      "end_line": 193,
+      "heading": "\\subsubsection{Headings: third level}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 193,
+      "end_line": 198,
+      "heading": "\\section{Citations, figures, tables, references}",
+      "labels": [
+        "others"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 198,
+      "end_line": 213,
+      "heading": "\\subsection{Citations within the text}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 213,
+      "end_line": 220,
+      "heading": "\\subsection{Footnotes}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 220,
+      "end_line": 244,
+      "heading": "\\subsection{Figures}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 244,
+      "end_line": 268,
+      "heading": "\\subsection{Tables}",
+      "labels": [
+        "sample-table"
+      ],
+      "references": [
+        "sample-table"
+      ]
+    },
+    {
+      "start_line": 268,
+      "end_line": 393,
+      "heading": "\\section{Default Notation}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 393,
+      "end_line": 400,
+      "heading": "\\section{Final instructions}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 400,
+      "end_line": 416,
+      "heading": "\\section{Preparing PostScript or PDF files}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 416,
+      "end_line": 438,
+      "heading": "\\subsection{Margins in LaTeX}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 438,
+      "end_line": 455,
+      "heading": "\\subsection*{AI use statement}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 455,
+      "end_line": 469,
+      "heading": "\\subsection*{Ethics statement}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 469,
+      "end_line": 487,
+      "heading": "\\subsection*{Reproducibility statement}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 487,
+      "end_line": 491,
+      "heading": "\\subsubsection*{Author Contributions}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 491,
+      "end_line": 496,
+      "heading": "\\subsubsection*{Acknowledgments}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 496,
+      "end_line": 516,
+      "heading": "\\section{A sector-wide quantitative swing-by theorem}",
+      "labels": [
+        "sbsector:main"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 516,
+      "end_line": 576,
+      "heading": "\\begin{theorem}[A whole sector with quantitative reversal]",
+      "labels": [
+        "sbsector:theorem",
+        "sbsector:time",
+        "sbsector:amplitude"
+      ],
+      "references": [
+        "sbsector:time"
+      ]
+    },
+    {
+      "start_line": 576,
+      "end_line": 596,
+      "heading": "\\begin{corollary}[Two learned concepts and two reversal sectors]",
+      "labels": [
+        "sbsector:two-concept"
+      ],
+      "references": [
+        "sbsector:theorem"
+      ]
+    },
+    {
+      "start_line": 596,
+      "end_line": 622,
+      "heading": "\\begin{corollary}[A positive-probability isotropic initialization result]",
+      "labels": [
+        "sbsector:isotropic",
+        "sbsector:isotropic-time"
+      ],
+      "references": [
+        "sbsector:two-concept"
+      ]
+    },
+    {
+      "start_line": 622,
+      "end_line": 640,
+      "heading": "\\begin{remark}[What is and is not being derived]",
+      "labels": [],
+      "references": [
+        "sbsector:isotropic"
+      ]
+    },
+    {
+      "start_line": 640,
+      "end_line": 642,
+      "heading": "\\section{Appendix}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 642,
+      "end_line": 693,
+      "heading": "\\section{Notation}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 693,
+      "end_line": 699,
+      "heading": "\\section{Proof of Theorem 1}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 699,
+      "end_line": 1534,
+      "heading": "\\begin{lemma}[Strengthened two-concept master event]",
+      "labels": [
+        "lem:Hstrong"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 1534,
+      "end_line": 1601,
+      "heading": "\\begin{remark}[Downstream role of the master event]",
+      "labels": [
+        "rem:Hstrong-downstream"
+      ],
+      "references": [
+        "lem:gated-moment-concentration"
+      ]
+    },
+    {
+      "start_line": 1601,
+      "end_line": 1742,
+      "heading": "\\begin{lemma}[Almost-sure finite-sample general position]",
+      "labels": [
+        "lem:general-position"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 1742,
+      "end_line": 1943,
+      "heading": "\\begin{lemma}[Empirical second-moment spectral bound]",
+      "labels": [
+        "lem:second-moment"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 1943,
+      "end_line": 2008,
+      "heading": "\\begin{remark}[No ambient-dimension dependence]",
+      "labels": [
+        "rem:second-moment-dimension"
+      ],
+      "references": [
+        "lem:second-moment"
+      ]
+    },
+    {
+      "start_line": 2008,
+      "end_line": 2123,
+      "heading": "\\begin{definition}[Data event]",
+      "labels": [
+        "def:Hdata",
+        "eq:Hdata-snr",
+        "eq:nmax-snr"
+      ],
+      "references": [
+        "lem:Hstrong",
+        "eq:Hdata-snr",
+        "lem:Hstrong",
+        "lem:second-moment",
+        "lem:general-position"
+      ]
+    },
+    {
+      "start_line": 2123,
+      "end_line": 2269,
+      "heading": "\\begin{remark}[Confidence-budget invariant]",
+      "labels": [
+        "rem:confidence-budget-invariant"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 2269,
+      "end_line": 2768,
+      "heading": "\\begin{lemma}[Uniform gated second moments with entrywise concentration]",
+      "labels": [
+        "lem:gated-moment-concentration",
+        "eq:gate-entry-error",
+        "eq:gate-modulus"
+      ],
+      "references": [
+        "lem:Hstrong",
+        "lem:Hstrong",
+        "eq:gate-modulus",
+        "eq:gate-entry-error"
+      ]
+    },
+    {
+      "start_line": 2768,
+      "end_line": 2788,
+      "heading": "\\begin{remark}[Why the off-diagonal entry is the binding gated-moment scale]",
+      "labels": [],
+      "references": [
+        "lem:gated-moment-concentration"
+      ]
+    },
+    {
+      "start_line": 2788,
+      "end_line": 4044,
+      "heading": "\\begin{lemma}[Global Clarke gradient flow and measurable ReLU selectors]",
+      "labels": [
+        "lem:gf-regularity"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 4044,
+      "end_line": 4079,
+      "heading": "\\begin{remark}[Flow and selector convention]",
+      "labels": [
+        "rem:gf-selector-convention"
+      ],
+      "references": [
+        "lem:gf-regularity"
+      ]
+    },
+    {
+      "start_line": 4079,
+      "end_line": 4289,
+      "heading": "\\begin{remark}[Boundary contribution in projected angular dynamics]",
+      "labels": [
+        "rem:angular-boundary-selection"
+      ],
+      "references": [
+        "def:Hdata",
+        "lem:general-position",
+        "lem:gf-regularity",
+        "lem:general-position"
+      ]
+    },
+    {
+      "start_line": 4289,
+      "end_line": 4341,
+      "heading": "\\begin{corollary}[Exact neuronwise balance]",
+      "labels": [
+        "cor:exact-balance"
+      ],
+      "references": [
+        "lem:gf-regularity"
+      ]
+    },
+    {
+      "start_line": 4341,
+      "end_line": 4650,
+      "heading": "\\begin{corollary}[Perpendicular invariance and stacked output contraction]",
+      "labels": [
+        "cor:perp-dynamics"
+      ],
+      "references": [
+        "lem:gf-regularity",
+        "lem:gf-regularity"
+      ]
+    },
+    {
+      "start_line": 4650,
+      "end_line": 4897,
+      "heading": "\\begin{lemma}[General-horizon spectral norm and output bounds]",
+      "labels": [
+        "lem:norm-output"
+      ],
+      "references": [
+        "def:Hdata",
+        "cor:exact-balance"
+      ]
+    },
+    {
+      "start_line": 4897,
+      "end_line": 4949,
+      "heading": "\\begin{corollary}[Original spectral early-time specialization]",
+      "labels": [
+        "cor:norm-output-early"
+      ],
+      "references": [
+        "lem:norm-output"
+      ]
+    },
+    {
+      "start_line": 4949,
+      "end_line": 5059,
+      "heading": "\\begin{definition}[Core two-concept admissible region]",
+      "labels": [
+        "def:R2c-core"
+      ],
+      "references": [
+        "lem:gated-moment-concentration",
+        "lem:early-projected-trapping",
+        "lem:init-angular-coverage",
+        "sbnew:inner",
+        "sbgen:first-hit",
+        "prop:gate-cliff-creation"
+      ]
+    },
+    {
+      "start_line": 5059,
+      "end_line": 5769,
+      "heading": "\\begin{lemma}[Dimension-free angular initialization coverage]",
+      "labels": [
+        "lem:init-angular-coverage",
+        "eq:init-width"
+      ],
+      "references": [
+        "eq:init-width"
+      ]
+    },
+    {
+      "start_line": 5769,
+      "end_line": 5796,
+      "heading": "\\begin{remark}[Initial versus dynamical radial floor]",
+      "labels": [
+        "rem:init-vs-dynamic-radius"
+      ],
+      "references": [
+        "lem:init-angular-coverage"
+      ]
+    },
+    {
+      "start_line": 5796,
+      "end_line": 5844,
+      "heading": "\\begin{remark}[Distinct dynamical roles of the strong and weak seed arcs]",
+      "labels": [
+        "rem:seed-basin-margin"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 5844,
+      "end_line": 5861,
+      "heading": "\\begin{remark}[Seed cohorts are not final blocks]",
+      "labels": [
+        "rem:init-seeds-not-blocks"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 5861,
+      "end_line": 5959,
+      "heading": "\\begin{remark}[Joint closure of seed arcs, field margins, retention, and width]",
+      "labels": [
+        "rem:seed-margin-closure"
+      ],
+      "references": [
+        "lem:early-projected-trapping"
+      ]
+    },
+    {
+      "start_line": 5959,
+      "end_line": 6435,
+      "heading": "\\begin{lemma}[Exact projected polar dynamics]",
+      "labels": [
+        "lem:projected-polar-dynamics"
+      ],
+      "references": [
+        "lem:gf-regularity",
+        "rem:angular-boundary-selection",
+        "cor:perp-dynamics",
+        "lem:gf-regularity",
+        "rem:angular-boundary-selection"
+      ]
+    },
+    {
+      "start_line": 6435,
+      "end_line": 6587,
+      "heading": "\\begin{corollary}[Contractive Cartesian projected mismatch]",
+      "labels": [
+        "cor:projected-mismatch"
+      ],
+      "references": [
+        "lem:projected-polar-dynamics"
+      ]
+    },
+    {
+      "start_line": 6587,
+      "end_line": 6688,
+      "heading": "\\begin{corollary}[Projected radius and angle transfer]",
+      "labels": [
+        "cor:projected-radius-transfer"
+      ],
+      "references": [
+        "lem:projected-polar-dynamics"
+      ]
+    },
+    {
+      "start_line": 6688,
+      "end_line": 6705,
+      "heading": "\\begin{remark}[Asymmetry of projected matching mechanisms]",
+      "labels": [
+        "rem:projected-dynamics-asymmetry"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 6705,
+      "end_line": 6841,
+      "heading": "\\begin{corollary}[Aligned invariant manifold for the target-only flow]",
+      "labels": [
+        "cor:target-only-aligned-manifold"
+      ],
+      "references": [
+        "lem:gf-regularity",
+        "cor:projected-mismatch"
+      ]
+    },
+    {
+      "start_line": 6841,
+      "end_line": 8648,
+      "heading": "\\begin{lemma}[Early projected trapping and weak-seed retention]",
+      "labels": [
+        "lem:early-projected-trapping"
+      ],
+      "references": [
+        "lem:norm-output",
+        "lem:projected-polar-dynamics",
+        "sbnew:bias",
+        "sbnew:kappa-cert",
+        "lem:Hstrong",
+        "lem:norm-output",
+        "lem:norm-output",
+        "lem:projected-polar-dynamics",
+        "lem:Hstrong",
+        "lem:projected-polar-dynamics",
+        "lem:projected-polar-dynamics",
+        "lem:projected-polar-dynamics",
+        "sbnew:bias"
+      ]
+    },
+    {
+      "start_line": 8648,
+      "end_line": 8747,
+      "heading": "\\begin{remark}[Early trapping versus full strong locking]",
+      "labels": [
+        "rem:early-trap-vs-full-lock"
+      ],
+      "references": [
+        "lem:early-projected-trapping"
+      ]
+    },
+    {
+      "start_line": 8747,
+      "end_line": 9969,
+      "heading": "\\begin{lemma}[Post-trapping continuation and fine strong locking]",
+      "labels": [
+        "lem:post-trapping-locking"
+      ],
+      "references": [
+        "lem:early-projected-trapping",
+        "lem:early-projected-trapping",
+        "lem:norm-output",
+        "lem:early-projected-trapping",
+        "lem:norm-output",
+        "sbnew:bias"
+      ]
+    },
+    {
+      "start_line": 9969,
+      "end_line": 9989,
+      "heading": "\\begin{remark}[Actual versus heuristic locking-gap scale]",
+      "labels": [
+        "rem:actual-locking-gap"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 9989,
+      "end_line": 10010,
+      "heading": "\\begin{remark}[Locking-stage sample-size floor]",
+      "labels": [
+        "rem:locking-sample-floor"
+      ],
+      "references": [
+        "thm:block-reduction"
+      ]
+    },
+    {
+      "start_line": 10010,
+      "end_line": 10025,
+      "heading": "\\begin{remark}[What T1.9 does not yet prove for the weak cohort]",
+      "labels": [
+        "rem:T19-weak-status"
+      ],
+      "references": [
+        "lem:post-trapping-locking"
+      ]
+    },
+    {
+      "start_line": 10025,
+      "end_line": 10050,
+      "heading": "\\begin{remark}[Conservatism of the uniform output ceiling]",
+      "labels": [
+        "rem:T19-Fstar-conservative"
+      ],
+      "references": [
+        "lem:norm-output"
+      ]
+    },
+    {
+      "start_line": 10050,
+      "end_line": 10126,
+      "heading": "\\subsection{Residual-gated strong progress and the inner strong branch}",
+      "labels": [
+        "subsec:T110-progress",
+        "eq:meff-exact"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 10126,
+      "end_line": 10247,
+      "heading": "\\begin{lemma}[Scale-free strong readout barrier]",
+      "labels": [
+        "lem:strong-readout-barrier",
+        "eq:readout-barrier"
+      ],
+      "references": [
+        "eq:readout-barrier"
+      ]
+    },
+    {
+      "start_line": 10247,
+      "end_line": 10371,
+      "heading": "\\begin{lemma}[One-sided harmful readout decomposition]",
+      "labels": [
+        "lem:one-sided-harmful-readout",
+        "eq:harmful-rho",
+        "eq:harmful-opt"
+      ],
+      "references": [
+        "eq:meff-exact",
+        "eq:harmful-rho",
+        "eq:harmful-opt"
+      ]
+    },
+    {
+      "start_line": 10371,
+      "end_line": 10552,
+      "heading": "\\begin{lemma}[Residual-gated projected dynamics]",
+      "labels": [
+        "lem:residual-gated-mismatch",
+        "eq:residual-gated-cartesian",
+        "eq:residual-gated-mismatch",
+        "eq:mismatch-energy",
+        "eq:residual-gated-angle",
+        "eq:sym-lower",
+        "eq:mismatch-aggregate"
+      ],
+      "references": [
+        "lem:gf-regularity",
+        "eq:residual-gated-mismatch",
+        "eq:mismatch-energy",
+        "eq:residual-gated-angle",
+        "eq:sym-lower",
+        "eq:mismatch-energy",
+        "eq:mismatch-aggregate"
+      ]
+    },
+    {
+      "start_line": 10552,
+      "end_line": 10900,
+      "heading": "\\begin{lemma}[Pure negative-sector cluster-$1$ residual reduction]",
+      "labels": [
+        "lem:negative-sector-residual-reduction",
+        "eq:C1",
+        "eq:pure-sector-SNR",
+        "eq:pure-gates",
+        "eq:pure-residual-reduction",
+        "eq:cross-identity",
+        "eq:pure-angular-field",
+        "eq:pure-radial-field",
+        "eq:R11-lower",
+        "eq:coarse-offdiag"
+      ],
+      "references": [
+        "eq:pure-gates",
+        "eq:pure-sector-SNR",
+        "eq:pure-residual-reduction",
+        "eq:cross-identity",
+        "eq:pure-angular-field",
+        "eq:pure-radial-field",
+        "eq:R11-lower",
+        "eq:coarse-offdiag"
+      ]
+    },
+    {
+      "start_line": 10900,
+      "end_line": 10912,
+      "heading": "\\begin{remark}[Pure-sector width and confidence]",
+      "labels": [],
+      "references": [
+        "eq:pure-sector-SNR"
+      ]
+    },
+    {
+      "start_line": 10912,
+      "end_line": 11166,
+      "heading": "\\begin{lemma}[Angle-resolved strong progress and cluster-$1$ self-field]",
+      "labels": [
+        "lem:angle-resolved-progress-self-field",
+        "eq:X-measure",
+        "eq:X-one-sided-measure",
+        "eq:m-measure-error",
+        "eq:terminal-progress-certificate",
+        "eq:terminal-self-field-certificate"
+      ],
+      "references": [
+        "eq:X-measure",
+        "eq:X-one-sided-measure",
+        "eq:meff-exact",
+        "eq:m-measure-error"
+      ]
+    },
+    {
+      "start_line": 11166,
+      "end_line": 11192,
+      "heading": "\\begin{remark}[High-SNR sign geometry of the self-field kernel]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 11192,
+      "end_line": 11338,
+      "heading": "\\begin{lemma}[Structured cluster-$1$ off-diagonal residual decomposition]",
+      "labels": [
+        "lem:structured-cluster1-offdiag",
+        "eq:R12-structured",
+        "eq:R22-structured",
+        "eq:partial-tail"
+      ],
+      "references": [
+        "eq:C1",
+        "lem:gated-moment-concentration",
+        "eq:R12-structured",
+        "eq:R22-structured",
+        "eq:partial-tail"
+      ]
+    },
+    {
+      "start_line": 11338,
+      "end_line": 11352,
+      "heading": "\\begin{remark}[Why the structured off-diagonal estimate matters]",
+      "labels": [],
+      "references": [
+        "eq:R12-structured"
+      ]
+    },
+    {
+      "start_line": 11352,
+      "end_line": 11607,
+      "heading": "\\begin{lemma}[Pure-sector transverse control by anisotropic amplification]",
+      "labels": [
+        "lem:pure-sector-anisotropic-amplification",
+        "eq:M-sqrt-lower",
+        "eq:Q-sqrt-upper",
+        "eq:pure-ratio"
+      ],
+      "references": [
+        "lem:negative-sector-residual-reduction",
+        "eq:M-sqrt-lower",
+        "eq:Q-sqrt-upper",
+        "eq:pure-ratio"
+      ]
+    },
+    {
+      "start_line": 11607,
+      "end_line": 11620,
+      "heading": "\\begin{remark}[Extremal test function]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 11620,
+      "end_line": 11644,
+      "heading": "\\begin{remark}[Headline anisotropy constant and second-order self-field]",
+      "labels": [],
+      "references": [
+        "eq:pure-ratio"
+      ]
+    },
+    {
+      "start_line": 11644,
+      "end_line": 11660,
+      "heading": "\\begin{remark}[Corrected inner-branch interface]",
+      "labels": [
+        "prop:inner-strong-branch-interface"
+      ],
+      "references": [
+        "sbnew:inner",
+        "sbnew:weak-comparison"
+      ]
+    },
+    {
+      "start_line": 11660,
+      "end_line": 11685,
+      "heading": "\\begin{lemma}[Inner residual-matrix decomposition]",
+      "labels": [
+        "lem:inner-residual-decomposition"
+      ],
+      "references": [
+        "sbnew:inner-purity",
+        "sbnew:jumps",
+        "sbnew:residual-constants"
+      ]
+    },
+    {
+      "start_line": 11685,
+      "end_line": 11707,
+      "heading": "\\begin{remark}[T1.10--T1.11 stopping-time assembly: still open]",
+      "labels": [
+        "rem:T110-assembly"
+      ],
+      "references": [
+        "prop:gate-cliff-creation",
+        "sbgen:first-hit"
+      ]
+    },
+    {
+      "start_line": 11707,
+      "end_line": 11731,
+      "heading": "\\subsection{Scope and status}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 11731,
+      "end_line": 11732,
+      "heading": "\\subsection{Repair of the early strong-angle estimate}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 11732,
+      "end_line": 11835,
+      "heading": "\\begin{proposition}[The centering obstruction and its bias-aware repair]",
+      "labels": [
+        "sbnew:bias",
+        "sbnew:target-derivative",
+        "sbnew:bad-centering",
+        "sbnew:population-bias",
+        "sbnew:bias-coercivity",
+        "sbnew:kappa-cert",
+        "sbnew:bias-cert"
+      ],
+      "references": [
+        "sbnew:target-derivative",
+        "sbnew:bad-centering",
+        "sbnew:population-bias",
+        "sbnew:bias-coercivity",
+        "sbnew:kappa-cert",
+        "sbnew:bias"
+      ]
+    },
+    {
+      "start_line": 11835,
+      "end_line": 11836,
+      "heading": "\\subsection{Global bounds and the remaining mismatch forcing}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 11836,
+      "end_line": 11868,
+      "heading": "\\begin{lemma}[A global norm bound without the Riccati cutoff]",
+      "labels": [
+        "sbnew:global",
+        "sbnew:global-S",
+        "sbnew:A-norm"
+      ],
+      "references": [
+        "sbnew:A-norm"
+      ]
+    },
+    {
+      "start_line": 11868,
+      "end_line": 11923,
+      "heading": "\\begin{lemma}[Aggregate perpendicular forcing and normalized mismatch]",
+      "labels": [
+        "sbnew:forcing",
+        "sbnew:fperp",
+        "sbnew:P-bound",
+        "sbnew:D-bound",
+        "sbnew:normalized-D"
+      ],
+      "references": [
+        "sbnew:D-bound",
+        "sbnew:normalized-D"
+      ]
+    },
+    {
+      "start_line": 11923,
+      "end_line": 11924,
+      "heading": "\\subsection{Explicit residual constants from structured output bounds}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 11924,
+      "end_line": 12039,
+      "heading": "\\begin{lemma}[Residual bounds with all learned-output inputs exposed]",
+      "labels": [
+        "sbnew:residual-constants",
+        "sbnew:tail",
+        "sbnew:inner-purity",
+        "sbnew:alpha11",
+        "sbnew:alpha22",
+        "sbnew:beta12",
+        "sbnew:beta21",
+        "sbnew:diagonal-bulk",
+        "sbnew:partial-band"
+      ],
+      "references": [
+        "sbnew:tail",
+        "sbnew:inner-purity",
+        "sbnew:global"
+      ]
+    },
+    {
+      "start_line": 12039,
+      "end_line": 12040,
+      "heading": "\\subsection{A valid finite-sample inner-cone and spread result}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 12040,
+      "end_line": 12062,
+      "heading": "\\begin{lemma}[Residual jumps are not target-moment jumps]",
+      "labels": [
+        "sbnew:jumps",
+        "sbnew:residual-jump",
+        "sbnew:V-jump"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 12062,
+      "end_line": 12179,
+      "heading": "\\begin{proposition}[Inner cone and pairwise contraction with a jump floor]",
+      "labels": [
+        "sbnew:inner",
+        "sbnew:ratio",
+        "sbnew:ratio-error",
+        "sbnew:cone-conditions",
+        "sbnew:cell-contract",
+        "sbnew:jump-modulus",
+        "sbnew:pairwise",
+        "sbnew:jump-explicit"
+      ],
+      "references": [
+        "sbnew:cone-conditions",
+        "sbnew:ratio",
+        "sbnew:ratio-error",
+        "sbnew:cell-contract",
+        "sbnew:global-S"
+      ]
+    },
+    {
+      "start_line": 12179,
+      "end_line": 12276,
+      "heading": "\\begin{proposition}[Late holding of an already-specialized strong family]",
+      "labels": [
+        "prop:late-strong-holding",
+        "eq:late-hold-plus",
+        "eq:late-hold-minus",
+        "eq:late-hold-cone"
+      ],
+      "references": [
+        "sbnew:ratio"
+      ]
+    },
+    {
+      "start_line": 12276,
+      "end_line": 12321,
+      "heading": "\\begin{lemma}[Directional physical ratio field and reciprocal upper-face transfer]",
+      "labels": [
+        "lem:late-directional-ratio",
+        "eq:physical-directional-field",
+        "eq:reciprocal-upper-face"
+      ],
+      "references": [
+        "eq:late-hold-minus",
+        "eq:reciprocal-upper-face"
+      ]
+    },
+    {
+      "start_line": 12321,
+      "end_line": 12333,
+      "heading": "\\begin{remark}[Asymmetric late holding is the intended B2 interface]",
+      "labels": [
+        "rem:asymmetric-B2-holding"
+      ],
+      "references": [
+        "eq:reciprocal-upper-face",
+        "eq:late-hold-minus"
+      ]
+    },
+    {
+      "start_line": 12333,
+      "end_line": 12375,
+      "heading": "\\begin{remark}[B1 contraction versus B2 holding]",
+      "labels": [
+        "rem:B1-B2-split",
+        "eq:late-hold-error"
+      ],
+      "references": [
+        "sbnew:inner",
+        "eq:late-hold-minus",
+        "sbnew:ratio-error",
+        "sbcoh:scope"
+      ]
+    },
+    {
+      "start_line": 12375,
+      "end_line": 12396,
+      "heading": "\\begin{remark}[Separate branch-locking and creation progress scales]",
+      "labels": [
+        "rem:separate-progress-levels"
+      ],
+      "references": [
+        "sbgen:first-hit"
+      ]
+    },
+    {
+      "start_line": 12396,
+      "end_line": 12418,
+      "heading": "\\subsection{What a strong-progress first-exit proof still requires}",
+      "labels": [
+        "sbnew:signed-certificate"
+      ],
+      "references": [
+        "sbnew:bias"
+      ]
+    },
+    {
+      "start_line": 12418,
+      "end_line": 12449,
+      "heading": "\\begin{corollary}[An asymmetric replacement for the self-field guard]",
+      "labels": [
+        "sbnew:asymmetric"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 12449,
+      "end_line": 12527,
+      "heading": "\\begin{lemma}[Exact whole-network weighted evolution]",
+      "labels": [
+        "sbnew:measure-evolution",
+        "sbnew:measure-derivative",
+        "sbnew:measure-error"
+      ],
+      "references": [
+        "sbnew:P-bound",
+        "sbnew:D-bound",
+        "sbnew:alpha11",
+        "sbnew:beta21",
+        "sbnew:measure-derivative"
+      ]
+    },
+    {
+      "start_line": 12527,
+      "end_line": 12528,
+      "heading": "\\subsection{Independent coarse-field sign result}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 12528,
+      "end_line": 12580,
+      "heading": "\\begin{lemma}[Equal-noise coarse-field asymmetry and wrong-quadrant exclusion]",
+      "labels": [
+        "sbnew:coarse",
+        "sbnew:coarse-q2-m"
+      ],
+      "references": [
+        "sbnew:coarse-q2-m"
+      ]
+    },
+    {
+      "start_line": 12580,
+      "end_line": 12583,
+      "heading": "\\subsection{Finite-sample weak-basin creation by self-regulation and a gate cliff}",
+      "labels": [
+        "subsec:gate-cliff-creation"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 12583,
+      "end_line": 12629,
+      "heading": "\\begin{remark}[Why the creation proof has this form]",
+      "labels": [
+        "rem:creation-provenance"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 12629,
+      "end_line": 12702,
+      "heading": "\\begin{lemma}[Strong progress and signed cross-output as matched network coordinates]",
+      "labels": [
+        "lem:creation-progress-coordinates",
+        "eq:creation-progress-coords",
+        "eq:bstar-emp",
+        "eq:self-regulation-identities",
+        "eq:beff-exact"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 12702,
+      "end_line": 12737,
+      "heading": "\\begin{remark}[The self-regulated cross-output scale]",
+      "labels": [
+        "rem:bstar-scaling",
+        "eq:bstar-scaling"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 12737,
+      "end_line": 12771,
+      "heading": "\\begin{remark}[The regulator reference level is not an upper barrier]",
+      "labels": [
+        "rem:self-regulation-not-monotonicity",
+        "eq:regulation-deficit"
+      ],
+      "references": [
+        "eq:self-regulation-identities",
+        "sbgen:network-regulator",
+        "sbgen:first-hit"
+      ]
+    },
+    {
+      "start_line": 12771,
+      "end_line": 12794,
+      "heading": "\\begin{remark}[Do not conflate the two weak second moments]",
+      "labels": [
+        "rem:strong-gated-vs-positivepart"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 12794,
+      "end_line": 12880,
+      "heading": "\\begin{lemma}[Positive-cohort cross-output generation interface]",
+      "labels": [
+        "lem:positive-cohort-generation-interface",
+        "eq:block-b-generation",
+        "eq:block-b-lower",
+        "eq:b-negative-complement"
+      ],
+      "references": [
+        "eq:block-b-lower",
+        "eq:beff-exact",
+        "sbgen:strong-cone-regulator",
+        "sbgen:first-hit"
+      ]
+    },
+    {
+      "start_line": 12880,
+      "end_line": 12900,
+      "heading": "\\begin{remark}[Relation to the creation wrong-sign charge]",
+      "labels": [
+        "rem:generation-creation-same-bad-mass"
+      ],
+      "references": [
+        "eq:b-negative-complement",
+        "eq:coarse-sign-guard"
+      ]
+    },
+    {
+      "start_line": 12900,
+      "end_line": 13014,
+      "heading": "\\begin{lemma}[Exact middle quadratic in the two progress coordinates]",
+      "labels": [
+        "lem:middle-two-progress",
+        "eq:blift-emp",
+        "eq:middle-Q-decomp",
+        "eq:middle-EQ",
+        "eq:creation-gap"
+      ],
+      "references": [
+        "eq:middle-EQ"
+      ]
+    },
+    {
+      "start_line": 13014,
+      "end_line": 13042,
+      "heading": "\\begin{remark}[Concentrate the creation gap jointly]",
+      "labels": [
+        "rem:joint-gap-concentration",
+        "eq:joint-gap-bound"
+      ],
+      "references": [
+        "sbgen:joint-gap",
+        "sbgen:gap-clipping"
+      ]
+    },
+    {
+      "start_line": 13042,
+      "end_line": 13105,
+      "heading": "\\begin{corollary}[Uniform gated moments with one fixed auxiliary halfspace]",
+      "labels": [
+        "cor:fixed-intersection-gated-moments",
+        "eq:fixed-gate-concentration"
+      ],
+      "references": [
+        "lem:gated-moment-concentration"
+      ]
+    },
+    {
+      "start_line": 13105,
+      "end_line": 13144,
+      "heading": "\\begin{lemma}[Coarse first-quadrant output-sign transfer]",
+      "labels": [
+        "lem:first-quadrant-output-sign",
+        "eq:output-sign-transfer",
+        "eq:coarse-sign-guard"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 13144,
+      "end_line": 13217,
+      "heading": "\\begin{lemma}[Signed strong-family shape correction]",
+      "labels": [
+        "lem:signed-strong-creation-kernel",
+        "eq:strong-shape-exact",
+        "eq:strong-shape-bound",
+        "eq:strong-shape-derivative"
+      ],
+      "references": [
+        "eq:middle-EQ"
+      ]
+    },
+    {
+      "start_line": 13217,
+      "end_line": 13311,
+      "heading": "\\begin{lemma}[Signed two-feature transition kernel]",
+      "labels": [
+        "lem:signed-two-feature-transition-kernel",
+        "eq:J12-emp",
+        "eq:J12-moment-form",
+        "eq:J-adm",
+        "eq:J12-positive"
+      ],
+      "references": [
+        "cor:fixed-intersection-gated-moments",
+        "cor:fixed-intersection-gated-moments"
+      ]
+    },
+    {
+      "start_line": 13311,
+      "end_line": 13324,
+      "heading": "\\begin{remark}[Canonical sign profile is sizing evidence, not a theorem]",
+      "labels": [],
+      "references": [
+        "eq:J-adm",
+        "sbgen:J-positive",
+        "sbgen:J-finite"
+      ]
+    },
+    {
+      "start_line": 13324,
+      "end_line": 13397,
+      "heading": "\\begin{lemma}[Weak-feature and residual decomposition of the middle error]",
+      "labels": [
+        "lem:middle-signed-decomposition",
+        "eq:middle-signed-full"
+      ],
+      "references": [
+        "eq:coarse-sign-guard",
+        "eq:J12-positive",
+        "eq:middle-EQ"
+      ]
+    },
+    {
+      "start_line": 13397,
+      "end_line": 13427,
+      "heading": "\\begin{lemma}[Exact downward jump at a cluster-$1$ gate switch]",
+      "labels": [
+        "lem:gate-cliff-jump",
+        "eq:gate-cliff-jump"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 13427,
+      "end_line": 13465,
+      "heading": "\\begin{lemma}[One-dimensional switch-density certificate]",
+      "labels": [
+        "lem:switch-density-DKW",
+        "eq:switch-count-DKW"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 13465,
+      "end_line": 13682,
+      "heading": "\\begin{proposition}[Deterministic gate-cliff creation at a certification time]",
+      "labels": [
+        "prop:gate-cliff-creation",
+        "eq:GC-sign-guard",
+        "eq:GC-lift-margin",
+        "eq:GC-weak-timing",
+        "eq:GC-middle-budget",
+        "eq:GC-middle-sign",
+        "eq:GC-left",
+        "eq:GC-right",
+        "eq:GC-staircase",
+        "eq:GC-three-signs"
+      ],
+      "references": [
+        "eq:J-adm",
+        "eq:J12-positive",
+        "prop:late-strong-holding",
+        "sbgen:first-hit",
+        "eq:GC-staircase",
+        "lem:middle-signed-decomposition",
+        "eq:GC-lift-margin",
+        "eq:GC-middle-budget",
+        "lem:gate-cliff-jump",
+        "lem:switch-density-DKW",
+        "eq:GC-staircase"
+      ]
+    },
+    {
+      "start_line": 13682,
+      "end_line": 13762,
+      "heading": "\\begin{remark}[Canonical diagnostics versus the rigorous high-SNR ledger]",
+      "labels": [
+        "rem:canonical-creation-sizing",
+        "eq:CR0"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 13762,
+      "end_line": 13763,
+      "heading": "\\subsection{Independent weak-branch comparison and projected mass}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 13763,
+      "end_line": 13837,
+      "heading": "\\begin{proposition}[Smooth reference branch, robust signs, and tracking]",
+      "labels": [
+        "sbnew:weak-comparison",
+        "sbnew:branch-speed",
+        "sbnew:tracking-cond",
+        "sbnew:tracking",
+        "sbnew:capture-time"
+      ],
+      "references": [
+        "sbnew:branch-speed",
+        "sbnew:tracking",
+        "sbnew:capture-time",
+        "prop:gate-cliff-creation",
+        "sbnew:tracking-cond"
+      ]
+    },
+    {
+      "start_line": 13837,
+      "end_line": 13888,
+      "heading": "\\begin{lemma}[Weak self-field, radius compatibility, and mass time]",
+      "labels": [
+        "sbnew:mass",
+        "sbnew:weak-self",
+        "sbnew:weak-mass",
+        "sbnew:trace-mass",
+        "sbnew:output-angle",
+        "sbnew:tW"
+      ],
+      "references": [
+        "sbnew:weak-self",
+        "sbnew:weak-mass",
+        "sbnew:trace-mass",
+        "sbnew:output-angle",
+        "sbnew:tW"
+      ]
+    },
+    {
+      "start_line": 13888,
+      "end_line": 13911,
+      "heading": "\\begin{remark}[Intended pure-Q2 to gate-cliff capture route]",
+      "labels": [
+        "rem:weak-capture-route"
+      ],
+      "references": [
+        "sbnew:weak-comparison",
+        "sbnew:mass"
+      ]
+    },
+    {
+      "start_line": 13911,
+      "end_line": 13912,
+      "heading": "\\subsection{Completed selector and moving-boundary implications}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 13912,
+      "end_line": 13972,
+      "heading": "\\begin{lemma}[Fixed-family selectors with ambient correction]",
+      "labels": [
+        "sbnew:selectors",
+        "sbnew:ambient-boundary",
+        "sbnew:boundary-mass"
+      ],
+      "references": [
+        "sbnew:ambient-boundary",
+        "sbnew:boundary-mass",
+        "sbnew:mass",
+        "sbnew:selectors"
+      ]
+    },
+    {
+      "start_line": 13972,
+      "end_line": 14077,
+      "heading": "\\subsection{Dependency chain, conditions, and required statement changes}",
+      "labels": [],
+      "references": [
+        "prop:late-strong-holding",
+        "sbgen:strong-cone-regulator",
+        "sbgen:regulator-transition-kernel",
+        "sbgen:first-hit",
+        "sbcoh:chi-deadline",
+        "sbcoh:spread",
+        "prop:gate-cliff-creation",
+        "sbnew:kappa-cert",
+        "sbnew:inner-purity",
+        "sbnew:residual-constants",
+        "sbnew:cone-conditions",
+        "sbnew:ratio-error",
+        "sbnew:jump-modulus",
+        "eq:late-hold-plus",
+        "eq:late-hold-minus",
+        "eq:joint-gap-bound",
+        "eq:J-adm",
+        "eq:GC-sign-guard",
+        "sbgen:regulator-adm",
+        "sbgen:u-positive-condition",
+        "sbgen:complement-forcing",
+        "sbgen:corridor-positive",
+        "sbgen:first-hit-clock",
+        "eq:GC-weak-timing",
+        "eq:GC-middle-budget",
+        "eq:GC-staircase",
+        "sbcoh:field-transfer",
+        "sbcoh:own-margin",
+        "sbcoh:chi-before-hit-clock",
+        "sbnew:tracking-cond",
+        "sbnew:capture-time",
+        "sbnew:weak-self",
+        "sbnew:tW",
+        "prop:gate-cliff-creation",
+        "sbgen:first-hit",
+        "sbnew:output-angle",
+        "sbnew:ambient-boundary",
+        "sbnew:alpha11",
+        "sbnew:beta21",
+        "sbgen:mass-clock",
+        "sbgen:regulator-adm",
+        "sbgen:u-positive-condition",
+        "sbgen:complement-forcing"
+      ]
+    },
+    {
+      "start_line": 14077,
+      "end_line": 14329,
+      "heading": "\\begin{remark}[The theorem scope used in this review copy]",
+      "labels": [
+        "rem:scope-A-specialization",
+        "thm:two-concept-specialization"
+      ],
+      "references": [
+        "sbaudit:scope"
+      ]
+    },
+    {
+      "start_line": 14329,
+      "end_line": 14331,
+      "heading": "\\section{Proof of Theorem 2}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 14331,
+      "end_line": 14411,
+      "heading": "\\begin{theorem}[Post-specialization concept-block reduction]",
+      "labels": [
+        "thm:block-reduction"
+      ],
+      "references": [
+        "thm:two-concept-specialization"
+      ]
+    },
+    {
+      "start_line": 14411,
+      "end_line": 14413,
+      "heading": "\\section{Post-specialization predictive OOD normal form}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 14413,
+      "end_line": 14498,
+      "heading": "\\begin{theorem}[Post-specialization predictive two-concept OOD normal form]",
+      "labels": [
+        "thm:swingby"
+      ],
+      "references": [
+        "thm:two-concept-specialization",
+        "thm:block-reduction"
+      ]
+    },
+    {
+      "start_line": 14498,
+      "end_line": 14512,
+      "heading": "\\begin{remark}[Scope of the predictive theorem]",
+      "labels": [
+        "rem:T3-scope-A"
+      ],
+      "references": [
+        "sbaudit:scope",
+        "thm:swingby",
+        "sbsign:scope",
+        "thm:block-reduction"
+      ]
+    },
+    {
+      "start_line": 14512,
+      "end_line": 14543,
+      "heading": "\\section{Aggregate propagation beyond the predictive normal form}",
+      "labels": [
+        "sbagg:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 14543,
+      "end_line": 14807,
+      "heading": "\\begin{lemma}[Cross-residual energy controls weighted residual forcing]",
+      "labels": [
+        "sbagg:lem:cross-residual-controls-forcing",
+        "sbagg:eq:cross-forcing-1",
+        "sbagg:eq:cross-forcing-2",
+        "sbagg:eq:cross-forcing-root"
+      ],
+      "references": [
+        "sbagg:eq:cross-forcing-1",
+        "sbagg:eq:cross-forcing-root"
+      ]
+    },
+    {
+      "start_line": 14807,
+      "end_line": 15557,
+      "heading": "\\begin{lemma}[Coupled propagation of cross residual and aggregate axis grading]",
+      "labels": [
+        "sbagg:lem:coupled-cross-transverse",
+        "sbagg:eq:coupled-mass-ceiling",
+        "sbagg:eq:coupled-residual-ceiling",
+        "sbagg:eq:coupled-Y",
+        "sbagg:eq:coupled-X",
+        "sbagg:eq:coupled-Z",
+        "sbagg:eq:coupled-duhamel",
+        "sbagg:eq:coupled-uniform",
+        "sbagg:eq:coupled-checkpoint",
+        "sbagg:eq:coupled-forcing-budget",
+        "sbagg:eq:selected-ntk",
+        "sbagg:eq:perp-residual-forcing",
+        "sbagg:eq:Gperp-bound",
+        "sbagg:eq:Kw-cross",
+        "sbagg:eq:Ku-cross",
+        "sbagg:eq:cross-ntk-bound"
+      ],
+      "references": [
+        "sbagg:lem:cross-residual-controls-forcing",
+        "sbagg:eq:coupled-forcing-budget",
+        "sbagg:eq:coupled-checkpoint",
+        "sbagg:lem:cross-residual-controls-forcing",
+        "sbagg:eq:coupled-Y",
+        "sbagg:eq:selected-ntk",
+        "sbagg:eq:Kw-cross",
+        "sbagg:eq:Ku-cross",
+        "sbagg:eq:coupled-X",
+        "sbagg:eq:coupled-X",
+        "sbagg:eq:coupled-Y",
+        "sbagg:eq:coupled-Z",
+        "sbagg:eq:coupled-duhamel",
+        "sbagg:eq:coupled-uniform",
+        "sbagg:eq:coupled-checkpoint",
+        "sbagg:eq:coupled-forcing-budget"
+      ]
+    },
+    {
+      "start_line": 15557,
+      "end_line": 15558,
+      "heading": "\\subsection{A sharper comparison and the required accuracy condition}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 15558,
+      "end_line": 15582,
+      "heading": "\\begin{remark}[Available global ceilings do not require extra trajectory hypotheses]",
+      "labels": [
+        "sbagg:global-ceilings"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 15582,
+      "end_line": 15604,
+      "heading": "\\begin{remark}[The smaller input-kernel coefficient is also valid]",
+      "labels": [
+        "sbagg:kernel-sharpening"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 15604,
+      "end_line": 15642,
+      "heading": "\\begin{corollary}[Two-dimensional comparison and finite accuracy budget]",
+      "labels": [
+        "sbagg:budget",
+        "sbagg:accuracy-budget"
+      ],
+      "references": [
+        "sbagg:lem:coupled-cross-transverse",
+        "sbagg:accuracy-budget"
+      ]
+    },
+    {
+      "start_line": 15642,
+      "end_line": 15688,
+      "heading": "\\begin{corollary}[Consequent grading and coefficient rates]",
+      "labels": [
+        "sbagg:rates"
+      ],
+      "references": [
+        "sbagg:accuracy-budget"
+      ]
+    },
+    {
+      "start_line": 15688,
+      "end_line": 15691,
+      "heading": "\\subsection{Checkpoint construction and its precise limitation}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 15691,
+      "end_line": 15875,
+      "heading": "\\begin{lemma}[Optimal two-axis partition and aggregate checkpoint]",
+      "labels": [
+        "sbagg:lem:optimal-axis-checkpoint",
+        "sbagg:eq:axis-defect-min",
+        "sbagg:eq:optimal-axis-partition",
+        "sbagg:eq:axis-checkpoint-root",
+        "sbagg:eq:aggregate-checkpoint",
+        "sbagg:eq:coupled-checkpoint-ready"
+      ],
+      "references": [
+        "sbagg:lem:coupled-cross-transverse",
+        "sbagg:eq:aggregate-checkpoint",
+        "sbagg:eq:axis-defect-min",
+        "sbagg:eq:optimal-axis-partition",
+        "sbagg:eq:axis-checkpoint-root",
+        "sbagg:eq:aggregate-checkpoint"
+      ]
+    },
+    {
+      "start_line": 15875,
+      "end_line": 15923,
+      "heading": "\\begin{corollary}[Cohort and primitive checkpoint certificates]",
+      "labels": [
+        "sbagg:primitive"
+      ],
+      "references": [
+        "sbagg:accuracy-budget",
+        "sbagg:lem:optimal-axis-checkpoint"
+      ]
+    },
+    {
+      "start_line": 15923,
+      "end_line": 15952,
+      "heading": "\\begin{remark}[Why small initial mass does not close late propagation]",
+      "labels": [
+        "sbagg:small-mass-example"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 15952,
+      "end_line": 15962,
+      "heading": "\\subsection{The weak pure-sector calculation}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 15962,
+      "end_line": 16114,
+      "heading": "\\begin{lemma}[Quadrant-II cluster-$2$ pure-sector residual reduction]",
+      "labels": [
+        "sbagg:lem:cluster2-pure-residual-reduction"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 16114,
+      "end_line": 16170,
+      "heading": "\\begin{corollary}[Weak pure-sector absolute transverse energy]",
+      "labels": [
+        "sbagg:weak-Q"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 16170,
+      "end_line": 16195,
+      "heading": "\\begin{remark}[Retention and the interface to Theorem 3 remain separate]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 16195,
+      "end_line": 16222,
+      "heading": "\\subsection{Post-B1 strong-tilt coherence: population branch, spread, and weak rotation}",
+      "labels": [
+        "sbcoh:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 16222,
+      "end_line": 16316,
+      "heading": "\\begin{lemma}[Exact positive-side tilt kernel and centered $A_{12}$ identity]",
+      "labels": [
+        "sbcoh:tilt-kernel",
+        "sbcoh:tilt-kernel-exact",
+        "sbcoh:A12-axis",
+        "sbcoh:A12-strong-exact",
+        "sbcoh:raw-vs-input-cross"
+      ],
+      "references": [
+        "sbcoh:A12-axis",
+        "sbcoh:tilt-kernel-exact",
+        "sbcoh:A12-strong-exact",
+        "sbcoh:raw-vs-input-cross"
+      ]
+    },
+    {
+      "start_line": 16316,
+      "end_line": 16327,
+      "heading": "\\begin{remark}[The moving slab is part of the field, not a perturbation]",
+      "labels": [
+        "sbcoh:slab-not-error"
+      ],
+      "references": [
+        "sbcoh:tilt-kernel-exact"
+      ]
+    },
+    {
+      "start_line": 16327,
+      "end_line": 16408,
+      "heading": "\\begin{proposition}[Coherent high-SNR population strong-tilt field]",
+      "labels": [
+        "sbcoh:population-field",
+        "sbcoh:matched-progress",
+        "sbcoh:C1",
+        "sbcoh:C2",
+        "sbcoh:C3",
+        "sbcoh:own-partial",
+        "sbcoh:own-total-split"
+      ],
+      "references": [
+        "sbgap:progress"
+      ]
+    },
+    {
+      "start_line": 16408,
+      "end_line": 16434,
+      "heading": "\\begin{remark}[Matched branch and canonical rescaled zero]",
+      "labels": [
+        "sbcoh:matched-branch",
+        "sbcoh:s-rho"
+      ],
+      "references": [
+        "sbcoh:C1"
+      ]
+    },
+    {
+      "start_line": 16434,
+      "end_line": 16452,
+      "heading": "\\begin{remark}[Collective stability versus spread contraction]",
+      "labels": [
+        "sbcoh:two-derivatives"
+      ],
+      "references": [
+        "sbcoh:own-total-split",
+        "sbcoh:own-partial",
+        "sbcoh:C3"
+      ]
+    },
+    {
+      "start_line": 16452,
+      "end_line": 16492,
+      "heading": "\\begin{lemma}[Finite-sample spread contraction from the own partial]",
+      "labels": [
+        "sbcoh:spread",
+        "sbcoh:field-transfer",
+        "sbcoh:own-margin",
+        "sbcoh:spread-dini",
+        "sbcoh:spread-floor"
+      ],
+      "references": [
+        "sbcoh:field-transfer",
+        "sbcoh:own-margin",
+        "sbcoh:spread-floor"
+      ]
+    },
+    {
+      "start_line": 16492,
+      "end_line": 16532,
+      "heading": "\\begin{remark}[Canonical own-partial and additive-floor budgets]",
+      "labels": [
+        "sbcoh:canonical-spread-budget",
+        "sbcoh:canonical-own-budget",
+        "sbcoh:additive-floor-canonical"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 16532,
+      "end_line": 16552,
+      "heading": "\\begin{remark}[Only the transverse mismatch needs noise-scale accuracy]",
+      "labels": [
+        "sbcoh:directional-mismatch",
+        "sbcoh:directional-mismatch-eq"
+      ],
+      "references": [
+        "eq:late-hold-error"
+      ]
+    },
+    {
+      "start_line": 16552,
+      "end_line": 16614,
+      "heading": "\\begin{lemma}[Exact signed weak off-diagonal evolution]",
+      "labels": [
+        "sbcoh:weak-cross",
+        "sbcoh:weak-cross-ode",
+        "sbcoh:weak-cross-rem",
+        "sbcoh:weak-cross-rem-bound"
+      ],
+      "references": [
+        "sbagg:lem:cluster2-pure-residual-reduction",
+        "sbcoh:weak-cross-ode",
+        "sbcoh:weak-cross-rem"
+      ]
+    },
+    {
+      "start_line": 16614,
+      "end_line": 16663,
+      "heading": "\\begin{proposition}[Signed weak-rotation clock]",
+      "labels": [
+        "sbcoh:weak-rotation",
+        "sbcoh:weak-A12-pop",
+        "sbcoh:weak-trace-pop",
+        "sbcoh:chi-exact-interface",
+        "sbcoh:chi-leading"
+      ],
+      "references": [
+        "sbcoh:weak-cross-ode"
+      ]
+    },
+    {
+      "start_line": 16663,
+      "end_line": 16683,
+      "heading": "\\begin{remark}[Weak-feature timing does not replace the $\\chi_W$ face]",
+      "labels": [
+        "sbcoh:gamma-vs-chi"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 16683,
+      "end_line": 16725,
+      "heading": "\\begin{corollary}[Fixed-angle weak mass is noise-scale before the coherence face]",
+      "labels": [
+        "sbcoh:weak-mass-compat",
+        "sbcoh:CW-angle-lower",
+        "sbcoh:weak-mass-noise-scale"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 16725,
+      "end_line": 16764,
+      "heading": "\\begin{corollary}[A deterministic weak-rotation deadline]",
+      "labels": [
+        "sbcoh:chi-deadline",
+        "sbcoh:chi-duhamel",
+        "sbcoh:chi-before-hit-clock"
+      ],
+      "references": [
+        "sbcoh:chi-exact-interface",
+        "sbcoh:chi-duhamel",
+        "sbgen:first-hit"
+      ]
+    },
+    {
+      "start_line": 16764,
+      "end_line": 16831,
+      "heading": "\\begin{lemma}[Initialization/noise ordering interface]",
+      "labels": [
+        "sbcoh:init-noise",
+        "sbcoh:init-chi",
+        "sbcoh:init-noise-hit"
+      ],
+      "references": [
+        "sbcoh:init-noise",
+        "sbcoh:chi-deadline"
+      ]
+    },
+    {
+      "start_line": 16831,
+      "end_line": 16887,
+      "heading": "\\begin{remark}[Frozen canonical audit: weak rotation is not the observed bottleneck]",
+      "labels": [
+        "sbcoh:canonical-audit"
+      ],
+      "references": [
+        "sbcoh:init-noise-hit",
+        "sbcoh:additive-floor-canonical"
+      ]
+    },
+    {
+      "start_line": 16887,
+      "end_line": 16906,
+      "heading": "\\begin{remark}[Status and fallback to the $c_{21}^O$ channel]",
+      "labels": [
+        "sbcoh:status"
+      ],
+      "references": [
+        "sbcoh:field-transfer",
+        "sbcoh:additive-floor-canonical",
+        "sbcoh:directional-mismatch",
+        "sbpos:scope",
+        "sbpos:aggregate-mean"
+      ]
+    },
+    {
+      "start_line": 16906,
+      "end_line": 16939,
+      "heading": "\\section{Signed transverse propagation and direct probe dynamics}",
+      "labels": [
+        "sbsign:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 16939,
+      "end_line": 16940,
+      "heading": "\\subsection{The off-diagonal feedback has an exact negative term}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 16940,
+      "end_line": 17005,
+      "heading": "\\begin{lemma}[Signed transverse-energy identity]",
+      "labels": [
+        "sbsign:energy",
+        "sbsign:identity",
+        "sbsign:Y",
+        "sbsign:X"
+      ],
+      "references": [
+        "sbsign:identity",
+        "sbsign:X"
+      ]
+    },
+    {
+      "start_line": 17005,
+      "end_line": 17018,
+      "heading": "\\begin{remark}[What remains inside the signed rate]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 17018,
+      "end_line": 17045,
+      "heading": "\\begin{corollary}[Comparison relative to mass growth]",
+      "labels": [
+        "sbsign:clock",
+        "sbsign:relative"
+      ],
+      "references": [
+        "sbsign:Y"
+      ]
+    },
+    {
+      "start_line": 17045,
+      "end_line": 17083,
+      "heading": "\\begin{corollary}[A spectral-gap certificate in the noiseless planar model]",
+      "labels": [
+        "sbsign:spectral"
+      ],
+      "references": [
+        "sbsign:energy"
+      ]
+    },
+    {
+      "start_line": 17083,
+      "end_line": 17084,
+      "heading": "\\subsection{Actual probe gates can be controlled by aggregate input signs}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 17084,
+      "end_line": 17126,
+      "heading": "\\begin{lemma}[Negative input mass and its integral certificate]",
+      "labels": [
+        "sbsign:negative",
+        "sbsign:negative-integral"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 17126,
+      "end_line": 17157,
+      "heading": "\\begin{lemma}[Grading of the actual active set near a negative concept axis]",
+      "labels": [
+        "sbsign:probe",
+        "sbsign:probe-energy"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 17157,
+      "end_line": 17230,
+      "heading": "\\begin{proposition}[Pointwise error expansion through probe gate changes]",
+      "labels": [
+        "sbsign:switching"
+      ],
+      "references": [
+        "sbsign:probe",
+        "sbsign:probe-energy",
+        "sbsign:X"
+      ]
+    },
+    {
+      "start_line": 17230,
+      "end_line": 17231,
+      "heading": "\\subsection{A complete noiseless fixed-gate reversal theorem}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 17231,
+      "end_line": 17340,
+      "heading": "\\begin{theorem}[Fixed-gate swing-by in a balanced pure-sector subcase]",
+      "labels": [
+        "sbsign:exact-reversal",
+        "sbsign:one-neuron-ode",
+        "sbsign:exact-matrix",
+        "sbsign:exact-error"
+      ],
+      "references": [
+        "sbsign:one-neuron-ode",
+        "sbsign:identity",
+        "sbsign:exact-error"
+      ]
+    },
+    {
+      "start_line": 17340,
+      "end_line": 17370,
+      "heading": "\\begin{corollary}[A second probe has a peak before its gate turns off]",
+      "labels": [
+        "sbsign:switch-peak"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 17370,
+      "end_line": 17384,
+      "heading": "\\subsection{The remaining general-model step}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 17384,
+      "end_line": 17387,
+      "heading": "\\section{Proof of the sector theorem}",
+      "labels": [
+        "sbsector:proof"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 17387,
+      "end_line": 17435,
+      "heading": "\\subsection{Exact gradient flow and invariant region}",
+      "labels": [
+        "sbsector:ode",
+        "sbsector:balance"
+      ],
+      "references": [
+        "sbsector:ode"
+      ]
+    },
+    {
+      "start_line": 17435,
+      "end_line": 17502,
+      "heading": "\\subsection{Exact error identity and sign estimates}",
+      "labels": [
+        "sbsector:error",
+        "sbsector:basic",
+        "sbsector:leakage",
+        "sbsector:early-sign",
+        "sbsector:late-sign"
+      ],
+      "references": [
+        "sbsector:leakage",
+        "sbsector:error",
+        "sbsector:basic"
+      ]
+    },
+    {
+      "start_line": 17502,
+      "end_line": 17559,
+      "heading": "\\subsection{Reached times and a uniform rebound amplitude}",
+      "labels": [],
+      "references": [
+        "sbsector:time",
+        "sbsector:late-sign",
+        "sbsector:error",
+        "sbsector:theorem"
+      ]
+    },
+    {
+      "start_line": 17559,
+      "end_line": 17587,
+      "heading": "\\subsection{Proof of the two-concept extension}",
+      "labels": [],
+      "references": [
+        "sbsector:ode",
+        "sbsector:two-concept",
+        "sbsector:isotropic",
+        "sbsector:isotropic-time"
+      ]
+    },
+    {
+      "start_line": 17587,
+      "end_line": 17590,
+      "heading": "\\section{Closing the direct-probe obligations in this regime}",
+      "labels": [
+        "sbsector:obligations"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 17590,
+      "end_line": 17625,
+      "heading": "\\begin{proposition}[A reached crossing and a late leakage margin]",
+      "labels": [
+        "sbsector:crossing"
+      ],
+      "references": [
+        "sbsector:theorem",
+        "sbsector:error"
+      ]
+    },
+    {
+      "start_line": 17625,
+      "end_line": 17683,
+      "heading": "\\begin{proposition}[Uniform normal form and derivative accuracy]",
+      "labels": [
+        "sbsector:profile"
+      ],
+      "references": [
+        "sbsector:two-concept"
+      ]
+    },
+    {
+      "start_line": 17683,
+      "end_line": 17692,
+      "heading": "\\begin{remark}[Profile versus a universal limiting curve]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 17692,
+      "end_line": 17708,
+      "heading": "\\section{Restricted reversal theorem and scope of the general noisy reversal}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 17708,
+      "end_line": 17723,
+      "heading": "\\section{General-model creation: regulator and data-side advances}",
+      "labels": [
+        "sbgen:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 17723,
+      "end_line": 17749,
+      "heading": "\\section{A whole-network equation for the regulation deficit}",
+      "labels": [
+        "sbgen:regulation-section"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 17749,
+      "end_line": 17805,
+      "heading": "\\begin{proposition}[Exact projected regulator and its defect]",
+      "labels": [
+        "sbgen:network-regulator",
+        "sbgen:vector-regulator",
+        "sbgen:scalar-regulator",
+        "sbgen:clock-lower"
+      ],
+      "references": [
+        "sbgen:scalar-regulator"
+      ]
+    },
+    {
+      "start_line": 17805,
+      "end_line": 17837,
+      "heading": "\\begin{corollary}[A signed generation-to-network certificate]",
+      "labels": [
+        "sbgen:deficit-certificate",
+        "sbgen:deficit-duhamel"
+      ],
+      "references": [
+        "sbgen:deficit-duhamel",
+        "sbgen:clock-lower"
+      ]
+    },
+    {
+      "start_line": 17837,
+      "end_line": 17886,
+      "heading": "\\begin{proposition}[An explicit directional forcing budget]",
+      "labels": [
+        "sbgen:forcing-budget",
+        "sbgen:forcing-charge"
+      ],
+      "references": [
+        "sbgen:forcing-charge"
+      ]
+    },
+    {
+      "start_line": 17886,
+      "end_line": 18207,
+      "heading": "\\begin{lemma}[Strong-cone signed regulator and sharp damping clock]",
+      "labels": [
+        "sbgen:strong-cone-regulator",
+        "sbgen:kappa-split",
+        "sbgen:sharp-clock",
+        "sbgen:H1-lower",
+        "sbgen:chi-split",
+        "sbgen:chi-w",
+        "sbgen:chi-u",
+        "sbgen:Fprime",
+        "sbgen:chi-w-positive",
+        "sbgen:u-positive-condition",
+        "sbgen:chi-u-positive",
+        "sbgen:kcirc-axis",
+        "sbgen:complement-forcing",
+        "sbgen:total-forcing"
+      ],
+      "references": [
+        "sbgen:network-regulator",
+        "sbgen:chi-w",
+        "sbgen:chi-u",
+        "sbgen:network-regulator",
+        "sbgen:sharp-clock",
+        "sbgen:H1-lower",
+        "sbgen:network-regulator",
+        "sbgen:chi-w",
+        "sbgen:chi-u",
+        "sbgen:Fprime",
+        "sbgen:chi-w",
+        "sbgen:chi-w-positive",
+        "sbgen:u-positive-condition",
+        "sbgen:chi-u-positive",
+        "sbgen:kcirc-axis"
+      ]
+    },
+    {
+      "start_line": 18207,
+      "end_line": 18418,
+      "heading": "\\begin{lemma}[Two-feature lower bound for the regulator tangent margin]",
+      "labels": [
+        "sbgen:regulator-transition-kernel",
+        "sbgen:Fprime-twofeature",
+        "sbgen:gamma-measure",
+        "sbgen:Jreg-profile",
+        "sbgen:alpha2-bound",
+        "sbgen:regulator-adm"
+      ],
+      "references": [
+        "sbgen:chi-w-positive",
+        "sbgen:Fprime-twofeature",
+        "sbgen:gamma-measure",
+        "sbgen:gamma-measure",
+        "sbgen:alpha2-bound"
+      ]
+    },
+    {
+      "start_line": 18418,
+      "end_line": 18429,
+      "heading": "\\begin{remark}[Relation to the creation weak-feature clock]",
+      "labels": [],
+      "references": [
+        "lem:middle-signed-decomposition"
+      ]
+    },
+    {
+      "start_line": 18429,
+      "end_line": 18593,
+      "heading": "\\begin{proposition}[Regulator clock and first hitting of the creation corridor]",
+      "labels": [
+        "sbgen:first-hit",
+        "sbgen:corridor",
+        "sbgen:corridor-positive",
+        "sbgen:delta-gen",
+        "sbgen:G-ineq",
+        "sbgen:G-duhamel",
+        "sbgen:first-hit-clock",
+        "sbgen:first-hit-eq",
+        "sbgen:mass-clock"
+      ],
+      "references": [
+        "lem:middle-two-progress",
+        "eq:GC-middle-budget",
+        "prop:gate-cliff-creation",
+        "sbgen:strong-cone-regulator",
+        "sbgen:delta-gen",
+        "sbgen:G-ineq",
+        "sbgen:G-duhamel",
+        "sbgen:first-hit-clock",
+        "sbgen:G-duhamel",
+        "sbgen:corridor-positive",
+        "sbgen:sharp-clock"
+      ]
+    },
+    {
+      "start_line": 18593,
+      "end_line": 18602,
+      "heading": "\\begin{remark}[Creation is a first-hitting event, not an invariant window]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 18602,
+      "end_line": 18617,
+      "heading": "\\begin{remark}[Joint gap concentration feeds the first-hitting margin]",
+      "labels": [],
+      "references": [
+        "sbgen:joint-gap",
+        "sbgen:delta-gen"
+      ]
+    },
+    {
+      "start_line": 18617,
+      "end_line": 18644,
+      "heading": "\\section{An analytic region for the transition-kernel sign}",
+      "labels": [
+        "sbgen:J-section"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 18644,
+      "end_line": 18783,
+      "heading": "\\begin{theorem}[Uniform high-SNR positivity with explicit constants]",
+      "labels": [
+        "sbgen:J-positive",
+        "sbgen:J-expansion",
+        "sbgen:J-region",
+        "sbgen:J-margin",
+        "sbgen:hinge-approx",
+        "sbgen:h-bound"
+      ],
+      "references": [
+        "sbgen:hinge-approx",
+        "sbgen:h-bound",
+        "sbgen:J-expansion",
+        "sbgen:J-region",
+        "sbgen:J-margin",
+        "sbgen:J-margin"
+      ]
+    },
+    {
+      "start_line": 18783,
+      "end_line": 18826,
+      "heading": "\\begin{corollary}[Explicit finite-sample transfer of the sign]",
+      "labels": [
+        "sbgen:J-finite"
+      ],
+      "references": [
+        "sbgen:J-positive",
+        "sbgen:J-margin"
+      ]
+    },
+    {
+      "start_line": 18826,
+      "end_line": 18857,
+      "heading": "\\section{An explicit joint concentration bound for the creation gap}",
+      "labels": [
+        "sbgen:joint-section",
+        "sbgen:gap-affine"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 18857,
+      "end_line": 18935,
+      "heading": "\\begin{proposition}[Joint influence concentration with ratio remainder]",
+      "labels": [
+        "sbgen:joint-gap",
+        "sbgen:gap-bound"
+      ],
+      "references": [
+        "sbgen:gap-bound",
+        "sbgen:gap-affine"
+      ]
+    },
+    {
+      "start_line": 18935,
+      "end_line": 18978,
+      "heading": "\\begin{corollary}[Explicit clipping correction]",
+      "labels": [
+        "sbgen:gap-clipping"
+      ],
+      "references": [
+        "sbgen:joint-gap",
+        "sbgen:gap-bound"
+      ]
+    },
+    {
+      "start_line": 18978,
+      "end_line": 19008,
+      "heading": "\\section{What this closes, and the next dynamical obligation}",
+      "labels": [],
+      "references": [
+        "sbgen:sharp-clock",
+        "sbgen:regulator-adm",
+        "sbgen:first-hit",
+        "sbgen:u-positive-condition",
+        "sbgen:complement-forcing",
+        "rem:T3-scope-A"
+      ]
+    },
+    {
+      "start_line": 19008,
+      "end_line": 19017,
+      "heading": "\\section{A direct signed-gap certificate without a transverse-ratio barrier}",
+      "labels": [
+        "sbgap:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 19017,
+      "end_line": 19080,
+      "heading": "\\subsection{Normalization and the exact feedback identity}",
+      "labels": [
+        "sbgap:efficiency",
+        "sbgap:groups"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 19080,
+      "end_line": 19095,
+      "heading": "\\begin{lemma}[Retained-feedback signed gap]\\label{sbgap:identity}",
+      "labels": [
+        "sbgap:identity",
+        "sbgap:gap-exact"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 19095,
+      "end_line": 19097,
+      "heading": "\\subsection{Why the proposed ratio barrier is not automatic}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19097,
+      "end_line": 19166,
+      "heading": "\\begin{proposition}[An outward ratio face with a positive grading gap]",
+      "labels": [
+        "sbgap:counterexample"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 19166,
+      "end_line": 19173,
+      "heading": "\\begin{remark}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19173,
+      "end_line": 19204,
+      "heading": "\\subsection{A corrected finite-data certificate}",
+      "labels": [
+        "sbgap:polarization"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 19204,
+      "end_line": 19242,
+      "heading": "\\begin{theorem}[Direct signed-gap certificate]\\label{sbgap:certificate}",
+      "labels": [
+        "sbgap:certificate",
+        "sbgap:certificate-eq"
+      ],
+      "references": [
+        "sbsign:clock",
+        "sbgap:polarization",
+        "sbgap:gap-exact"
+      ]
+    },
+    {
+      "start_line": 19242,
+      "end_line": 19264,
+      "heading": "\\begin{corollary}[A certificate independent of transverse mass share]",
+      "labels": [
+        "sbgap:theta-free",
+        "sbgap:theta-free-eq"
+      ],
+      "references": [
+        "sbgap:certificate-eq"
+      ]
+    },
+    {
+      "start_line": 19264,
+      "end_line": 19274,
+      "heading": "\\begin{remark}[The direct certificate succeeds at the outward face]",
+      "labels": [],
+      "references": [
+        "sbgap:counterexample",
+        "sbgap:theta-free"
+      ]
+    },
+    {
+      "start_line": 19274,
+      "end_line": 19301,
+      "heading": "\\begin{remark}[A nonempty numerical certificate box, not a trajectory region]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19301,
+      "end_line": 19303,
+      "heading": "\\subsection{Where the needed feedback can come from}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19303,
+      "end_line": 19363,
+      "heading": "\\begin{lemma}[Strong-family polarization and weak-gate suppression]",
+      "labels": [
+        "sbgap:feedback-source",
+        "sbgap:feedback-source-eq",
+        "sbgap:weak-suppression"
+      ],
+      "references": [
+        "sbgap:feedback-source-eq"
+      ]
+    },
+    {
+      "start_line": 19363,
+      "end_line": 19406,
+      "heading": "\\begin{corollary}[Feedback supplied by a positive branch tube]",
+      "labels": [
+        "sbgap:branch-feedback",
+        "sbgap:branch-zeta"
+      ],
+      "references": [
+        "sbgap:feedback-source",
+        "sbgap:theta-free",
+        "sbgap:branch-zeta"
+      ]
+    },
+    {
+      "start_line": 19406,
+      "end_line": 19421,
+      "heading": "\\begin{remark}[Continuation versus entry]",
+      "labels": [],
+      "references": [
+        "sbcoh:scope"
+      ]
+    },
+    {
+      "start_line": 19421,
+      "end_line": 19442,
+      "heading": "\\begin{lemma}[Raw entries versus projected strong progress]",
+      "labels": [
+        "sbgap:progress"
+      ],
+      "references": [
+        "sbgap:efficiency"
+      ]
+    },
+    {
+      "start_line": 19442,
+      "end_line": 19460,
+      "heading": "\\subsection{Installing the cone-uniform input-side bound}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19460,
+      "end_line": 19527,
+      "heading": "\\begin{lemma}[Cone-pure centered-feature refinement]\\label{sbgap:u-side}",
+      "labels": [
+        "sbgap:u-side"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 19527,
+      "end_line": 19544,
+      "heading": "\\begin{lemma}[Two-sided radial mass rate]\\label{sbgap:mass-rate}",
+      "labels": [
+        "sbgap:mass-rate"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 19544,
+      "end_line": 19546,
+      "heading": "\\subsection{An integrated generation deadline}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19546,
+      "end_line": 19580,
+      "heading": "\\begin{lemma}[Longitudinal mass share needs no transverse-ratio barrier]",
+      "labels": [
+        "sbgap:mass-share",
+        "sbgap:mass-share-eq",
+        "sbgap:mass-share-horizon"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 19580,
+      "end_line": 19617,
+      "heading": "\\begin{proposition}[First hitting from a lower mass-growth rate]",
+      "labels": [
+        "sbgap:deadline",
+        "sbgap:deadline-eq"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 19617,
+      "end_line": 19641,
+      "heading": "\\begin{remark}[What is still required]",
+      "labels": [],
+      "references": [
+        "sbcoh:scope",
+        "rem:scope-A-specialization"
+      ]
+    },
+    {
+      "start_line": 19641,
+      "end_line": 19653,
+      "heading": "\\section{The default feedback channel: coupled ratios and fixed gate endpoints}",
+      "labels": [
+        "sbpos:scope"
+      ],
+      "references": [
+        "sbemp:scope"
+      ]
+    },
+    {
+      "start_line": 19653,
+      "end_line": 19667,
+      "heading": "\\subsection{Exact input--output ratio dynamics}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19667,
+      "end_line": 19701,
+      "heading": "\\begin{lemma}[Coupled ratios without a mismatch remainder]",
+      "labels": [
+        "sbpos:ratios",
+        "sbpos:input-ratio",
+        "sbpos:output-ratio",
+        "sbpos:q-bounds"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 19701,
+      "end_line": 19752,
+      "heading": "\\begin{lemma}[Output cone from longitudinal matching and one-sided balance]",
+      "labels": [
+        "sbpos:longitudinal-barrier",
+        "sbpos:longitudinal-face",
+        "sbpos:radial-face"
+      ],
+      "references": [
+        "sbpos:longitudinal-face"
+      ]
+    },
+    {
+      "start_line": 19752,
+      "end_line": 19773,
+      "heading": "\\begin{remark}[Noise-scale feasibility of the longitudinal face]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19773,
+      "end_line": 19866,
+      "heading": "\\begin{theorem}[Positive-cone entry and persistence from coupled faces]",
+      "labels": [
+        "sbpos:entry",
+        "sbpos:face-budgets",
+        "sbpos:positive-box",
+        "sbpos:long-growth"
+      ],
+      "references": [
+        "sbpos:q-bounds"
+      ]
+    },
+    {
+      "start_line": 19866,
+      "end_line": 19877,
+      "heading": "\\begin{remark}[What this removes, and what it requires]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19877,
+      "end_line": 19901,
+      "heading": "\\begin{corollary}[Positive entry using an existing input holding certificate]",
+      "labels": [
+        "sbpos:held-input-entry"
+      ],
+      "references": [
+        "sbpos:longitudinal-barrier",
+        "sbpos:entry",
+        "sbpos:face-budgets",
+        "sbpos:entry"
+      ]
+    },
+    {
+      "start_line": 19901,
+      "end_line": 19920,
+      "heading": "\\subsection{Cross-residual lower bounds from fixed endpoints}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19920,
+      "end_line": 19969,
+      "heading": "\\begin{lemma}[Fixed-endpoint cross-residual certificate]",
+      "labels": [
+        "sbpos:endpoints",
+        "sbpos:A12-lower",
+        "sbpos:A21-lower"
+      ],
+      "references": [
+        "sbpos:A12-lower",
+        "sbpos:A21-lower"
+      ]
+    },
+    {
+      "start_line": 19969,
+      "end_line": 19971,
+      "heading": "\\subsection{A dimension-free data bound at the natural noise scale}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 19971,
+      "end_line": 20048,
+      "heading": "\\begin{proposition}[Joint fixed-endpoint concentration]",
+      "labels": [
+        "sbpos:concentration",
+        "sbpos:data-errors",
+        "sbpos:moment-lower"
+      ],
+      "references": [
+        "sbpos:data-errors",
+        "sbpos:moment-lower"
+      ]
+    },
+    {
+      "start_line": 20048,
+      "end_line": 20059,
+      "heading": "\\begin{remark}[The noise-scale sampling improvement is limited but real]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 20059,
+      "end_line": 20067,
+      "heading": "\\subsection{Joint holding: retain the favorable cross-coordinate term}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 20067,
+      "end_line": 20107,
+      "heading": "\\begin{lemma}[Coupled rectangular holding with signed residuals]",
+      "labels": [
+        "sbpos:rectangle"
+      ],
+      "references": [
+        "sbpos:input-ratio",
+        "sbpos:output-ratio"
+      ]
+    },
+    {
+      "start_line": 20107,
+      "end_line": 20206,
+      "heading": "\\begin{proposition}[A nonempty common population face budget]",
+      "labels": [
+        "sbpos:population-faces",
+        "sbpos:population-input",
+        "sbpos:population-output"
+      ],
+      "references": [
+        "sbpos:population-input",
+        "sbpos:population-output",
+        "sbpos:rectangle"
+      ]
+    },
+    {
+      "start_line": 20206,
+      "end_line": 20230,
+      "heading": "\\begin{remark}[What the joint check does and does not close]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 20230,
+      "end_line": 20317,
+      "heading": "\\begin{theorem}[Aggregate mean closes the population holding corridor]",
+      "labels": [
+        "sbpos:aggregate-mean",
+        "sbpos:mean-equation",
+        "sbpos:augmented-region"
+      ],
+      "references": [
+        "sbpos:population-faces",
+        "sbpos:population-output",
+        "sbpos:population-output",
+        "sbpos:mean-equation"
+      ]
+    },
+    {
+      "start_line": 20317,
+      "end_line": 20329,
+      "heading": "\\begin{remark}[The remaining bridge is entry, transfer, and duration]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 20329,
+      "end_line": 20331,
+      "heading": "\\subsection{Delivering the default feedback after entry}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 20331,
+      "end_line": 20386,
+      "heading": "\\begin{corollary}[A positive feedback coefficient without transverse matching]",
+      "labels": [
+        "sbpos:feedback",
+        "sbpos:feedback-coefficient"
+      ],
+      "references": [
+        "sbpos:feedback-coefficient"
+      ]
+    },
+    {
+      "start_line": 20386,
+      "end_line": 20414,
+      "heading": "\\begin{corollary}[Uniform coefficient with a retained weak complement]",
+      "labels": [
+        "sbpos:uniform-feedback",
+        "sbpos:zeta-uniform"
+      ],
+      "references": [
+        "sbpos:feedback-coefficient"
+      ]
+    },
+    {
+      "start_line": 20414,
+      "end_line": 20440,
+      "heading": "\\begin{corollary}[A regulator clock from longitudinal growth]",
+      "labels": [
+        "sbpos:clock"
+      ],
+      "references": [
+        "sbpos:long-growth"
+      ]
+    },
+    {
+      "start_line": 20440,
+      "end_line": 20456,
+      "heading": "\\begin{remark}[Remaining initialization-to-creation obligations]",
+      "labels": [],
+      "references": [
+        "sbpos:population-faces"
+      ]
+    },
+    {
+      "start_line": 20456,
+      "end_line": 20467,
+      "heading": "\\section{Empirical holding with two tracked means}",
+      "labels": [
+        "sbemp:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 20467,
+      "end_line": 20483,
+      "heading": "\\subsection{Convex empirical kernels and the second mean}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 20483,
+      "end_line": 20548,
+      "heading": "\\begin{lemma}[Kernel geometry and a mean-input closure]",
+      "labels": [
+        "sbemp:kernel",
+        "sbemp:covariance",
+        "sbemp:defect",
+        "sbemp:lagging-lower",
+        "sbemp:lagging-upper"
+      ],
+      "references": [
+        "sbemp:covariance",
+        "sbemp:lagging-upper"
+      ]
+    },
+    {
+      "start_line": 20548,
+      "end_line": 20571,
+      "heading": "\\subsection{An exact empirical reference system}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 20571,
+      "end_line": 20626,
+      "heading": "\\begin{lemma}[Exact residual and dynamical remainders]",
+      "labels": [
+        "sbemp:exact-transfer",
+        "sbemp:input",
+        "sbemp:output"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 20626,
+      "end_line": 20671,
+      "heading": "\\begin{lemma}[Exact directional factorization of the complement remainder]",
+      "labels": [
+        "sbemp:directional-complement",
+        "sbemp:directional-Cu",
+        "sbemp:directional-Cw"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 20671,
+      "end_line": 20682,
+      "heading": "\\begin{remark}[Why the old whole-output late bound loses the relevant scale]",
+      "labels": [
+        "rem:directional-50"
+      ],
+      "references": [
+        "sbemp:directional-Cu",
+        "sbemp:directional-Cw"
+      ]
+    },
+    {
+      "start_line": 20682,
+      "end_line": 20765,
+      "heading": "\\begin{lemma}[Signed reduction of the amplified input complement]",
+      "labels": [
+        "sbemp:signed-input-complement",
+        "sbemp:X12-exception-bound"
+      ],
+      "references": [
+        "sbemp:X12-exception-bound"
+      ]
+    },
+    {
+      "start_line": 20765,
+      "end_line": 20809,
+      "heading": "\\begin{lemma}[Netting the empirical cluster--$1$ cross moment]",
+      "labels": [
+        "sbemp:b-netting",
+        "sbemp:C12-C1-net",
+        "sbemp:b-netted-input"
+      ],
+      "references": [
+        "sbemp:C12-C1-net"
+      ]
+    },
+    {
+      "start_line": 20809,
+      "end_line": 20865,
+      "heading": "\\begin{remark}[The retained weak cohort has favorable input sign]",
+      "labels": [
+        "sbemp:weak-E12-sign",
+        "sbemp:mean-input",
+        "sbemp:mean-output"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 20865,
+      "end_line": 20975,
+      "heading": "\\begin{lemma}[Wide-cone contraction of the two empirical means]",
+      "labels": [
+        "sbemp:wide-mean-contraction",
+        "sbemp:wide-mean-Dini",
+        "sbemp:wide-mean-Duhamel"
+      ],
+      "references": [
+        "sbemp:wide-mean-Dini",
+        "sbemp:wide-mean-Duhamel"
+      ]
+    },
+    {
+      "start_line": 20975,
+      "end_line": 21024,
+      "heading": "\\begin{lemma}[Modulus bound for the longitudinal-weight oscillation]",
+      "labels": [
+        "sbemp:k-modulus",
+        "sbemp:k-modulus-bound"
+      ],
+      "references": [
+        "sbemp:k-modulus-bound"
+      ]
+    },
+    {
+      "start_line": 21024,
+      "end_line": 21049,
+      "heading": "\\subsection{Eight empirical faces and a larger error allowance}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 21049,
+      "end_line": 21091,
+      "heading": "\\begin{theorem}[Empirical two-mean holding certificate]",
+      "labels": [
+        "sbemp:holding"
+      ],
+      "references": [
+        "sbemp:covariance",
+        "sbemp:defect",
+        "sbemp:mean-input",
+        "sbemp:mean-output"
+      ]
+    },
+    {
+      "start_line": 21091,
+      "end_line": 21227,
+      "heading": "\\begin{theorem}[Lagging-aware empirical two-mean holding]",
+      "labels": [
+        "sbemp:lagging-holding",
+        "sbemp:lagging-mean-s",
+        "sbemp:lagging-mean-t"
+      ],
+      "references": [
+        "sbemp:kernel",
+        "sbemp:lagging-mean-s",
+        "sbemp:lagging-mean-t",
+        "sbemp:holding"
+      ]
+    },
+    {
+      "start_line": 21227,
+      "end_line": 21239,
+      "heading": "\\begin{remark}[Fixed maximal handoff enlargement]",
+      "labels": [
+        "sbemp:maximal-handoff"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21239,
+      "end_line": 21276,
+      "heading": "\\begin{corollary}[A certified population design point for the two-mean region]",
+      "labels": [
+        "sbemp:design"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21276,
+      "end_line": 21291,
+      "heading": "\\begin{remark}[Balance and the longitudinal factor]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 21291,
+      "end_line": 21293,
+      "heading": "\\subsection{Feedback, grading, and local stability}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 21293,
+      "end_line": 21320,
+      "heading": "\\begin{corollary}[Mean-weighted feedback and the scope of grading]",
+      "labels": [
+        "sbemp:feedback"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21320,
+      "end_line": 21351,
+      "heading": "\\begin{remark}[What the local stability threshold means]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 21351,
+      "end_line": 21406,
+      "heading": "\\subsection{What the actual T1.9 clock supplies}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 21406,
+      "end_line": 21491,
+      "heading": "\\begin{lemma}[Two-stage sign crossing under the moving mean envelope]",
+      "labels": [
+        "sbemp:sign-crossing",
+        "sbemp:input-cross-margin",
+        "sbemp:input-cross-clock",
+        "sbemp:output-cross-margin",
+        "sbemp:output-cross-clock"
+      ],
+      "references": [
+        "sbemp:exact-transfer",
+        "sbemp:input-cross-clock",
+        "sbemp:output-cross-clock"
+      ]
+    },
+    {
+      "start_line": 21491,
+      "end_line": 21500,
+      "heading": "\\begin{remark}[The pre-crossing output lower bound is a separate guard]",
+      "labels": [],
+      "references": [
+        "sbflux:pre-cross-output",
+        "sbflux:reflected-output"
+      ]
+    },
+    {
+      "start_line": 21500,
+      "end_line": 21518,
+      "heading": "\\begin{remark}[Canonical crossing margins]",
+      "labels": [
+        "sbemp:canonical-crossing"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21518,
+      "end_line": 21588,
+      "heading": "\\begin{corollary}[Piecewise moving-cone mean contraction across input crossing]",
+      "labels": [
+        "sbemp:piecewise-wide-mean",
+        "sbemp:piecewise-Duhamel"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21588,
+      "end_line": 21612,
+      "heading": "\\begin{remark}[Combined entry clock]",
+      "labels": [
+        "sbemp:combined-clock"
+      ],
+      "references": [
+        "sbemp:piecewise-Duhamel",
+        "sbguard:scope"
+      ]
+    },
+    {
+      "start_line": 21612,
+      "end_line": 21662,
+      "heading": "\\begin{remark}[Current status and remaining initialized-trajectory obligations]",
+      "labels": [
+        "sbemp:remaining-entry-obligations"
+      ],
+      "references": [
+        "sbemp:signed-input-complement",
+        "sbpos:endpoints",
+        "sbemp:b-netting",
+        "sbemp:combined-clock"
+      ]
+    },
+    {
+      "start_line": 21662,
+      "end_line": 21671,
+      "heading": "\\section{Fixed-complement transport and the pre-crossing output envelope}",
+      "labels": [
+        "sbflux:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21671,
+      "end_line": 21693,
+      "heading": "\\subsection{The weighted complement quantity}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 21693,
+      "end_line": 21729,
+      "heading": "\\begin{lemma}[Cross-weighted signed complement bound]",
+      "labels": [
+        "sbflux:output",
+        "sbflux:output-bound"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21729,
+      "end_line": 21754,
+      "heading": "\\begin{lemma}[Exact weighted transport without a boundary-count assumption]",
+      "labels": [
+        "sbflux:transport",
+        "sbflux:transport-exact"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21754,
+      "end_line": 21794,
+      "heading": "\\begin{corollary}[A signed production comparison]",
+      "labels": [
+        "sbflux:production",
+        "sbflux:Q-envelope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21794,
+      "end_line": 21808,
+      "heading": "\\begin{remark}[A mass-relative version]",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 21808,
+      "end_line": 21835,
+      "heading": "\\subsection{What maximal fixed enlargement supplies}",
+      "labels": [
+        "sbflux:handoff-weight"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21835,
+      "end_line": 21851,
+      "heading": "\\subsection{The genuinely concurrent output lower bound}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 21851,
+      "end_line": 21915,
+      "heading": "\\begin{lemma}[Output lower envelope before input crossing]",
+      "labels": [
+        "sbflux:pre-cross-output",
+        "sbflux:Y-envelope",
+        "sbflux:reflected-output"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21915,
+      "end_line": 21956,
+      "heading": "\\subsection{Ambient crossing costs from the installed radius envelopes}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 21956,
+      "end_line": 21991,
+      "heading": "\\subsection{Following the transport bound into the timing audit}",
+      "labels": [
+        "sbflux:crossing-budget"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 21991,
+      "end_line": 22060,
+      "heading": "\\begin{remark}[Transport frontier before the coupled signed-source continuation]",
+      "labels": [
+        "sbflux:frontier"
+      ],
+      "references": [
+        "sbcouple:scope",
+        "sbcouple:unresolved-budget",
+        "sbflux:Q-envelope",
+        "sbflux:crossing-budget"
+      ]
+    },
+    {
+      "start_line": 22060,
+      "end_line": 22070,
+      "heading": "\\section{Signed cohort sources and coupled complement propagation}",
+      "labels": [
+        "sbcouple:scope"
+      ],
+      "references": [
+        "sbflux:frontier"
+      ]
+    },
+    {
+      "start_line": 22070,
+      "end_line": 22102,
+      "heading": "\\subsection{Exact signed decomposition and the self-interaction calculation}",
+      "labels": [
+        "sbcouple:exact-production",
+        "sbcouple:exact-skew"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 22102,
+      "end_line": 22149,
+      "heading": "\\begin{lemma}[Matched first-quadrant self-interaction]",
+      "labels": [
+        "sbcouple:self",
+        "sbcouple:self-bound",
+        "sbcouple:strong-one-sided"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 22149,
+      "end_line": 22177,
+      "heading": "\\subsection{An axis comparison that retains every actual receiver gate}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 22177,
+      "end_line": 22235,
+      "heading": "\\begin{lemma}[Finite-data cohort comparison]",
+      "labels": [
+        "sbcouple:axis",
+        "sbcouple:N",
+        "sbcouple:A0",
+        "sbcouple:X0"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 22235,
+      "end_line": 22261,
+      "heading": "\\subsection{A coupled comparison with the missing sign source propagated}",
+      "labels": [],
+      "references": [
+        "sbnew:A-norm"
+      ]
+    },
+    {
+      "start_line": 22261,
+      "end_line": 22363,
+      "heading": "\\begin{proposition}[Closed signed-moment/mismatch differential comparison]",
+      "labels": [
+        "sbcouple:comparison",
+        "sbcouple:matrix",
+        "sbcouple:damping"
+      ],
+      "references": [
+        "sbcouple:X0",
+        "sbcouple:matrix",
+        "sbcouple:A0"
+      ]
+    },
+    {
+      "start_line": 22363,
+      "end_line": 22386,
+      "heading": "\\subsection{Solving the coupling and consuming it in the entry clock}",
+      "labels": [
+        "sbcouple:solution"
+      ],
+      "references": [
+        "sbcouple:matrix",
+        "sbcouple:damping",
+        "sbcouple:solution"
+      ]
+    },
+    {
+      "start_line": 22386,
+      "end_line": 22442,
+      "heading": "\\begin{lemma}[Common-mass normalization of the signed complement system]",
+      "labels": [
+        "sbcouple:mass-relative",
+        "sbcouple:mass-relative-comparison",
+        "sbcouple:mass-relative-Duhamel"
+      ],
+      "references": [
+        "sbcouple:matrix",
+        "sbcouple:matrix",
+        "sbcouple:damping",
+        "sbcouple:matrix"
+      ]
+    },
+    {
+      "start_line": 22442,
+      "end_line": 22467,
+      "heading": "\\begin{remark}[The $5/9$ threshold is one concept-rate ratio]",
+      "labels": [
+        "sbcouple:spectral-check"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 22467,
+      "end_line": 22533,
+      "heading": "\\begin{remark}[An algebraic check that the retained damping can matter]",
+      "labels": [
+        "sbcouple:spectral-check-legacy",
+        "sbcouple:output-clock",
+        "sbcouple:clock"
+      ],
+      "references": [
+        "sbcouple:mass-relative",
+        "sbcouple:solution",
+        "sbwindow:scope"
+      ]
+    },
+    {
+      "start_line": 22533,
+      "end_line": 22535,
+      "heading": "\\subsection{Non-implications and the remaining initialized estimate}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 22535,
+      "end_line": 22568,
+      "heading": "\\begin{proposition}[Two sign reductions that cannot be used]",
+      "labels": [
+        "sbcouple:obstructions"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 22568,
+      "end_line": 22652,
+      "heading": "\\begin{lemma}[Initialization data uniform over the eventual fixed partition]",
+      "labels": [
+        "sbcouple:init",
+        "sbcouple:unresolved-budget"
+      ],
+      "references": [
+        "sbcouple:init",
+        "sbwindow:scope",
+        "sbwindow:next-gap",
+        "sbcouple:solution",
+        "sbcouple:unresolved-budget"
+      ]
+    },
+    {
+      "start_line": 22652,
+      "end_line": 22662,
+      "heading": "\\section{From-zero finite-window propagation and an entry certificate}",
+      "labels": [
+        "sbwindow:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 22662,
+      "end_line": 22709,
+      "heading": "\\subsection{The mixed-sign channel as a finite-window source}",
+      "labels": [
+        "sbwindow:N-duhamel"
+      ],
+      "references": [
+        "sbcouple:matrix",
+        "sbcouple:damping"
+      ]
+    },
+    {
+      "start_line": 22709,
+      "end_line": 22712,
+      "heading": "\\subsection{A general envelope before any late cohort geometry is reached}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 22712,
+      "end_line": 22754,
+      "heading": "\\begin{lemma}[Global exponential mass bound and early mismatch rate]",
+      "labels": [
+        "sbwindow:mass"
+      ],
+      "references": [
+        "sbcouple:scope"
+      ]
+    },
+    {
+      "start_line": 22754,
+      "end_line": 22837,
+      "heading": "\\begin{lemma}[Whole-network comparison retaining the target PSD structure]",
+      "labels": [
+        "sbwindow:early-system",
+        "sbwindow:H",
+        "sbwindow:Z",
+        "sbwindow:closed-envelope",
+        "sbwindow:subset-envelope",
+        "sbwindow:charge"
+      ],
+      "references": [
+        "sbnew:P-bound",
+        "sbwindow:H",
+        "sbwindow:mass",
+        "sbwindow:Z",
+        "sbcouple:init"
+      ]
+    },
+    {
+      "start_line": 22837,
+      "end_line": 22874,
+      "heading": "\\subsection{An explicit small-output region for the finite-window charge}",
+      "labels": [
+        "sbwindow:data-size",
+        "sbwindow:initial-smallness",
+        "sbwindow:small-charge"
+      ],
+      "references": [
+        "sbwindow:closed-envelope"
+      ]
+    },
+    {
+      "start_line": 22874,
+      "end_line": 22928,
+      "heading": "\\subsection{Consuming the output bound in the exact entry equations}",
+      "labels": [
+        "sbwindow:tube",
+        "sbwindow:entry-data",
+        "sbwindow:ambient"
+      ],
+      "references": [
+        "sbwindow:data-size"
+      ]
+    },
+    {
+      "start_line": 22928,
+      "end_line": 22980,
+      "heading": "\\begin{lemma}[The required directional and mean errors are delivered]",
+      "labels": [
+        "sbwindow:errors"
+      ],
+      "references": [
+        "sbwindow:data-size",
+        "sbwindow:ambient",
+        "sbwindow:ambient"
+      ]
+    },
+    {
+      "start_line": 22980,
+      "end_line": 23069,
+      "heading": "\\begin{proposition}[A concurrent entry window with a priced complement]",
+      "labels": [
+        "sbwindow:entry"
+      ],
+      "references": [
+        "sbwindow:tube",
+        "sbwindow:entry-data",
+        "sbwindow:entry",
+        "sbwindow:initial-smallness",
+        "sbguard:scope"
+      ]
+    },
+    {
+      "start_line": 23069,
+      "end_line": 23163,
+      "heading": "\\subsection{Consuming entry in the signed-feedback inequality}",
+      "labels": [
+        "sbwindow:feedback",
+        "sbwindow:first-unclosed",
+        "sbwindow:N4",
+        "sbwindow:N2"
+      ],
+      "references": [
+        "sbcouple:scope"
+      ]
+    },
+    {
+      "start_line": 23163,
+      "end_line": 23188,
+      "heading": "\\subsection{A signed target refinement that removes the unsigned feedback deficit}",
+      "labels": [],
+      "references": [
+        "sbwindow:first-unclosed",
+        "lem:gated-moment-concentration"
+      ]
+    },
+    {
+      "start_line": 23188,
+      "end_line": 23267,
+      "heading": "\\begin{lemma}[Negative-coordinate target growth and full-flow propagation]",
+      "labels": [
+        "sbwindow:negative-coordinates",
+        "sbwindow:d-sharp",
+        "sbwindow:negative-comparison",
+        "sbwindow:negative-envelope",
+        "sbwindow:signed-feedback"
+      ],
+      "references": [
+        "sbwindow:negative-comparison",
+        "sbwindow:d-sharp",
+        "sbwindow:Z",
+        "sbwindow:negative-comparison"
+      ]
+    },
+    {
+      "start_line": 23267,
+      "end_line": 23309,
+      "heading": "\\begin{lemma}[Longitudinal mass for the reached seed family]",
+      "labels": [
+        "sbwindow:seed-mass",
+        "sbwindow:mass-fraction"
+      ],
+      "references": [
+        "sbwindow:ambient",
+        "sbwindow:mass-fraction"
+      ]
+    },
+    {
+      "start_line": 23309,
+      "end_line": 23389,
+      "heading": "\\begin{proposition}[A finite signed-feedback window priced from initialization]",
+      "labels": [
+        "sbwindow:positive-feedback",
+        "sbwindow:feedback-time",
+        "sbwindow:feedback-smallness",
+        "sbwindow:c21-positive",
+        "sbwindow:next-gap"
+      ],
+      "references": [
+        "sbguard:old-time",
+        "sbguard:old-rho",
+        "sbguard:projected-feedback",
+        "sbwindow:feedback-smallness",
+        "sbwindow:signed-feedback",
+        "sbwindow:mass-fraction",
+        "sbwindow:c21-positive",
+        "sbwindow:first-unclosed",
+        "sbgap:certificate"
+      ]
+    },
+    {
+      "start_line": 23389,
+      "end_line": 23398,
+      "heading": "\\section{Continuation deadlines and the dimension audit}",
+      "labels": [
+        "sbguard:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 23398,
+      "end_line": 23464,
+      "heading": "\\subsection{Which branch interval is actually used?}",
+      "labels": [
+        "sbguard:hold-exit"
+      ],
+      "references": [
+        "lem:post-trapping-locking",
+        "sbpos:scope",
+        "sbemp:scope",
+        "sbemp:holding",
+        "sbgap:certificate",
+        "sbgen:first-hit",
+        "sbgap:deadline",
+        "prop:gate-cliff-creation",
+        "sbcoh:chi-deadline",
+        "sbnew:weak-comparison",
+        "sbemp:combined-clock",
+        "sbwindow:scope",
+        "sbemp:scope",
+        "sbemp:design",
+        "sbemp:holding"
+      ]
+    },
+    {
+      "start_line": 23464,
+      "end_line": 23516,
+      "heading": "\\begin{proposition}[What the feedback window does and does not order]",
+      "labels": [
+        "sbguard:early-order",
+        "sbguard:generation-exit"
+      ],
+      "references": [
+        "sbwindow:positive-feedback",
+        "sbgen:first-hit",
+        "sbgen:first-hit-clock"
+      ]
+    },
+    {
+      "start_line": 23516,
+      "end_line": 23632,
+      "heading": "\\subsection{Late continuation after the directional reduction}",
+      "labels": [
+        "sbguard:missing-face",
+        "sbguard:late-physical-reserve",
+        "sbguard:late-shared-gap",
+        "sbguard:late-scale-hierarchy",
+        "sbguard:PM-neuron",
+        "sbguard:PM"
+      ],
+      "references": [
+        "sbemp:directional-complement",
+        "lem:late-directional-ratio",
+        "sbguard:missing-face",
+        "eq:reciprocal-upper-face",
+        "eq:late-hold-minus"
+      ]
+    },
+    {
+      "start_line": 23632,
+      "end_line": 23758,
+      "heading": "\\begin{lemma}[Coupled regulator-clock progress envelope]",
+      "labels": [
+        "sbguard:progress-envelope",
+        "sbguard:progress-exact",
+        "sbguard:progress-lower",
+        "sbguard:progress-upper",
+        "sbguard:PC-clock",
+        "sbguard:PC-ceiling"
+      ],
+      "references": [
+        "sbguard:PC-clock",
+        "sbguard:PC-ceiling",
+        "sbgen:vector-regulator",
+        "eq:late-hold-minus"
+      ]
+    },
+    {
+      "start_line": 23758,
+      "end_line": 23811,
+      "heading": "\\subsection{Dimension dependence of the installed unprojected certificate}",
+      "labels": [
+        "sbguard:old-time",
+        "sbguard:old-rho"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 23811,
+      "end_line": 23819,
+      "heading": "\\subsection{A projected-energy repair of the seed dilution}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 23819,
+      "end_line": 23892,
+      "heading": "\\begin{lemma}[Projected energy and its initialization scale]",
+      "labels": [
+        "sbguard:projected-mass",
+        "sbguard:projected-init",
+        "sbguard:projected-smallness",
+        "sbguard:projected-seed"
+      ],
+      "references": [
+        "sbwindow:scope",
+        "sbwindow:H",
+        "sbwindow:Z"
+      ]
+    },
+    {
+      "start_line": 23892,
+      "end_line": 23913,
+      "heading": "\\begin{corollary}[Feedback without the unprojected seed dilution]",
+      "labels": [
+        "sbguard:projected-feedback"
+      ],
+      "references": [
+        "sbwindow:positive-feedback",
+        "sbguard:projected-smallness"
+      ]
+    },
+    {
+      "start_line": 23913,
+      "end_line": 23921,
+      "heading": "\\subsection{Continuing the positive box beyond the locking horizon}",
+      "labels": [],
+      "references": [
+        "sbguard:hold-exit"
+      ]
+    },
+    {
+      "start_line": 23921,
+      "end_line": 24025,
+      "heading": "\\begin{proposition}[A direct small-output holding continuation]",
+      "labels": [
+        "sbguard:direct-holding"
+      ],
+      "references": [
+        "sbwindow:ambient",
+        "sbguard:ambient-primitive",
+        "sbguard:missing-face"
+      ]
+    },
+    {
+      "start_line": 24025,
+      "end_line": 24152,
+      "heading": "\\subsection{Primitive ledger and the remaining hard gate}",
+      "labels": [
+        "sbguard:ambient-primitive"
+      ],
+      "references": [
+        "sbwindow:ambient",
+        "def:R2c-core",
+        "sbguard:direct-holding",
+        "sbwindow:data-size",
+        "sbwindow:entry-data",
+        "sbguard:projected-smallness",
+        "sbguard:ambient-primitive",
+        "sbguard:missing-face"
+      ]
+    },
+    {
+      "start_line": 24152,
+      "end_line": 24166,
+      "heading": "\\section{Re-auditing the initialized noisy reversal goal}",
+      "labels": [
+        "sbaudit:scope"
+      ],
+      "references": [
+        "sbsep:scope"
+      ]
+    },
+    {
+      "start_line": 24166,
+      "end_line": 24259,
+      "heading": "\\subsection{Exact effective matrices and the missing signed quantity}",
+      "labels": [
+        "sbaudit:cell",
+        "sbaudit:matrix-rate",
+        "sbaudit:ambient-rate",
+        "sbaudit:exact-error",
+        "sbaudit:exact-rate",
+        "sbaudit:kernel",
+        "sbaudit:alignment",
+        "sbaudit:regulator-split"
+      ],
+      "references": [
+        "sbsign:scope",
+        "sbaudit:exact-rate",
+        "sbsign:switching"
+      ]
+    },
+    {
+      "start_line": 24259,
+      "end_line": 24261,
+      "heading": "\\subsection{An endpoint alternative to derivative propagation}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 24261,
+      "end_line": 24317,
+      "heading": "\\begin{proposition}[Three snapshots give a whole sector with a rebound]",
+      "labels": [
+        "sbaudit:secants",
+        "sbaudit:two-gaps",
+        "sbaudit:matrix-secants"
+      ],
+      "references": [
+        "sbaudit:alignment"
+      ]
+    },
+    {
+      "start_line": 24317,
+      "end_line": 24319,
+      "heading": "\\subsection{The decreasing side is available from isotropic initialization}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 24319,
+      "end_line": 24394,
+      "heading": "\\begin{theorem}[High-probability initial descent for a fixed OOD probe]",
+      "labels": [
+        "sbaudit:initial-descent",
+        "sbaudit:initial-rate",
+        "sbaudit:initial-budget"
+      ],
+      "references": [
+        "sbaudit:alignment",
+        "sbaudit:initial-rate"
+      ]
+    },
+    {
+      "start_line": 24394,
+      "end_line": 24451,
+      "heading": "\\begin{corollary}[An explicit noisy SIM region for the decreasing side]",
+      "labels": [
+        "sbaudit:noisy-descent",
+        "sbaudit:primitive-descent"
+      ],
+      "references": [
+        "sbaudit:initial-descent",
+        "sbaudit:initial-budget"
+      ]
+    },
+    {
+      "start_line": 24451,
+      "end_line": 24506,
+      "heading": "\\begin{corollary}[A directional noise estimate reaches noise-scale probe arcs]",
+      "labels": [
+        "sbaudit:sharp-noise",
+        "sbaudit:sharp-J"
+      ],
+      "references": [
+        "sbaudit:initial-descent",
+        "sbaudit:sharp-J"
+      ]
+    },
+    {
+      "start_line": 24506,
+      "end_line": 24554,
+      "heading": "\\begin{corollary}[Uniform descent permits a later, trajectory-chosen probe]",
+      "labels": [
+        "sbaudit:uniform-descent"
+      ],
+      "references": [
+        "sbaudit:sharp-J",
+        "sbaudit:primitive-descent"
+      ]
+    },
+    {
+      "start_line": 24554,
+      "end_line": 24556,
+      "heading": "\\subsection{A local exit mechanism that avoids a global sign theorem}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 24556,
+      "end_line": 24608,
+      "heading": "\\begin{proposition}[One gate exit supplies a later positive witness]",
+      "labels": [
+        "sbaudit:exit-witness",
+        "sbaudit:exit-charge",
+        "sbaudit:angular-exit"
+      ],
+      "references": [
+        "sbaudit:uniform-descent",
+        "sbaudit:exit-charge",
+        "sbaudit:exit-charge"
+      ]
+    },
+    {
+      "start_line": 24608,
+      "end_line": 24658,
+      "heading": "\\subsection{What the re-audit does and does not decide}",
+      "labels": [
+        "sbaudit:later-witness"
+      ],
+      "references": [
+        "sbsep:scope",
+        "sbaudit:two-gaps",
+        "sbaudit:regulator-split"
+      ]
+    },
+    {
+      "start_line": 24658,
+      "end_line": 24668,
+      "heading": "\\section{Quantitative descent and specialization-linked endpoint certificates}",
+      "labels": [
+        "sbend:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 24668,
+      "end_line": 24670,
+      "heading": "\\subsection{A deterministic decreasing interval without a minimum gate margin}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 24670,
+      "end_line": 24734,
+      "heading": "\\begin{lemma}[Gate-robust control of the initial target pairing]",
+      "labels": [
+        "sbend:pairing-motion",
+        "sbend:pairing-motion-bound",
+        "sbend:residual-cost"
+      ],
+      "references": [
+        "sbaudit:kernel",
+        "sbend:pairing-motion-bound",
+        "sbaudit:alignment",
+        "sbend:residual-cost"
+      ]
+    },
+    {
+      "start_line": 24734,
+      "end_line": 24784,
+      "heading": "\\begin{theorem}[Explicit uniform initial descent time and snapshot drop]",
+      "labels": [
+        "sbend:descent-clock",
+        "sbend:tau-dec",
+        "sbend:early-drop"
+      ],
+      "references": [
+        "sbaudit:uniform-descent",
+        "sbwindow:mass",
+        "sbend:pairing-motion"
+      ]
+    },
+    {
+      "start_line": 24784,
+      "end_line": 24791,
+      "heading": "\\subsection{The correct time bookkeeping for an O2b endpoint result}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 24791,
+      "end_line": 24832,
+      "heading": "\\begin{proposition}[Four snapshots and an explicit final sector]",
+      "labels": [
+        "sbend:four-snapshots",
+        "sbend:mass-cap",
+        "sbend:sector-width"
+      ],
+      "references": [
+        "sbend:descent-clock",
+        "sbwindow:mass",
+        "sbnew:global",
+        "sbaudit:secants"
+      ]
+    },
+    {
+      "start_line": 24832,
+      "end_line": 24853,
+      "heading": "\\subsection{Which transverse output removal can actually cause a rebound?}",
+      "labels": [
+        "sbend:leakage-secants"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 24853,
+      "end_line": 24892,
+      "heading": "\\begin{proposition}[Minimal transverse snapshot certificate]",
+      "labels": [
+        "sbend:leakage-certificate",
+        "sbend:leakage-budget"
+      ],
+      "references": [
+        "sbend:four-snapshots",
+        "sbend:leakage-secants"
+      ]
+    },
+    {
+      "start_line": 24892,
+      "end_line": 24907,
+      "heading": "\\subsection{A zero-lag endpoint mechanism: removing a useful probe response}",
+      "labels": [
+        "sbend:matched-benefit"
+      ],
+      "references": [
+        "sbend:matched-benefit"
+      ]
+    },
+    {
+      "start_line": 24907,
+      "end_line": 24948,
+      "heading": "\\begin{proposition}[Post-specialization gate removal with signed background]",
+      "labels": [
+        "sbend:sweep-certificate",
+        "sbend:background-cost",
+        "sbend:sweep-gap"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 24948,
+      "end_line": 25017,
+      "heading": "\\subsection{Exact lag profile and its conditional viability}",
+      "labels": [
+        "sbend:lag-exact",
+        "sbend:lag-skew",
+        "sbend:lag-profile",
+        "sbend:lag-lower"
+      ],
+      "references": [
+        "sbpos:scope",
+        "sbend:lag-lower"
+      ]
+    },
+    {
+      "start_line": 25017,
+      "end_line": 25029,
+      "heading": "\\section{A learned-mass endpoint theorem in an extreme-separation region}",
+      "labels": [
+        "sbsep:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 25029,
+      "end_line": 25031,
+      "heading": "\\subsection{Directional concentration removes an artificial width conflict}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 25031,
+      "end_line": 25053,
+      "heading": "\\begin{lemma}[Directional initial fluctuation bound]",
+      "labels": [
+        "sbsep:directional-variance"
+      ],
+      "references": [
+        "sbaudit:initial-descent"
+      ]
+    },
+    {
+      "start_line": 25053,
+      "end_line": 25085,
+      "heading": "\\subsection{Exact all-neuron rank-one reference and uniform comparison}",
+      "labels": [
+        "sbsep:exact-system",
+        "sbsep:gram",
+        "sbsep:scalar-reference"
+      ],
+      "references": [
+        "sbsep:exact-system"
+      ]
+    },
+    {
+      "start_line": 25085,
+      "end_line": 25146,
+      "heading": "\\begin{lemma}[Relative comparison through learned mass]",
+      "labels": [
+        "sbsep:relative-comparison",
+        "sbsep:comparison-caps",
+        "sbsep:comparison-bounds"
+      ],
+      "references": [
+        "sbsep:gram",
+        "sbsep:comparison-bounds"
+      ]
+    },
+    {
+      "start_line": 25146,
+      "end_line": 25177,
+      "heading": "\\subsection{The signed endpoint gain}",
+      "labels": [
+        "sbsep:snapshot-times",
+        "sbsep:probe-reference"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 25177,
+      "end_line": 25233,
+      "heading": "\\begin{lemma}[Endpoint rebound at learned mass]",
+      "labels": [
+        "sbsep:reference-rebound",
+        "sbsep:rebound-caps",
+        "sbsep:output-cap"
+      ],
+      "references": [
+        "sbsep:relative-comparison",
+        "sbsep:probe-reference",
+        "sbsep:comparison-bounds"
+      ]
+    },
+    {
+      "start_line": 25233,
+      "end_line": 25282,
+      "heading": "\\subsection{Nonempty primitive noisy region and high-probability initialization}",
+      "labels": [
+        "sbsep:width",
+        "sbsep:remaining-caps",
+        "sbsep:data-caps"
+      ],
+      "references": [
+        "sbsep:comparison-caps",
+        "sbsep:rebound-caps",
+        "sbsep:output-cap"
+      ]
+    },
+    {
+      "start_line": 25282,
+      "end_line": 25455,
+      "heading": "\\begin{theorem}[Noisy many-neuron strong-cohort specialization and endpoint rebound]",
+      "labels": [
+        "sbsep:theorem",
+        "sbsep:learned-mass",
+        "sbsep:noisy-rebound",
+        "sbsep:final-sector",
+        "sbsep:geometry-event",
+        "sbsep:noisy-distance"
+      ],
+      "references": [
+        "sbend:descent-clock",
+        "sbsep:geometry-event",
+        "sbsep:relative-comparison",
+        "sbsep:data-caps",
+        "sbsep:reference-rebound",
+        "sbsep:noisy-rebound",
+        "sbsep:directional-variance",
+        "sbsep:remaining-caps",
+        "sbend:descent-clock",
+        "sbsep:final-sector",
+        "sbsep:data-caps"
+      ]
+    },
+    {
+      "start_line": 25455,
+      "end_line": 25494,
+      "heading": "\\subsection{The lag remains of initialization scale after learned mass}",
+      "labels": [
+        "sbsep:lag-profile",
+        "sbsep:lag-lower"
+      ],
+      "references": [
+        "sbsep:probe-reference"
+      ]
+    },
+    {
+      "start_line": 25494,
+      "end_line": 25503,
+      "heading": "\\section{Quantitative audit: typical initialization, residual stability, and a signed endpoint limitation}",
+      "labels": [
+        "sbquant:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 25503,
+      "end_line": 25510,
+      "heading": "\\subsection{A core retaining almost all initial longitudinal weight}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 25510,
+      "end_line": 25548,
+      "heading": "\\begin{lemma}[Robust initialization geometry]\\label{sbquant:core}",
+      "labels": [
+        "sbquant:core",
+        "sbquant:core-event",
+        "sbquant:individual"
+      ],
+      "references": [
+        "sbquant:individual"
+      ]
+    },
+    {
+      "start_line": 25548,
+      "end_line": 25550,
+      "heading": "\\subsection{Anti-concentration of the actual dependent coefficient}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 25550,
+      "end_line": 25608,
+      "heading": "\\begin{lemma}[Finite-width typical transverse coefficient]",
+      "labels": [
+        "sbquant:smallball",
+        "sbquant:smallball-bound",
+        "sbquant:core-radius"
+      ],
+      "references": [
+        "sbquant:core",
+        "sbquant:smallball-bound"
+      ]
+    },
+    {
+      "start_line": 25608,
+      "end_line": 25610,
+      "heading": "\\subsection{Training-residual stability replaces the generic exponential}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 25610,
+      "end_line": 25678,
+      "heading": "\\begin{lemma}[One-sided comparison on a common strong training pattern]",
+      "labels": [
+        "sbquant:stability",
+        "sbquant:distance-ode",
+        "sbquant:polynomial-comparison"
+      ],
+      "references": [
+        "sbsep:relative-comparison"
+      ]
+    },
+    {
+      "start_line": 25678,
+      "end_line": 25735,
+      "heading": "\\subsection{An explicitly instantiated improvement that is still not R1}",
+      "labels": [],
+      "references": [
+        "sbquant:core",
+        "sbquant:smallball"
+      ]
+    },
+    {
+      "start_line": 25735,
+      "end_line": 25743,
+      "heading": "\\subsection{The inactive background has an adverse sign}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 25743,
+      "end_line": 25796,
+      "heading": "\\begin{proposition}[Signed limitation of the all-active scalar endpoints]",
+      "labels": [
+        "sbquant:signed-obstruction",
+        "sbquant:signed-upper",
+        "sbquant:background-size"
+      ],
+      "references": [
+        "sbsep:snapshot-times",
+        "sbsep:probe-reference",
+        "sbquant:signed-upper"
+      ]
+    },
+    {
+      "start_line": 25796,
+      "end_line": 25850,
+      "heading": "\\subsection{What changes when only the core's probe gates are fixed}",
+      "labels": [
+        "sbquant:clipping-correction",
+        "sbquant:clipping-secant",
+        "sbquant:coherent-output",
+        "sbquant:coherent-rebound"
+      ],
+      "references": [
+        "sbsep:probe-reference",
+        "sbquant:core-radius"
+      ]
+    },
+    {
+      "start_line": 25850,
+      "end_line": 25852,
+      "heading": "\\subsection{A rank-one comparison that permits marginal gate changes}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 25852,
+      "end_line": 25925,
+      "heading": "\\begin{lemma}[Transverse-residual comparison without a minimum coordinate]",
+      "labels": [
+        "sbquant:residual-comparison",
+        "sbquant:residual-controls"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 25925,
+      "end_line": 25962,
+      "heading": "\\begin{proposition}[Full-network coherent endpoint with explicit charges]",
+      "labels": [
+        "sbquant:coherent-finite",
+        "sbquant:coherent-finite-gap"
+      ],
+      "references": [
+        "sbquant:residual-comparison",
+        "sbquant:residual-comparison"
+      ]
+    },
+    {
+      "start_line": 25962,
+      "end_line": 25972,
+      "heading": "\\section{A noisy coherent-endpoint theorem at fixed aggregate initialization}",
+      "labels": [
+        "sbwide:scope"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 25972,
+      "end_line": 25983,
+      "heading": "\\subsection{A gate-robust noisy comparison}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 25983,
+      "end_line": 26037,
+      "heading": "\\begin{lemma}[Axis comparison with actual noisy training selectors]",
+      "labels": [
+        "sbwide:axis-system",
+        "sbwide:perturbed-axis"
+      ],
+      "references": []
+    },
+    {
+      "start_line": 26037,
+      "end_line": 26119,
+      "heading": "\\begin{lemma}[Relative noisy bounds without a minimum coordinate]",
+      "labels": [
+        "sbwide:relative",
+        "sbwide:mass-stop",
+        "sbwide:relative-bounds"
+      ],
+      "references": [
+        "sbwide:perturbed-axis",
+        "sbquant:residual-comparison",
+        "sbwide:perturbed-axis",
+        "sbwide:mass-stop"
+      ]
+    },
+    {
+      "start_line": 26119,
+      "end_line": 26133,
+      "heading": "\\subsection{A fixed initialization cohort at learned mass}",
+      "labels": [],
+      "references": [
+        "sbwide:relative"
+      ]
+    },
+    {
+      "start_line": 26133,
+      "end_line": 26187,
+      "heading": "\\begin{lemma}[Core holding from per-neuron estimates]",
+      "labels": [
+        "sbwide:core-holding",
+        "sbwide:core-mass"
+      ],
+      "references": [
+        "sbwide:axis-system",
+        "sbwide:relative-bounds"
+      ]
+    },
+    {
+      "start_line": 26187,
+      "end_line": 26189,
+      "heading": "\\subsection{One common, explicitly checked parameter regime}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 26189,
+      "end_line": 26402,
+      "heading": "\\begin{theorem}[Noisy planar many-neuron coherent rebound]",
+      "labels": [
+        "sbwide:theorem"
+      ],
+      "references": [
+        "sbquant:smallball",
+        "sbwide:mass-stop",
+        "sbwide:core-mass",
+        "sbquant:coherent-finite"
+      ]
+    },
+    {
+      "start_line": 26402,
+      "end_line": 26413,
+      "heading": "\\section{Sharper descent, a common sector, and a ten-million-neuron witness}",
+      "labels": [
+        "sbsharp:scope"
+      ],
+      "references": [
+        "sbwide:theorem"
+      ]
+    },
+    {
+      "start_line": 26413,
+      "end_line": 26446,
+      "heading": "\\subsection{Optimizing the actual instantaneous-kernel certificate}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 26446,
+      "end_line": 26516,
+      "heading": "\\begin{lemma}[Explicit maximal interval for a specified kernel budget]",
+      "labels": [
+        "sbsharp:descent",
+        "sbsharp:old-drop"
+      ],
+      "references": [
+        "sbwide:theorem",
+        "sbwide:theorem"
+      ]
+    },
+    {
+      "start_line": 26516,
+      "end_line": 26538,
+      "heading": "\\subsection{A weighted residual comparison}",
+      "labels": [],
+      "references": [
+        "sbwide:relative"
+      ]
+    },
+    {
+      "start_line": 26538,
+      "end_line": 26589,
+      "heading": "\\begin{lemma}[Cancellation between normalized residual and mismatch]",
+      "labels": [
+        "sbsharp:weighted"
+      ],
+      "references": [
+        "sbwide:relative"
+      ]
+    },
+    {
+      "start_line": 26589,
+      "end_line": 26591,
+      "heading": "\\subsection{The revised primitive witness}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 26591,
+      "end_line": 26810,
+      "heading": "\\begin{theorem}[A smaller-width noisy coherent rebound and its timing]",
+      "labels": [
+        "sbsharp:theorem"
+      ],
+      "references": [
+        "sbsharp:weighted",
+        "sbsharp:descent"
+      ]
+    },
+    {
+      "start_line": 26810,
+      "end_line": 26862,
+      "heading": "\\subsection{What these improvements do and do not resolve}",
+      "labels": [],
+      "references": []
+    },
+    {
+      "start_line": 26862,
+      "end_line": 26908,
+      "heading": "\\subsection{Numerical validation at the certified primitive point}",
+      "labels": [],
+      "references": []
+    }
+  ],
+  "root_labels": [
+    "sbsharp:theorem",
+    "sbsector:theorem",
+    "sbsector:two-concept",
+    "sbsector:isotropic"
+  ],
+  "reference_closure_block_indices": [
+    22,
+    23,
+    24,
+    370,
+    372,
+    380,
+    381,
+    384,
+    385,
+    387,
+    389,
+    392,
+    394,
+    396
+  ],
+  "duplicate_labels": {},
+  "informal_dependency_hits": [
+    {
+      "line": 163,
+      "text": "set in boldface, and each name is placed above its corresponding"
+    },
+    {
+      "line": 205,
+      "text": "should be in parenthesis using \\verb|\\citep{}| (as in ``Deep learning shows promise to make progress"
+    },
+    {
+      "line": 422,
+      "text": "the line width as in the example below using .eps graphics"
+    },
+    {
+      "line": 484,
+      "text": "provided in the supplementary materials. Each of the above are examples of"
+    },
+    {
+      "line": 2272,
+      "text": "Work with the confidence split fixed above, and set"
+    },
+    {
+      "line": 2780,
+      "text": "entrywise form above is the theorem-level baseline used below."
+    },
+    {
+      "line": 3017,
+      "text": "gradient-flow solution, not merely the trajectory fixed above."
+    },
+    {
+      "line": 3171,
+      "text": "merely the trajectory fixed above."
+    },
+    {
+      "line": 6133,
+      "text": "With the same boundary correction $E_i^{\\mathrm{bd}}$ as in"
+    },
+    {
+      "line": 6713,
+      "text": "with its Clarke gradient flow, using the same selector convention as in"
+    },
+    {
+      "line": 6803,
+      "text": "calculation as in Corollary~\\ref{cor:projected-mismatch} gives"
+    },
+    {
+      "line": 8606,
+      "text": "All preceding estimates hold on the full interval"
+    },
+    {
+      "line": 9702,
+      "text": "The exact gap equation and the same local-frame estimates as in T1.8 give"
+    },
+    {
+      "line": 9724,
+      "text": "first exit; the comparison above then shows that this guard cannot itself"
+    },
+    {
+      "line": 9876,
+      "text": "Proposition~\\ref{sbnew:bias} is used, with the bias included in"
+    },
+    {
+      "line": 11615,
+      "text": "conservation law $\\sum_i v_{i2}^2=\\mathrm{const}$ derived above and explains"
+    },
+    {
+      "line": 11674,
+      "text": "$\\pm(x-f_\\parallel(x))x^\\top/(2n)$, as in"
+    },
+    {
+      "line": 11687,
+      "text": "The identities and local comparisons above do not yet exclude every"
+    },
+    {
+      "line": 11997,
+      "text": "$(B_2)_{22}\\ge-\\ell_{22}$ to bound it from above."
+    },
+    {
+      "line": 12114,
+      "text": "The same bound holds for their angular distance, since $\\arctan$ is"
+    },
+    {
+      "line": 12338,
+      "text": "conditions above.  The positive face condition is, to leading order,"
+    },
+    {
+      "line": 12499,
+      "text": "separate argument instead of the asymmetric replacement above;"
+    },
+    {
+      "line": 12509,
+      "text": "The supplied source proves none of the four B1 uniform conclusions above,"
+    },
+    {
+      "line": 12524,
+      "text": "ceiling have been discharged above; the signed angular/mismatch part has"
+    },
+    {
+      "line": 13822,
+      "text": "To invoke the smooth reference comparison above on a later interval, one"
+    },
+    {
+      "line": 13833,
+      "text": "lies on the capturable side of the new separatrix. The comparison above"
+    },
+    {
+      "line": 13991,
+      "text": "the tracking and mass comparisons above feed the proved selector and"
+    },
+    {
+      "line": 13996,
+      "text": "source's early/post inequalities with the bias additions stated above. The"
+    },
+    {
+      "line": 15584,
+      "text": "The preceding proof safely uses $\\Lambda_u=\\lambda_1+\\lambda_2$."
+    },
+    {
+      "line": 16188,
+      "text": "No identification of $\\eta$ with the noise scale is used above."
+    },
+    {
+      "line": 16685,
+      "text": "Suppose the retained weak cohort has input angles"
+    },
+    {
+      "line": 17159,
+      "text": "Fix one probe $\\xi$ as in Lemma~\\ref{sbsign:probe}. At each time form"
+    },
+    {
+      "line": 17325,
+      "text": "and $D$ is bounded above and below by exponentials with rates"
+    },
+    {
+      "line": 17372,
+      "text": "empirical equations. The complete reversal theorem above is restricted"
+    },
+    {
+      "line": 17563,
+      "text": "swapped for the second neuron. The first has input $(a,-\\eta)$ and"
+    },
+    {
+      "line": 17638,
+      "text": "The same bounds hold on each of the two sectors in"
+    },
+    {
+      "line": 17659,
+      "text": "$(\\alpha,b,c_*,d)=(ac,-c,-aD,D)$ and $s=-1$, giving $H_z$ above."
+    },
+    {
+      "line": 18813,
+      "text": "The feature-map estimate in the proof above gives the population Gram"
+    },
+    {
+      "line": 19067,
+      "text": "As in the manuscript, let $f_D$ and $f_O$ be the diagonal and off-diagonal"
+    },
+    {
+      "line": 19847,
+      "text": "$a_--(d_++\\beta U)z$. The same bounds hold with input and output"
+    },
+    {
+      "line": 19884,
+      "text": "Define $A_*,D_\\pm$ as in Theorem~\\ref{sbpos:entry}, with"
+    },
+    {
+      "line": 19916,
+      "text": "$H_\\pm$ in this subsection are moments, not the entry times above."
+    },
+    {
+      "line": 20038,
+      "text": "have ranges bounded by $R_X$ or $R_Z$, and second moments bounded as above."
+    },
+    {
+      "line": 20061,
+      "text": "The positive $A_{21}$ floor above is sufficient but is not necessary for"
+    },
+    {
+      "line": 20383,
+      "text": "$F\\ge D[c_B\\sqrt{S_BT_B}-N]_+^2$, with $c_B$ the prefactor above,"
+    },
+    {
+      "line": 20520,
+      "text": "$K(\\sum_j\\nu_jr_j)$, even if some contributors lie above $U$."
+    },
+    {
+      "line": 20862,
+      "text": "same bounded-variable covariance inequality as above. No frozen training"
+    },
+    {
+      "line": 21163,
+      "text": "margins above, interpreted with the core intervals and the total mass $M$."
+    },
+    {
+      "line": 21796,
+      "text": "$\\dot P_B/P_B\\ge g_B(t)$, then the same calculation gives"
+    },
+    {
+      "line": 22347,
+      "text": "Consequently the external positive parts above obey"
+    },
+    {
+      "line": 22621,
+      "text": "time zero. It does not assert those same bounds at $a_0$. One may apply"
+    },
+    {
+      "line": 23018,
+      "text": "the same calculation gives slope at least"
+    },
+    {
+      "line": 23071,
+      "text": "The absolute output budget above is not a relative polarization estimate."
+    },
+    {
+      "line": 23161,
+      "text": "the unsigned comparison above is retained to document its limitation."
+    },
+    {
+      "line": 23204,
+      "text": "For the data packet above, $s\\le\\rho\\le10^{-4}$ implies"
+    },
+    {
+      "line": 23269,
+      "text": "On the broad tube, data, ambient and mass guards above,"
+    },
+    {
+      "line": 23364,
+      "text": "comparison $F$ above. The new source gives"
+    },
+    {
+      "line": 23512,
+      "text": "$t_{\\rm gen}$, as in \\eqref{sbgen:first-hit-clock}. The available result"
+    },
+    {
+      "line": 23910,
+      "text": "otherwise identical. Ambient sources still use $s_0$, as required above."
+    },
+    {
+      "line": 23948,
+      "text": "estimate as before give $B_\\times^{\\rm out}/e<0.00237$."
+    },
+    {
+      "line": 24022,
+      "text": "estimates described above.  The present output-mass bound remains only an"
+    },
+    {
+      "line": 24084,
+      "text": "the corrected late architecture above."
+    },
+    {
+      "line": 24218,
+      "text": "with frozen-selector rates, as in Proposition~\\ref{sbsign:switching}."
+    },
+    {
+      "line": 24305,
+      "text": "above does not even need that restriction."
+    },
+    {
+      "line": 24433,
+      "text": "use the expectation representation in the preceding proof. Cauchy--Schwarz"
+    },
+    {
+      "line": 24520,
+      "text": "$\\mathcal I$ has initial upper right error derivative at most"
+    },
+    {
+      "line": 24654,
+      "text": "and the sector extension above. Proving that witness from the same"
+    },
+    {
+      "line": 25081,
+      "text": "$D^\\dagger$ as above, with the actual constant $B$ and the actual inactive"
+    },
+    {
+      "line": 25259,
+      "text": "Use $\\rho,\\delta_c,D_*,\\epsilon_f$ from the preceding lemmas with"
+    },
+    {
+      "line": 25284,
+      "text": "For the primitive region above, balanced isotropic independent"
+    },
+    {
+      "line": 25491,
+      "text": "concept ratio bounded away from zero. The theorem above establishes the"
+    },
+    {
+      "line": 25710,
+      "text": "All output comparison estimates in the preceding proof remain valid"
+    },
+    {
+      "line": 26018,
+      "text": "has the same bound. A changed gate implies $|a_i|\\le a_D\\|u_i\\|$;"
+    },
+    {
+      "line": 26024,
+      "text": "Full balance permits the same bound for input and output weights."
+    },
+    {
+      "line": 26063,
+      "text": "Here $a(0)_-=(\\min(a_i(0),0))_i$. The same bounds hold with $b_0$"
+    },
+    {
+      "line": 26089,
+      "text": "$W\\le0.01$, the same dissipative calculation as in"
+    },
+    {
+      "line": 26099,
+      "text": "exactly as in the preceding rank-one proof; at the last face use the"
+    },
+    {
+      "line": 26135,
+      "text": "Suppose the preceding estimates hold, $\\Gamma_C<1/4$, and"
+    },
+    {
+      "line": 26164,
+      "text": "$k+|R|$, and the same data estimates as in"
+    },
+    {
+      "line": 26250,
+      "text": "widths. For the last event use the same iid scalar sum as in"
+    },
+    {
+      "line": 26271,
+      "text": "Direct substitution in the preceding lemmas gives the safe upper bounds"
+    },
+    {
+      "line": 26310,
+      "text": "Expanding coordinatewise as in"
+    },
+    {
+      "line": 26417,
+      "text": "$\\lambda\\le\\lambda_0$. Then the installed norm envelope implies"
+    },
+    {
+      "line": 26479,
+      "text": "For the original parameters of Theorem~\\ref{sbwide:theorem}, use"
+    },
+    {
+      "line": 26543,
+      "text": "Then its conclusions and the core-holding lemma hold with these new"
+    },
+    {
+      "line": 26581,
+      "text": "the original norm, $k$, $g$, and radial faces close as before."
+    },
+    {
+      "line": 26655,
+      "text": "Berry--Esseen bound as before and the elementary Gaussian tail bound"
+    },
+    {
+      "line": 26711,
+      "text": "Use Lemma~\\ref{sbsharp:descent} with the radial-error rate $\\lambda_0<0.495019$ above,"
+    },
+    {
+      "line": 26802,
+      "text": "$\\bar\\theta=4.5\\cdot10^{-5}$ gives a rate above $10^{-5}$ and an"
+    },
+    {
+      "line": 26803,
+      "text": "inner-arc rebound above $2\\cdot10^{-5}$. Absolute continuity gives strict increase on $[t_-,t_b]$."
+    },
+    {
+      "line": 26830,
+      "text": "above $9\\cdot10^{-6}$. Consequently every old-theorem"
+    },
+    {
+      "line": 26865,
+      "text": "point was instantiated with $h=10^7$, all $2000$ noisy training samples,"
+    }
+  ]
+}

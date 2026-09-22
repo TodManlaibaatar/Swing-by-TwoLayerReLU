@@ -1,0 +1,10 @@
+{
+  "status": "Retrospective numerical saltation diagnostic, not a validated event enclosure. Crossing state and side velocities are interpolated.",
+  "events": 185211,
+  "adverse_events": 58225,
+  "ambiguous_interpolated_events": 0,
+  "max_single_event_ratio": 1.125484735124824,
+  "max_neuron_sum_positive_log_ratio": 1.567854358848045,
+  "sum_over_all_neurons_positive_log_ratio": 33.96048339677762,
+  "runtime_seconds": 45.243493540998315
+}

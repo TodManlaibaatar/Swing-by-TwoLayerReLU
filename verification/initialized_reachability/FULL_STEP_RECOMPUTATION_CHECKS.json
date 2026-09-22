@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "full_steps_exactly_recomputed": [
+    1,
+    2487,
+    4974
+  ],
+  "scope": "Implementation regression; all other intervals covered by delivered validated ledger and deterministic proof."
+}

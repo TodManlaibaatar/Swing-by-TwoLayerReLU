@@ -1,0 +1,56 @@
+{
+  "repository_commit": "ae16f9c0e4e51269c624ffb196184568f2cfe6d9",
+  "method": "Read saved states and evaluate RHS only; no training or integration.",
+  "residual": {
+    "R": 0.005790768494846767,
+    "Rdot": 0.004168168038850825,
+    "relative_R": 0.005879945073208213,
+    "inactive_strong": 5,
+    "active_weak": 0,
+    "active_remainder": 38,
+    "remainder_norm": 2.134554952805717e-05,
+    "strong_mismatch_norm": 0.005804573435497693
+  },
+  "strong_count": 71,
+  "G_reduced_max_discrepancy": 0.00018400734853202087,
+  "G_reduced_correlation": 0.999998541453188,
+  "crossings": {
+    "G": [
+      3.6018240262643726
+    ],
+    "edot_reduced": [
+      3.6035305073352717
+    ],
+    "edot_full": [
+      3.672551358889815
+    ]
+  },
+  "phase_counts": {
+    "total": 1022,
+    "inside_closed_positive_cone": 198,
+    "outside": 824,
+    "swing_above_threshold": 230
+  },
+  "compositional": {
+    "angle_deg": 33.690067525979785,
+    "max_successive_error_increment": -2.6530597815888825e-08,
+    "E0": 0.4999513208079791,
+    "E10": 7.245321180983158e-06
+  },
+  "grid_G_crossing_counts": {
+    "mu2_2p000__sigma_0p120": 1,
+    "mu2_2p000__sigma_0p180": 1,
+    "mu2_2p200__sigma_0p150": 1,
+    "mu2_2p000__sigma_0p150": 1,
+    "mu2_2p200__sigma_0p120": 1,
+    "mu2_2p200__sigma_0p180": 1,
+    "mu2_1p800__sigma_0p150": 1,
+    "mu2_1p800__sigma_0p180": 1,
+    "mu2_1p800__sigma_0p120": 1
+  },
+  "switch_rows_count": 126,
+  "top26": {
+    "max_absolute_timing_difference": 0.35614037886651984,
+    "positive_predicted_delta": 26
+  }
+}

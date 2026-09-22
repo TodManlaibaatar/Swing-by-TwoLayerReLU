@@ -1,0 +1,146 @@
+{
+  "model": "Exact certified h=10^7, N=2000, d=2, s=.04, mu=(1,1e-4), sigma=1e-9; no data or neuron subsampling.",
+  "method": "Classical RK4 with actual empirical gates; bulk aggregation only for masks certified uniform across a cluster, all boundary neurons evaluated sample by sample. Double precision, fixed seed 20260918, no resampling.",
+  "probability_role": "Illustration only; all theorem claims are analytic.",
+  "probe_inner": 4e-05,
+  "probe_upper": 0.00035,
+  "steps": {
+    "coarse": 0.02,
+    "fine": 0.01,
+    "early": "1e-5 through .00017; .001 through .1 in refined runs"
+  },
+  "times": {
+    "pre": 5.394304768019068,
+    "spec": 5.489569514961796,
+    "a": 5.513978830332313,
+    "b": 7.538624447073395
+  },
+  "inner": {
+    "sampled_min_time": 0.04617000000000003,
+    "sampled_min_error": 0.4900572343758916,
+    "sampled_maximum_improvement": 2.767127749159215e-09,
+    "derivative_crossing_brackets": [
+      [
+        0.04617000000000003,
+        0.04717000000000003
+      ]
+    ],
+    "endpoint_secant": 0.00010587036876824607,
+    "initial_drop_at_00017": 1.9905799231167975e-11,
+    "initial_value": 0.49005723714301935
+  },
+  "upper": {
+    "sampled_min_time": 0.40017000000000014,
+    "sampled_min_error": 0.49005699773756806,
+    "sampled_maximum_improvement": 2.3647168628793125e-07,
+    "derivative_crossing_brackets": [
+      [
+        0.3801700000000001,
+        0.40017000000000014
+      ]
+    ],
+    "endpoint_secant": 0.00010480719479577516,
+    "initial_drop_at_00017": 1.845085750851183e-10,
+    "initial_value": 0.49005723420925434
+  },
+  "coarse_fine_common_snapshots": 492,
+  "coarse_fine_max_discrepancy": {
+    "E": 5.034861416675085e-14,
+    "core_mass": 9.09080588584743e-11,
+    "S": 1.1115319775711896e-10,
+    "weak_fit": 5.204170427930421e-17,
+    "angle_u": 2.0925705612739876e-11,
+    "angle_w": 2.0924262322807863e-11,
+    "dE": 4.008532600904141e-14
+  },
+  "instrumented_checks": {
+    "S": true,
+    "core_mass": true,
+    "core_angle": true,
+    "weak_fit": true,
+    "z": true,
+    "l": true,
+    "q_log": true,
+    "q_direction": true,
+    "Cc": true,
+    "B_movement": true,
+    "D_movement": true,
+    "J_D": true,
+    "J_B": true,
+    "J_p": true,
+    "Gamma_core": true,
+    "norm_factor": true,
+    "core_positive": true,
+    "Mstar": true,
+    "inner_late_rate": true,
+    "upper_late_rate": true,
+    "inner_initial_rate": true,
+    "upper_initial_rate": true
+  },
+  "observed_maxima": {
+    "S": 0.9799907460806548,
+    "weak_fit": 0.009992689410814633,
+    "z": 8.119631887896753e-07,
+    "l": 6.525593981276051e-08,
+    "log_u_A": 6.937828090044255e-11,
+    "direction_error": 7.087064952012369e-07,
+    "c_error": 7.714988397261651e-08,
+    "B_movement": 3.625302397679301e-09,
+    "D_movement": 6.191010054012704e-07,
+    "J_D_observed": 6.199919662551457e-06,
+    "J_B_observed": 3.732042184063171e-08,
+    "J_p_observed": 6.363853829883193e-07,
+    "Gamma_core_observed": 1.445191272209101e-07,
+    "norm_factor_observed": 1.0000000000000002,
+    "balance_error": 8.44861661132593e-21
+  },
+  "snapshots": {
+    "pre": {
+      "t": 5.394304768019068,
+      "E": 0.49032629558659474,
+      "core_mass": 0.5646536981581481,
+      "angle_u": 0.11986408014264452,
+      "angle_w": 0.11986422564018973,
+      "S": 0.7199907458393907,
+      "weak_fit": 0.009992678690079226,
+      "dE": 9.517939938520411e-05
+    },
+    "spec": {
+      "t": 5.489569514961796,
+      "E": 0.49033520406060044,
+      "core_mass": 0.5810204720204166,
+      "angle_u": 0.1181796934949629,
+      "angle_w": 0.11817985386122166,
+      "S": 0.7399907458489507,
+      "weak_fit": 0.009992678232345417,
+      "dE": 9.180454620842554e-05
+    },
+    "a": {
+      "t": 5.513978830332313,
+      "E": 0.4903374339561487,
+      "core_mass": 0.5851121654860788,
+      "angle_u": 0.11776957637947473,
+      "angle_w": 0.11776974049413438,
+      "S": 0.7449907458513919,
+      "weak_fit": 0.009992678115494162,
+      "dE": 9.090163559763743e-05
+    },
+    "b": {
+      "t": 7.538624447073395,
+      "E": 0.49044330432491695,
+      "core_mass": 0.7774217583932225,
+      "angle_u": 0.102286985310844,
+      "angle_w": 0.10228737666423701,
+      "S": 0.9799907460806548,
+      "weak_fit": 0.00999267039964763,
+      "dE": 2.1582544684604987e-05
+    }
+  },
+  "caveats": "Minimum brackets are sampled numerical derivative crossings, not rigorous locations or uniqueness results. The upper-probe run uses dt=.02; refinement validation is for the same training trajectory at the inner probe, not an independent rigorous integrator error bound. Tiny differences below rounding scale are not interpreted.",
+  "files_sha256": {
+    "sim_sbstrength.cpp": "af47db8cff5d3e77d0d8b0fde35e0b42e6d100ed1be3246a21a9b6c4cc75a777",
+    "SWINGBY_SIM_fine.csv": "b4be09fd0db83ae63feccaaaa56662c6feb743e0a2eaf86895cbbef3d37e48e4",
+    "SWINGBY_SIM_coarse.csv": "768cfb5f5edc57f27e6dc897ecd987c27f8e06f786ed18c638c555b1b5855364",
+    "SWINGBY_SIM_upper.csv": "ce8bc754287bc4cfdba559af323048427c5933232fd9bb91c2d4ec470b815126"
+  }
+}

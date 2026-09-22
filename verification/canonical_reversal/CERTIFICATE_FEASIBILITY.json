@@ -1,0 +1,8 @@
+{
+  "status": "Feasibility diagnostic only, not an enclosure. Linearized gate sweep and sampled log norm are not rigorous bounds.",
+  "smooth_log_norm_integral": 7.556156977199663,
+  "smooth_amplification": 1912.481662079701,
+  "predicted_gate_error_0.0002": 0.00017411314993144854,
+  "predicted_gate_error_0.0001": 0.00011986759987289464,
+  "predicted_gate_error_1e-05": 2.2001022871263577e-05
+}

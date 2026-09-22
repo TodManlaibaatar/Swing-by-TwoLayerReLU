@@ -1,0 +1,2776 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\usepackage[colorlinks=true]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Swing-by: sharper certificates and a smaller-width noisy theorem}
+\author{Theory continuation for review}
+\date{September 18, 2026}
+\makeatletter
+\@namedef{r@sbnew:global}{{source}{}{}{source-anchor}{}}
+\@namedef{r@sbpos:scope}{{source}{}{}{source-anchor}{}}
+\@namedef{r@sbsign:scope}{{source}{}{}{source-anchor}{}}
+\@namedef{r@sbsign:switching}{{source}{}{}{source-anchor}{}}
+\@namedef{r@sbwindow:mass}{{source}{}{}{source-anchor}{}}
+\makeatother
+\begin{document}
+\maketitle
+\hypertarget{source-anchor}{Cross-references marked ``source refer to the accompanying manuscript.}
+\section{Re-auditing the initialized noisy reversal goal}
+\label{sbaudit:scope}
+\textbf{Historical audit.} The restricted learned-mass result in Section~\ref{sbsep:scope} below supersedes the missing-later-witness status in this earlier section.
+
+This continuation supersedes the architectural assertion that a general noisy
+reversal necessarily requires a second large dynamical theory. The intended
+target remains initialized noisy many-neuron specialization followed by
+reversal on a nonempty OOD sector. Neither that target nor its impossibility
+has been proved. In particular, an unproved sign estimate is not a proof that
+its eventual proof must be long. We first remove unnecessary uniformity and
+grading requirements, and then prove the decreasing side directly from
+isotropic initialization.
+
+\subsection{Exact effective matrices and the missing signed quantity}
+
+Use the projected equations in Section~\ref{sbsign:scope}, and put
+$b_i=w_{i,\perp}$. For a fixed actual probe pattern $c_i\in\{0,1\}$,
+define
+\[
+ M_c=\sum_i c_i z_iv_i^\top,\qquad
+ N_c=\sum_i c_i b_iv_i^\top.
+\]
+Every neuron is included. On the corresponding cell, for $\xi\in\mathcal S$,
+\begin{equation}\label{sbaudit:cell}
+ f_\parallel(\xi)=M_c\xi,\qquad f_\perp(\xi)=N_c\xi.
+\end{equation}
+On an interval with this pattern fixed, the exact equations give
+\begin{align}
+ \dot M_c&=\sum_i c_i
+ (A_iv_iv_i^\top+z_iz_i^\top A_i-z_iP_i^\top),
+ \label{sbaudit:matrix-rate}\\
+ \dot N_c&=\sum_i c_i
+ \left\{-\mathbb E_n[f_\perp(x)(v_i^\top x)_+]v_i^\top
+           +b_iz_i^\top A_i-b_iP_i^\top\right\}.
+ \label{sbaudit:ambient-rate}
+\end{align}
+The training selectors in $A_i$ remain the actual selectors. Even if all
+active neurons have one common training selector, the two Gram matrices
+$\sum c_i v_iv_i^\top$ and $\sum c_i z_iz_i^\top$ enter the rate; fixing
+the probe pattern alone does not supply them from $M_c$.
+
+For a unit probe $\xi=\eta z e_p+sk e_q$, where
+$k=\sqrt{1-\eta^2z^2}$ and $s\in\{-1,1\}$, write
+\[
+ \mathcal A_\xi=\eta^{-1}(f_p(\xi)-\eta z),\qquad
+ \mathcal T_\xi=\eta^{-2}f_q(\xi).
+\]
+These definitions do not assume bounded scaled coefficients. Exactly,
+\begin{align}
+ E(\xi)&=\frac12+\eta^2\left\{
+ \frac12\mathcal A_\xi^2-sk\mathcal T_\xi-\frac12z^2
+ \right\}+\frac{\eta^4}{2}\mathcal T_\xi^2
+                  +\frac12\|f_\perp(\xi)\|^2,
+ \label{sbaudit:exact-error}\\
+ \frac{\dot E(\xi)}{\eta^2}
+ &=\mathcal A_\xi\dot{\mathcal A}_\xi
+    +(\eta^2\mathcal T_\xi-sk)\dot{\mathcal T}_\xi
+    +\eta^{-2}\langle f_\perp(\xi),\dot f_\perp(\xi)\rangle.
+ \label{sbaudit:exact-rate}
+\end{align}
+For $M_c=\left(\begin{smallmatrix}a&\eta b\\
+\eta c&\eta^2d\end{smallmatrix}\right)$, in the ordered basis $(e_p,e_q)$,
+$\mathcal A_\xi=(a-1)z+skb$ and $\mathcal T_\xi=cz+skd$.
+There is no derivative remainder in \eqref{sbaudit:exact-rate}.
+With moving probe patterns, the same identities hold almost everywhere
+with frozen-selector rates, as in Proposition~\ref{sbsign:switching}.
+
+There is also a formulation that does not grade any matrix. Write
+$r_x=x-f(x)$ and $r_\xi=\xi-f(\xi)$, including ambient output coordinates,
+and let $c_i=\mathbf1_{u_i^\top\xi>0}$. Set
+\begin{equation}\label{sbaudit:kernel}
+ \mathsf K(\xi,x)=\sum_i\left[
+ (u_i^\top\xi)_+(u_i^\top x)_+ I_d
+ +c_i\alpha_i(x)(\xi^\top x)w_iw_i^\top\right].
+\end{equation}
+The exact full gradient-flow equations imply, almost everywhere,
+\begin{equation}\label{sbaudit:alignment}
+ \dot f(\xi)=\mathbb E_n[\mathsf K(\xi,x)r_x],\qquad
+ \dot E(\xi)=-\mathfrak J_\xi,\qquad
+ \mathfrak J_\xi:=\mathbb E_n\langle r_\xi,\mathsf K(\xi,x)r_x\rangle.
+\end{equation}
+Indeed, differentiate each $w_i(u_i^\top\xi)_+$ and substitute the two
+parameter equations. The positive semidefinite training Gram kernel
+controls training-loss dissipation; it does not give a sign for this
+mixed probe--training pairing. This is an exact instantaneous Jacobian
+kernel, not a frozen-kernel or lazy-training approximation.
+
+To compare with regulator information, set $p=(x_1)_+$,
+$D=\mathbb E_n p^2>0$, and define
+\[
+ d=\mathbb E_n[pr_x]/D,\quad r_x^\circ=r_x-pd,\quad
+ q_\xi(x)=\mathsf K(\xi,x)^\top r_\xi,\quad
+ Q_\xi=\mathbb E_n[pq_\xi(x)].
+\]
+Then the exact orthogonal decomposition is
+\begin{equation}\label{sbaudit:regulator-split}
+ \mathfrak J_\xi=Q_\xi^\top d+
+ \mathbb E_n\left\langle q_\xi-pQ_\xi/D,r_x^\circ\right\rangle.
+\end{equation}
+Regulator progress controls coordinates of $d$. It does not itself give
+a signed bound for $Q_\xi$ or the last, centered pairing. This is a precise
+additional quantity, rather than a demand for global grading or small
+unassigned mass. Reciprocal holding and the signed complement estimates
+can be used to estimate this pairing; their existence does not already
+establish its sign.
+
+\subsection{An endpoint alternative to derivative propagation}
+
+\begin{proposition}[Three snapshots give a whole sector with a rebound]
+\label{sbaudit:secants}
+Let a finite network follow an absolutely continuous parameter trajectory
+on $[t_0,t_2]$. Suppose $t_0<t_1<t_2$ and a unit $\xi_0\in\mathcal S$
+satisfies
+\begin{equation}\label{sbaudit:two-gaps}
+ E(\xi_0,t_0)-E(\xi_0,t_1)\ge a>0,\qquad
+ E(\xi_0,t_2)-E(\xi_0,t_1)\ge b>0.
+\end{equation}
+Put $L=\max_{j=0,1,2}\sum_i\|w_i(t_j)\|\|u_i(t_j)\|$.
+For every unit $\xi\in\mathcal S$ with
+\[
+ \|\xi-\xi_0\|<\frac{\min(a,b)}{4(1+L)^2},
+\]
+the two gaps are at least $a/2$ and $b/2$. Consequently the error has an
+interior minimum on $[t_0,t_2]$, and its rebound from that minimum to $t_2$
+is at least $b/2$. The derivative is negative on a set of positive measure
+in $(t_0,t_1)$ and positive on a set of positive measure in $(t_1,t_2)$.
+No activation pattern need persist between snapshots.
+\end{proposition}
+\begin{proof}
+At a snapshot the map $f$ is $L$-Lipschitz and positively homogeneous.
+On unit directions its residual norm and residual Lipschitz constant are
+both at most $1+L$. Thus
+$|E(\xi,t_j)-E(\xi_0,t_j)|\le(1+L)^2\|\xi-\xi_0\|$.
+Apply this twice to each gap. Continuity gives an attained minimum,
+and both endpoints have strictly larger error than $t_1$. Absolute
+continuity and integration of the derivative give the two sign sets.
+The minimum need not be unique or strict; no such claim follows from
+the endpoint inequalities alone.
+\end{proof}
+
+At each snapshot form the actual matrices for $\xi_0$ and put
+\[
+ H_j=(M_j-I)^\top(M_j-I)+N_j^\top N_j.
+\]
+The two inequalities to prove in this alternative are exactly
+\begin{equation}\label{sbaudit:matrix-secants}
+ \tfrac12\xi_0^\top(H_0-H_1)\xi_0\ge a,
+ \qquad
+ \tfrac12\xi_0^\top(H_2-H_1)\xi_0\ge b.
+\end{equation}
+Each $M_j,N_j$ includes every neuron. A fixed three-snapshot cell permits
+using the same quadratic forms for nearby probes; the Lipschitz argument
+above does not even need that restriction.
+
+For the stronger claim of strict monotonicity on two open time intervals,
+one may instead prove strict signs of \eqref{sbaudit:alignment} at two
+regular times, with negative $\dot E$ first. Here regular means every
+training preactivation and the chosen probe's preactivations are nonzero.
+The parameter vector field and the probe derivative are then continuous
+locally. Strict signs persist on two time intervals and one common open
+probe sector. This local argument requires no uniform gate persistence
+between those intervals. Regularity at those later witnesses must be
+checked; the endpoint proposition alone does not assert it.
+
+\subsection{The decreasing side is available from isotropic initialization}
+
+\begin{theorem}[High-probability initial descent for a fixed OOD probe]
+\label{sbaudit:initial-descent}
+Fix nonzero empirical training samples in $\mathcal S$, a unit probe
+$\xi\in\mathcal S$, and $d\ge2$. Initialize independently
+$u_i=w_i=\varepsilon\widehat u_i$ with $\widehat u_i$ uniform on
+$\mathbb S^{d-1}$. Put $s_0=h\varepsilon^2$,
+$C_x=\mathbb E_n\|x\|^2$, and
+\[
+ F(c)=\sqrt{1-c^2}+(\pi-\arccos c)c,\qquad
+ J_\xi=\frac1\pi\mathbb E_n\left[
+ (\xi^\top x)\|x\| F\left(\frac{\xi^\top x}{\|x\|}\right)\right].
+\]
+For $\ell=\log(1/\delta)$ define
+\[
+ b_h=C_x\sqrt{\frac{6\ell}{d(d+2)h}}+
+                 \frac{4C_x\ell}{3h}.
+\]
+With probability at least $1-\delta$ over initialization,
+\begin{equation}\label{sbaudit:initial-rate}
+ \dot E(\xi,0)\le-\frac{s_0}{d}
+ \{J_\xi-2db_h-2dC_xs_0(2+s_0)\}.
+\end{equation}
+In particular, if $J_\xi\ge J_*>0$ and
+\begin{equation}\label{sbaudit:initial-budget}
+ 2db_h+2dC_xs_0(2+s_0)\le J_*/2,
+\end{equation}
+then $\dot E(\xi,0)\le-s_0J_*/(2d)<0$. Almost surely all the finitely
+many initial training and probe margins are nonzero, so the strict
+decrease persists on some positive time interval and a nonempty open
+sector containing $\xi$.
+\end{theorem}
+\begin{proof}
+At initialization, $\|f_0(x)\|\le s_0\|x\|$ and
+$\|\mathsf K_0(\xi,x)\|\le2s_0\|x\|$. Replacing both residuals by
+their targets in \eqref{sbaudit:alignment} therefore costs at most
+\[
+ 2C_xs_0^2(2+s_0).
+\]
+Because $w_i=u_i$, the two kernel contributions to the target pairing
+are identical. With
+\[
+ Y_i=\mathbb E_n[(\xi^\top x)(\widehat u_i^\top\xi)_+
+                                      (\widehat u_i^\top x)_+],
+\]
+the target pairing is $2\varepsilon^2\sum_iY_i$.
+Rotational integration gives
+\[
+ \mathbb E[(\widehat u^\top\xi)_+(\widehat u^\top x)_+]
+ =\frac{\|x\|}{2\pi d}F(\xi^\top x/\|x\|),
+ \qquad \mathbb EY_i=J_\xi/(2d).
+\]
+For completeness this integral follows by writing a standard Gaussian
+as its independent radius and uniform direction, using
+$\mathbb E\|g\|^2=d$, and integrating the product of two positive
+linear forms over their angular overlap in the two-dimensional plane.
+The uniform angular integral is
+$\{\sin\theta+(\pi-\theta)\cos\theta\}/(4\pi)$; the independent
+two-dimensional Gaussian squared radius has mean $2$.
+
+Also $|Y_i|\le C_x$. Apply Jensen with weights proportional to
+$\|x\|^2$, and use
+\[
+ \mathbb E[(\widehat u^\top a)^2(\widehat u^\top b)^2]
+ =\frac{1+2(a^\top b)^2}{d(d+2)}\le\frac3{d(d+2)}
+\]
+for unit $a,b$. It follows that
+$\mathbb EY_i^2\le3C_x^2/[d(d+2)]$.
+The centered summands have absolute bound $2C_x$, so the one-sided
+Bernstein inequality gives $h^{-1}\sum_iY_i\ge\mathbb EY_i-b_h$
+with the stated probability. Substitution proves
+\eqref{sbaudit:initial-rate}. On the probability-one nonzero-margin
+event the finite empirical vector field is smooth near initialization;
+continuity gives the last assertion.
+\end{proof}
+
+\begin{corollary}[An explicit noisy SIM region for the decreasing side]
+\label{sbaudit:noisy-descent}
+Consider equal cluster weights and write
+$x^{(k)}=\mu_ke_k+\zeta^{(k)}$, with $\mu_1>\mu_2>0$.
+Fix $0<r\le1/4$ and the OOD probe
+$\xi_r=re_1-\sqrt{1-r^2}e_2$. Suppose each noise vector has norm at most
+$a$, and set
+\[
+ \overline C=(\mu_1+a)^2,\qquad
+ J_*:=\frac{11\mu_1^2r}{32\pi}-2(2\mu_1+a)a>0.
+\]
+Sufficient primitive initialization conditions are
+\begin{equation}\label{sbaudit:primitive-descent}
+ h\ge\max\left\{
+ \frac{1536\overline C^2\ell}{J_*^2},
+ \frac{64d\overline C\ell}{3J_*}\right\},\qquad
+ h\varepsilon^2\le\min\left\{1,\frac{J_*}{24d\overline C}\right\}.
+\end{equation}
+Under these conditions Theorem~\ref{sbaudit:initial-descent} applies.
+For planar isotropic Gaussian cluster noise with standard deviations
+at most $\sigma_{\max}$ and $N$ samples in total, one may take
+$a=\sigma_{\max}\sqrt{2\log(N/\delta_D)}$ with probability at least
+$1-\delta_D$. Independently sampling the initialization gives total
+success probability at least $1-\delta_D-\delta$.
+This is an explicit nonempty region for initial descent, not yet a common
+parameter region for specialization and reversal.
+\end{corollary}
+\begin{proof}
+Write $k=\sqrt{1-r^2}$. The noiseless quantity is
+\[
+ J^{(0)}_{\xi_r}=\frac1{2\pi}
+ \{\mu_1^2r[k+(\pi-\arccos r)r]
+       -\mu_2^2k[r-k\arcsin r]\}.
+\]
+Here $k\ge3/4$ and $r-k\arcsin r\le r(1-k)\le r^3$.
+Since $\mu_2<\mu_1$ and $r^2\le1/16$, this gives
+$J^{(0)}_{\xi_r}\ge11\mu_1^2r/(32\pi)$.
+
+To bound the noise change without differentiating the angular formula,
+use the expectation representation in the preceding proof. Cauchy--Schwarz
+and $\mathbb E(\widehat u^\top v)^2=\|v\|^2/d$ give, for any $x,y$,
+\[
+ 2d\left|\mathbb E_{\widehat u}
+ \bigl[(\xi^\top x)(\widehat u^\top\xi)_+(\widehat u^\top x)_+
+       -(\xi^\top y)(\widehat u^\top\xi)_+(\widehat u^\top y)_+\bigr]
+ \right|
+ \le2(\|x\|+\|y\|)\|x-y\|.
+\]
+Average this inequality with $y=\mu_ke_k$ to get $J_{\xi_r}\ge J_*$.
+The two width bounds make the two terms of $2db_h$ at most $J_*/8$
+each. The initialization cap makes the remaining term in
+\eqref{sbaudit:initial-budget} at most $J_*/4$. The Gaussian assertion
+is the two-dimensional radial tail followed by a union bound. Finally,
+choose sufficiently small positive noise, then finite $h$, then positive
+$\varepsilon$ sufficiently small to see nonemptiness for this corollary.
+\end{proof}
+
+\begin{corollary}[A directional noise estimate reaches noise-scale probe arcs]
+\label{sbaudit:sharp-noise}
+Let $0<r_0<r_1\le1/4$, suppose all sample perturbations have norm at most
+$a\le\mu_2/4$, and suppose the empirical mean perturbation of cluster 1
+has norm at most $b$. Uniformly for $r_0\le r\le r_1$,
+\begin{equation}\label{sbaudit:sharp-J}
+ J_{\xi_r}\ge J_{\rm sh}:=\frac1{2\pi}
+ \left\{\mu_1(\mu_1-a)r_0-\mu_1b-a^2
+              -\frac{(\mu_2r_1+a)^3}{\mu_2-a}\right\}.
+\end{equation}
+Whenever $J_{\rm sh}>0$, it may replace $J_*$ in the initialization
+conditions, with $\overline C=(\mu_1+a)^2$.
+For $n_1$ independent isotropic Gaussian samples in cluster 1, the mean
+event can be imposed at failure probability $\delta_m$ with
+\[
+ b=\sigma_1\sqrt{2\log(1/\delta_m)/n_1}.
+\]
+\end{corollary}
+\begin{proof}
+The function $F$ in Theorem~\ref{sbaudit:initial-descent} is increasing,
+with $F(0)=1$, so $cF(c)\ge c$ for every $-1\le c\le1$.
+On cluster 1 this gives a lower bound by
+$\mathbb E_{1,n}[(\xi_r^\top x)\|x\|]$ for the numerator of its
+contribution to $J_{\xi_r}$. Since
+$|\|x\|-\mu_1|\le a$ and $|\xi_r^\top x|\le\mu_1r+a$,
+this is at least
+$\mu_1^2r-\mu_1b-\mu_1ra-a^2$.
+
+On cluster 2, $\xi_r^\top x<0$. Write its angle with $\xi_r$ as
+$\pi-\beta$, with $0\le\beta<\pi/2$. Then
+\[
+ F(-\cos\beta)=\sin\beta-\beta\cos\beta
+ \le\sin\beta(1-\cos\beta)\le\sin^3\beta.
+\]
+Moreover $|\det(\xi_r,x)|\le\mu_2r+a$ and $\|x\|\ge\mu_2-a$.
+Its possibly negative numerator is therefore bounded below by
+$-(\mu_2r+a)^3/(\mu_2-a)$. Combine the two clusters with weights
+$1/2$, and use $r\ge r_0$ in the positive term and $r\le r_1$ in the
+negative term. The mean-event assertion follows from the planar
+Gaussian radial tail with variance $\sigma_1^2/n_1$.
+\end{proof}
+
+Unlike the absolute perturbation bound, \eqref{sbaudit:sharp-J} is useful
+when $r_0,r_1$ themselves have the noise scale. For fixed means and fixed
+$0<\kappa_0<\kappa_1$, take $r_j=\kappa_j e$,
+$\sigma_{\max}=O(e)$, polynomial sample sizes growing to infinity,
+and fixed positive failure probabilities. Then
+$a=O(e\sqrt{\log(1/e)})$, $b=o(e)$, and
+\[
+ J_{\rm sh}=\frac{\mu_1^2\kappa_0}{2\pi}e+o(e)>0.
+\]
+Thus the initial-descent argument need not choose probes far outside the
+noise-scale learned angles. This asymptotic compatibility concerns this
+module only; it does not prove the remaining specialization inequalities.
+
+\begin{corollary}[Uniform descent permits a later, trajectory-chosen probe]
+\label{sbaudit:uniform-descent}
+Fix $0<r_0<r_1\le1/4$ and the closed probe arc
+$\mathcal I=\{re_1-\sqrt{1-r^2}e_2:r_0\le r\le r_1\}$.
+Use a positive uniform lower bound $J_*$ from the absolute-noise corollary
+(evaluated at $r_0$) or from \eqref{sbaudit:sharp-J}.
+Let
+\[
+ \rho=\frac{J_*}{32d\overline C},\quad
+ G=1+\left\lceil\frac{\arcsin r_1-\arcsin r_0}{\rho}\right\rceil,
+ \qquad \ell=\log(G/\delta).
+\]
+Impose \eqref{sbaudit:primitive-descent} with this $\ell$.
+With initialization probability at least $1-\delta$, every probe on
+$\mathcal I$ has initial upper right error derivative at most
+$-s_0J_*/(4d)$. There exists a common $\tau>0$ on which all these errors
+are strictly decreasing. Thus a later probe chosen using the trajectory,
+anywhere in this deterministic arc, is covered by the same event.
+The positive time $\tau$ is not quantitatively lower bounded here.
+\end{corollary}
+\begin{proof}
+Use $G$ equally spaced angular grid points. Every point on the arc is
+within Euclidean distance $\rho$ of a grid point. The Bernstein argument
+holds at every grid point simultaneously with probability at least
+$1-\delta$. Directly from its definition,
+\[
+ |Y_i(\xi)-Y_i(\zeta)|\le2C_x\|\xi-\zeta\|
+ \quad(\|\xi\|=\|\zeta\|=1).
+\]
+Consequently the transport cost in $2d h^{-1}\sum_iY_i$ is at most
+$4dC_x\rho\le J_*/8$. Grid fluctuations cost at most $J_*/4$ and
+the residual correction costs at most $J_*/4$. The remaining margin
+is at least $3J_*/8$, stronger than asserted.
+
+At an initial zero probe preactivation the target-pairing formula is
+unchanged for every compatible selector: its potentially ambiguous
+second kernel term has a factor $w_i^\top\xi=u_i^\top\xi=0$.
+The residual correction is uniformly bounded for all those selectors.
+Training margins are nonzero almost surely, so the parameter vector
+field is continuous for a positive initial interval. The graph of
+compatible probe selectors is closed. Compactness of the probe arc
+and of the selector cube, together with the strict uniform initial
+margin, therefore gives a common positive interval on which all
+compatible error slopes remain negative. Integrate the almost-everywhere
+slopes to obtain strict decrease. This step provides existence of an
+interval, not an explicit initialized learning clock.
+\end{proof}
+
+\subsection{A local exit mechanism that avoids a global sign theorem}
+
+\begin{proposition}[One gate exit supplies a later positive witness]
+\label{sbaudit:exit-witness}
+At a time $t_*$ suppose all training preactivations are nonzero. For a
+unit probe $\xi_*$ suppose exactly one probe preactivation vanishes,
+say $q_j=u_j^\top\xi_*=0$, all other probe preactivations are nonzero,
+and $\dot q_j<0$. Remove neuron $j$ and denote the remaining probe
+output and its time derivative at $t_*$ by $F$ and $\dot F$.
+If
+\begin{equation}\label{sbaudit:exit-charge}
+ \underbrace{\langle F-\xi_*,\dot F\rangle}_{\text{signed background rate}}
+ +\underbrace{\langle F-\xi_*,w_j\rangle\dot q_j}_{\text{exit contribution}}
+ >0,
+\end{equation}
+then the actual full-network probe error has strictly positive derivative
+on an interval immediately before $t_*$, and on a common nonempty open
+probe sector after shortening that interval.
+If $\xi_*$ lies in the interior of $\mathcal I$ and
+Corollary~\ref{sbaudit:uniform-descent} holds, there is an initial decreasing
+interval and a later increasing interval on a common open OOD sector.
+\end{proposition}
+\begin{proof}
+Before the transverse exit, $q_j>0$ and
+$f(\xi_*)=F(t)+w_j(t)q_j(t)$. The active-side derivative is
+\[
+ \langle F+w_jq_j-\xi_*,
+       \dot F+\dot w_jq_j+w_j\dot q_j\rangle.
+\]
+Its limit at $t_*$ is exactly \eqref{sbaudit:exit-charge}. The regular
+training flow and all other probe contributions are smooth locally.
+Continuity gives a positive interval before the exit; choose a compact
+subinterval strictly before it and then a small open probe sector.
+Intersect with the initial descent sector. The strict positive and
+negative intervals cannot overlap, so they have the required ordering.
+\end{proof}
+
+In the planar notation $v_j=r_j(\cos\phi_j,\sin\phi_j)$,
+$z_j=s_j(\cos\psi_j,\sin\psi_j)$, take
+$\xi_*=(\sin\phi_j,-\cos\phi_j)$ and suppose $\dot\phi_j>0$.
+Then $\dot q_j=-r_j\dot\phi_j$ and
+$z_j^\top\xi_*=s_j\sin(\phi_j-\psi_j)$.
+If the background were zero, the exit contribution would therefore be
+\begin{equation}\label{sbaudit:angular-exit}
+ r_js_j\dot\phi_j\sin(\phi_j-\psi_j).
+\end{equation}
+In the actual network the background in \eqref{sbaudit:exit-charge}
+is retained exactly, including every unassigned neuron. Directional
+estimates for that signed expression may be cheaper than bounding the
+whole complementary mass. Specialization alone supplies neither an
+outward exit with output-angle lag nor this signed background bound;
+the proposition is a finite-window route to test, not a reached-exit
+claim.
+
+\subsection{What the re-audit does and does not decide}
+
+The initialized decreasing side now has a direct high-probability noisy
+many-neuron proof. It does not rely on the two-neuron example. The uniform
+version covers a prescribed nonempty arc, with a quantitative derivative
+margin, but its common initial time interval is only asserted to be positive.
+Its width requirement
+includes a $d$-dependent term, and is not a dimension-free width theorem.
+
+The first remaining reversal-specific task is to reach, at a probe
+covered by that decreasing-side result, either
+\begin{equation}\label{sbaudit:later-witness}
+ \mathfrak J_\xi(t_+)<0
+\end{equation}
+at a regular later time, or the second strict secant inequality in
+\eqref{sbaudit:two-gaps}. For example, once $t_1>0$ is in the initial
+decreasing interval, $E(\xi,t_2)\ge E(\xi,0)$ is a stronger sufficient
+endpoint target, but is not necessary and should not be imposed if the
+weaker second secant can be proved. A desired post-specialization
+decreasing interval would require its own witness; initial descent is
+not automatically descent after specialization.
+
+None of the supplied specialization conclusions explicitly bounds the
+signed mixed pairing in \eqref{sbaudit:regulator-split}, supplies this
+later witness, or supplies the second secant. Nor do the early feedback
+and creation guards automatically extend to a later witness time.
+Conversely, no argument here excludes deriving that one-sided quantity
+from a short finite-window use of the signed equations.
+
+To distinguish non-implication from impossibility, in the noiseless
+planar limit put balanced neurons exactly on the two positive axes.
+For arbitrary multiplicities the exact flow gives
+$f(x)=m_1(x_1)_+e_1+m_2(x_2)_+e_2$, with
+$m_j'=2\lambda_jm_j(1-m_j)$ and $0<m_j(0)<1$.
+For every fixed probe its error is nonincreasing. This verifies that
+perfect axis concentration, fixed gates, increasing progress and balanced
+gradient flow do not, by themselves, force reversal. It is not an
+isotropic-initialization counterexample, not a noisy-model counterexample,
+and not a counterexample to the full basin-creation hypotheses.
+
+Accordingly, neither O1 nor O2 is closed by this continuation, and O3
+has not been justified. The Scope A pivot is not accepted on the basis
+of the old grading obstruction. The reduced O2 route remains live:
+one probe, one finite window, a later signed witness or second secant,
+and the sector extension above. Proving that witness from the same
+initialized event and closing specialization's common primitive region
+are still required before asserting the original headline theorem.
+
+\section{Quantitative descent and specialization-linked endpoint certificates}
+\label{sbend:scope}
+
+The original noisy many-neuron specialization-to-reversal goal remains open.
+This section makes the initialized decreasing interval quantitative, isolates
+the signed endpoint change needed for a post-specialization rebound, and
+audits the angular lag without assuming that it decays monotonically.
+All conclusions called endpoint certificates below are conditional on their
+displayed reached-state hypotheses. No Scope A pivot is made.
+
+\subsection{A deterministic decreasing interval without a minimum gate margin}
+
+\begin{lemma}[Gate-robust control of the initial target pairing]
+\label{sbend:pairing-motion}
+Let $s_0=h\varepsilon^2\le1$, $C_x\le\overline C$, and
+$\|\mathbb E_nxx^\top\|\le\overline\lambda$. On any interval where
+$S(t)\le2s_0$, define
+\[
+ B(t)=\int_0^t\overline\lambda(1+S(v))\sqrt{S(v)}\,dv.
+\]
+For a unit planar probe and the exact kernel of
+\eqref{sbaudit:kernel}, put
+$G_\xi(t)=\mathbb E_n[\xi^\top\mathsf K_t(\xi,x)x]$.
+Uniformly in the probe and compatible selectors,
+\begin{equation}\label{sbend:pairing-motion-bound}
+ |G_\xi(t)-G_\xi(0)|
+ \le(36+6\sqrt2)\overline C\,\overline\lambda s_0t
+ <45\overline C\,\overline\lambda s_0t.
+\end{equation}
+Also
+\begin{equation}\label{sbend:residual-cost}
+ |\dot E(\xi,t)+G_\xi(t)|
+ \le2\overline C S(t)^2(2+S(t))
+\end{equation}
+almost everywhere. These estimates do not require fixed training or probe
+gates or a lower bound on their initial margins.
+\end{lemma}
+\begin{proof}
+Use stacked matrices $U,W$ whose columns are the full neuron vectors.
+Balance gives $\|U\|_F=\|W\|_F=\sqrt S$. The selected full residual
+matrix for each neuron has norm at most
+$\overline\lambda(1+S)$: its target part is bounded by
+$\overline\lambda$, and Cauchy--Schwarz with
+$\|f\|_n\le\sqrt{\overline\lambda}S$ bounds the learned part by
+$\overline\lambda S$. Thus both parameter displacements have Frobenius
+norm at most $B(t)$, and $\|W-U\|_F\le2B(t)$.
+
+Set
+\[
+ I_\xi(U)=\mathbb E_n\left[(\xi^\top x)
+             \sum_i(u_i^\top\xi)_+(u_i^\top x)_+\right].
+\]
+ReLU Lipschitzness and Cauchy--Schwarz give
+\[
+ |I_\xi(U(t))-I_\xi(U(0))|
+ \le\overline C(\sqrt{S(t)}+\sqrt{s_0})B(t).
+\]
+In the second kernel term replace
+$(w_i^\top\xi)(w_i^\top x)$ by
+$(u_i^\top\xi)(u_i^\top x)$, retaining the actual two selectors.
+Their product with the latter expression is exactly the ReLU product,
+also at zero preactivations. Therefore
+\[
+ |G_\xi(t)-2I_\xi(U(t))|
+ \le\overline C(\|W\|_F+\|U\|_F)\|W-U\|_F
+ \le4\overline C\sqrt{S(t)}B(t).
+\]
+At initialization the difference is zero. Since
+$B(t)\le3\overline\lambda\sqrt{2s_0}t$, combining the two estimates
+proves \eqref{sbend:pairing-motion-bound}. Finally
+$\|f(x)\|\le S\|x\|$ and
+$\|\mathsf K_t(\xi,x)\|\le2S\|x\|$ bound the cost of replacing both
+residuals in \eqref{sbaudit:alignment} by their targets, proving
+\eqref{sbend:residual-cost}.
+\end{proof}
+
+\begin{theorem}[Explicit uniform initial descent time and snapshot drop]
+\label{sbend:descent-clock}
+On the initialization event proved in
+Corollary~\ref{sbaudit:uniform-descent}, with its primitive width and
+initialization conditions, define
+\begin{equation}\label{sbend:tau-dec}
+ \tau_{\rm dec}:=\min\left\{
+ \frac{\log(5/4)}{6\overline\lambda},
+ \frac{J_*}{720d\overline C\,\overline\lambda}\right\},
+ \qquad c_{\rm dec}:=\frac{s_0J_*}{4d}.
+\end{equation}
+Then every probe on the deterministic arc $\mathcal I$ satisfies
+\[
+ \dot E(\xi,t)\le-c_{\rm dec}
+ \quad\text{for almost every }0\le t\le\tau_{\rm dec}.
+\]
+In particular, the deterministic time and uniform drop
+\begin{equation}\label{sbend:early-drop}
+ t_{\rm early}:=\tau_{\rm dec}/2,\qquad
+ a_{\rm dec}:=\frac{s_0J_*\tau_{\rm dec}}{8d}>0
+\end{equation}
+obey $E(\xi,0)-E(\xi,t_{\rm early})\ge a_{\rm dec}$.
+The arc's angular width is exactly
+\[
+ \Delta_{\rm init}=\arcsin r_1-\arcsin r_0.
+\]
+For $r_j=\kappa_je$, it lies between
+$(\kappa_1-\kappa_0)e$ and
+$(\kappa_1-\kappa_0)e/\sqrt{1-r_1^2}$.
+\end{theorem}
+\begin{proof}
+Before the residual correction, the uniform-grid event gives
+$G_\xi(0)\ge5s_0J_*/(8d)$ for every probe. The grid fluctuation costs
+$J_*/4$ and the transport costs $J_*/8$ from a target lower bound $J_*$.
+The installed exponential estimate in Lemma~\ref{sbwindow:mass} gives
+\[
+ S(t)\le\alpha s_0,\qquad \alpha=(5/4)^{1/3}<2
+ \quad(t\le\tau_{\rm dec}).
+\]
+The initial residual cost obeys
+$2\overline C s_0^2(2+s_0)\le s_0J_*/(4d)$ by the primitive
+initialization cap. Its bound at time $t$ is at most $\alpha^3$ times
+this value, hence at most $5s_0J_*/(16d)$.
+Lemma~\ref{sbend:pairing-motion} costs at most $s_0J_*/(16d)$ on the
+chosen interval. Subtracting these two costs from $5s_0J_*/(8d)$ leaves
+$s_0J_*/(4d)$. Integrate the almost-everywhere derivative bound; the
+absolute continuity statement includes gate changes. The two arc-width
+bounds follow by integrating $(\arcsin r)'=(1-r^2)^{-1/2}$.
+\end{proof}
+
+\subsection{The correct time bookkeeping for an O2b endpoint result}
+
+Initial descent supplies a drop at $t_{\rm early}$. It does not supply
+$E(0)>E(t_{\rm spec})$. Consequently an initial drop and a distinct
+post-specialization rebound naturally use four snapshots, not a tacit
+identification of $t_{\rm early}$ with a specialization time.
+
+\begin{proposition}[Four snapshots and an explicit final sector]
+\label{sbend:four-snapshots}
+Suppose $0<t_{\rm early}<t_{\rm spec}\le t_a<t_b\le H$,
+and $\xi_0$ is a probe in the central half of the angular arc
+$\mathcal I$. In addition to Theorem~\ref{sbend:descent-clock}, suppose
+\[
+ E(\xi_0,t_b)-E(\xi_0,t_a)\ge b_*>0.
+\]
+Put
+\begin{align}
+ S_H&:=\min\{s_0e^{2\overline\lambda H},
+                         s_0+\overline C H/2\},\label{sbend:mass-cap}\\
+ \rho_*&:=\min\left\{1,
+       \frac{\min(a_{\rm dec},b_*)}{4(1+S_H)^2}\right\},\notag\\
+ \Delta_{\rm swing}&:=\min\{\Delta_{\rm init}/2,
+                                  4\arcsin(\rho_*/2)\}>0.
+ \label{sbend:sector-width}
+\end{align}
+There is an open sector centered at $\xi_0$ of angular width
+$\Delta_{\rm swing}$ on which the initial drop is at least
+$a_{\rm dec}/2$ and the post-specialization rebound is at least $b_*/2$.
+Each probe error has an interior minimum on $[0,t_b]$ and a rebound from
+that minimum of at least $b_*/2$. This is an O2b-endpoint certificate when
+the stipulated specialization state is actually certified. It does not
+place that minimum after $t_{\rm spec}$.
+\end{proposition}
+\begin{proof}
+The exponential and linear mass bounds, respectively
+Lemmas~\ref{sbwindow:mass} and~\ref{sbnew:global}, give $S\le S_H$.
+Neuronwise balance implies
+$\sum_i\|w_i\|\|u_i\|=S$, so this also bounds the snapshot Lipschitz
+constant. Apply the proof of Proposition~\ref{sbaudit:secants} to the
+two separate pairs of times. A chord radius $\rho_*$ is an angular
+half-width $2\arcsin(\rho_*/2)$. Intersect with the initial arc; the
+central-half assumption leaves an angular half-width at least
+$\Delta_{\rm init}/4$.
+The global minimum is interior because the left endpoint exceeds the
+value at $t_{\rm early}$ and the right endpoint exceeds the value at
+$t_a$, even though those two intermediate values need not be ordered.
+\end{proof}
+
+\subsection{Which transverse output removal can actually cause a rebound?}
+
+For a fixed $\xi=re_1-ke_2$, $k=\sqrt{1-r^2}$, put
+\[
+ X=f_1(\xi)-r,\qquad \Lambda=-f_2(\xi),\qquad P=f_\perp(\xi).
+\]
+The exact snapshot identity is
+\begin{equation}\label{sbend:leakage-secants}
+ E_b-E_a=(\Lambda_a-\Lambda_b)
+          \left[k-\frac{\Lambda_a+\Lambda_b}{2}\right]
+       +\frac{X_b^2-X_a^2}{2}
+       +\frac{\|P_b\|^2-\|P_a\|^2}{2}.
+\end{equation}
+In active-matrix notation, this scalar is
+\[
+ \Lambda_j=k(M_j)_{22}-r(M_j)_{21}.
+\]
+Every neuron is included and the active sets may differ at the two times.
+For the noise-scaled normal form it is
+$\Lambda=\eta^2(kd-zc)$, not either cross entry separately.
+
+\begin{proposition}[Minimal transverse snapshot certificate]
+\label{sbend:leakage-certificate}
+At two reached times $t_{\rm spec}\le t_a<t_b\le H$, suppose
+$|\Lambda_a|,|\Lambda_b|\le\ell<k$, $|X_a|\le\alpha$, and
+$\Lambda_a-\Lambda_b\ge d_\Lambda>0$. Then
+\begin{equation}\label{sbend:leakage-budget}
+ E_b-E_a\ge (k-\ell)d_\Lambda
+                          -\frac{\alpha^2+s_0S_H}{2}.
+\end{equation}
+A strictly positive right side supplies $b_*$ in
+Proposition~\ref{sbend:four-snapshots}.
+\end{proposition}
+\begin{proof}
+Only the possibly negative longitudinal difference is bounded by
+$-X_a^2/2$. The installed ambient contraction gives
+$\|P_a\|\le\|W_\perp(t_a)\|_F\sqrt{S(t_a)}
+\le\sqrt{s_0S_H}$. Discard the nonnegative final ambient square.
+The remaining estimate is exactly \eqref{sbend:leakage-secants}.
+\end{proof}
+
+Thus removing a \emph{negative} coordinate-2 output that helped reconstruct
+this probe can supply a rebound. In contrast, if $f_2\ge0$ and only this
+coordinate decreases while the others remain fixed, the error decreases:
+the derivative of its squared residual is $(k+f_2)\dot f_2\le0$.
+Likewise ambient output has no target component here; reducing its norm
+alone improves reconstruction. The contraction of the stacked ambient
+weights does not by itself imply pointwise contraction of $P(\xi)$ because
+input activations also move. These signs prevent using unspecified
+``leakage decay'' as the missing later witness.
+
+For example, a held positive strong family has $z_{i2}\ge0$. Its own
+contribution to $\Lambda$ is nonpositive at every probe, irrespective of
+the input gates. A nearly positive-$e_2$ weak family is inactive on this
+negative-$e_2$ sector whenever its input angles exceed $\arcsin r$.
+Beneficial negative transverse output, if used, must therefore be tracked
+in the actual active complement or in a strong family not yet known to
+have positive output coordinates. Positivity of the aggregate training
+coefficient $c_{21}^O$ does not settle this probe-selected quantity.
+
+\subsection{A zero-lag endpoint mechanism: removing a useful probe response}
+
+Small lag is not an obstruction to the snapshot route. A perfectly
+matched coherent planar block with unit direction $n(t)$ and mass $m(t)$
+has $f_B(\xi)=m n(n^\top\xi)_+$ and, with no background,
+\begin{equation}\label{sbend:matched-benefit}
+ E(\xi,t)=\frac12-\frac12m(t)(2-m(t))(n(t)^\top\xi)_+^2.
+\end{equation}
+For $0<m\le1$, losing the positive probe activation can return the
+error toward $1/2$ even with identically zero input--output angular lag.
+The gate-exit derivative vanishes at the exact zero-lag exit, but the
+finite endpoint gain in \eqref{sbend:matched-benefit} need not vanish.
+This calculation is algebraic; a matched rotating block is not asserted
+to follow the actual gradient flow.
+
+\begin{proposition}[Post-specialization gate removal with signed background]
+\label{sbend:sweep-certificate}
+Fix a cohort $B$, two reached times $t_{\rm spec}\le t_a<t_b\le H$,
+and a probe $\xi=(\sin\theta,-\cos\theta)$. Let $0<g\le1/4$.
+At $t_a$ suppose every $i\in B$ has nonzero projected radii and
+\[
+ g\le\theta-\phi_i\le5g/4,\qquad
+ g\le\theta-\psi_i\le5g/4,\qquad
+ m_*\le M_B:=\sum_{i\in B}r_is_i\le1.
+\]
+At $t_b$ suppose all its probe gates are off. Let $G_j$ denote the full
+output of $B^c$ at the probe at time $t_j$, let
+$F_a=f_B(\xi,t_a)$, and define the signed background cost
+\begin{equation}\label{sbend:background-cost}
+ \mathfrak C_B:=\langle G_a,F_a\rangle
+ +\frac12\|G_a-\xi\|^2-\frac12\|G_b-\xi\|^2
+ +\frac12\|P_{\mathcal S^\perp}F_a\|^2.
+\end{equation}
+If $\mathfrak C_B\le7m_*g^2/96$, then
+\begin{equation}\label{sbend:sweep-gap}
+ E(\xi,t_b)-E(\xi,t_a)\ge m_*g^2/8>0.
+\end{equation}
+This conclusion requires no lower bound on angular lag. The background
+contains every neuron outside $B$, including weak and unassigned neurons.
+\end{proposition}
+\begin{proof}
+The two angle bounds give
+$\xi^\top F_a\ge M_B\sin^2g$ and
+$\|P_{\mathcal S}F_a\|\le M_B\sin(5g/4)\le5M_Bg/4$.
+Since $M_B\le1$ and
+$\sin^2g\ge g^2-g^4/3\ge47g^2/48$,
+\[
+ \xi^\top F_a-\frac12\|P_{\mathcal S}F_a\|^2
+ \ge M_Bg^2\left(\frac{47}{48}-\frac{25}{32}\right)
+ =\frac{19}{96}M_Bg^2.
+\]
+The exact endpoint expansion, using $f_B(\xi,t_b)=0$, is this
+benefit minus $\mathfrak C_B$, leaving at least
+$(19-7)m_*g^2/96=m_*g^2/8$.
+\end{proof}
+
+\subsection{Exact lag profile and its conditional viability}
+
+Let $n_i=v_i/r_i$, $t_i=n_i^\angle$, $q_i=s_i/r_i$, and
+$\zeta_i=\psi_i-\phi_i$. In this subsection $q_i$ is the radial ratio,
+not the longitudinal ratio used in Section~\ref{sbpos:scope}.
+For the actual compatible selected matrix write
+\[
+ a_i=n_i^\top A_i n_i,\quad b_i=n_i^\top A_i t_i,\quad
+ c_i=t_i^\top A_i n_i,\quad d_i=t_i^\top A_i t_i,\quad
+ p_i=t_i^\top P_i/r_i.
+\]
+The exact polar equations are
+\[
+ \dot\phi_i=q_i(b_i\cos\zeta_i+d_i\sin\zeta_i)-p_i,\qquad
+ \dot\psi_i=q_i^{-1}(c_i\cos\zeta_i-a_i\sin\zeta_i).
+\]
+Thus, with
+$\alpha_i=q_i^{-1}a_i+q_id_i$ and
+$\beta_i=q_i^{-1}c_i-q_ib_i$,
+\begin{equation}\label{sbend:lag-exact}
+ \dot\zeta_i=-\alpha_i\sin\zeta_i+\beta_i\cos\zeta_i+p_i.
+\end{equation}
+There is no extra boundary approximation here: $A_i$ already uses the
+actual compatible selectors. In particular
+\begin{equation}\label{sbend:lag-skew}
+ \beta_i=X_i+(q_i^{-1}-1)c_i-(q_i-1)b_i,\qquad
+ X_i=\mathbb E_n[(f_1x_2-f_2x_1)\alpha_i(x)].
+\end{equation}
+For $q_i=1$ and zero ambient forcing, the forcing at zero lag is
+exactly $X_i$, while the damping coefficient is $\operatorname{tr}A_i$.
+Both depend on the learned residual; neither has an automatic late sign.
+
+Put $y_i=\sin\zeta_i$, $k_i=\alpha_i\cos\zeta_i$, and
+$F_i=\beta_i\cos^2\zeta_i+p_i\cos\zeta_i$. Then the exact, scalar
+variation-of-constants identity is
+\begin{equation}\label{sbend:lag-profile}
+ y_i(t)=e^{-\int_a^t k_i}y_i(a)
+             +\int_a^t e^{-\int_v^t k_i}F_i(v)\,dv.
+\end{equation}
+For example, on a stopped interval with
+$0<\underline k\le k_i\le\overline k$ and $|F_i|\le F_*$,
+\[
+ |y_i(t)|\le e^{-\underline k(t-a)}|y_i(a)|
+       +\frac{F_*}{\underline k}(1-e^{-\underline k(t-a)}).
+\]
+If instead $F_i\le-F_-<0$ there, the one-sided estimate is
+\begin{equation}\label{sbend:lag-lower}
+ -y_i(t)\ge
+ \frac{F_-}{\overline k}(1-e^{-\overline k(t-a)})
+                 -e^{-\underline k(t-a)}[y_i(a)]_+.
+\end{equation}
+Thus forcing of order $e$ can sustain lag of order $e$ over a fixed
+window. Monotone lag decay is not a consequence of the mismatch damping
+term. Conversely, a nonzero lower lag bound requires a signed forcing
+estimate such as the one in \eqref{sbend:lag-lower}; an upper Cartesian
+mismatch bound cannot supply it.
+
+At the outward exit normal, the zero-background contribution is
+$-r_is_i\dot\phi_i y_i$. The full contribution plus background is
+\[
+ -r_is_i\dot\phi_i y_i
+ -r_i\dot\phi_i\langle G,w_i\rangle
+ +\langle G-\xi,\dot G\rangle.
+\]
+The last two terms are signed. An $O(e)$ lag and $O(e)$ angular velocity
+only give an $O(r_is_i e^2)$ individual exit contribution; they do not
+bound the rest of the network. This is why the endpoint route remains
+primary even after the lag audit.
+
+\section{A learned-mass endpoint theorem in an extreme-separation region}
+\label{sbsep:scope}
+
+This section proves a restricted noisy many-neuron result from isotropic
+initialization, with a learned strong cohort of mass at least $1/2$ before
+the rebound. It does not prove learned weak-family specialization. The
+region permits $\mu_2/\mu_1$ and the noise to be very small relative to the
+initialization scale. Consequently this is a candidate one-concept
+O2b-endpoint theorem, not a closure of the original two-family theorem or
+of its fixed concept-ratio regime. Both restrictions are theorem-scope
+choices; neither is evidence of an obstruction to the original goal.
+
+\subsection{Directional concentration removes an artificial width conflict}
+
+\begin{lemma}[Directional initial fluctuation bound]
+\label{sbsep:directional-variance}
+In Theorem~\ref{sbaudit:initial-descent}, set
+$C_\xi=\mathbb E_n[|\xi^\top x|\|x\|]$. One may replace $C_x$ by
+$C_\xi$ in the definition of $b_h$, while retaining $C_x$ in the residual
+cost. If $C_\xi\le C_{\rm dir}$ on a deterministic arc, the uniform-grid
+proof likewise permits replacing $\overline C$ by $C_{\rm dir}$ in its
+width requirement, but not in its net radius or initialization cap.
+\end{lemma}
+\begin{proof}
+Write $v_x=x/\|x\|$ and use weights
+$|\xi^\top x|\|x\|/C_\xi$ in Jensen's inequality. Then
+\[
+ |Y_i|\le C_\xi,\qquad
+ \mathbb EY_i^2\le C_\xi^2\mathbb E_n^{\rm weighted}
+ \mathbb E[(\widehat u^\top\xi)^2(\widehat u^\top v_x)^2]
+ \le\frac{3C_\xi^2}{d(d+2)}.
+\]
+The Bernstein and net arguments are unchanged. In particular a target
+margin of order $r$ and $C_{\rm dir}=O(r)$ do not force $h\gtrsim r^{-2}$.
+\end{proof}
+
+\subsection{Exact all-neuron rank-one reference and uniform comparison}
+
+Set $\mu_1=1$. The reference dataset has equal mass at $e_1$ and zero;
+its time variable is $\tau=t/2$. Let $I_+=\{i:u_{i1}(0)>0\}$.
+On these neurons write the input matrix as $(a^\top,B^\top)^\top$ and
+the output matrix as $(c^\top,D^\top)^\top$, separating $e_1$ from its
+orthogonal complement. Here $a,c\in\mathbb R^{|I_+|}$ and
+$B,D\in\mathbb R^{(d-1)\times|I_+|}$. While the strong training gates
+are retained, $B$ is constant and
+\begin{equation}\label{sbsep:exact-system}
+ a'=(1-a^\top c)c-D^\top Da,\qquad
+ c'=(1-a^\top c)a,\qquad D'=-Daa^\top.
+\end{equation}
+All neurons in $I_+^c$ are stationary. Balanced isotropic initialization
+gives $a(0)=c(0)=a_0$, $D(0)=B$. Therefore
+\begin{equation}\label{sbsep:gram}
+ cc^\top+D^\top D-aa^\top=B^\top B,\qquad
+ a'=c-\|a\|^2a-B^\top Ba,\qquad \|D\|_F\le\|B\|_F.
+\end{equation}
+This reference includes every neuron, not a selected two-neuron subsystem.
+
+Put $A_0=\|a_0\|$, $v=a_0/A_0$, and define
+\begin{equation}\label{sbsep:scalar-reference}
+ A'=A(1-A^2),\quad A(0)=A_0,\qquad
+ d_0(\tau)=\sqrt{\frac{1-A(\tau)^2}{1-A_0^2}},\qquad
+ D^\dagger=B[I-(1-d_0)vv^\top].
+\end{equation}
+The superscript $\dagger$ below means $a^\dagger=c^\dagger=Av$ and
+$D^\dagger$ as above, with the actual constant $B$ and the actual inactive
+neurons. It is an approximation to \eqref{sbsep:exact-system}, not an
+assertion that all input or output directions coincide.
+
+\begin{lemma}[Relative comparison through learned mass]
+\label{sbsep:relative-comparison}
+Suppose $\|B\|_F^2\le s_0$, $A_0^2\le s_0$, $v_i\ge v_*>0$,
+and $0<\nu\le1/64$. On a scalar-reference interval $0\le\tau\le T\le H$
+with $A^2\le1-\nu$, set
+\[
+ \rho=\frac{3s_0H}{\nu},\qquad
+ \delta_c=4\rho+\frac{4s_0}{\nu},\qquad
+ D_* =\frac{36s_0^{3/2}H^2}{\nu}.
+\]
+If
+\begin{equation}\label{sbsep:comparison-caps}
+ s_0\le\frac{\nu^2}{64(H+1)},\qquad \delta_c\le v_*/4,
+\end{equation}
+then all strong gates are retained throughout and
+\begin{align}
+ \|a-Av\|&\le4A\rho,&\quad\|c-Av\|&\le A\delta_c,
+ &\quad\|D-D^\dagger\|_F&\le D_* .\label{sbsep:comparison-bounds}
+\end{align}
+The total reference mass is at most $1+2s_0$. If $A^2\ge3/4$, then
+$a^\top c\ge2/3$ and $a_i,c_i\ge v_*/2$.
+\end{lemma}
+\begin{proof}
+Let $u=\|a\|$, $p=c-a$, $l=\|p\|/u$ and
+$\vartheta=a^\top p/u^2$. Stop before a strong gate changes or either
+$u^2=1-\nu/2$ or $l=\nu/8$. Equations \eqref{sbsep:gram} give
+\[
+ \frac{u'}u=1-u^2+\vartheta-\widehat a^\top B^\top B\widehat a=:g,
+ \qquad p'=-(1-a^\top c)p+D^\top Da.
+\]
+On the stopped interval $g\ge\nu/4$, and
+$1-a^\top c+g\ge\nu/2$. In the upper-Dini sense,
+$l'\le-(\nu/2)l+s_0$, hence $l\le2s_0/\nu$.
+Writing $q=\log(u/A)$ yields
+$q'=-A^2(e^{2q}-1)+\epsilon_q$, $|\epsilon_q|\le3s_0/\nu$.
+The restoring sign gives $|q|\le3s_0\tau/\nu$ without an exponential
+in $H$. Also $\|\widehat a'\|\le l+s_0\le3s_0/\nu$, so
+$\|\widehat a-v\|\le3s_0\tau/\nu$.
+These bounds give the first two inequalities in
+\eqref{sbsep:comparison-bounds}. The caps make
+$\rho<\nu/8$ and exclude both radial stopping faces:
+$(1-\nu)e^{\nu/4}<1-\nu/2$ and $2s_0/\nu<\nu/8$.
+They also give $a_i,c_i\ge3Av_i/4$, which excludes gate exit and
+proves continuation from the initially positive gates.
+
+The error $Z=D-D^\dagger$ satisfies
+\[
+ Z'=-Zaa^\top-D^\dagger(aa^\top-A^2vv^\top).
+\]
+The first term dissipates $\|Z\|_F^2$.
+Since $\|aa^\top-A^2vv^\top\|\le12A^2(3s_0\tau/\nu)$,
+integration gives the stated $D_*$ (with a factor-two reserve).
+Finally $\|a\|^2<1$, $\|B\|_F^2\le s_0$, and the inactive input
+mass is at most $s_0$. This gives the full mass bound. At $A^2\ge3/4$,
+\[
+ a^\top c\ge A^2e^{-2\rho}(1-2s_0/\nu)
+ \ge\tfrac34(63/64)^2>2/3,
+\]
+and $a_i,c_i\ge3Av_i/4\ge v_*/2$.
+\end{proof}
+
+\subsection{The signed endpoint gain}
+
+Let $B_2$ be the row of $B$ corresponding to $e_2$ and set
+$b=Bv$, $b_2=B_2v$, $\eta=|b_2|>0$, and $s=\operatorname{sign}b_2$.
+Choose $r=8\sqrt{s_0}/v_*\le1/8$, $k=\sqrt{1-r^2}$,
+$\xi_0=re_1+sk e_2$, and $z=r/\eta$.
+Assume $\eta\ge\eta_*>0$, let $Z_*=r/\eta_*$, and take
+$\nu=1/(512Z_*^2)$. In particular $8\le z\le Z_*$.
+Define scalar-reference times by
+\begin{equation}\label{sbsep:snapshot-times}
+ A(\tau_{\rm spec})^2=3/4,\qquad
+ (A(\tau_a)^2-1)z+A(\tau_a)k=0,\qquad
+ A(\tau_b)^2=1-\nu.
+\end{equation}
+Then $\tau_{\rm spec}<\tau_a<\tau_b$. These times may depend on
+initialization; all will have a deterministic upper bound below.
+For $\tau\ge\tau_{\rm spec}$ every $I_+$ probe gate is strictly on.
+Indeed $ra_i\ge rv_*/2=4\sqrt{s_0}>|B_{2i}|$.
+
+Write $G$ for the stationary output of $I_+^c$ at $\xi_0$, so
+$\|G\|\le s_0$. Put $C=BB_2^\top-bb_2$, with $\|C\|\le2s_0$.
+The approximate full output is exactly
+\begin{equation}\label{sbsep:probe-reference}
+ f^\dagger(\xi_0)=
+ e_1(A^2r+A\eta k)+(0,skC)+\eta(0,b)T+G,
+ \qquad T=d_0(Az+k).
+\end{equation}
+The transverse component along $b$ initially helps reconstruct the
+probe and subsequently decreases; the inactive complement $G$ is
+retained in the endpoint squares.
+
+\begin{lemma}[Endpoint rebound at learned mass]
+\label{sbsep:reference-rebound}
+In addition to Lemma~\ref{sbsep:relative-comparison}, suppose
+\begin{equation}\label{sbsep:rebound-caps}
+ s_0\le\min\{1/256,1/(32Z_*^2)\},\quad
+ s_0^{3/2}\le\eta_*/16,\quad s_0^2\le\eta_*^2/8,
+\end{equation}
+and
+\begin{equation}\label{sbsep:output-cap}
+ \epsilon_f:=4r\delta_c+3rD_*+4r\sqrt{s_0}\rho
+ \le\eta_*^2/128.
+\end{equation}
+Then the exact rank-one reference obeys
+$E(\xi_0,2\tau_b)-E(\xi_0,2\tau_a)\ge3\eta^2/8$.
+Here $E(\xi_0,2\tau)$ denotes the reference error at physical time
+$t=2\tau$.
+\end{lemma}
+\begin{proof}
+The unique root defining $\tau_a$ has $A_a>9/10$: evaluate its quadratic
+at $A=9/10$ and use $z\ge8$. Moreover
+$1-A_a^2=A_ak/z>\nu$, proving the strict ordering.
+At the two endpoints,
+\[
+ T_a\ge\tfrac9{16}\sqrt z,\qquad
+ T_b\le\sqrt{2\nu}(Z_*+1)\le1/8,
+ \qquad T_a-T_b\ge1,\quad 0\le T_a,T_b\le2Z_*.
+\]
+Set $Q=skC+G_\perp-sk e_2$, viewing $e_2$ in the $(d-1)$-dimensional
+transverse space. Then
+\[
+ Q^\top b=-\eta k+(skC+G_\perp)^\top b,
+ \qquad |(skC+G_\perp)^\top b|\le3s_0^{3/2}\le\eta k/4.
+\]
+Thus the transverse error secant in \eqref{sbsep:probe-reference} is
+\[
+ \eta(T_b-T_a)Q^\top b+
+ \tfrac12\eta^2\|b\|^2(T_b^2-T_a^2)
+ \ge\tfrac9{16}\eta^2-2\eta^2s_0Z_*^2
+ \ge\tfrac8{16}\eta^2.
+\]
+At $\tau_a$ the longitudinal residual of the variable part is zero.
+Its full initial longitudinal residual is $G_1$, so its secant is
+bounded below by $-G_1^2/2\ge-\eta^2/16$.
+The approximate full secant is therefore at least $7\eta^2/16$.
+
+At either endpoint, \eqref{sbsep:comparison-bounds} and
+$\|ra+skB_2^\top\|\le2r+\sqrt{s_0}$ give
+$\|f-f^\dagger\|\le\epsilon_f$; the first-coordinate cost is at most
+$\delta_c(3r+\sqrt{s_0})\le4r\delta_c$, and the transverse cost is
+at most $3rD_*+4r\sqrt{s_0}\rho$.
+The exact reference has mass at most $1+2s_0$, and $\epsilon_f<1/16$,
+so an error perturbation of norm $\epsilon_f$ changes each error square
+by at most $4\epsilon_f$. The two-endpoint cost is at most
+$8\epsilon_f\le\eta^2/16$, as required.
+\end{proof}
+
+\subsection{Nonempty primitive noisy region and high-probability initialization}
+
+The following explicit choices are deliberately conservative. They certify
+nonemptiness, not a useful experimental parameter range. All constants
+are primitive; none presupposes a trajectory event.
+Fix $d\ge2$, $0<\delta<1/4$, and an even total sample count $N\ge2$.
+Set
+\[
+ G_*=2+\lceil256\pi d\rceil,\qquad \ell=\log(8G_*/\delta),
+\]
+and choose the integer width so that
+\begin{equation}\label{sbsep:width}
+ h\ge\max\{1536(16\pi)^2\ell,
+           (1024\pi/3)d\ell,32\log(16/\delta)\}.
+\end{equation}
+Define
+\begin{align*}
+ \beta&=\frac{\delta}{32h\sqrt d},&
+ v_*&=\frac\beta{\sqrt h},&
+ b_*&=\frac{\delta^3}{262144\,d\,h^{3/2}},\\
+ s_0&=h\varepsilon^2,& \eta_*&=\varepsilon b_*,&
+ r&=\frac{8\sqrt{s_0}}{v_*},\\
+ Z_*&=\frac r{\eta_*}=\frac{8\sqrt h}{v_*b_*},&
+ \nu&=\frac1{512Z_*^2},&
+ H&=\frac12\log\frac4{\nu s_0\beta^2}.
+\end{align*}
+Use $\rho,\delta_c,D_*,\epsilon_f$ from the preceding lemmas with
+this $H$. Choose $\varepsilon>0$ sufficiently small that all of
+\eqref{sbsep:comparison-caps}, \eqref{sbsep:rebound-caps}, and
+\eqref{sbsep:output-cap} hold, together with
+\begin{equation}\label{sbsep:remaining-caps}
+ r\le1/8,\qquad s_0\le\frac r{384\pi d},\qquad
+ \frac{8\sqrt{s_0}\rho}{v_*^2}
+       +\frac{3(\delta_c+D_*)}{v_*}\le\eta_*/40.
+\end{equation}
+Finally set
+\begin{align}
+ \chi_*&=\min\{1/32,\varepsilon\beta/8,
+                   \eta_*^2/1024,\eta_*v_*/240\},\notag\\
+ q_D&=\chi_*e^{-20H},\label{sbsep:data-caps}\\
+ 0<\mu_2^2&\le\min\{r^2/100,q_D/256\},\notag\\
+ 0<a_D&\le\min\{\mu_2/4,r^2/100,
+                           \varepsilon\beta/16,q_D/160\},\notag\\
+ 0<\sigma_1,\sigma_2&\le
+                   a_D/\sqrt{2\log(4N/\delta)}.\notag
+\end{align}
+Here $\sigma_k$ are standard deviations of planar isotropic Gaussian
+noise, there are $N/2$ independent samples per cluster, and $\mu_1=1$.
+
+\begin{theorem}[Noisy many-neuron strong-cohort specialization and endpoint rebound]
+\label{sbsep:theorem}
+For the primitive region above, balanced isotropic independent
+initialization $u_i(0)=w_i(0)=\varepsilon\widehat u_i$ has the following
+properties with probability at least $1-\delta$ jointly with the samples.
+There is a fixed initialization cohort $I_+$ of at least $h/4$ neurons,
+and times
+\[
+ 0<t_{\rm early}<t_{\rm spec}<t_a<t_b\le2H,
+\]
+such that throughout $[t_{\rm spec},t_b]$ its input and output vectors
+lie within angle $r/2$ of $e_1$ and its learned longitudinal mass satisfies
+\begin{equation}\label{sbsep:learned-mass}
+ \sum_{i\in I_+}u_{i1}(t)w_{i1}(t)\ge1/2.
+\end{equation}
+The entire network has $S(t)\le4$ on $[0,t_b]$.
+On each of the two deterministic arcs
+\[
+ \mathcal I_\pm=\{\sin\theta\,e_1\pm\cos\theta\,e_2:
+       |\theta-\arcsin r|\le r/4\},\qquad
+ \Delta_{\rm init}=r/2,
+\]
+there is uniform initial decrease with the explicit
+$\tau_{\rm dec},c_{\rm dec},t_{\rm early},a_{\rm dec}$ of
+Theorem~\ref{sbend:descent-clock}, taking
+$J_*=r/(8\pi)$ and $\overline C=\overline\lambda=2$.
+At one of their centers $\xi_0$ the later secant is
+\begin{equation}\label{sbsep:noisy-rebound}
+ E(\xi_0,t_b)-E(\xi_0,t_a)\ge b_{\rm reb}:=\eta_*^2/8>0.
+\end{equation}
+On an open sector, the initial drop is at least $a_{\rm dec}/2$.
+The rebound after specialization is at least $b_{\rm reb}/2$.
+An explicit lower bound on its angular width is
+\begin{equation}\label{sbsep:final-sector}
+ \min\{r/4,4\arcsin(\rho_{\rm swing}/2)\},\qquad
+ \rho_{\rm swing}=\min\{1,\min(a_{\rm dec},b_{\rm reb})/100\}.
+\end{equation}
+Every such error has an interior minimum on $[0,t_b]$.
+The conclusion does not locate the minimum after $t_{\rm spec}$, fit the
+weak concept, or create a second learned family.
+\end{theorem}
+\begin{proof}
+\emph{The initialization geometry.}
+Let $R_i^2=\widehat u_{i1}^2+\widehat u_{i2}^2$ and
+$R_*^2=\delta/(32dh)$. With failure probability less than $\delta/4$,
+\begin{equation}\label{sbsep:geometry-event}
+ |I_+|\ge h/4,\quad
+ \min_i|\widehat u_{i1}|\ge\beta,\quad
+ \min_iR_i^2\ge R_*^2,\quad |B_2v|\ge\varepsilon b_*.
+\end{equation}
+Indeed the first failure is at most $e^{-h/8}\le\delta/32$.
+The density of one spherical coordinate on $[-\beta,\beta]$ is at most
+$\sqrt d$, giving a union bound $2h\sqrt d\beta=\delta/16$.
+For $d>2$, $R_i^2$ has distribution function
+$1-(1-q)^{(d-2)/2}\le dq$ for $0\le q\le1/2$; for $d=2$ it is one.
+The radius failure is at most $\delta/32$.
+Condition on all radii, signs of the first coordinates, and all but the
+first positive neuron's planar angle. Its angle is uniform on a
+half-circle. Its contribution to
+$\sum_{I_+}\widehat u_{i1}\widehat u_{i2}$ is
+$(R_i^2/2)\sin(2\theta_i)$. The elementary arcsine small-ball bound
+\[
+ \sup_z\Pr\{|\sin(2\theta_i)-z|\le u\}\le4\sqrt u
+\]
+follows by integrating its density on an interval, with the largest
+endpoint singularity proportional to $1/\sqrt{1-|x|}$.
+Taking $q=R_*^2\delta^2/8192$ bounds the probability that this sum has
+absolute value less than $q$ by $\delta/16$.
+Since $A_0\le\varepsilon\sqrt h$, this proves the last bound in
+\eqref{sbsep:geometry-event}. This conditioning is on signs and radii,
+not on the minimum-coordinate event; a union bound combines them.
+Moreover
+\[
+ s_0\beta^2/4\le A_0^2\le s_0,\qquad v_i\ge\beta/\sqrt h=v_*.
+\]
+The explicit logistic solution gives
+$\tau_b=\tfrac12\log[(1-\nu)(1-A_0^2)/(\nu A_0^2)]\le H$.
+Apply the preceding reference lemmas up to this time.
+
+\emph{Uniform noisy comparison, including arbitrary weak gates.}
+On the sample event $\max\|x^{(k)}-\mu_ke_k\|\le a_D$, the failure
+probability is at most $\delta/4$ by the planar Gaussian radial tail
+and a union bound over $N$ samples. Couple the real and reference
+networks with the same initialization. Stop while both full input and
+output Frobenius norms are at most $2$, and all strong-sample gates
+agree with $I_+$. The reference vector field, in physical time and
+combined parameter Frobenius norm, is $10$-Lipschitz there.
+For example its longitudinal-input and output difference bounds have
+coefficients $2$ and $9/2$, whose block norm is at most $13/2<10$.
+At a fixed parameter point the strong-sample covariance changes by at
+most $a_D+a_D^2/2$. Since $\|I-WU_{I_+}^\top\|\le5$, the combined
+strong-gradient cost is at most $30a_D$. The entire weak gradient,
+with its actual arbitrary selectors, has combined norm at most
+$10(\mu_2+a_D)^2$. Thus a sufficient forcing bound is
+\[
+ P_D=40[a_D+(\mu_2+a_D)^2].
+\]
+The parameter distance up to physical time $2H$ is at most
+\begin{equation}\label{sbsep:noisy-distance}
+ \chi:=P_De^{20H}\le\chi_*.
+\end{equation}
+This is a finite-window comparison with the vanishing data perturbation,
+not a Gronwall estimate on the $B^\top B$ amplification error; that error
+was controlled relatively in Lemma~\ref{sbsep:relative-comparison}.
+The caps in \eqref{sbsep:data-caps} give $P_D<q_D$.
+
+Reference strong margins are at least $\varepsilon\beta/2$ for $I_+$,
+and at least $\varepsilon\beta$ in absolute value for $I_+^c$.
+The perturbations cost at most $\chi+2a_D\le\varepsilon\beta/4$.
+Reference parameter norms are at most $\sqrt{1+2s_0}$, so adding
+$\chi\le1/32$ also excludes the norm stopping face. The comparison
+therefore continues to $2\tau_b\le2H$. In particular $S\le4$
+through the last snapshot. The deterministic $2H$ is used only as an
+upper bound in the comparison integral; no radial estimate past
+$2\tau_b$ is needed.
+
+At the reached times $t_j=2\tau_j$, the learned strong mass changes
+by at most $4\chi$ from its reference value $2/3$, leaving at least
+$1/2$. Its longitudinal coordinates are at least $v_*/2-\chi$ and its
+transverse input/output norms at most $\sqrt{s_0}+\chi$, giving angles
+at most $4\sqrt{s_0}/v_*=r/2$. At either rebound snapshot the full
+output changes by at most $4\chi$, hence its error changes by at most
+$16\chi$. The secant loses at most $32\chi\le\eta_*^2/32$, which is
+less than the reserve in Lemma~\ref{sbsep:reference-rebound}.
+This proves \eqref{sbsep:noisy-rebound}.
+The limitation concerning the weak concept is quantitative: throughout this
+window, transverse input and output Frobenius norms are each at most
+$\sqrt{s_0}+\chi$, so
+$|f_2(e_2,t)|\le(\sqrt{s_0}+\chi)^2\le2s_0$.
+By homogeneity this is also the coordinate-2 fitting fraction at
+$\mu_2e_2$. Thus the theorem does not hide a second learned family.
+
+\emph{The initialized decreasing event on the same primitive region.}
+Uniformly on both arcs, the first coordinate of the probe is in
+$[3r/4,5r/4]$. The bounded-noise event and the data caps give
+$C_x\le2$, $C_\xi\le2r$ and $J_\xi\ge r/(8\pi)$.
+For the last assertion use $cF(c)\ge c$ on cluster 1 and the crude
+negative bound $cF(c)\ge-1$ on cluster 2. Its numerator is at least
+\[
+ [(3r/4)(1-a_D)-a_D](1-a_D)-(\mu_2+a_D)^2\ge r/4.
+\]
+This estimate holds for both signs of the second probe coordinate.
+A net with chord mesh $r/(512\pi d)$ requires at most $G_*$ points
+per arc. Lemma~\ref{sbsep:directional-variance}, the width condition,
+and a union bound over both nets give failure probability at most
+$\delta/4$. Keep $\overline C=2$ for grid transport and the initial
+residual cost. The initialization cap in
+\eqref{sbsep:remaining-caps} is precisely the required one.
+Theorem~\ref{sbend:descent-clock} now gives the claimed deterministic
+initial drop. Since $A_0^2\le1/256$, $2\tau_{\rm spec}>1$ whereas
+$t_{\rm early}<1$, proving the strict ordering.
+The geometry, data and descent failures sum to less than $\delta$;
+no independence between their derived events is assumed.
+
+Finally apply the four-snapshot argument with the proven mass cap $4$
+at the four snapshots. It gives \eqref{sbsep:final-sector}.
+All unit probes in these sectors are at distance at least $3/4$ from
+every training sample under the displayed data caps, so the statement
+concerns extrapolation probes even if the selected sign is positive.
+
+\emph{Nonemptiness.}
+Choose $d,\delta,N,h$ first. The constants $v_*,b_*,Z_*,\nu$ do not
+depend on $\varepsilon$. As $\varepsilon\downarrow0$,
+$H=O(\log(1/\varepsilon))$, $\rho,\delta_c=O(\varepsilon^2H)$,
+$D_*=O(\varepsilon^3H^2)$ and
+$\epsilon_f=O(\varepsilon^3H)$, whereas $\eta_*^2$ is a positive
+constant times $\varepsilon^2$. Every initialization cap is therefore
+satisfied for sufficiently small positive $\varepsilon$. Then choose
+positive $\mu_2,a_D,\sigma_1,\sigma_2$ successively from
+\eqref{sbsep:data-caps}. The region is nonempty and all time, probability
+and endpoint budgets hold there simultaneously.
+\end{proof}
+
+\subsection{The lag remains of initialization scale after learned mass}
+
+This proof also identifies the lag profile; it does not assume damping
+has removed it. For $i\in I_+$ and $\tau_{\rm spec}\le\tau\le\tau_b$,
+put $q_i=B_{2i}/(Av_i)$. In the approximation,
+\begin{equation}\label{sbsep:lag-profile}
+ \zeta_i^\dagger(\tau)=
+ \arctan\left(q_i-\frac{(1-d_0)b_2}{A}\right)-\arctan q_i.
+\end{equation}
+Here $|q_i|\le r/4$, $d_0\le\sqrt{(1/4)/(1-s_0)}$, and
+$A\ge\sqrt{3/4}$. The mean-value theorem gives
+\[
+ \eta/5\le-s\zeta_i^\dagger\le2\eta.
+\]
+The reference comparison and the noisy parameter perturbation give
+\[
+ |\zeta_i-\zeta_i^\dagger|
+ \le\frac{8\sqrt{s_0}\rho}{v_*^2}
+       +\frac{3(\delta_c+D_*)}{v_*}+\frac{6\chi}{v_*}
+ \le\eta_*/20.
+\]
+Consequently the actual planar lag obeys the uniform learned-window bound
+\begin{equation}\label{sbsep:lag-lower}
+ \eta/8\le-s\zeta_i(t)\le3\eta
+ \qquad(t_{\rm spec}\le t\le t_b).
+\end{equation}
+Thus this trajectory retains a nonzero lag of order $|B_2v|$, inherited
+from initialization, after learning order-one strong mass. It is not a
+noise-generated lag. No gate-exit witness is used: all strong probe gates
+are on during the two endpoint snapshots. The decaying signed transverse
+coefficient in \eqref{sbsep:probe-reference} supplies the rebound.
+
+The scope question left by this result is exact: whether an initialized
+noisy many-neuron theorem with one learned strong cohort and
+initialization-dependent extreme concept separation is an acceptable
+narrowing, or whether the paper requires two learned families and/or a
+concept ratio bounded away from zero. The theorem above establishes the
+former mathematical result; it does not choose it as the paper's headline.
+
+\section{Quantitative audit: typical initialization, residual stability, and a signed endpoint limitation}
+\label{sbquant:scope}
+
+The preceding restricted theorem is retained unchanged as R0. This section
+does not assert R1 or R2. It proves two initialization improvements, a
+replacement for the exponential data-comparison bound, and an exact signed
+limitation of the all-active endpoint calculation. The robust-core event
+is not substituted for an all-neuron gate event without a proof.
+
+\subsection{A core retaining almost all initial longitudinal weight}
+
+Write $t_i=\widehat u_{i1}$, $y_i=\widehat u_{i2}$,
+$Q=\sum_i(t_i)_+^2$, $v_i=(t_i)_+/\sqrt Q$ on $I_+$, and set
+\[
+ I_{\rm core}=\{i:t_i\ge(8\sqrt d)^{-1}\}.
+\]
+\begin{lemma}[Robust initialization geometry]\label{sbquant:core}
+With failure probability at most $2e^{-h/64}+e^{-h/192}$,
+\begin{equation}\label{sbquant:core-event}
+ \frac{h}{4d}\le Q\le\frac hd,\qquad
+ |I_{\rm core}|\ge\frac h{48},\qquad
+ v_i\ge\frac1{8\sqrt h}\ (i\in I_{\rm core}),\qquad
+ \sum_{I_{\rm core}}v_i^2\ge\frac{15}{16}.
+\end{equation}
+In particular $s_0/(4d)\le A_0^2\le s_0/d$.
+For $0<\alpha<1$, with additional failure at most $\alpha$,
+\begin{equation}\label{sbquant:individual}
+ \max_i|B_{2i}|\le\varepsilon b_{\max},\qquad
+ b_{\max}=\min\left\{1,
+ 2\sqrt{\frac{\log(\sqrt2h/\alpha)}d}\right\}.
+\end{equation}
+The deterministic bound $\|B_{\cdot i}\|\le\varepsilon$ also holds.
+\end{lemma}
+\begin{proof}
+For $Y=d(t)_+^2$, $\mathbb EY=1/2$, $\mathbb EY^2\le3/2$.
+Spherical moments give
+$\mathbb E\exp(\lambda d t^2)\le(1-2\lambda)^{-1/2}$ for
+$0\le\lambda<1/2$. At $\lambda=1/10$ this implies
+$\Pr(Q\ge h/d)\le e^{-h/32}$.
+The elementary bound $e^{-x}\le1-x+x^2/2$ gives
+$\mathbb Ee^{-Y/10}\le0.9575$, whence
+$\Pr(Q\le h/(4d))\le(e^{1/40}0.9575)^h\le e^{-h/64}$.
+For $Z=dt^2$, $\mathbb EZ=1$, $\mathbb EZ^2\le3$.
+Paley--Zygmund and symmetry imply
+$\Pr(t\ge1/\sqrt{2d})\ge1/24$.
+This event is contained in the core. The multiplicative Chernoff bound
+therefore gives its count with failure at most $e^{-h/192}$.
+The stated coordinate bound follows from the upper bound for $Q$.
+The omitted longitudinal weight is at most
+$h/(64dQ)\le1/16$. Finally
+$\mathbb E\exp(dy_i^2/4)\le\sqrt2$ and a union bound prove
+\eqref{sbquant:individual}.
+\end{proof}
+
+\subsection{Anti-concentration of the actual dependent coefficient}
+
+\begin{lemma}[Finite-width typical transverse coefficient]
+\label{sbquant:smallball}
+For $u>0$, the actual initialization coefficient satisfies
+\begin{equation}\label{sbquant:smallball-bound}
+ \Pr\{|B_2v|<\varepsilon u\}
+ \le 2e^{-h/64}
+ +2u\sqrt{\frac{d+2}{\pi}}
+ +\frac{8\sqrt2}{\pi\sqrt h}.
+\end{equation}
+Here $Q=0$ is counted as a failure. For example, with
+$h\ge(64/\delta)^2$ and $0<\delta<1/4$, the choice
+\[
+ \eta_* =\frac{\delta\varepsilon}{32\sqrt{d+2}}
+\]
+has failure less than $\delta/8$. There is no negative power of $h$ in
+this lower bound.
+\end{lemma}
+\begin{proof}
+Use independent scalar summands, rather than incorrectly making $B_2$
+independent of $v$:
+\[
+ X_i=t_i y_i\mathbf1_{t_i>0},\qquad
+ B_2v=\varepsilon\frac{\sum_iX_i}{\sqrt Q}.
+\]
+Reflection in coordinate 2 and spherical moments give
+\[
+ \mathbb EX_i=0,\quad
+ \omega^2:=\mathbb EX_i^2=\frac1{2d(d+2)},\quad
+ \mathbb E|X_i|^3=\frac4{\pi d(d+2)(d+4)}.
+\]
+Consequently $\mathbb E|X_i|^3/\omega^3\le8\sqrt2/\pi$.
+The iid Berry--Esseen inequality with the conservative constant $1/2$
+gives Kolmogorov distance at most $4\sqrt2/(\pi\sqrt h)$.
+On $Q\le h/d$, the small-ball event is contained in
+\[
+ \left\{\left|\frac{\sum_iX_i}{\omega\sqrt h}\right|
+ <u\sqrt{2(d+2)}\right\}.
+\]
+The standard normal density is at most $(2\pi)^{-1/2}$.
+Two distribution-function errors and Lemma~\ref{sbquant:core} prove
+\eqref{sbquant:smallball-bound}. The numerical corollary follows by
+substitution. The Berry--Esseen constant used here is weaker than the
+proved bound $0.4756$ in I. Shevtsova,
+\emph{On the absolute constants in the Berry--Esseen type inequalities
+for identically distributed summands} (2011),
+\href{https://arxiv.org/abs/1111.6554}{arXiv:1111.6554}.
+\end{proof}
+
+If a dynamical comparison supplies $a_i\ge Av_i/2$ on the core and
+$A\ge\sqrt3/2$, its probe gates are positive as soon as
+\begin{equation}\label{sbquant:core-radius}
+ r\ge32\varepsilon\sqrt h\,b_{\max}.
+\end{equation}
+This is a core-only statement. It says neither that the other probe
+gates are on nor that their training gates persist. Core output-angle
+control additionally requires a columnwise bound on $D$; an input
+coordinate estimate alone does not establish it.
+
+\subsection{Training-residual stability replaces the generic exponential}
+
+\begin{lemma}[One-sided comparison on a common strong training pattern]
+\label{sbquant:stability}
+Let $\widehat\theta=(\widehat W,\widehat a)$ solve the rank-one reference
+flow in physical time, and let $\theta=(W,a)$ solve that same vector field
+plus a forcing of combined Frobenius norm at most $P(t)$. Include passive
+coordinates in the distance if they are forced. Assume the same fixed
+strong training pattern, and put
+\[
+ e=\|\theta-\widehat\theta\|,
+ \widehat R=\|\widehat W\widehat a-e_1\|.
+\]
+Then, in the upper-Dini sense,
+\begin{equation}\label{sbquant:distance-ode}
+ e'\le\tfrac12\widehat R e+\tfrac1{32}e^3+P(t).
+\end{equation}
+While $e\le\chi_*$, define
+\[
+ K(t)=\exp\left(\frac12\int_0^t\widehat R(v)\,dv
+                     +\frac{\chi_*^2t}{32}\right).
+\]
+Then $e(t)\le K(t)[e(0)+\int_0^tP(v)/K(v)\,dv]$.
+This conclusion makes no assertion about changing strong training gates.
+\end{lemma}
+\begin{proof}
+Set $F=Wa$, $\widehat F=\widehat W\widehat a$,
+$\Delta F=F-\widehat F$ and $Q_e=(W-\widehat W)(a-\widehat a)$.
+For $L(W,a)=\frac12\|Wa-e_1\|^2$, exact expansion gives
+\[
+ \langle\theta-\widehat\theta,\nabla L(\theta)-\nabla L(\widehat\theta)\rangle
+ =\|\Delta F\|^2+
+   \langle2(\widehat F-e_1)+\Delta F,Q_e\rangle.
+\]
+Since $\|Q_e\|\le e^2/2$, completing the square in $\|\Delta F\|$
+gives, in normalized reference time,
+$\frac12(e^2)'\le\widehat R e^2+e^4/16$.
+Physical time contributes the factor $1/2$. Add the forcing and divide
+by $e$, using the usual regularization at $e=0$.
+\end{proof}
+
+Under Lemma~\ref{sbsep:relative-comparison}, let
+\[
+ \Gamma=3\delta_c+\sqrt{s_0}(1+4\rho)+D_*.
+\]
+The reference residual obeys
+\[
+ \widehat R(2\tau)\le1-A(\tau)^2+\Gamma,
+ \qquad
+ \exp\left(\frac12\int_0^{2\tau}\widehat R\right)
+ \le\frac{A(\tau)}{A_0}e^{\Gamma\tau}.
+\]
+Indeed the longitudinal mass error is at most $3\delta_c$ and
+$\|Da\|\le\sqrt{s_0}(1+4\rho)+D_*$.
+Thus if $\Gamma H+\chi_*^2H/16\le\log2$, $e(0)=0$, and
+$P(t)\le P$, a sufficient bootstrap bound through $2\tau_b\le2H$ is
+\begin{equation}\label{sbquant:polynomial-comparison}
+ e(t)\le\frac{4HP}{A_0}
+ \le\frac{8H\sqrt d}{\sqrt{s_0}}P.
+\end{equation}
+In the R0 common-gate argument the separate forcing allowances are
+\[
+ P_s\le30a_D,\qquad P_w\le10(\mu_2+a_D)^2.
+\]
+The new estimate therefore improves the data comparison itself, not just
+the constant in $e^{20H}$. Strong-noise and weak-signal allowances remain
+different: the former enters linearly in the maximum sample displacement,
+the latter quadratically in its amplitude. All gate and stopping guards
+must still be closed.
+
+\subsection{An explicitly instantiated improvement that is still not R1}
+
+The following conservative variant of R0 is useful for locating the next
+loss. Keep its width condition and every reference comparison/rebound cap,
+but use
+\[
+ \beta=\frac{\delta}{32h\sqrt d},\quad
+ v_* =\frac{\delta}{32h^{3/2}},\quad
+ b_* =\frac{\delta}{32\sqrt{d+2}},\quad
+ \eta_* =\varepsilon b_*,\quad r=\frac{32\varepsilon}{v_*},
+\]
+\[
+ Z_* =\frac{32}{v_*b_*},\quad
+ \nu=\frac1{512Z_*^2},\quad
+ H=\frac12\log\frac{4d}{\nu s_0}.
+\]
+Here the minimum-coordinate event is deliberately retained only for this
+fully proved variant. It has failure at most $\delta/16$; combine it with
+Lemmas~\ref{sbquant:core}--\ref{sbquant:smallball} by a union bound.
+Require also $D_*\le\varepsilon$,
+$\Gamma H+\chi_*^2H/16\le\log2$, and set
+\[
+ \chi_* =\min\{1/32,\varepsilon\beta/8,\eta_*^2/1024,
+                   \eta_*v_*/240,\varepsilon/16\},\qquad
+ q_D=\frac{\chi_*\sqrt{s_0}}{16H\sqrt d}.
+\]
+Use the data caps of R0 with this $q_D$. The all-positive input probe
+gates follow from $ra_i\ge16\varepsilon>|B_{2i}|$.
+For output angles use
+$\|D_{\cdot i}\|\le\varepsilon+\sqrt{s_0}v_i+D_*$,
+not the global norm. Together with $a_i,c_i\ge3Av_i/4$ and the
+noisy perturbation cap, these give the stated $r/2$ cones.
+All output comparison estimates in the preceding proof remain valid
+because $r\ge8\sqrt{s_0}$. The original lag statement is not needed for
+this variant. Its four-snapshot, mass, and sector conclusions are the
+same as R0; the original theorem and its lag corollary are unchanged.
+
+For example the following values, rounded down for the data allowances,
+pass this entire modified ledger:
+\[
+\begin{array}{c|c@{\qquad}c|c}
+ d&2&\delta&0.1\\
+ N&2000&h&10^8\\
+ \varepsilon&10^{-77}&\mu_1&1\\
+ \mu_2&6\cdot10^{-122}&\sigma_1=\sigma_2&10^{-243}\\
+ a_D&10^{-242}&H&215.574142\text{ (upper bound)}\\
+ \eta_*&1.5625\cdot10^{-80}&b_{\rm reb}&3.0517578125\cdot10^{-161}
+\end{array}
+\]
+One may certify $\Delta_{\rm swing}\ge3.6\cdot10^{-278}$ radians.
+The ratios are $\mu_2/\mu_1=6\cdot10^{-122}$,
+$\sigma/\mu_1=10^{-243}$, and $\sigma/\varepsilon=10^{-166}$.
+This is explicitly \emph{not} a useful noisy R1 regime. It shows that
+removing the generic exponential and repairing anti-concentration alone
+do not repair the endpoint proof. In this variant the binding initialization
+loss is the scalar-reference output cap, not the data exponential.
+
+\subsection{The inactive background has an adverse sign}
+
+For the old all-active probe let $g=-G_1$. In dimension two,
+$C=\|B_2\|^2-\eta^2\ge0$, and $sG_2\ge0$ because a stationary neuron
+with negative first coordinate can activate only with transverse sign $s$.
+The approximate endpoint secant therefore has the following \emph{upper}
+bound, not merely a failed lower bound.
+
+\begin{proposition}[Signed limitation of the all-active scalar endpoints]
+\label{sbquant:signed-obstruction}
+Suppose $d=2$, $s_0\le1/256$, $r\le1/8$, $z=r/\eta\ge8$, and take
+the two scalar endpoints of \eqref{sbsep:snapshot-times}. For the complete
+all-active approximate output \eqref{sbsep:probe-reference},
+\begin{equation}\label{sbquant:signed-upper}
+ E_b^\dagger-E_a^\dagger
+ \le-\frac78g\eta+3\eta^{3/2}\sqrt r.
+\end{equation}
+In particular these endpoints have \emph{negative} secant if
+$g>4\sqrt{\eta r}$. This proposition concerns the stated scalar
+approximation and endpoints; it is not an impossibility result for the
+true network or other probe sectors.
+\end{proposition}
+\begin{proof}
+At the first endpoint the full longitudinal residual is $G_1=-g$.
+Its increment at the second is
+$d_L=\eta(A_bk-\nu z)$, with $7\eta/8\le d_L\le\eta$.
+Its squared-error secant is exactly $-gd_L+d_L^2/2$.
+The transverse secant is
+\[
+ \eta^2(T_a-T_b)(k-kC-sG_2)
+ +\tfrac12\eta^4(T_b^2-T_a^2)
+ \le\eta^2T_a.
+\]
+The first endpoint identity gives
+$T_a^2=A_ak(A_az+k)^2/[z(1-A_0^2)]\le4z$.
+Combining these estimates and $z\ge8$ proves
+\eqref{sbquant:signed-upper}.
+\end{proof}
+
+The scale of $g$ is not hypothetical. For isotropic initialization in any
+$d\ge2$ and either sign, rotational moments imply
+\[
+ \mathbb E[t\mathbf1_{t<0}(rt+sky)_+]
+ \le-\frac{k}{2\pi d}+\frac r{2d}
+ \le-\frac1{4\pi d}\quad(0<r\le1/8).
+\]
+The first inequality compares with $r=0$ and uses the ReLU Lipschitz
+bound; $\mathbb E|ty|=2/(\pi d)$. Each summand lies in $[-1/2,0]$.
+Hoeffding and a union bound over the two signs consequently give
+\begin{equation}\label{sbquant:background-size}
+ g\ge\frac{s_0}{8\pi d}
+ \quad\text{with failure at most }2e^{-h/(8\pi^2d^2)}.
+\end{equation}
+Thus the all-active scalar endpoint requires a comparison of
+$s_0/d$ against $\sqrt{\eta r}$, even after retaining the complement
+\emph{with its sign}. With $\eta\asymp\varepsilon$ and
+$r\asymp\sqrt{s_0}$ this is a genuine $s_0\lesssim h^{-1/2}$ scale
+constraint (up to the displayed constants). Increasing width at fixed
+$s_0$ does not remove it. This is different from proving the full noisy
+theorem impossible.
+
+\subsection{What changes when only the core's probe gates are fixed}
+
+For the same approximate parameters, put
+$q_i=rAv_i+skB_{2i}$ and $\widehat w_i=(Av_i,D^\dagger_{\cdot i})$.
+Without assuming all positive neurons are active, the exact forward
+correction to \eqref{sbsep:probe-reference} is
+\begin{equation}\label{sbquant:clipping-correction}
+ \Gamma_{\rm clip}(A)=\sum_{i\in I_+}\widehat w_i(-q_i)_+.
+\end{equation}
+The core contributes zero when \eqref{sbquant:core-radius} holds.
+The correction to the endpoint secant is exactly
+\begin{align}\label{sbquant:clipping-secant}
+ &\langle f_b^\dagger-\xi,\Gamma_{{\rm clip},b}\rangle
+ -\langle f_a^\dagger-\xi,\Gamma_{{\rm clip},a}\rangle\\
+ &\hspace{15mm}
+ +\tfrac12(\|\Gamma_{{\rm clip},b}\|^2-
+                    \|\Gamma_{{\rm clip},a}\|^2).\nonumber
+\end{align}
+Neither the core count nor its $15/16$ longitudinal share determines this
+signed quantity. Dropping it is not a legitimate robust-core repair.
+
+There is, however, an exact alternative mechanism illustrating why this
+term should not automatically be treated as error. Consider a planar
+reflection-symmetric initialization for which $Bv=0$. On the rank-one
+dataset the exact solution is $a=c=Av$, $D=B$. Define
+\[
+ P=\sum_{I_+}v_i(B_{2i})_+.
+\]
+Reflection in the first coordinate gives $G_1=-A_0P$ at $\xi=e_2$,
+and the full output at this probe is exactly
+\begin{equation}\label{sbquant:coherent-output}
+ f(e_2,A)=P(A-A_0)e_1+K e_2,
+ \qquad K=\sum_i(B_{2i})_+^2.
+\end{equation}
+For $A_0\le1/4$, $A_a=\sqrt{3/4}$ and $A_b=\sqrt{9/10}$,
+\begin{equation}\label{sbquant:coherent-rebound}
+ E_b-E_a
+ =\frac{P^2}{2}(A_b-A_a)(A_b+A_a-2A_0)
+ \ge\frac{P^2}{20}>0.
+\end{equation}
+All positive neurons already carry mass $A^2\ge3/4$ in this window.
+For isotropic angular averaging $P=\sqrt{s_0}/(2\pi)$ in dimension two,
+so the gain has scale $s_0=h\varepsilon^2$, rather than $\varepsilon^2$.
+This exact symmetric-reference calculation is \emph{not} yet a
+high-probability noisy initialized theorem. The pure axis probe also
+does not have strict initial descent by this calculation alone. Extending
+to a positive-first-coordinate arc and transferring the reference to iid
+initialization/noisy data are separate obligations.
+
+The user has authorized pursuing the partly active probe mechanism with
+its $h\varepsilon^2$ scale, while retaining R0. The next section develops
+this route. It is not Scope A, O3, or a requirement that the weak family
+be learned before the rebound.
+
+\subsection{A rank-one comparison that permits marginal gate changes}
+
+\begin{lemma}[Transverse-residual comparison without a minimum coordinate]
+\label{sbquant:residual-comparison}
+For the exact rank-one dataset, retain all initially positive neurons,
+including those that subsequently reach zero. Put
+\[
+ R=Da,\quad u=\|a\|,\quad p=c-a,\quad
+ z=\|R\|/u,\quad l=\|p\|/u,\quad W=z+l,
+ \quad b_0=\|Bv\|.
+\]
+Suppose $s_0\le1$, $A^2\le1-\nu$ on $[0,H]$, and define
+\[
+ \overline W=b_0e^{(\sqrt{s_0}+0.02)H},\qquad
+ q_*=2H\overline W.
+\]
+If $\overline W<\min\{0.01,\nu/16\}$ and $q_*<\nu/8$, then
+through this interval
+\begin{align}
+ W&\le\overline W,&
+ |\log(u/A)|&\le q_*,&
+ \|a/u-v\|&\le q_*,\label{sbquant:residual-controls}\\
+ \|a-Av\|&\le3Aq_*,&
+ \|c-Av\|&\le A(3q_*+2\overline W),&
+ \|D-B\|_F&\le H\overline W.\nonumber
+\end{align}
+No positive minimum of the initial coordinates is assumed. The comparison
+retains every neuron and permits zero strong training coordinates.
+\end{lemma}
+\begin{proof}
+An initially negative first coordinate is stationary on the rank-one
+dataset. An initially positive one cannot become negative: the derivative
+of its negative part is zero almost everywhere on the negative half-line.
+Thus $a\ge0$ on $I_+$, even if some coordinates reach zero. Let
+$\mathcal A$ be the diagonal compatible selector. Almost everywhere
+$\mathcal A a=a$, and the exact system is
+\[
+ a'=\mathcal A(kc-D^\top R),\quad c'=ka,\quad D'=-Ra^\top,
+ \qquad k=1-a^\top c.
+\]
+The Frobenius norm of $D$ is nonincreasing. With
+$\theta=a^\top p/u^2$, direct differentiation gives
+\begin{align*}
+ g:=u'/u&=k(1+\theta)-z^2,\\
+ p'&=-k\mathcal A p+\mathcal A D^\top R,\\
+ R'&=(k-u^2)R+kD\mathcal A p-D\mathcal A D^\top R.
+\end{align*}
+While $0\le k\le1$ and $g\ge0$, the dissipative terms give
+\[
+ l'\le-gl+\sqrt{s_0}z,\qquad
+ z'\le(-u^2-k\theta+z^2)z+k\sqrt{s_0}l.
+\]
+Consequently $W'\le\sqrt{s_0}W+W^2+W^3$ and $W(0)=b_0$.
+For $W\le0.01$, scalar comparison gives $W\le\overline W$.
+Moreover
+\[
+ g=1-u^2+(1-2u^2)\theta-u^2\theta^2-z^2.
+\]
+On $u^2\le1$, the error after $1-u^2$ has magnitude at most
+$W+2W^2\le2\overline W$.
+The restoring term in $(\log(u/A))'$ therefore gives the stated bound.
+Also
+$\|(a/u)'\|\le l+\sqrt{s_0}z\le2\overline W$.
+The estimates on $a,c$ follow, and integrating
+$\|D'\|_F=u^2z$ proves the last bound.
+
+For completeness stop also at $u^2=1-\nu/2$, $k=0$, or $g=0$.
+The logarithmic bound excludes the first face because
+$(1-\nu)e^{\nu/4}<1-\nu/2$.
+Then $k=1-u^2(1+\theta)\ge\nu/2-\overline W>\nu/4$,
+and $g\ge k(1-\overline W)-\overline W^2>0$.
+The strict caps exclude every stopping face. At a zero coordinate there
+is no stopping condition and no division by that coordinate.
+\end{proof}
+
+\begin{proposition}[Full-network coherent endpoint with explicit charges]
+\label{sbquant:coherent-finite}
+In dimension two, under Lemma~\ref{sbquant:residual-comparison}, set
+\[
+ P=\sum_{I_+}v_i(B_{2i})_+,\quad
+ C_0=\varepsilon^2\sum_i t_i(y_i)_+,\quad
+ K=\varepsilon^2\sum_i(y_i)_+^2,\quad
+ B_+=\left(\sum_{I_+}(B_{2i})_+^2\right)^{1/2}.
+\]
+Let $A_a=\sqrt{3/4}$ and $A_b=\sqrt{9/10}$, with $A_0<A_a$.
+At $\xi=e_2$, define
+\[
+ L_j=P(A_j-A_0)+C_0,\quad
+ e_{1,j}=A_j(3q_*+2\overline W)B_+,\quad
+ e_2=H\overline W B_+.
+\]
+The exact rank-one network satisfies
+\begin{align}\label{sbquant:coherent-finite-gap}
+ E_b-E_a\ \ge\ &\frac{P^2}{2}(A_b-A_a)(A_b+A_a-2A_0)
+                  -|C_0|P(A_b-A_a)\\
+ &-\sum_{j=a,b}\left(|L_j|e_{1,j}+\frac{e_{1,j}^2}{2}
+                   +|K-1|e_2+\frac{e_2^2}{2}\right).\nonumber
+\end{align}
+This includes all inactive neurons and every changing strong gate.
+\end{proposition}
+\begin{proof}
+The input transverse coordinates are constant, so probe activations at
+$e_2$ are exactly $(B_{2i})_+$, even when strong training gates change.
+The comparison output $(L_j,K)$ follows from the definitions; the inactive
+first-coordinate contribution is $C_0-A_0P$.
+The two coordinate errors are bounded separately by
+Lemma~\ref{sbquant:residual-comparison}.
+Expand the two squared residuals coordinate by coordinate. In particular
+the first-coordinate comparison pays $|L_j|e_{1,j}$, rather than replacing
+its small residual by the full transverse residual of order one.
+\end{proof}
+
+\section{A noisy coherent-endpoint theorem at fixed aggregate initialization}
+\label{sbwide:scope}
+
+This continuation uses probes inside the strong family's angular spread.
+It preserves the preceding fluctuation-scale theorem. Its width is still
+very large and its allowed data noise is small; those limitations are
+reported numerically, rather than hidden in an asymptotic existence claim.
+All statements in this section concern $d=2$ and equal cluster weights.
+Time $\tau=t/2$ is used in the dynamical estimates.
+
+\subsection{A gate-robust noisy comparison}
+
+Write $a,c$ for the full first-coordinate input and output vectors and
+$B,D$ for the second-coordinate rows. Set
+\begin{gather*}
+ a_+=(a_i)_+,\qquad u=\|a_+\|,\qquad p=c-a,\qquad
+ m=c^\top a_+,\qquad k=1-m,\\
+ R=Da_+,\qquad z=|R|/u,\qquad l=\|p\|/u,\qquad W=z+l.
+\end{gather*}
+Thus the actual output at $e_1$ is $(m,R)$, without any block reduction.
+
+\begin{lemma}[Axis comparison with actual noisy training selectors]
+\label{sbwide:axis-system}
+Suppose every strong sample is within $a_D\le10^{-3}$ of $e_1$, every
+weak sample within $a_D$ of $\mu_2e_2$, and $0<\mu_2\le10^{-2}$.
+On a stopped interval with $S\le2$, $0\le k\le1$, and $|R|\le1$, put
+\[
+ P=30\{a_D+(\mu_2+a_D)^2\}.
+\]
+There is a diagonal matrix $\mathcal A\in[0,1]^{h\times h}$ such that
+almost everywhere
+\begin{align}\label{sbwide:perturbed-axis}
+ a'&=ka_++k\mathcal A p-\mathcal A D^\top R+E_a,
+ &c'&=ka_++E_c,\\
+ D'&=-Ra_+^\top+E_D,
+ &B'&=E_B,\nonumber
+\end{align}
+where every error has Frobenius norm at most $P$ and every neuronwise
+error has norm at most $P\|u_i\|$. Furthermore
+\[
+ \|(\mathcal A-I)a_+\|\le a_D\sqrt S.
+\]
+No common strong-sample mask is assumed. The weak selectors are arbitrary.
+\end{lemma}
+\begin{proof}
+Let $\mathcal A_{ii}$ be the empirical strong-cluster mean of its actual
+selector. Write $f(e_1)=(m,R)$. ReLU Lipschitzness gives
+\[
+ \|f(x)-f(e_1)\|\le Sa_D,\qquad
+ |(u_i^\top x)_+-(a_i)_+|\le a_D\|u_i\|.
+\]
+The target-minus-output residual changes by at most $(1+S)a_D$.
+At $e_1$ its norm is at most $\sqrt2$ on the stopped interval.
+The output-gradient error on the strong cluster is therefore at most
+$[3(1+a_D)+\sqrt2]a_D\|u_i\|<5a_D\|u_i\|$.
+The first input-gradient error before replacing $\mathcal A a$ by $a_+$
+has the same bound. A changed gate implies $|a_i|\le a_D\|u_i\|$;
+thus $|\mathcal A_{ii}a_i-(a_i)_+|\le a_D\|u_i\|$.
+The transverse input-gradient norm is at most
+$(\sqrt2+3a_D)a_D\|u_i\|$.
+On a weak sample, $\|x-f(x)\|\le3\|x\|$, so each input or output
+gradient norm is at most $3(\mu_2+a_D)^2\|u_i\|$.
+Full balance permits the same bound for input and output weights.
+Combining these estimates gives each error at most
+$9\{a_D+(\mu_2+a_D)^2\}\|u_i\|$.
+Summing squares and using $\sqrt S\le\sqrt2$ proves both asserted
+bounds with the stated reserve. The selector estimate follows from the
+same changed-gate implication.
+\end{proof}
+
+Define the scalar logistic solution $A'=A(1-A^2)$ with
+$A_0=\|(a(0))_+\|$, and put $v=(a(0))_+/A_0$.
+The coordinates of $v$ outside $I_+$ are zero. All initial neurons have
+norm $\varepsilon$, and $s_0=h\varepsilon^2$.
+
+\begin{lemma}[Relative noisy bounds without a minimum coordinate]
+\label{sbwide:relative}
+Let $A_{0,-}\le A_0$, and let $A^2\le1-\nu$ through a terminal time
+$T\le H$. Define
+\begin{align*}
+ \overline B&=\sqrt{s_0}+PH,\qquad b_0=\|B(0)v\|,\\
+ \overline W&=(b_0+10PH/A_{0,-})e^{(\overline B+0.02)H},\\
+ q_*&=H(2\overline W+3P/A_{0,-}),\\
+ C_c&=3q_*+(H+1)\overline W+PH.
+\end{align*}
+Suppose $\overline B\le0.3$, $\overline W<\min\{0.01,\nu/16\}$,
+$q_*<\nu/8$, $3P/A_{0,-}<\nu/16$, and
+\begin{equation}\label{sbwide:mass-stop}
+ 1-\nu/2+
+ \{\sqrt{s_0}+H[(1+\overline B)\overline W+P]\}^2
+ +\overline B^2<2.
+\end{equation}
+Then, up to $T$,
+\begin{align}\label{sbwide:relative-bounds}
+ W&\le\overline W,& |\log(u/A)|&\le q_*,&
+ \|a_+/u-v\|&\le q_*,\\
+ \|a_+-Av\|&\le3Aq_*,&
+ \|c-(Av+a(0)_-)\|&\le C_c,&
+ \|D-B(0)\|&\le H(\overline W+P),\nonumber\\
+ \|B-B(0)\|&\le PH,&\|D\|&\le\overline B,& S&<2.\nonumber
+\end{align}
+Here $a(0)_-=(\min(a_i(0),0))_i$. The same bounds hold with $b_0$
+replaced by any deterministic upper bound.
+\end{lemma}
+\begin{proof}
+Let $\mathcal G$ denote the diagonal selector for $a_+$, so
+$\mathcal G a_+=a_+$. The chain rule for absolutely continuous ReLU
+coordinates is used almost everywhere. Equations
+\eqref{sbwide:perturbed-axis} imply
+\[
+ p'=-k\mathcal A p+\mathcal A D^\top R+E_c-E_a,
+\]
+\[
+ R'=(k-u^2)R+kD\mathcal G\mathcal A p
+ -D\mathcal G\mathcal A D^\top R+E_Da_++D\mathcal G E_a.
+\]
+The last quadratic term is dissipative. With
+$\theta=a_+^\top p/u^2$ and $g=u'/u$, the selector bound gives
+\[
+ g=k(1+\theta)-z^2+E_g,
+ \qquad |E_g|\le P(1+l+z)/u.
+\]
+In particular
+\[
+ g=1-u^2+(1-2u^2)\theta-u^2\theta^2-z^2+E_g.
+\]
+While $g\ge0$, $u\ge A_{0,-}/2$, $u^2\le1-\nu/2$, and
+$W\le0.01$, the same dissipative calculation as in
+Lemma~\ref{sbquant:residual-comparison} gives
+\[
+ W'\le(\overline B+0.02)W+10P/A_{0,-}.
+\]
+The initial value is $b_0$. The forcing after $1-u^2$ in $g$ is at most
+$2\overline W+3P/A_{0,-}$ in absolute value. The restoring logarithmic
+comparison and the projected directional equation give the bounds for
+$\log(u/A)$ and $a_+/u$.
+The bounds exclude $u^2=1-\nu/2$, $u=A_{0,-}/2$, $k=0$, and $g=0$
+exactly as in the preceding rank-one proof; at the last face use the
+additional $3P/A_{0,-}$ reserve.
+
+The contraction in $D'=-Ra_+^\top+E_D$ gives
+$\|D\|\le\sqrt{s_0}+PH$, and integration gives the two displacement
+bounds. For the full $c$ comparison, on $c_i<0$ one has
+$(a_i)_+\le|p_i|$. Therefore
+$\|c_- -a(0)_-\|\le H(\overline W+P)$, while
+$\|c_+-a_+\|\le\|p\|\le\overline W$.
+This proves the asserted $C_c$ bound without an extra factor of $H$.
+On $a_i<0$, its derivative in \eqref{sbwide:perturbed-axis} has no
+$ka_+$ term. Hence
+\[
+ \|a_-\|\le\sqrt{s_0}+H[(1+\overline B)\overline W+P].
+\]
+Together with $\|B\|\le\overline B$, condition
+\eqref{sbwide:mass-stop} excludes the final norm stopping face.
+All estimates include neurons whose coordinate signs change.
+\end{proof}
+
+\subsection{A fixed initialization cohort at learned mass}
+
+In the planar initialization write $\widehat u_i=(t_i,y_i)$ and take
+$I_C=\{t_i\ge|y_i|\}$. Its angular aperture is $\pi/2$.
+Define the following deterministic charges from Lemma~\ref{sbwide:relative}:
+\begin{align*}
+ M_*&=4q_*+2\overline W,& V_*&=H(M_*+\overline W+P),\\
+ J_D&=e^{V_*}H(\overline W+P)/A_{0,-},&
+ J_B&=e^{V_*}HP/A_{0,-},\\
+ J_p&=H(1+J_D)\overline W+2e^{V_*}HP/A_{0,-},\\
+ \Gamma_C&=e^{M_*H}-1+
+ \sqrt2e^{2M_*H}H\{J_p+(1+J_D)\overline W+Pe^{V_*}/A_{0,-}\}.
+\end{align*}
+
+\begin{lemma}[Core holding from per-neuron estimates]
+\label{sbwide:core-holding}
+Suppose the preceding estimates hold, $\Gamma_C<1/4$, and
+\[
+ \frac{1-\Gamma_C}{\sqrt2}>a_De^{V_*}.
+\]
+Then all strong noisy training gates of $I_C$ stay active and
+\[
+ a_i\ge(1-\Gamma_C)A\varepsilon t_i/A_0,\qquad
+ |p_i|\le\varepsilon J_p,\qquad
+ |B_i|\le\varepsilon(|y_i|+J_B),\qquad
+ |D_i|\le\varepsilon(|y_i|+J_D).
+\]
+If $\sum_{I_C}v_i^2\ge\omega_C$, its longitudinal learned mass is at least
+\begin{equation}\label{sbwide:core-mass}
+ A^2\omega_C(1-\Gamma_C)^2-\sqrt{s_0}J_p.
+\end{equation}
+On $A\ge A_{\rm spec}$, its input and output tangent-angle bounds are
+respectively
+\[
+ \frac{A_0}{A_{\rm spec}}
+ \frac{1+\sqrt2J_B}{1-\Gamma_C},\qquad
+ \frac{A_0}{A_{\rm spec}}
+ \frac{1+\sqrt2J_D}
+ {1-\Gamma_C-\sqrt2 A_0J_p/A_{\rm spec}},
+\]
+provided the last denominator is positive.
+\end{lemma}
+\begin{proof}
+The neuronwise residual matrix has norm at most
+$k+|R|+P$ on the stopped interval: the strong residual contributes
+$k+|R|$, and the same data estimates as in
+Lemma~\ref{sbwide:axis-system} absorb the remaining terms.
+Full balance thus gives
+\[
+ \|u_i\|=\|w_i\|\le\varepsilon\frac A{A_0}e^{V_*}.
+\]
+Here $|m-A^2|\le M_*$ follows from \eqref{sbwide:relative-bounds},
+and $\int(1-A^2)=\log(A/A_0)$.
+Integrating the per-neuron $B,D,p$ equations gives $J_B,J_D,J_p$.
+Stop the core only when a strong noisy gate first ceases to be active.
+Before that time,
+$a_i'=ka_i+kp_i-D_iR+E_{a,i}$.
+The integrating factor for $k$ is between
+$(A/A_0)e^{-M_*H}$ and $(A/A_0)e^{M_*H}$.
+Variation of constants and $t_i\ge1/\sqrt2$ give the displayed
+relative error $\Gamma_C$.
+The gate reserve follows because its preactivation is at least
+$a_i-a_D\|u_i\|$; the stated inequality makes it strictly positive.
+For the mass bound use $c_i=a_i+p_i$ and
+$\sum_{I_C}|a_i|\le\sqrt h\|a_+\|\le\sqrt h$.
+Finally $|y_i|\le t_i$ on this cohort proves the two angle bounds.
+\end{proof}
+
+\subsection{One common, explicitly checked parameter regime}
+
+\begin{theorem}[Noisy planar many-neuron coherent rebound]
+\label{sbwide:theorem}
+Let $h\ge10^{10}$, initialize independently and uniformly on the planar
+unit circle with balanced weights of norm
+$\varepsilon=\sqrt{0.04/h}$, and train on $N=2000$ independent samples,
+half from each of the two isotropic planar Gaussian clusters with
+\[
+ \mu_1=1,\qquad \mu_2=10^{-5},\qquad
+ \sigma_1=\sigma_2=10^{-11}.
+\]
+With probability at least $0.9$, there is a fixed initialization cohort
+$I_C$ of at least $0.24h$ neurons and times
+\[
+ 0<t_{\rm early}<t_{\rm spec}<t_a<t_b<7
+\]
+with the following properties.
+
+Throughout $[t_{\rm spec},t_b]$, every cohort member's input and output
+angle has absolute value at most $0.13$ radians, and
+\[
+ \sum_{i\in I_C}u_{i1}w_{i1}\ge0.55.
+\]
+The whole-network mass is at most $2$ through $t_b$, and
+$|f_2(e_2,t)|<0.011$ there; in particular the weak concept is not learned
+to order-one fitting fraction.
+
+On the deterministic probe arc
+\[
+ \xi_\theta=(\sin\theta,\cos\theta),\qquad
+ |\theta-\arcsin(2\cdot10^{-5})|\le5\cdot10^{-6},
+\]
+the initial error derivative is at most $-10^{-8}$ almost everywhere
+for $0\le t\le10^{-8}$. Thus $t_{\rm early}=5\cdot10^{-9}$ supplies
+a uniform drop $a_{\rm dec}=5\cdot10^{-17}$.
+At the center of this arc,
+\[
+ E(\xi,t_b)-E(\xi,t_a)\ge3\cdot10^{-5}.
+\]
+On an open arc of angular width $2\cdot10^{-18}$ centered there,
+the initial drop is at least $2.5\cdot10^{-17}$ and the
+post-specialization rebound at least $1.5\cdot10^{-5}$.
+Every such error has an interior minimum on $[0,t_b]$; this does not
+assert that its minimum occurs after specialization.
+\end{theorem}
+
+\begin{proof}
+\emph{Common initialization and sample event.}
+Set $s_0=0.04$ and use the following planar empirical events:
+\begin{align*}
+ &Q/h\in[0.249,0.251],\qquad
+ h^{-1}\sum(t_i)_+(y_i)_+\in[0.077,0.082],\\
+ &\left|h^{-1}\sum t_i(y_i)_+\right|\le10^{-4},\qquad
+ h^{-1}\sum(y_i)_+^2\in[0.249,0.251],\\
+ &|I_C|\ge0.24h,\qquad h^{-1}\sum_{I_C}t_i^2\ge0.202,
+ \qquad |B(0)v|\le2\varepsilon.
+\end{align*}
+The respective population means are $1/4$, $1/(4\pi)$, zero, $1/4$,
+$1/4$, and $1/8+1/(4\pi)$ for the first six quantities.
+For the first six events the scalar ranges are at most $2$ and their
+mean-to-threshold distances are at least $10^{-4}$. Hoeffding bounds
+their total failure by $12e^{-h\,10^{-8}/2}<0.001$ at the stated
+widths. For the last event use the same iid scalar sum as in
+Lemma~\ref{sbquant:smallball}, now for an upper tail. On $Q\ge0.249h$,
+the threshold for its variance-normalized sum is
+$8\sqrt{0.249}>3.99$. The normal two-sided tail plus two
+Berry--Esseen errors is below $0.001$. No independence between these
+events is assumed. The cohort's normalized longitudinal share exceeds
+$0.202/0.251>0.80$.
+
+The sample event $\max\|x^{(k)}-\mu_ke_k\|\le a_D=10^{-10}$ has failure
+at most $2000e^{-50}<0.001$, by the planar Gaussian radial tail.
+The additional initialization event for initial descent below costs
+$0.005$. The union of all failures is less than $0.1$.
+
+\emph{Dynamical ledger and learned mass.}
+Take $H=3.5$, $\nu=0.1$,
+$A_{0,-}=\sqrt{0.249s_0}$ and $A_{0,+}=\sqrt{0.251s_0}$.
+Define the reached times by $A^2=0.7,0.75,0.9$, respectively;
+the last normalized time is at most
+$\frac12\log\{9(1-A_{0,-}^2)/A_{0,-}^2\}<3.5$.
+All subsequent bounds improve as $h$ increases, so it suffices to use
+$h=10^{10}$ and $b_0\le2\varepsilon=4\cdot10^{-6}$ in the ledger.
+Direct substitution in the preceding lemmas gives the safe upper bounds
+\[
+\begin{array}{c|c@{\qquad}c|c}
+ P&6.001\cdot10^{-9}&\overline W&1.319\cdot10^{-5}\\
+ q_*&9.30\cdot10^{-5}&C_c&3.382\cdot10^{-4}\\
+ M_*&3.985\cdot10^{-4}&V_*&1.442\cdot10^{-3}\\
+ J_D&4.64\cdot10^{-4}&J_B&2.11\cdot10^{-7}\\
+ J_p&4.67\cdot10^{-5}&\Gamma_C&1.695\cdot10^{-3}.
+\end{array}
+\]
+Every stopping reserve is strict. The left side of
+\eqref{sbwide:mass-stop} is less than $1.031$.
+Equation~\eqref{sbwide:core-mass} is greater than $0.558$, and the
+larger angle bound is less than $0.120$ radians. These imply the stated
+mass and cone with reserve, throughout the whole learned window.
+
+\emph{Endpoint, including every neuron.}
+Let $P_\xi=\sum_{I_+}v_i(B_i(0))_+$,
+$C_0=\varepsilon^2\sum_i t_i(y_i)_+$, and
+$K=\varepsilon^2\sum_i(y_i)_+^2$.
+The comparison output at $e_2$ is
+\[
+ (L_j,K),\qquad L_j=P_\xi(A_j-A_0)+C_0.
+\]
+The full actual coordinate errors at either snapshot are bounded by
+\[
+ e_1=C_c\sqrt{K_{\max}}+\sqrt2PH<3.392\cdot10^{-5},
+ \quad
+ e_2=H(\overline W+P)\sqrt{K_{\max}}+\overline BPH
+       <4.64\cdot10^{-6},
+\]
+where $K_{\max}=0.251s_0$. These bounds use the actual input row
+$B(\tau)$ and its Lipschitz ReLU change, not fixed probe gates.
+The moment event gives
+\[
+ P_{\xi,-}=\sqrt{s_0}\frac{0.077}{\sqrt{0.251}},\qquad
+ P_{\xi,+}=\sqrt{s_0}\frac{0.082}{\sqrt{0.249}},\qquad
+ |C_0|\le4\cdot10^{-6}.
+\]
+Expanding coordinatewise as in
+Proposition~\ref{sbquant:coherent-finite}, the uncharged endpoint gain
+exceeds $6.302\cdot10^{-5}$, and its complete coordinate-error charge
+is less than $1.109\cdot10^{-5}$. Hence the actual secant at $e_2$
+exceeds $5.193\cdot10^{-5}$.
+The same output estimate at every time, with $A\le\sqrt{0.9}$,
+gives $|f_2(e_2,t)|\le K_{\max}+e_2<0.011$.
+
+At either endpoint and $0\le\theta\le2.5\cdot10^{-5}$,
+\[
+ |f_1(\xi_\theta)-\sin\theta|<0.029,
+ \qquad |f_2(\xi_\theta)-\cos\theta|<1.011.
+\]
+The spatial derivatives of these residual coordinates have absolute
+bounds $3$ and $\overline B\sqrt2+2.5\cdot10^{-5}<0.283$, respectively.
+Thus $|\partial_\theta E|<0.4$ almost everywhere. Spatial absolute
+continuity transfers the two-snapshot gap to the prescribed center,
+losing at most $0.8\arcsin(2\cdot10^{-5})<1.601\cdot10^{-5}$.
+The remaining gap exceeds $3\cdot10^{-5}$.
+
+\emph{Uniform initial decrease on the same arc.}
+Put $m_0=s_0/4=0.01$ and $\gamma=0.99$.
+For a deterministic unit direction $v$, the scalar
+$Y_j=\widehat u_j(\widehat u^\top v)_+$ has mean $v_j/4$,
+variance $(1+v_j^2)/16\le1/8$, and centered absolute bound $2$.
+Apply two-sided Bernstein to both coordinates at 11 equally spaced
+angles on the probe arc and at $e_1,e_2$. With
+$\ell=\log(10400)$, failure is at most $0.005$ and the vector error
+at these points is at most
+\[
+ \sqrt2s_0\left\{\sqrt{\frac\ell{4h}}+
+                         \frac{4\ell}{3h}\right\}<8.61\cdot10^{-7}.
+\]
+The residual map $f_0(v)-m_0v$ is $s_0+m_0=0.05$ Lipschitz.
+Transport from the grid therefore bounds its error by $9\cdot10^{-7}$
+on the full probe arc and the normalized strong samples. For the
+normalized weak samples the bound is $1.9\cdot10^{-6}$, since their
+distance from $e_2$ is at most $2a_D/\mu_2$.
+
+The mass bound $S(t)\le s_0e^{2\lambda t}$ with $\lambda\le1$
+gives $S\le0.04000001$ on $0\le t\le10^{-8}$.
+Each of the two parameter displacements has norm at most $0.21t$;
+hence $\|W-U\|_F\le0.42t$, $\|f_t(v)-f_0(v)\|\le0.1t$ for unit $v$,
+and each ReLU-product sum below changes by at most $0.1t$.
+For unit $\xi,v$ write
+\[
+ c=\xi^\top v,\qquad
+ L=\sum_i(u_i^\top\xi)_+(u_i^\top v)_+.
+\]
+Replacing $W$ by $U$ only in the second term of the exact instantaneous
+kernel gives, if both residual errors relative to $\gamma I$ are at most
+$\delta_f$,
+\begin{align*}
+ \langle\xi-f_t(\xi),K_t(\xi,v)(v-f_t(v))\rangle
+ \ge\ &2\gamma^2cL-(L+cS)(2\gamma\delta_f+\delta_f^2)\\
+ &-c(\|W\|_F+\|U\|_F)\|W-U\|_F(\gamma+\delta_f)^2.
+\end{align*}
+This identity-based bound uses the factor $c$ on the second kernel term;
+it does not pay a global $S^2$ residual cost.
+For strong samples, $c\ge1.49\cdot10^{-5}$, $L\ge0.003$, and
+$\delta_f\le9.02\cdot10^{-7}$ throughout this time interval. Substitution
+gives a strong-cluster contribution, including its weight $1/2$ and
+sample norm squared, greater than $4\cdot10^{-8}$.
+For weak samples $c>0.999$, $L>0.0095$, and
+$\delta_f<2\cdot10^{-6}$, so their contribution is nonnegative.
+The claimed bound $\dot E\le-10^{-8}$ follows with reserve, uniformly
+over the arc. Gate changes are allowed in this argument.
+
+\emph{Time ordering and final sector.}
+Since $A_0^2\le0.01004$, the specialization time is greater than one
+in physical time and precedes both endpoint times strictly.
+Integrating the initial derivative gives the stated $a_{\rm dec}$.
+Use the four-snapshot argument with the proven mass bound $2$.
+Its chord radius is at least $a_{\rm dec}/36$ and its angular width
+exceeds $2.7\cdot10^{-18}$. The smaller reported arc stays inside the
+initial probe arc. All these probes have distance greater than $0.9$
+from every training sample on the same sample event.
+\end{proof}
+
+At the smallest certified width, the concrete primitive tuple is
+\[
+ (d,\delta,N,h,\varepsilon,\mu_1,\mu_2,\sigma,H)
+ =(2,0.1,2000,10^{10},2\cdot10^{-6},1,10^{-5},10^{-11},3.5).
+\]
+Here $H$ is normalized time; physical time is less than $7$.
+The ratios are $\mu_2/\mu_1=10^{-5}$,
+$\sigma/\mu_1=10^{-11}$, and $\sigma/\varepsilon=5\cdot10^{-6}$.
+The rebound is certified at $3\cdot10^{-5}$ at the chosen center.
+The theorem permits fixed means and fixed noise as $h$ increases with
+$h\varepsilon^2=0.04$; it does not assert a fixed-width limit
+$\varepsilon\downarrow0$ at those same data parameters.
+
+\section{Sharper descent, a common sector, and a ten-million-neuron witness}
+\label{sbsharp:scope}
+
+This section preserves R0 and Theorem~\ref{sbwide:theorem}. It strengthens
+that theorem's initial descent and common sector, and supplies a second
+primitive regime with smaller width and larger noise. The learned object
+is one dominant family. Neither result is a two-learned-family theorem.
+A signed derivative estimate also locates every global minimum on the
+certified interval \emph{before} the declared specialization time; no
+claim that specialization causes the minimum is made.
+
+\subsection{Optimizing the actual instantaneous-kernel certificate}
+
+All times in this subsection are physical. Write $s=h\varepsilon^2$,
+$\gamma=1-s/4$, and suppose the empirical covariance and initial loss give
+$\lambda\le\lambda_0$. Then the installed norm envelope implies
+\begin{gather*}
+ S(t)\le s e^{2\lambda_0t},\quad
+ \|U(t)-U(0)\|_F,\|W(t)-W(0)\|_F
+       \le\sqrt{s}(e^{\lambda_0t}-1),\\
+ F(t):=s(e^{2\lambda_0t}-1),\qquad
+ D_*(t):=4s e^{\lambda_0t}(e^{\lambda_0t}-1).
+\end{gather*}
+Here $F$ bounds both the change of the output on any unit probe and the
+change of any ReLU-product sum $L$. The second kernel term's
+$W$-to-$U$ replacement costs at most $D_*$ before its factor
+$\xi^\top v$. These estimates follow by integrating
+$\|\dot U\|_F,\|\dot W\|_F\le\lambda_0\sqrt S$ and applying
+ReLU Lipschitzness twice; they require no fixed gates.
+
+Let the deterministic probe arc be
+$\xi_\theta=(\sin\theta,\cos\theta)$, $\alpha\le\theta\le\beta$.
+Suppose its initial radial error, and that on normalized strong samples,
+is at most $d_0$. Suppose the initial strong ReLU-product sum is at least
+$L_0$, and $\xi^\top v\ge c_0>0$ on that cluster. Define
+\[
+ d(t)=d_0+F(t),\quad L_-(t)=L_0-F(t),\quad S_+(t)=se^{2\lambda_0t}.
+\]
+\begin{align*}
+ \mathcal J(t)&=2\gamma^2c_0 L_-(t)
+ -(L_-(t)+c_0S_+(t))(2\gamma d(t)+d(t)^2)\\
+ &\hspace{2em}-c_0D_*(t)(\gamma+d(t))^2.
+\end{align*}
+
+\begin{lemma}[Explicit maximal interval for a specified kernel budget]
+\label{sbsharp:descent}
+Suppose the corresponding weak-cluster budget is nonnegative.
+While $L_->0$, $2\gamma^2c_0>2\gamma d+d^2$, and
+$2\gamma^2L_--S_+(2\gamma d+d^2)-D_*(\gamma+d)^2>0$,
+\[
+ \dot E(\xi_\theta,t)\le-\frac{(1-a_D)^2}{2}\mathcal J(t).
+\]
+The function $\mathcal J$ is strictly decreasing until its first zero
+$T_0$ in this regime. For every $0<T<T_0$ the uniform descent rate and
+integrated drop are
+\[
+ c(T)=\frac{(1-a_D)^2}{2}\mathcal J(T)>0,\qquad
+ a(T)=\frac{(1-a_D)^2}{2}\int_0^T\mathcal J(t)\,dt>0.
+\]
+Thus $T_0$ is the supremum of the strictly negative-derivative intervals
+certified by \emph{this budget}, not a claimed optimal interval for the
+actual flow. The integral is an explicit polynomial antiderivative in
+$x=e^{\lambda_0t}$: integrate its constant term as $T$ and each $x^j$
+term as $(e^{j\lambda_0T}-1)/(j\lambda_0)$.
+\end{lemma}
+\begin{proof}
+Use the exact kernel bound in Theorem~\ref{sbwide:theorem} with the
+new displacement estimates. The two displayed positivity conditions
+make that bound increasing in both $c$ and $L$, permitting their lower
+bounds to be substituted without replacing a negative term incorrectly.
+Multiply by the strong-cluster weight and its squared sample norm.
+For monotonicity, write the first two terms as
+$L_-(2\gamma^2c_0-2\gamma d-d^2)-c_0S_+(2\gamma d+d^2)$.
+The first product decreases while its factors are positive, and both
+subtracted terms increase. Integration proves the claims.
+\end{proof}
+
+For the original parameters of Theorem~\ref{sbwide:theorem}, use
+the radial-error refinement of $\lambda_0$ below, the slightly larger arc
+$[1.5\cdot10^{-5},2.5\cdot10^{-5}]$, the same eleven-point net, and
+\begin{gather*}
+ d_0=\sqrt2s\left\{\sqrt{\frac{\log10400}{4h}}
+             +\frac{4\log10400}{3h}\right\}
+             +0.05(5\cdot10^{-7}),\\
+ c_0=\sin(1.5\cdot10^{-5})-2a_D,\qquad
+ L_0=0.077s\cos(2.5\cdot10^{-5})-2a_Ds.
+\end{gather*}
+Let $d_{\rm train}$ be the net bound plus $0.05(2a_D/\mu_2)$.
+The radial initialization event and loss monotonicity sharpen the rate to
+\[
+ \lambda_0=(\gamma+d_{\rm train})
+        \frac{(1+a_D)^2+(\mu_2+a_D)^2}{2},
+\]
+since $\lambda\le\sqrt{2\mathcal L(0)}
+\sqrt{\mathbb E_n\|x\|^2}$.
+At $h=10^{10}$, $\lambda_0<0.495001$ and $T_0$ lies between
+$0.00035080$ and $0.00035081$.
+At $T=0.00035$ the rate is greater than $9\cdot10^{-11}$ and
+\begin{equation}\label{sbsharp:old-drop}
+ E(\xi,0)-E(\xi,0.00035)>7.45\cdot10^{-12}.
+\end{equation}
+The weak budget is positive throughout. These bounds improve with $h$.
+The stronger integrated estimate, rather than $Tc(T)$, is used here.
+For reference the constant-rate-product optimum is approximately
+$0.00017522$, determined by $\mathcal J+T\mathcal J'=0$.
+
+There is also no need to transfer this small gap spatially. The initial
+drop is already uniform on the whole arc. The old axis secant exceeds
+$5.193\cdot10^{-5}$; its spatial loss on the whole arc is at most
+$0.8(2.5\cdot10^{-5})$. Consequently the later secant exceeds
+$3\cdot10^{-5}$ \emph{on that same entire arc}. Its open interior has
+width $10^{-5}$ radians. This replaces the artificial $2\cdot10^{-18}$
+sector restriction without spending any initial-drop margin.
+
+\subsection{A weighted residual comparison}
+
+Return to normalized time $\tau=t/2$ and the notation of
+Lemma~\ref{sbwide:relative}. The following refinement is important at
+smaller width: the initial residual grows with $\varepsilon$, so simply
+relaxing concentration intervals is insufficient.
+Set $q_c=10^{-3}$, $\beta_B=\sqrt{s}+PH$, and suppose $A^2\le1-\nu$.
+Define
+\begin{align*}
+ I_*&=\operatorname{arctanh}\sqrt{1-\nu}
+                 -\operatorname{arctanh}A_{0,-},\\
+ J_*&=\tfrac12\log\frac{1-A_{0,-}^2}{\nu},\\
+ Z_*&=\{b_0+PH(1+6\beta_B/A_{0,-})\}
+                  e^{(\beta_B^2+0.01)H},\\
+ l_*&=\beta_B Z_*e^{2q_c}\frac{I_*}{\sqrt{1-\nu}}
+               +\frac{2PH e^{q_c}}{A_{0,-}},\qquad W_*=Z_*+l_*,\\
+ q_*&=H\max\{l_*+l_*^2+Z_*^2+2P/A_{0,-},\,
+                     l_*+\beta_BZ_*+2P/A_{0,-}\},\\
+ C_c^*&=3q_*+(H+1)l_*+PH,\qquad
+ D_*^{\rm mov}=Z_*e^{2q_*}J_*+PH.
+\end{align*}
+
+\begin{lemma}[Cancellation between normalized residual and mismatch]
+\label{sbsharp:weighted}
+Suppose $\beta_B\le0.3$, $W_*<0.005$, $q_*<q_c$,
+$3P/A_{0,-}<0.001$, and the strict stopping conditions of
+Lemma~\ref{sbwide:relative} hold with $W_*,q_*$.
+Then its conclusions and the core-holding lemma hold with these new
+constants, and with the improved bounds
+\[
+ z\le Z_*,\qquad l\le l_*,\qquad
+ \|c-(Av+a(0)_-)\|\le C_c^*,\qquad
+ \|D-B(0)\|\le D_*^{\rm mov}.
+\]
+The core charges $M_*,V_*,J_D,J_B,J_p,\Gamma_C$ retain their original
+form, using $W_*,q_*$. No neuron is discarded.
+\end{lemma}
+\begin{proof}
+Stop additionally at $z+l=0.005$ and $|\log(u/A)|=q_c$.
+The exact residual and mismatch equations imply, almost everywhere,
+\begin{align*}
+ l'&\le-gl+\beta_Bz+2P/u,\\
+ z'&\le(-u^2-k\theta+z^2+|E_g|)z
+                    +k\beta_Bl+P(1+\beta_B/u),
+ \qquad |\theta|\le l.
+\end{align*}
+For $Z=z+\beta_Bl$ the $k\beta_Bl$ term cancels the matching part of
+$-\beta_Bgl$ because $k-g=-k\theta+z^2-E_g$. Thus
+\[
+ Z'\le(\beta_B^2+l+z^2+|E_g|)Z+P(1+3\beta_B/u)
+ \le(\beta_B^2+0.01)Z+P(1+6\beta_B/A_{0,-}).
+\]
+The last inequality uses the stopping bounds and
+$|E_g|\le P(1+l+z)/u$. This proves $Z\le Z_*$.
+Independently, dissipativity in the Cartesian mismatch equation gives
+$(\|p\|)'\le\beta_Buz+2P$. Since
+$\int_0^\tau A\,ds=\operatorname{arctanh}A(\tau)
+-\operatorname{arctanh}A_0$, division by $u\ge Ae^{-q_c}$ gives $l_*$.
+The function $(\operatorname{arctanh}A-\operatorname{arctanh}A_0)/A$
+is increasing in $A\ge A_0$, justifying the uniform terminal bound.
+
+In the exact radial identity, the forcing after $1-u^2$ is at most
+$l_*+l_*^2+Z_*^2+2P/A_{0,-}$. The directional speed is at most
+$l_*+\beta_BZ_*+2P/A_{0,-}$. The restoring logarithmic comparison
+therefore gives $q_*$. These strict bounds close both added faces;
+the original norm, $k$, $g$, and radial faces close as before.
+The negative-part estimate for $c$ now uses $\|p\|\le l_*$, proving
+$C_c^*$. Finally $\|D'\|\le u^2z+P$ and
+$\int_0^\tau A^2\,ds=\frac12\log[(1-A_0^2)/(1-A(\tau)^2)]$
+give $D_*^{\rm mov}$. All per-neuron core proofs use only $W_*,q_*$
+and consequently remain valid with these stronger estimates.
+\end{proof}
+
+\subsection{The revised primitive witness}
+
+\begin{theorem}[A smaller-width noisy coherent rebound and its timing]
+\label{sbsharp:theorem}
+Let $d=2$, $h\ge10^7$, $\varepsilon=\sqrt{0.04/h}$, and let $N=2000$
+consist of independent samples with exactly half in each isotropic
+Gaussian cluster, with
+\[
+ \mu_1=1,\qquad\mu_2=10^{-4},\qquad\sigma_1=\sigma_2=10^{-9}.
+\]
+Use independent isotropic balanced initialization. With probability at
+least $0.97$, one fixed cohort has at least $0.24h$ neurons, input and
+output angles at most $0.13$ radians, and longitudinal learned mass at
+least $0.55$ throughout $[t_{\rm spec},t_b]$. With reference levels
+$A^2=0.69,0.71,0.715,0.95$ defining $t_-,t_{\rm spec},t_a,t_b$,
+\[
+ 0<0.00017<0.0055<t_-<t_{\rm spec}<t_a<t_b<7.6.
+\]
+The full mass is below $2$ through $t_b$ and $|f_2(e_2,t)|<0.011$.
+On the entire deterministic open arc
+\[
+ \xi_\theta=(\sin\theta,\cos\theta),\qquad
+ 3.5\cdot10^{-5}<\theta<4\cdot10^{-4},
+\]
+whose angular width is $3.65\cdot10^{-4}$ radians,
+\begin{align*}
+ \dot E(\xi_\theta,t)&\le-1.5\cdot10^{-9}
+                         &&(0\le t\le0.00017),\\
+ E(\xi_\theta,0)-E(\xi_\theta,0.00017)&>2.04\cdot10^{-12},\\
+ E(\xi_\theta,t_b)-E(\xi_\theta,t_a)&>7.2\cdot10^{-6},\\
+ \dot E(\xi_\theta,t)&>3.56\cdot10^{-6}
+                         &&(t_-\le t\le t_b)
+\end{align*}
+almost everywhere where derivatives are stated. On the inner arc
+$3.5\cdot10^{-5}<\theta<4.5\cdot10^{-5}$ the rebound exceeds
+$2\cdot10^{-5}$. On the upper subarc
+$3\cdot10^{-4}<\theta<4\cdot10^{-4}$, of width $10^{-4}$,
+\[
+ \dot E\le-2.67\cdot10^{-8}\quad(0\le t\le0.0055),\qquad
+ E(\xi,0)-E(\xi,0.0055)>2.15\cdot10^{-9}.
+\]
+It retains the full-arc rebound $7.2\cdot10^{-6}$.
+Every global minimum
+on $[0,t_b]$ belongs to $(0,t_-]$, hence occurs strictly before the
+certified specialization time. The statement certifies an initial
+transient and subsequent degradation of a learned dominant-family state;
+it does not locate a reversal caused by specialization.
+\end{theorem}
+
+\begin{proof}
+\emph{One event and one ledger.}
+Use empirical windows
+\[
+ Q/h,K/s\in[0.248,0.252],\qquad
+ \left|h^{-1}\sum t_i^+y_i^+-\frac1{4\pi}\right|\le0.002,
+\]
+$|h^{-1}\sum t_i y_i^+|\le0.001$, core count at least $0.24h$,
+and core squared-first-coordinate mean at least
+$1/8+1/(4\pi)-0.002$. Their scalar ranges are respectively
+$1,1,1/2,1,1,1$. Applying Hoeffding separately gives total failure at most
+\[
+ 6e^{-2h(0.002)^2}+2e^{-8h(0.002)^2}
+             +2e^{-2h(0.001)^2}+2e^{-2h(0.01)^2}<4.13\cdot10^{-9}.
+\]
+On $Q\ge0.248h$, the event $b_0\le1.25\varepsilon$ has
+variance-normalized threshold $5\sqrt{0.248}$. The same
+Berry--Esseen bound as before and the elementary Gaussian tail bound
+give failure less than $0.015575$ for $h\ge10^7$.
+The eleven-probe plus two-axis Bernstein event costs $0.005$.
+With $a_D=10^{-8}$, the sample event costs $2000e^{-50}$.
+The total is below $0.020575<0.03$; no independence of these events is
+used.
+
+Set $H=3.8$, $\nu=0.05$, $A_{0,\pm}=\sqrt{0.04(0.25\pm0.002)}$.
+The normalized terminal time is at most $3.773836<H$. Direct
+substitution into Lemma~\ref{sbsharp:weighted} gives the following
+outward-rounded upper bounds (the minimum-width case is worst):
+\[
+\begin{array}{c|c@{\quad}c|c}
+ b_0&7.906\cdot10^{-5}&P&6.001\cdot10^{-7}\\
+ \beta_B&0.200003&Z_*&1.316\cdot10^{-4}\\
+ l_*&1.021\cdot10^{-4}&W_*&2.337\cdot10^{-4}\\
+ q_*&5.337\cdot10^{-4}&C_c^*&0.002094\\
+ D_*^{\rm mov}&1.990\cdot10^{-4}&M_*&0.002602\\
+ V_*&0.010777&J_D&0.009034\\
+ J_B&2.315\cdot10^{-5}&J_p&9.422\cdot10^{-4}\\
+ \Gamma_C&0.016426&&
+\end{array}
+\]
+All stopping conditions are strict. The mass-stop expression is below
+$1.056$; the learned core mass exceeds $0.55196$, its angle is below
+$0.12210$, and its normalized share exceeds $0.80387$.
+The calculation uses the exact definitions, not successive substitution
+of the displayed rounded values.
+
+\emph{Endpoint on the inner arc.}
+Put $K_+=0.252s$, $C_+=0.001s$ and
+\[
+ P_-=\sqrt{s}\frac{1/(4\pi)-0.002}{\sqrt{0.252}},\qquad
+ P_+=\sqrt{s}\frac{1/(4\pi)+0.002}{\sqrt{0.248}}.
+\]
+The two coordinate errors are
+\[
+ e_1=C_c^*\sqrt{K_+}+\sqrt2PH<0.000213365,\qquad
+ e_2=D_*^{\rm mov}\sqrt{K_+}+\beta_BPH<0.000020428.
+\]
+The exact uncharged secant lower bound is
+\[
+ \frac{P_-^2}{2}(A_b-A_a)(A_b+A_a-2A_{0,+})
+       -C_+P_+(A_b-A_a)>9.9694\cdot10^{-5}.
+\]
+With $L_j^+=P_+(A_j-A_{0,-})+C_+$, its charge is
+$(L_a^++L_b^+)e_1+e_1^2+2e_2+e_2^2<5.2251\cdot10^{-5}$.
+The exact difference exceeds $4.74439\cdot10^{-5}$.
+Throughout $0\le\theta\le4.5\cdot10^{-5}$, the residual coordinate
+bounds are $0.030$ and $1.011$, with spatial derivatives at most
+$3$ and $\beta_B\sqrt2+\theta$. Thus $|\partial_\theta E|<0.4$.
+The inner-arc secant consequently exceeds
+$4.74439\cdot10^{-5}-0.8(4.5\cdot10^{-5})>1.1\cdot10^{-5}$.
+Also $K_++e_2<0.011$ bounds weak fitting throughout.
+
+\emph{Initial decrease.}
+Use Lemma~\ref{sbsharp:descent} with the radial-error rate $\lambda_0<0.495019$ above,
+$c_0=\sin(3.5\cdot10^{-5})-2a_D$,
+$L_0=s(1/(4\pi)-0.002)\cos(4.5\cdot10^{-5})-2a_Ds$,
+and
+\[
+ d_0=\sqrt2s\left\{\sqrt{\frac{\log10400}{4h}}
+        +\frac{4\log10400}{3h}\right\}+0.05(5\cdot10^{-7}).
+\]
+Its worst value is less than $2.729707\cdot10^{-5}$.
+For the weak budget use
+$c_w=\cos\beta-2a_D/\mu_2$,
+$L_{w,0}=s(0.248)-s(\beta+2a_D/\mu_2)$ and radial error equal to the
+net bound plus $0.05(2a_D/\mu_2)$. This budget stays positive.
+The strong budget's zero belongs to
+$(0.00018270,0.00018271)$, and at $T=0.00017$ its weighted rate exceeds
+$1.5604\cdot10^{-9}$. The exact polynomial antiderivative gives a
+drop greater than $2.04297\cdot10^{-12}$, proving the reported bounds.
+All substitutions respect the two monotonicity conditions in the lemma.
+To extend to the larger arc, anchor the initial residual at
+$\alpha=3.5\cdot10^{-5}$. Its Lipschitz constant $0.05$ gives the
+pointwise radial budget $d_0+0.05(\theta-\alpha)$, while use
+$c(\theta)=\sin\theta-2a_D$ and
+$L_0(\theta)=s(1/(4\pi)-0.002)\cos\theta-2a_Ds$.
+For $\alpha\le\theta\le4\cdot10^{-4}$ and $t\le0.00017$, direct
+partial differentiation gives
+$\mathcal J_c>0.0060$, $|\mathcal J_d|<0.0063$, and
+$|\mathcal J_L L_0'(\theta)|<2\cdot10^{-9}$.
+Thus $\partial_\theta\mathcal J>0.0060\cos(4\cdot10^{-4})
+-0.05(0.0063)-2\cdot10^{-9}>0.005$.
+The weakest strong budget remains the left endpoint's, so the same
+drop and rate apply to the larger arc without any new probability cost.
+For the weak budget use the larger endpoint radial error if necessary;
+it remains strictly positive.
+
+For the longer initial transient on the upper subarc, keep the same
+probability event and use the \emph{uniform} radial budget
+$d_0+0.05(4\cdot10^{-4}-3.5\cdot10^{-5})$, cosine at
+$4\cdot10^{-4}$ in $L_0$, and $c_0=\sin(3\cdot10^{-4})-2a_D$.
+This is merely Lipschitz transport from the existing anchor.
+The corresponding budget zero lies in $(0.00571064,0.00571066)$.
+At $T=0.0055$, direct polynomial integration gives a drop greater than
+$2.15495\cdot10^{-9}$ and a uniform derivative magnitude greater than
+$2.6743\cdot10^{-8}$. The weak budget is still positive. Thus the longer
+transient and the later rebound coexist on this same $10^{-4}$-wide arc.
+
+\emph{Signed increase and the minimum's location.}
+The following direct calculation is valid at every time with
+$A^2\in[0.69,0.95]$, including times before the declared specialization.
+Put $\bar\theta=4\cdot10^{-4}$, $A_-^\dagger=\sqrt{0.69}$,
+$k_-=0.05-M_*$, and
+\begin{align*}
+ T_-&=A_-^\dagger P_- -3q_*\sqrt{K_+}-PH,\\
+ T_+&=\sqrt{0.95}P_++3q_*\sqrt{K_+}+PH,\\
+ F_-&=P_-(A_-^\dagger-A_{0,+})-C_+-e_1-3\bar\theta,\\
+ V_1&=k_-\cos\bar\theta\,T_-
+   -\bar\theta\{l_*+\sqrt2(l_*+\beta_BZ_*+P)\}-2\sqrt2P,\\
+ V_2&=Z_*(T_++\bar\theta)+\bar\theta(T_++D_*^{\rm mov})
+   +\bar\theta\beta_B(l_*+\beta_BZ_*+P)+P(\sqrt2+\beta_B).
+\end{align*}
+For $q_i=a_i\sin\theta+B_i\cos\theta$, differentiate the actual
+all-neuron sum $(c,D)(q_i)_+$. The leading first-coordinate term is
+$k\sum a_i^+(q_i)_+\ge k\cos\theta\sum a_i^+(B_i)_+$.
+The other potentially negative longitudinal leading term satisfies
+$k\sin\theta\sum c_i a_i^+\mathbf1_{q_i>0}\ge-\sin\theta\,l_*$,
+because $c_i=a_i+p_i$. The remaining input terms cost at most
+$\sin\theta\sqrt2(l_*+\beta_BZ_*+P)$, and the two output/input error
+terms cost $2\sqrt2P$. Thus $f_1'\ge V_1$.
+For the second coordinate, retain the leading signed term
+$-R\sum a_i^+(q_i)_+$ and then bound its magnitude by
+$Z_*(T_++\bar\theta)$. For the input-leading term, preserve its sign:
+\[
+ \sum D_i a_i^+\mathbf1_{q_i>0}
+ \le\sum (B_i(0))_+a_i^++\|D-B(0)\|u
+ \le T_++D_*^{\rm mov}.
+\]
+Its upper bound is consequently $\bar\theta(T_++D_*^{\rm mov})$.
+The remaining terms cost
+$\bar\theta\beta_B(l_*+\beta_BZ_*+P)$, and the two error terms cost
+$P(\sqrt2+\beta_B)$. Hence $f_2'\le V_2$; an absolute bound is neither
+claimed nor needed. Since $f_2-\cos\theta<0$, this one-sided bound has
+the correct sign in the error derivative.
+These formulas permit both training and probe gate changes.
+We also have $f_1-\sin\theta\ge F_->0$ and
+$|f_2-\cos\theta|<1.011$. Therefore, in physical time,
+\[
+ \dot E\ge\tfrac12(F_-V_1-1.011V_2)>3.5618\cdot10^{-6}.
+\]
+The exact formulas give the strict inequality. The physical endpoint
+separation is
+$\log\frac{(0.95)(0.285)}{(0.05)(0.715)}>2.0246$; integration gives a
+full-arc rebound exceeding $7.2\cdot10^{-6}$. Substitution of
+$\bar\theta=4.5\cdot10^{-5}$ gives a rate above $10^{-5}$ and an
+inner-arc rebound above $2\cdot10^{-5}$. Absolute continuity gives strict increase on $[t_-,t_b]$.
+Initial descent excludes a global minimum at zero; strict increase
+excludes every time after $t_-$. Compactness supplies a minimum, proving
+its stated location. The probes are more than $0.9$ from every training
+sample on the same event.
+\end{proof}
+
+\subsection{What these improvements do and do not resolve}
+
+The original theorem's descent interval improves by a factor $35000$,
+and its certified drop by more than $149000$, on the same parameters.
+Its common sector improves from $2\cdot10^{-18}$ to $10^{-5}$ radians.
+The new theorem reduces width by $1000$, increases $\mu_2/\mu_1$ by $10$
+and noise by $100$, while keeping the learned-mass and angular guarantees.
+At its smallest width, $\sigma/\varepsilon=1.58114\cdot10^{-5}$.
+These remain a very small noise, strongly unequal concept regime.
+Choosing the upper subarc further raises the rigorous early drop to
+$2.15\cdot10^{-9}$ while retaining rebound $7.2\cdot10^{-6}$;
+these phases still have substantially different certified amplitudes.
+
+The signed-increase calculation also applies on the old theorem's event:
+use its own moment bounds by replacing $P_-,P_+$ with
+$\sqrt{s}(0.077)/\sqrt{0.252}$ and
+$\sqrt{s}(0.082)/\sqrt{0.248}$, and $C_+$ with $4\cdot10^{-6}$.
+Its $b_0\le4\cdot10^{-6}$ and forcing are smaller than the new
+comparison bounds. On its old arc, contained in
+$0<\theta<2.50001\cdot10^{-5}$, the same formula gives a derivative
+above $9\cdot10^{-6}$. Consequently every old-theorem
+global minimum on $[0,t_b]$ also precedes its specialization time.
+This is a \emph{construction-level timing limitation}, not evidence
+against other noisy many-neuron reversal mechanisms.
+
+For comparison, in the exactly isotropic continuum rank-one reference,
+let $P=\sqrt{s}/(2\pi)$, $A_0=\sqrt{s}/2$, $r=\sin\theta$,
+$k_r=\sqrt{1-r^2}$, and $x=2Ar/(k_r\sqrt{s})$.
+Its evolving positive-first-coordinate contribution is exactly
+\[
+ F_1^+(A,r)=\frac{A\sqrt{s}k_r}{2\pi}
+       \{1+x(\pi/2+\arctan x)\},\qquad
+ F_2^+(A,r)=\frac{s k_r}{4\pi}(\pi/2+\arctan x).
+\]
+The full output is $(s/4)\xi+F^+(A,r)-F^+(A_0,r)$, so no inactive
+background is omitted. Direct differentiation gives
+$E_A(A_0,r)=-2\gamma Pr+O(r^2)$ and
+$E_{AA}(A_0,0)=P^2$. The implicit-function theorem therefore gives a
+local minimum with
+$A-A_0=2\gamma r/P+O(r^2)$ and local improvement
+$2\gamma^2r^2+O(r^3)$, for fixed $s>0$ as $r\downarrow0$.
+This explains an early, small transient in that reference construction.
+It is \emph{not} an upper bound on the finite-width noisy trajectory's
+maximum improvement: the current comparison errors do not justify that
+transfer. The actual improvement/rebound amplitude asymmetry beyond the
+improved certificates remains unresolved.
+
+The weak-fitting upper bound rules out meaningful weak learning within
+this same window. Reaching such learning, or a minimum after a learned
+specialization state, needs an additional argument and is not a modest
+restatement of the present theorem.
+
+\subsection{Numerical validation at the certified primitive point}
+
+After the preceding analytic ledger closed, the exact smallest-width
+point was instantiated with $h=10^7$, all $2000$ noisy training samples,
+and random seed $20260918$. Its initialization and sample events passed
+without resampling. The empirical gradients were evaluated using the
+actual masks: neurons with a mask uniform across a cluster were summed
+as matrices, and all boundary neurons were evaluated sample by sample.
+An all-pairs preflight containing both types of boundary neuron agreed
+in outputs and gradients to less than $4\cdot10^{-16}$.
+
+Classical RK4 runs with maximum physical steps $0.02$ and $0.01$,
+smaller initial steps, and exact snapshot stops gave the following
+\emph{numerical} values:
+\[
+\begin{array}{c|r}
+ t_{\rm spec}&5.489569515\\
+ t_a&5.513978830\\
+ t_b&7.538624447\\
+ \text{core mass at }t_{\rm spec}&0.581020472\\
+ \text{largest core angle there}&0.118179854\\
+ \max S&0.979990746\\
+ \max |f_2(e_2)|&0.009992690
+\end{array}
+\]
+For $\theta=4\cdot10^{-5}$, the observed secant was
+$1.05870369\cdot10^{-4}$. A sampled derivative crossing occurred between
+$0.04617$ and $0.04717$, and the sampled maximum initial improvement was
+$2.76713\cdot10^{-9}$.
+For $\theta=3.5\cdot10^{-4}$, the observed secant was
+$1.04807195\cdot10^{-4}$, the sampled crossing bracket was
+$[0.38017,0.40017]$, and the sampled improvement was
+$2.36472\cdot10^{-7}$. Both are early transients well before the
+specialization declaration.
+
+At $407$ common snapshots, halving the step changed the inner-probe
+error by at most $5.08\cdot10^{-14}$ and core mass by at most
+$9.18\cdot10^{-11}$. All $22$ instrumented bounds on mass, angles,
+relative residual, mismatch, comparison errors, core holding, and
+initial/late derivatives passed at recorded times. These are numerical
+consistency checks, not rigorous integration-error bounds, continuous-time
+certificates, minimum-location proofs, or proof premises. The wider-angle
+probe was illustrated at step $0.02$; the refinement check concerns the
+same training trajectory observed at the inner probe.
+
+\end{document}

@@ -1,0 +1,6 @@
+{
+  "status": "FEASIBLE IN FLOATING POINT; directed-rounding audit still required",
+  "terminal": 3.9000000000000004,
+  "final_radius": 1.886109556809616e-05,
+  "runtime_seconds": 72.50900487499894
+}

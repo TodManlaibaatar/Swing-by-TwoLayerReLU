@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "whole_step_probe_pattern_checks": 2500,
+  "nominal_patterns_match_Bernstein_patterns": true,
+  "minimum_sector_margin": 1.40926893259931e-05,
+  "full_steps_recomputed": [
+    1,
+    1200,
+    1201,
+    2500
+  ]
+}

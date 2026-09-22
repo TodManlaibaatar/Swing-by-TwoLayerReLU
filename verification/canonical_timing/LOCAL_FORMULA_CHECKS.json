@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "exact_checks": [
+    "DF=-J*J+residual Hessian, both parameter blocks",
+    "D2F[p,p]=-2 DJ[p]*Jp-J*D2f[p,p], both blocks",
+    "All four cubic-Hermite midpoint identities"
+  ]
+}

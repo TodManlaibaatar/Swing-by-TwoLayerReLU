@@ -1,0 +1,55 @@
+{
+  "status": "Numerical event audit only; endpoint speed reversals are candidate sliding/chattering events, not validated classification.",
+  "total_step_gate_sign_changes": 185211,
+  "reversing_endpoint_speed_events": 0,
+  "minimum_oriented_endpoint_speed": 7.6397844161866e-07,
+  "first_events": [
+    {
+      "step": 0,
+      "sample": 130,
+      "neuron": 114,
+      "q0": -1.4353513434038048e-08,
+      "q1": 5.618681346633391e-08,
+      "v0": 0.00035260482393297075,
+      "v1": 0.0003527984841448491
+    },
+    {
+      "step": 0,
+      "sample": 430,
+      "neuron": 124,
+      "q0": -2.6443365098406016e-08,
+      "q1": 1.4916179290827497e-07,
+      "v0": 0.0008776836240021659,
+      "v1": 0.0008783680925408847
+    },
+    {
+      "step": 0,
+      "sample": 1066,
+      "neuron": 179,
+      "q0": -4.98539238344703e-08,
+      "q1": 7.343311591826443e-09,
+      "v0": 0.00028585526219430924,
+      "v1": 0.0002861171262286364
+    },
+    {
+      "step": 0,
+      "sample": 1576,
+      "neuron": 124,
+      "q0": -1.4871257624273565e-07,
+      "q1": 1.3107996204506778e-09,
+      "v0": 0.0007498245589965574,
+      "v1": 0.0007504093162304804
+    },
+    {
+      "step": 0,
+      "sample": 1950,
+      "neuron": 80,
+      "q0": -7.502095464631723e-08,
+      "q1": 1.4156184251945972e-09,
+      "v0": 0.0003820767801783156,
+      "v1": 0.0003822889613690907
+    }
+  ],
+  "first_reversing_events": [],
+  "runtime_seconds": 45.92226487500011
+}

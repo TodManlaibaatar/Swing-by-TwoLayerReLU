@@ -1,0 +1,150 @@
+% Research module: real-arithmetic bounds. Floating-point validation is separate.
+\subsection{An enclosure through training-gate changes}
+This section states the real-arithmetic stability inequality used by the
+interval validator. A successful floating-point run is not by
+itself a certificate; its input and rounding enclosures must also be verified.
+
+Write $F(\theta)=J_\theta^*(x-f_\theta)$ for the selected vector field.
+Fix a reference state $y$ and a radius $R$. Assume that along every straight
+parameter segment within this ball, the smooth pieces obey
+\[
+ \max_i\|\E_n[e_\theta(x)x^T\alpha_i(x)]\|\le a.
+\]
+For each neuron and sample choose an upper bound
+$h_{in}\ge N^{-1}\|x_n\|(w_i^Te_\theta(x_n))_+$ throughout the ball.
+Set $d_{in}=|u_i(y)^Tx_n|/\|x_n\|$ for nonzero samples, and
+\[
+ B_i(s)=\sum_{n:d_{in}\le s}h_{in},\qquad 0\le s\le R.
+\]
+If the center ranges along a reference subinterval, lower bounds for the
+margins and uniform upper bounds for the weights can replace these quantities.
+
+\begin{lemma}[One-sided stability with adverse gate jumps]\label{initcert:tube}
+Suppose $B_i(s)\le a_i+\beta s$ for $0\le s\le R$, where $a_i,\beta\ge0$.
+Then for $\|z\|\le R$,
+\[
+ \langle z,F(y+z)-F(y)\rangle
+ \le(a+\beta)\|z\|^2+\|(a_i)_i\|_2\|z\|.
+\]
+Compatible endpoint selectors are allowed. Along an absolutely continuous
+reference path $y(t)$ with defect $\|F(y(t))-\dot y(t)\|\le\eta$, the
+error $r(t)=\|\theta(t)-y(t)\|$ therefore satisfies, while $r\le R$,
+\[
+ D^+r\le(a+\beta)r+\|(a_i)_i\|_2+\eta
+\]
+in the comparison sense (or almost everywhere away from $r=0$).
+\end{lemma}
+\begin{proof}
+On a smooth activation region,
+$DF=-J^*J+H_e$. The residual Hessian $H_e$ is block diagonal across
+neurons, with each block having off-diagonal entries $A_i,A_i^T$, where
+$A_i=\E_n[e x^T\alpha_i]$. Thus $\lambda_{\max}(DF)\le a$.
+Integrate this inequality along the segment $y+sz$, separating its finitely
+many training hyperplane crossings. When one gate crosses, the vector-field
+jump has only an input-coordinate component
+$\Delta F_{u_i}=N^{-1}\Delta\alpha_i(w_i^Te_x)x$; the output-coordinate
+component is continuous because the preactivation is zero there. Its pairing
+with $z$ is at most
+$N^{-1}(w_i^Te_x)_+|z_{u_i}^Tx|\le h_{in}\|z_{u_i}\|$.
+Only samples with $d_{in}\le\|z_{u_i}\|$ can cross. The sum of jumps is
+therefore bounded by
+\[
+ \sum_i\|z_{u_i}\|B_i(\|z_{u_i}\|)
+ \le\|(a_i)_i\|_2\|z\|+\beta\|z\|^2.
+\]
+Simultaneous crossings add; endpoint partial selectors satisfy the same
+upper bound by taking partial jumps. Segments that lie in a hyperplane
+contribute no conormal pairing for that gate. This proves the first claim.
+Take the inner product of the error equation with $\theta-y$ and divide
+by $r$ when it is positive. Standard norm regularization gives the comparison
+at zero.
+\end{proof}
+
+For a finite set of distances, permissible intercepts are explicit:
+\[
+ a_i(\beta)=\max\big\{0,\max_{0\le s\le R}(B_i(s)-\beta s)\big\}.
+\]
+The inner maximum only needs the sorted sample distances, including zero.
+There is no density assumption or asymptotic substitution for these counts.
+
+\begin{corollary}[A verified step criterion]\label{initcert:tube-step}
+On a reference interval of length $h$, let the preceding bounds be uniform
+on its radius-$R$ tube. Put $k=a+\beta$ and
+$\omega=\|(a_i)_i\|_2+\eta$. If the initial error is at most $r_0<R$ and
+\[
+ e^{kh}r_0+\omega\frac{e^{kh}-1}{k}<R,
+\]
+then the flow remains in the tube on the whole interval and its terminal
+error is bounded by the left side. At $k=0$ the quotient is interpreted as
+$h$. Successive verified steps give an enclosure from the initial state.
+\end{corollary}
+\begin{proof}
+Apply the scalar integrating-factor inequality until the first exit. Its
+upper bound is nondecreasing in time and strictly smaller than $R$ at the
+terminal time, excluding a first exit. Iterate using the terminal upper bound
+as the next initial radius.
+\end{proof}
+The absolute reference defect must also include any gates crossed by the
+reference path. The favorable sign used in Lemma~\ref{initcert:tube} applies to
+\emph{stability}, not automatically to the defect of a numerical interpolant.
+Using only a smooth-region defect bound would omit this term and would not
+constitute a certificate.
+
+\subsubsection{Cubic-reference defect used in the local validator}
+Let $y(s)$ be the cubic Hermite interpolant of two stored parameter states
+and two stored velocities, over a step of exact length $1/5000$.
+The stored velocities are merely coefficients of the reference polynomial;
+they need not be exact field values. Put $a=1/10000$ and center the step
+at $s=0$. Fix the actual training masks at $y(0)$ and denote that polynomial
+field by $F^0$. The validator encloses
+\begin{align*}
+ d_0&=\|F^0(y)-y'\|,\\
+ d_1&=\|DF^0(y)y'-y''\|,\\
+ d_2&=\|D^2F^0(y)[y',y']+DF^0(y)y''-y'''\|
+\end{align*}
+at the midpoint. Suppose $P_*,V_*,A_*,T_*$ bound respectively
+$\|y\|,\|y'\|,\|y''\|,\|y'''\|$ throughout the step, and $L_*$
+bounds $\|DF^0\|$. For the covariance bound $\lambda$,
+\[
+ \|D^2F^0\|\le3\lambda P_*,\qquad
+ \|D^3F^0\|\le3\lambda.
+\]
+Indeed the fixed-mask output is quadratic with second derivative norm
+at most $\sqrt\lambda$, while $\|J\|\le\sqrt\lambda P_*$;
+differentiate $F^0=J^*e$ twice and three times.
+Taylor's integral remainder therefore gives
+\[
+ \eta_{\rm sm}=d_0+ad_1+\tfrac12a^2d_2+
+ \tfrac16a^3\big(3\lambda V_*^3+9\lambda P_*V_*A_*+L_*T_*\big)
+\]
+as an upper bound for the fixed-mask defect on the whole step.
+The third derivative of the defect uses $y''''=0$.
+
+The true defect additionally includes $\eta_{\rm gate}$, the difference
+between the actual field and $F^0$ along the reference polynomial.
+It is bounded by the direct field argument in
+Proposition~\ref{initcert:static-bound}, using neuronwise input and output excursions
+\[
+ d_i^u=a\|y'_{u_i}(0)\|+\tfrac12a^2\|y''_{u_i}(0)\|
+                    +\tfrac16a^3\|y'''_{u_i}\|,
+\]
+and the analogous $d_i^w$. The corresponding whole-parameter excursion
+bounds residual changes. Thus $\eta=\eta_{\rm sm}+\eta_{\rm gate}$ is
+uniform on the step, including all reference-path gate changes.
+
+For the one-sided rate on a tube, let $A_i^0$ be its midpoint residual
+matrices and $D_*$ the pointwise output-change coefficient from the midpoint
+throughout the tube. If $p_{in}$ flags every potentially changed gate there,
+a valid smooth-piece bound is
+\[
+ a_* = \max_i\|A_i^0\|+\lambda D_*
+       +\max_i N^{-1}\sum_n p_{in}\|e_y(x_n)\|\|x_n\|.
+\]
+For gate jumps the validator bounds the positive conormal residual throughout
+the same tube, sorts lower bounds on its reference-path gate distances,
+and sums upward-rounded weights. With $\beta=1$, the intercept
+$\max_s(B_i(s)-s)_+$ only requires those finite sorted distances.
+All tube radii are explicit inputs, rather than inferred from successful
+numerical integration. Corollary~\ref{initcert:tube-step} is checked at every
+step. Its strict inequality is what validates the reference, independently
+of the integration method originally used to choose its coefficients.

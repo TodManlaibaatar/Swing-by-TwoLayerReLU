@@ -1,0 +1,185 @@
+{
+  "status": "STATIC WITNESS BALLS ENCLOSED; INITIALIZED TRAJECTORY REACHABILITY NOT CERTIFIED",
+  "arithmetic": "Float64 midpoint-radius intervals; dot gamma_k bounds; outward nextafter sums/products; interval trigonometry at 60 decimal digits. Assumes standard IEEE round-to-nearest basic arithmetic, sqrt, and dot accumulation without unsafe fast-math.",
+  "static_radius": "0.000035",
+  "radius_used_upper_float": 3.5000000000000004e-05,
+  "results": [
+    {
+      "time": 3.4,
+      "cluster": "all",
+      "quantity": "Q_G",
+      "center_lower": -0.0010496347967595971,
+      "center_upper": -0.0010496347967419012,
+      "smooth_budget_upper": 0.0001156630213327852,
+      "gate_budget_upper": 3.898672124399647e-05,
+      "ball_lower": -0.001204284539336379,
+      "ball_upper": -0.0008949850541651194,
+      "probe_margin_lower": null
+    },
+    {
+      "time": 3.4,
+      "cluster": "all",
+      "quantity": "full_rate",
+      "center_lower": -0.001297400278945163,
+      "center_upper": -0.0012974002789299481,
+      "smooth_budget_upper": 0.00010533426003363069,
+      "gate_budget_upper": 3.537805053513622e-05,
+      "ball_lower": -0.0014381125895139301,
+      "ball_upper": -0.001156687968361181,
+      "probe_margin_lower": 3.757547503229515e-05
+    },
+    {
+      "time": 3.4,
+      "cluster": "strong",
+      "quantity": "Q_G",
+      "center_lower": -0.0023387503177901615,
+      "center_upper": -0.0023387503177790332,
+      "smooth_budget_upper": 0.00010806322307619917,
+      "gate_budget_upper": 3.215893572358225e-05,
+      "ball_lower": -0.0024789724765899436,
+      "ball_upper": -0.002198528158979251,
+      "probe_margin_lower": null
+    },
+    {
+      "time": 3.4,
+      "cluster": "strong",
+      "quantity": "full_rate",
+      "center_lower": -0.002393977092440301,
+      "center_upper": -0.0023939770924300756,
+      "smooth_budget_upper": 9.817427244430422e-05,
+      "gate_budget_upper": 2.9182255313667515e-05,
+      "ball_lower": -0.002521333620198273,
+      "ball_upper": -0.0022666205646721034,
+      "probe_margin_lower": 3.757547503229515e-05
+    },
+    {
+      "time": 3.4,
+      "cluster": "weak",
+      "quantity": "Q_G",
+      "center_lower": 0.0012891155210325352,
+      "center_upper": 0.0012891155210351607,
+      "smooth_budget_upper": 5.6725255212778384e-05,
+      "gate_budget_upper": 2.115270329485693e-05,
+      "ball_lower": 0.0012112375625248997,
+      "ball_upper": 0.0013669934795427963,
+      "probe_margin_lower": null
+    },
+    {
+      "time": 3.4,
+      "cluster": "weak",
+      "quantity": "full_rate",
+      "center_lower": 0.0010965768134968167,
+      "center_upper": 0.001096576813498449,
+      "smooth_budget_upper": 5.1834648982640935e-05,
+      "gate_budget_upper": 1.919477663783864e-05,
+      "ball_lower": 0.0010255473878763369,
+      "ball_upper": 0.001167606239118929,
+      "probe_margin_lower": 3.757547503229515e-05
+    },
+    {
+      "time": 3.9,
+      "cluster": "all",
+      "quantity": "Q_G",
+      "center_lower": 0.0008297491390759903,
+      "center_upper": 0.0008297491390929149,
+      "smooth_budget_upper": 0.00011202504345228525,
+      "gate_budget_upper": 4.014493151511982e-05,
+      "ball_lower": 0.0006775791641085851,
+      "ball_upper": 0.0009819191140603202,
+      "probe_margin_lower": null
+    },
+    {
+      "time": 3.9,
+      "cluster": "all",
+      "quantity": "full_rate",
+      "center_lower": 0.0005883722053861875,
+      "center_upper": 0.0005883722054008631,
+      "smooth_budget_upper": 0.00010249389794618863,
+      "gate_budget_upper": 3.669001341080496e-05,
+      "ball_lower": 0.00044918829402919384,
+      "ball_upper": 0.0007275561167578568,
+      "probe_margin_lower": 5.6601688754547986e-05
+    },
+    {
+      "time": 3.9,
+      "cluster": "strong",
+      "quantity": "Q_G",
+      "center_lower": -0.001084030739978484,
+      "center_upper": -0.0010840307399682752,
+      "smooth_budget_upper": 0.00010996059182098837,
+      "gate_budget_upper": 2.9398570960782494e-05,
+      "ball_lower": -0.001223389902760255,
+      "ball_upper": -0.0009446715771865042,
+      "probe_margin_lower": null
+    },
+    {
+      "time": 3.9,
+      "cluster": "strong",
+      "quantity": "full_rate",
+      "center_lower": -0.0011058622525013826,
+      "center_upper": -0.001105862252491999,
+      "smooth_budget_upper": 0.00010056486452948443,
+      "gate_budget_upper": 2.686849677158782e-05,
+      "ball_lower": -0.0012332956138024552,
+      "ball_upper": -0.0009784288911909265,
+      "probe_margin_lower": 5.6601688754547986e-05
+    },
+    {
+      "time": 3.9,
+      "cluster": "weak",
+      "quantity": "Q_G",
+      "center_lower": 0.001913779879056232,
+      "center_upper": 0.0019137798790594318,
+      "smooth_budget_upper": 5.142266255486206e-05,
+      "gate_budget_upper": 2.6569747370273422e-05,
+      "ball_lower": 0.0018357874691310963,
+      "ball_upper": 0.0019917722889845678,
+      "probe_margin_lower": null
+    },
+    {
+      "time": 3.9,
+      "cluster": "weak",
+      "quantity": "full_rate",
+      "center_lower": 0.0016942344578890732,
+      "center_upper": 0.0016942344578913587,
+      "smooth_budget_upper": 4.708638125769693e-05,
+      "gate_budget_upper": 2.428312493122264e-05,
+      "ball_lower": 0.0016228649517001535,
+      "ball_upper": 0.0017656039640802784,
+      "probe_margin_lower": 5.6601688754547986e-05
+    }
+  ],
+  "geometry": [
+    {
+      "time": 3.4,
+      "strong_count": 71,
+      "m11_ball_lower": 0.9322886862638935,
+      "input_cone_15deg": true,
+      "output_cone_20deg": true,
+      "actual_field_norm_upper": 0.38488226916349694,
+      "parameter_norm_ball_upper": 1.9925806994129929
+    },
+    {
+      "time": 3.9,
+      "strong_count": 71,
+      "m11_ball_lower": 0.9340483493412168,
+      "input_cone_15deg": true,
+      "output_cone_20deg": true,
+      "actual_field_norm_upper": 0.30871291053811206,
+      "parameter_norm_ball_upper": 2.0069084617432513
+    }
+  ],
+  "inputs": {
+    "canonical_witness_states.npz": "f83864ac40df9bf634206a1884fe2c99ec6cd05df2de2c5f3d427e1fbcdea41a"
+  },
+  "versions": {
+    "python": "3.12.2",
+    "numpy": "2.5.3",
+    "mpmath": "1.3.0"
+  },
+  "not_claimed": [
+    "A true initialized flow reaches either ball",
+    "A gradient-flow crossing has been certified",
+    "High-probability iid initialization guarantee"
+  ]
+}

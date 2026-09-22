@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "checks": [
+    "All three signed moment equations",
+    "Orthogonal same-moment balanced counterexample",
+    "Different active-probe rank-one contribution"
+  ],
+  "residual_convention": "rho=f-x; A=mean(g*rho*x^T)"
+}

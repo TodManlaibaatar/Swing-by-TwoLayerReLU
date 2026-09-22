@@ -1,0 +1,15 @@
+{
+  "status": "LOCAL FLOW ENCLOSED FROM A BALL AT THE t=3.4 NUMERICAL CENTER; INITIALIZED REACHABILITY NOT CERTIFIED",
+  "initial_radius": 1.2e-05,
+  "initial_reference_index": 17000,
+  "final_reference_index": 19500,
+  "dt": "1/5000",
+  "final_radius_upper": 4.250034071783791e-05,
+  "inside_static_witness_ball": true,
+  "runtime_seconds": 585.3572104999912,
+  "initial_radius_decimal": "0.000012",
+  "initial_radius_float_upper": 1.2000000000000002e-05,
+  "scalar_replay": "PASS: 60-digit interval exponential; exact rational step; upward initial decimal radius",
+  "minimum_step_slack_diagnostic": 4.503000966709086e-06,
+  "snapshot_radius_at_3p7": 2.827008856496532e-05
+}

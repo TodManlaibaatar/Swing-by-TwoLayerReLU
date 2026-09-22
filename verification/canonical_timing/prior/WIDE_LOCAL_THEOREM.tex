@@ -1,0 +1,111 @@
+\subsection{A larger certified entry region}
+Let $X$ be the exact supplied binary dataset with $N=4000$, $h=200$,
+and the canonical generation parameters $(\mu_1,\mu_2,\sigma)=(3,2,0.15)$.
+Let $\widehat\theta_{3.4}$ be the supplied reference state. The fixed
+$71$-neuron cohort $I$ is selected by the archived in-distribution rule at
+$t=4$, not by OOD outcomes. Put
+\[
+ \xi_\alpha=(\cos\alpha,\sin\alpha),\qquad
+ \mathcal I=\{\alpha:|\alpha+17\pi/36|<10^{-6}\}.
+\]
+The theorem refers to global Clarke gradient flows of the empirical loss;
+it applies to every such flow satisfying its entry condition. No global
+uniqueness assumption is needed. Compatible selector fields are used as an
+overapproximation of the Clarke inclusion, including at zero preactivation.
+
+\begin{theorem}[Canonical continuation from a learned-state neighborhood]
+\label{initcert:wide-theorem}
+If
+\begin{equation}\label{initcert:entry}
+ \|\theta(3.4)-\widehat\theta_{3.4}\|_2\le1.2\cdot10^{-5},
+\end{equation}
+then, uniformly for $\alpha\in\mathcal I$,
+\begin{align*}
+ E(\xi_\alpha,3.4)-E(\xi_\alpha,3.7)&>1.2\cdot10^{-4},\\
+ E(\xi_\alpha,3.9)-E(\xi_\alpha,3.7)&>4\cdot10^{-5}.
+\end{align*}
+The error has an interior minimum on $[3.4,3.9]$. At entry the cohort has
+$m_{11}>0.9323$, input angles below $15^\circ$, and output angles below
+$20^\circ$. For the central probe, both $Q_G$ and the full OOD rate are
+negative at entry and positive at $3.9$ for all compatible training selectors.
+The strong-cluster contribution to the full OOD rate is negative at both
+endpoints, the weak-cluster contribution is positive, and the latter
+dominates at the late endpoint.
+Moreover, almost everywhere, for all probes in the sector,
+\[
+ \dot E<-0.0012\quad\hbox{on }[3.4,3.40001],\qquad
+ \dot E>0.00040\quad\hbox{on }[3.9,3.90001].
+\]
+The sector has width $2\cdot10^{-6}$ radians. Neither an initialized
+entry guarantee nor a unique continuous zero of $Q_G$ is asserted.
+\end{theorem}
+
+\begin{proof}
+The certificate applies the one-sided tube inequality and the verified-step
+criterion below to $2500$ reference intervals of exact length $1/5000$.
+Every reference coefficient is an exact stored binary number; its numerical
+integration provenance is not a proof premise. The uniform interval bounds
+are independent of the chosen initial error within the proposed tubes.
+An independent scalar replay with upward-rounded initial radius
+$1.2\cdot10^{-5}$ verifies every strict tube inequality. At the snapshots,
+\[
+ \|\theta(3.7)-\widehat\theta_{3.7}\|<2.828\cdot10^{-5},\qquad
+ \|\theta(3.9)-\widehat\theta_{3.9}\|<4.251\cdot10^{-5}.
+\]
+The full step ledger is \texttt{WIDE\_LOCAL\_FLOW\_ENCLOSURE.csv}.
+Static bounds use radii $2\cdot10^{-5}$, $3.5\cdot10^{-5}$ and
+$4.6\cdot10^{-5}$ at the three snapshots. On their respective balls,
+\begin{align*}
+ E(\xi_0,3.4)&\in[0.48314641,0.48315250],\\
+ E(\xi_0,3.7)&\in[0.48298853,0.48299930],\\
+ E(\xi_0,3.9)&\in[0.48305831,0.48307257],
+ \qquad \xi_0=\xi_{-17\pi/36}.
+\end{align*}
+These displayed intervals are enlarged from the computed enclosures.
+The full-precision central gaps exceed $0.00014712$ and $0.00005902$.
+On the unit circle the error is Lipschitz in the probe with constant
+$(1+\|\theta\|^2/2)^2<9.084$. Transporting two errors through an angular
+change below $10^{-6}$ costs less than $1.8168\cdot10^{-5}$.
+The resulting verified sector gaps are greater than $0.00012895$ and
+$0.00004085$, proving the stated margins and the interior minimum.
+
+The endpoint interval bounds for $10^3$ times the exact rates are:
+\begin{center}
+\begin{tabular}{llrr}
+\toprule
+Statistic & contribution & $t=3.4$ & $t=3.9$\\
+\midrule
+$Q_G$ & total & $[-1.140,-0.960]$ & $[0.630,1.029]$\\
+$\dot E$ & total & $[-1.379,-1.215]$ & $[0.406,0.771]$\\
+$\dot E$ & strong cluster & $[-2.468,-2.320]$ & $[-1.273,-0.939]$\\
+$\dot E$ & weak cluster & $[1.055,1.138]$ & $[1.601,1.788]$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Each cluster uses the same full-network residual and normalization $1/N$;
+this is a signed field decomposition, not a retraining ablation.
+The same interval calculation verifies the mass and cone statements.
+
+The speed bounds on the first and last static balls are $0.385$ and
+$0.309$. The verified endpoint radii leave enough room for a forward
+extension of $10^{-5}$ at each endpoint. A first-exit argument keeps the
+flow in those balls. The probe gates remain constant across each static
+ball and sector. Indeed their central score margins exceed
+$3.7575\cdot10^{-5}$ and $5.6601\cdot10^{-5}$, respectively;
+subtracting the parameter radius and an additional $2.01\cdot10^{-6}$
+for sector transport still leaves positive margins.
+With $P<2.01$, the OOD rate varies with the probe by at most
+$2(1+P^2/2)P\|F\|\|\xi-\xi_0\|<5\cdot10^{-6}$.
+Subtracting this cost from the full-precision rate margins gives the two
+uniform rate intervals. The exact static reports and arithmetic contract
+are supplied with the certificate.
+\end{proof}
+
+\paragraph{Scope.}
+Condition~\eqref{initcert:entry} specifies a parameter neighborhood of an
+ID-trained state; it does not assume an OOD sign. Its radius is twelve times
+the earlier sufficient radius. Membership of the canonical initialized flow
+in this neighborhood remains unproved. The result therefore does not
+strengthen the paper's existing random-initialization theorem or establish
+that specialization alone causes reversal. The offline cohort and witness
+times are retrospective, and the sector is deliberately conservative.

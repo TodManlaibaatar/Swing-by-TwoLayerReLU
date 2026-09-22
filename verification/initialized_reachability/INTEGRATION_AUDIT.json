@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "original_appendix_modified": false,
+  "new_label_count": 8,
+  "label_collisions": [],
+  "unresolved_patch_references": [],
+  "abstract_changed": false,
+  "foundation_dependency": "Existing lemma lem:gf-regularity in main-appendix-revised.tex",
+  "scope": "Conditional continuation only; no initialized canonical theorem inserted."
+}

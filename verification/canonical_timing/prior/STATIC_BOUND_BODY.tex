@@ -1,0 +1,85 @@
+\subsection{Static sign certificates with all training-gate changes}
+\label{initcert:static}
+This section concerns parameter neighborhoods, not their reachability from
+initialization. Its dataset consists of the exact binary numbers in the
+accompanying \texttt{canonical\_witness\_states.npz}. Rounding a Gaussian
+sample is not an iid Gaussian theorem.
+
+Let $y$ be a parameter center, $R>0$, $P=\|y\|$, $\bar P=P+R$, and
+$D=PR+R^2/2$. A cluster index set $C$ uses the full-dataset normalization
+$\|z\|_C^2=N^{-1}\sum_{n\in C}\|z_n\|^2$. Put
+$\lambda_C\ge\|N^{-1}\sum_{n\in C}x_nx_n^T\|$.
+Write $F_C$ for that cluster's contribution to the full gradient field,
+using the \emph{full-network residual}; $F=F_1+F_2$.
+Let $F_C^0$ denote its polynomial extension with the training gates fixed
+at $y$. No fixed-gate hypothesis is imposed on the actual field in the ball.
+
+For either potential used here, set $g=\nabla\Phi$, $G_0=\|g(y)\|$.
+For the empirical statistic use the potential $\Phi_I$ defined above. For the full derivative, fix the actual
+probe-active set at $y$ and use
+$\Phi(\theta)=\frac12\|M_{\rm act}(\theta)\xi-\xi\|^2$.
+This second choice is valid throughout the ball if
+$\min_i|u_i(y)^T\xi|>R\|\xi\|$.
+In either case let $v$ be its input vector, $I$ its fixed index set,
+$P_I=\|(u_i,w_i)_{i\in I}(y)\|$, and $\ell_y$ its output gradient.
+Define
+\begin{align*}
+ L_C&=\lambda_C\bar P^2+
+ \sqrt{\lambda_C}\big(\|e(y)\|_C+\sqrt{\lambda_C}D\big),\\
+ H_g&=\|v\|^2(P_I+R)^2+
+ \|v\|\big(\|\ell_y\|+\|v\|(P_IR+R^2/2)\big).
+\end{align*}
+
+Here are explicit bounds for the training-gate correction. Put
+$q_{ni}=u_i(y)^Tx_n$, $s_n=\|x_n\|$, $e_n=e(y;x_n)$, and
+\begin{align*}
+ d_{ni}&=(Rs_n-|q_{ni}|)_+,&
+ p_{ni}&=\mathbf1_{|q_{ni}|\le Rs_n},\\
+ b_{ni}&=|w_i(y)^Te_n|+R\|e_n\|
+                 +(\|w_i(y)\|+R)Ds_n,\\
+ j_i^u&=N^{-1}\sum_{n\in C}p_{ni}b_{ni}s_n,&
+ j_i^w&=N^{-1}\sum_{n\in C}d_{ni}(\|e_n\|+Ds_n),\\
+ z_n&=\sum_i(\|w_i(y)\|+R)d_{ni},&
+ B_C&=\Big[\sum_i((j_i^u)^2+(j_i^w)^2)\Big]^{1/2}
+                  +\sqrt{\lambda_C}\bar P\|z\|_C.
+\end{align*}
+Every neuron is retained in these quantities.
+
+\begin{proposition}[A static neighborhood enclosure]\label{initcert:static-bound}
+For any compatible training selectors and $\|\theta-y\|\le R$,
+\begin{equation}\label{initcert:static-equation}
+ \left|g(\theta)^TF_C(\theta)-g(y)^TF_C(y)\right|
+ \le R\left[H_g(\|F_C(y)\|+L_CR)+G_0L_C\right]
+                   +(G_0+H_gR)B_C.
+\end{equation}
+This applies to the total derivative and separately to each cluster's
+signed contribution. Cluster contributions always use the same full residual.
+\end{proposition}
+\begin{proof}
+The Jacobian norm on cluster $C$ is at most
+$\sqrt{\lambda_C}\|\theta\|$: apply Cauchy--Schwarz across neuron and
+input/output parameter coordinates before taking the empirical average.
+Integration along a parameter segment gives
+$\|f_\theta-f_y\|_C\le\sqrt{\lambda_C}D$ and the pointwise bound
+$\|f_\theta(x_n)-f_y(x_n)\|\le Ds_n$.
+The same bounds hold for the fixed-mask polynomial extension.
+Its field derivative is $-J_C^*J_C+H_{e,C}$, where the neuronwise
+residual Hessian has norm at most
+$\sqrt{\lambda_C}\|e\|_C$. Thus
+$\|DF_C^0\|\le L_C$. Differentiating either potential gives
+$\|Dg\|\le H_g$ on the ball. Adding and subtracting
+$g(y)^TF_C^0(\theta)$ proves the first term of \eqref{initcert:static-equation}.
+
+A changed training activation differs from its fixed-mask extension by at
+most $d_{ni}$, and its selector can differ only when $p_{ni}=1$.
+The pointwise residual and weight bounds give
+$|w_i(\theta)^Te_\theta(x_n)|\le b_{ni}$. The direct input- and
+output-gradient changes are therefore bounded by $j_i^u,j_i^w$.
+The change of residual between the actual network and the fixed-mask
+extension has norm at most $z_n$. Applying the fixed-mask adjoint to
+this residual costs at most $\sqrt{\lambda_C}\bar P\|z\|_C$.
+Consequently $\|F_C-F_C^0\|\le B_C$. Multiply by
+$\|g(\theta)\|\le G_0+H_gR$ to finish. Endpoint partial selectors obey
+the same bounds.
+\end{proof}
+

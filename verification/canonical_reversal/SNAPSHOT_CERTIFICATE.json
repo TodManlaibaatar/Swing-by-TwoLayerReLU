@@ -1,0 +1,39 @@
+{
+  "status": "STATIC SNAPSHOT BALLS ENCLOSED; TRAJECTORY REACHABILITY SEPARATE",
+  "radius": "0.000035",
+  "snapshots": [
+    {
+      "time": 3.4,
+      "E_center_lower": 0.48314945554681654,
+      "E_center_upper": 0.4831494555468179,
+      "E_ball_lower": 0.4831441414116017,
+      "E_ball_upper": 0.4831547696820327,
+      "parameter_norm_ball_upper": 1.9925806994129929,
+      "probe_error_Lipschitz_upper": 8.911352899055887
+    },
+    {
+      "time": 3.7,
+      "E_center_lower": 0.4829939160596393,
+      "E_center_upper": 0.48299391605964065,
+      "E_ball_lower": 0.4829885344873686,
+      "E_ball_upper": 0.48299929763191135,
+      "parameter_norm_ball_upper": 2.0038990939166053,
+      "probe_error_Lipschitz_upper": 9.04689566614598
+    },
+    {
+      "time": 3.9,
+      "E_center_lower": 0.48306543963835546,
+      "E_center_upper": 0.4830654396383568,
+      "E_ball_lower": 0.4830600220584917,
+      "E_ball_upper": 0.4830708572182206,
+      "parameter_norm_ball_upper": 2.0069084617432513,
+      "probe_error_Lipschitz_upper": 9.083236288832241
+    }
+  ],
+  "central_first_gap_lower": 0.0001448437796903734,
+  "central_rebound_lower": 6.07244265803386e-05,
+  "sector_angular_halfwidth": "0.000001",
+  "sector_first_gap_lower": 0.0001266773071127089,
+  "sector_rebound_lower": 4.25579540026741e-05,
+  "input_sha256": "ca09eb5c29d39fa713ec3427dfc1a5b214946eab0542a89ac9a06c2fc50180d1"
+}

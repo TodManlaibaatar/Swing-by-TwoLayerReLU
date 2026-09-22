@@ -1,0 +1,16 @@
+{
+  "entry": 3.4,
+  "horizon": 0.5,
+  "loss": 0.004122000030162799,
+  "parameter_displacement_bound": 0.045398238017365825,
+  "J_norm": 3.013937173517293,
+  "parameter_norm": 1.9925378097980315,
+  "boundary_term": 2.490595212781943,
+  "J_drift_bound": 2.712999193443708,
+  "g_drift_bound": 0.2334377437238186,
+  "rho_bound": 0.4028881163255618,
+  "frozen_positive_witness": 0.00043946878400800407,
+  "required_inequality": "rho_bound < frozen_positive_witness",
+  "passed": false,
+  "interpretation": "Diagnostic substitution of saved Euler state into conservative loss/margin bound; not a validated entry-state certificate or proof of impossibility."
+}

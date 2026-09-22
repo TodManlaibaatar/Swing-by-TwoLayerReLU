@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "exact_rational_enclosure_checks": 553,
+  "scope": "Arithmetic regression only; does not certify trajectory reachability or replace the real-arithmetic proof."
+}

@@ -1,0 +1,53 @@
+{
+  "status": "Floating-point evaluation of conservative static ball inequalities; not yet directed-rounded or linked to initialized reachability.",
+  "witnesses": [
+    {
+      "time": 3.4,
+      "kind": "Q_G",
+      "radius": 3e-05,
+      "q_center": -0.0010496347967507498,
+      "smooth_budget": 9.906177903473942e-05,
+      "training_gate_budget": 3.3739166900431426e-05,
+      "total_budget": 0.00013280094593517085,
+      "lower": -0.0011824357426859207,
+      "upper": -0.0009168338508155789,
+      "probe_margin": null
+    },
+    {
+      "time": 3.4,
+      "kind": "full_rate",
+      "radius": 3e-05,
+      "q_center": -0.001297400278937556,
+      "smooth_budget": 9.021545660655293e-05,
+      "training_gate_budget": 3.0616102451909444e-05,
+      "total_budget": 0.00012083155905846237,
+      "lower": -0.0014182318379960183,
+      "upper": -0.0011765687198790936,
+      "probe_margin": 3.7575475032295196e-05
+    },
+    {
+      "time": 3.9,
+      "kind": "Q_G",
+      "radius": 3e-05,
+      "q_center": 0.0008297491390844524,
+      "smooth_budget": 9.594165228599644e-05,
+      "training_gate_budget": 3.4110122430138514e-05,
+      "total_budget": 0.00013005177471613494,
+      "lower": 0.0006996973643683174,
+      "upper": 0.0009598009138005873,
+      "probe_margin": null
+    },
+    {
+      "time": 3.9,
+      "kind": "full_rate",
+      "radius": 3e-05,
+      "q_center": 0.0005883722053935251,
+      "smooth_budget": 8.777870323127475e-05,
+      "training_gate_budget": 3.117447019600679e-05,
+      "total_budget": 0.00011895317342728154,
+      "lower": 0.00046941903196624356,
+      "upper": 0.0007073253788208066,
+      "probe_margin": 5.6601688754548026e-05
+    }
+  ]
+}

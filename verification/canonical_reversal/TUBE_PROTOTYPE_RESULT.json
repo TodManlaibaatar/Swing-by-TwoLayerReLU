@@ -1,0 +1,12 @@
+{
+  "status": "FAILED FEASIBILITY; not a validated enclosure",
+  "failure": {
+    "reason": "radius cap exceeded",
+    "step": 8402,
+    "time": 1.6804000000000001,
+    "Rbar": 0.03015952215822387,
+    "eta": 6.664094262969607e-05,
+    "eta_gate": 5.216768900671509e-05
+  },
+  "runtime_seconds": 270.3108187500038
+}

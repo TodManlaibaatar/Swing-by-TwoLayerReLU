@@ -1,0 +1,6 @@
+{
+  "status": "Fixed-enclosure scalar budget; does not establish initialized entry",
+  "limiting_radius_lower_diagnostic": 1.223275714576565e-05,
+  "limiting_step": 19500,
+  "selected_certified_entry_radius": 1.2e-05
+}
